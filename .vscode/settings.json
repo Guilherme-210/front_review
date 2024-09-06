@@ -7,9 +7,9 @@
   "editor.bracketPairColorization.enabled": true, // Ativa a colorização dos pares de colchetes
   "editor.guides.bracketPairs": true, //realça os pares de colchetes para facilitar a leitura do código
   "editor.minimap.enabled": false, // Define se o minimapa esta ativo
-  "editor.formatOnSave": false,
-  "editor.formatOnPaste": false,
-  "files.autoSave": "off", // Salvamento automatico, PODE AFETAR EM ALGUNS CÓDIGOS DE EXECUÇÃO AUTOMÁTICA POR SAVE. "afterDelay"
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.autoSave": "afterDelay", // Salvamento automatico, PODE AFETAR EM ALGUNS CÓDIGOS DE EXECUÇÃO AUTOMÁTICA POR SAVE. "afterDelay"
   "editor.find.seedSearchStringFromSelection": "always", // editor de busca e subistituição
 
   // explorer
