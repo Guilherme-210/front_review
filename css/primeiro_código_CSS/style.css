@@ -1,0 +1,16 @@
+a {
+  color: white;
+}
+
+p {
+    color: green;
+    font-size: x-large;
+}
+p {
+  color: white;
+  font-size: x-large;
+}
+article p {
+    color: yellow;
+    font-size: x-large;
+}
