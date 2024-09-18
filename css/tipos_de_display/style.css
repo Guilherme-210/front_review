@@ -1,12 +1,12 @@
 .nav_pages {
   border-radius: 10px;
-  background-color:#ac1717;
+  background-color:#fff;
 }
 .nav_pages:hover {
   background-color: #f64348;
 }
 a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 
