@@ -1,0 +1,47 @@
+body {
+  background-image: url(public/praia_em_fernando_de_noronha.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  background-color: #248030;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.nav_pages {
+  border-radius: 10px;
+  background-color: #4bdff2;
+}
+.nav_pages:hover {
+  background-color: #0ff;
+}
+a {
+  color:#000;
+  text-decoration: none;
+}
+
+main {
+  border-radius: 5px;
+  background-color: #ff8;
+}
+#reserva {
+  color:#248030;
+  background-color: #ff8;
+}
+#reserva:hover {
+  text-decoration: underline;
+  background-color: #ffc;
+}
+#submit {
+  color: #ff8;
+  background-color: #228d30;
+  border-radius: 50%;
+}
+#submit:hover {
+  background-color: #30ed4a;
+}
+
+footer {
+  background-color: #fff;
+}
