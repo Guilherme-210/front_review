@@ -1,0 +1,55 @@
+.nav_pages {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #007900;
+  border: solid 3px #f64343;
+  border-radius: 10px;
+  padding: 5px 15px;
+  display: inline-block;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  text-transform: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.nav_pages:hover {
+  color: #000000;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+  background-color: #00ff04;
+  border: #007900 solid 3px;
+}
+
+/* Para criar variáveis globais no CSS usamos o seletor :root e dentro dele definimos os nomes iniciados por --: */
+
+:root {
+    --cor-principal: #3c59e7;
+    --cor-claro: #cfc9c9;
+    --cor-escuro: #232323;
+    --preenchimento-pq: .25rem 1rem;
+    --preenchimento-md: 2rem;
+    --preenchimento-gd: 4rem;
+}
+
+header {
+    background-color: var(--cor-escuro);
+    color: var(--cor-claro);
+    padding: var(--preenchimento-pq);
+}
+
+section {
+    background-color: var(--cor-claro);
+    padding: var(--preenchimento-md);
+}
+
+div {
+    --preenchimento-pq: 1rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-claro);
+    padding: var(--preenchimento-pq);
+}
+
+.red-box {
+    --cor-principal: #f64348;
+}
