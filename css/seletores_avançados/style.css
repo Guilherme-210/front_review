@@ -1,0 +1,62 @@
+.nav_pages {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #007900;
+  border: solid 3px #f64343;
+  border-radius: 10px;
+  padding: 5px 15px;
+  display: inline-block;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  text-transform: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.nav_pages:hover {
+  color: #000000;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+  background-color: #00ff04;
+  border: #007900 solid 3px;
+}
+
+/* Primeiro vamos conhecer o :nth-child, que permite escolhe filhos específicos de um determinado tipo: */
+li:nth-child(2) {
+    color: #f00;
+}
+li:nth-child(3n) {
+    color: #00f;
+}
+
+/* No CSS também temos seletores para diversos estados específicos, como o hover, ou seja, ao passar o cursos sobre o elemento */
+li:hover {
+    background-color: #999;
+}
+input:focus {
+  background-color: #f00;
+  color: #fff;
+}
+
+/* pseudo-elementos */
+/* Também temos o que chamamos de pseudo-elementos. Cada elemento no HTML pode possuir dois elementos extras associados a ele, um antes e outro depois. Podemos referenciar esses pseudo-elementos através dos seletores ::before e ::after:
+ */
+li::before { /* antes do elemento */
+  content: "(antes) ";
+}
+li::after { /* depois do elemento */
+  content: " (depois)";
+}
+
+/* Semelhante ao nth-child, temos o first-child e last-child para primeiros e últimos filhos de um tipo de elemento, respectivamente: */
+li:first-child {
+    color: rgb(255, 174, 0);
+}
+li:last-child {
+    color: rgb(255, 0, 179);
+}
+
+/* Por fim, também temos o :not(), que permite “negar”, ou inverter, um determinado seletor. */
+/* li:not(:first-child) {
+    color: rgb(0, 255, 255);
+} */
