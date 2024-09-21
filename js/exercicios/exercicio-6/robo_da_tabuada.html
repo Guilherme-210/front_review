@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Robô da Tabuada</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/estruturas_de_repetição/for/index.html"
+          >Aula anterior: Estrutura de Repetição FOR.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-6/procurando_palindromos.html"
+          >Exercício 6: Procurando Palíndromos.</a
+        >
+      </nav>
+      <h1>Exercício 9: Robô da Tabuada</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este exercício pede ao usuário um número de 1 a 20 e calcula a tabuada
+        desse número, exibindo os resultados.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+let numero = parseInt(prompt("Digite um número de 1 a 20:"));
+let resultado = "";
+
+if (numero >= 1 && numero <= 20) {
+    for (let i = 1; i <= 20; i++) {
+        resultado += "${numero} x ${i} = ${numero * i}\\n";
+    }
+    alert(resultado);
+} else {
+    alert("Número inválido! Por favor, digite um número entre 1 e 20.");
+}
+            </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>
+        O código acima pede um número ao usuário e calcula a tabuada desse
+        número, exibindo os resultados em um alerta.
+      </p>
+      <ul>
+        <li>O número é lido usando <code>prompt</code>.</li>
+        <li>Um loop FOR calcula a tabuada de 1 a 20.</li>
+        <li>
+          Os resultados são armazenados em uma string e exibidos ao final.
+        </li>
+        <li>Uma verificação garante que o número esteja entre 1 e 20.</li>
+      </ul>
+    </div>
+
+    <script src="robo_da_tabuada.js"></script>
+  </body>
+</html>

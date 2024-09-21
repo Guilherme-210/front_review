@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pilha de Cartas</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-7/fila_de_espera.html"
+          >Exercício 7: Fila de Espera</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/estruturas-de-dados/array_bidimensionais-matrizes/index.html"
+          >Próxima aula: Arrays Bidimensionais (Matrizes)</a
+        >
+      </nav>
+      <h1>Exercício 12: Pilha de Cartas</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este exercício simula um baralho de cartas, permitindo gerenciar as
+        cartas através de um menu interativo.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+let baralho = [];
+
+function mostrarMenu() {
+    let opcoes = "Quantidade de cartas no baralho: " + baralho.length + "\n";
+    opcoes += "Escolha uma opção:\n";
+    opcoes += "1. Adicionar uma carta\n";
+    opcoes += "2. Puxar uma carta\n";
+    opcoes += "3. Sair";
+    return prompt(opcoes);
+}
+
+function adicionarCarta() {
+    let carta = prompt("Digite o nome da carta:");
+    if (carta) {
+        baralho.push(carta);
+        alert(carta + " adicionada ao baralho.");
+    }
+}
+
+function puxarCarta() {
+    if (baralho.length > 0) {
+        let carta = baralho.pop();
+        alert("Carta puxada: " + carta);
+    } else {
+        alert("Nenhuma carta no baralho.");
+    }
+}
+
+let opcao;
+do {
+    opcao = mostrarMenu();
+    switch (opcao) {
+        case "1":
+            adicionarCarta();
+            break;
+        case "2":
+            puxarCarta();
+            break;
+    }
+} while (opcao !== "3");
+            </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>
+        O programa permite gerenciar um baralho de cartas com as seguintes
+        funcionalidades:
+      </p>
+      <ul>
+        <li>Adicionar uma carta ao topo do baralho.</li>
+        <li>Puxar a carta do topo do baralho e exibir seu nome.</li>
+        <li>Mostrar a quantidade de cartas no baralho no menu.</li>
+        <li>A opção de sair encerra o programa.</li>
+      </ul>
+    </div>
+
+    <script src="pilha_de_cartas.js"></script>
+  </body>
+</html>

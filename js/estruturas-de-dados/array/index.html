@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Arrays no JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-6/procurando_palindromos.html"
+          >Exercício 6: Procurando Palíndromos</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/estruturas-de-dados/trabalhando_com_array/index.html"
+          >Próxima aula: Novas Formas de Trabalhar com Arrays</a
+        >
+      </nav>
+      <h1>Arrays no JavaScript</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Esta aula aborda o conceito de Arrays em JavaScript, que são estruturas
+        de dados para trabalhar com listas.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>O que são Arrays</h2>
+      <ul>
+        <li>Estrutura de dados para trabalhar com listas.</li>
+        <li>Elementos identificados por índices inteiros (começando do 0).</li>
+        <li>Armazena qualquer tipo de dado.</li>
+        <li>Tamanho dinâmico.</li>
+        <li>Várias funções úteis.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Criando Arrays</h2>
+      <div class="code">
+        <pre>
+let frutas = ["maçã", "banana", "laranja"];
+            </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Manipulando Arrays</h2>
+      <div class="code">
+        <pre>
+// Acessar posição
+console.log(frutas[1]); // banana
+
+// Atribuir valor
+frutas[1] = "manga";
+console.log(frutas); // ["maçã", "manga", "laranja"]
+
+// Referenciar índice que não existe
+console.log(frutas[3]); // undefined
+            </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Funções Úteis</h2>
+      <p>Algumas operações comuns com arrays incluem:</p>
+      <ul>
+        <li>Enfileirar e desenfileirar elementos (fila).</li>
+        <li>Empilhar e desempilhar elementos (pilha).</li>
+        <li>Descobrir índice de um valor.</li>
+        <li>Cortar e concatenar arrays.</li>
+      </ul>
+    </div>
+
+    <script src="array.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cadastro de imóveis</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/estruturas-de-dados/objetos/index.html"
+          >Aula anterior: Objetos no JavaScript</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/">Próxima aula</a>
+      </nav>
+      <h1>Exercício 13: Cadastro de imóveis</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Desenvolver um programa em JavaScript para cadastro de imóveis,
+        permitindo que o usuário salve e visualize as informações dos imóveis
+        cadastrados.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+let imoveis = [];
+
+function cadastrarImovel() {
+    let proprietario = prompt("Nome do proprietário:");
+    let quartos = prompt("Número de quartos:");
+    let banheiros = prompt("Número de banheiros:");
+    let garagem = confirm("Possui garagem?");
+
+    let imovel = {
+        proprietario: proprietario,
+        quartos: Number(quartos),
+        banheiros: Number(banheiros),
+        garagem: garagem
+    };
+
+    imoveis.push(imovel);
+    alert("Imóvel cadastrado com sucesso! Total de imóveis: " + imoveis.length);
+}
+
+function mostrarImoveis() {
+    if (imoveis.length === 0) {
+        alert("Nenhum imóvel cadastrado.");
+        return;
+    }
+    
+    let listaImoveis = "Imóveis cadastrados:\n";
+    imoveis.forEach((imovel, index) => {
+        listaImoveis += (index + 1) + ". " + 
+            "Proprietário: " + imovel.proprietario + ", " + 
+            "Quartos: " + imovel.quartos + ", " + 
+            "Banheiros: " + imovel.banheiros + ", " + 
+            "Garagem: " + (imovel.garagem ? "Sim" : "Não") + "\n";
+    });
+    alert(listaImoveis);
+}
+
+// Exemplo de uso
+cadastrarImovel();
+mostrarImoveis();
+            </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>
+        O programa permite ao usuário cadastrar e visualizar imóveis utilizando
+        arrays e objetos:
+      </p>
+      <ul>
+        <li>Os imóveis são armazenados em um array.</li>
+        <li>
+          Cada imóvel é representado como um objeto com propriedades:
+          proprietário, quartos, banheiros e garagem.
+        </li>
+        <li>
+          Funções interativas permitem o cadastro e a visualização dos imóveis.
+        </li>
+        <li>Prática dos conceitos de arrays e objetos em JavaScript.</li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Arrays Bidimensionais (Matrizes)</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-7/pilha_de_cartas.html"
+          >Exercício 7: Pilha de Cartas</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/estruturas-de-dados/objetos/index.html"
+          >Próxima aula: Objetos no JavaScript</a
+        >
+      </nav>
+      <h1>Arrays Bidimensionais (Matrizes)</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este exercício apresenta como trabalhar com arrays bidimensionais
+        (matrizes) no JavaScript, permitindo manipular dados de forma
+        estruturada.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+let matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+// Acessando elementos
+console.log(matriz[1][2]); // Saída: 6
+
+// Iterando sobre a matriz
+for (let i = 0; i < matriz.length; i++) {
+    for (let j = 0; j < matriz[i].length; j++) {
+        console.log("Elemento na posição [" + i + "][" + j + "]: " + matriz[i][j]);
+    }
+}
+
+// Adicionando uma nova linha
+matriz.push([10, 11, 12]);
+console.log(matriz);
+            </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>
+        O programa demonstra como criar e manipular uma matriz no JavaScript:
+      </p>
+      <ul>
+        <li>Uma matriz é definida como um array de arrays.</li>
+        <li>
+          Os elementos são acessados usando colchetes encadeados, como
+          <code>matriz[1][2]</code>.
+        </li>
+        <li>Loops encadeados permitem iterar sobre cada elemento da matriz.</li>
+        <li>
+          O método <code>push()</code> é utilizado para adicionar uma nova linha
+          à matriz.
+        </li>
+      </ul>
+    </div>
+
+    <script src="matrizes.js"></script>
+  </body>
+</html>

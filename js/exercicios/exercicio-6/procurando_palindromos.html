@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Procurando Palíndromos</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-6/robo_da_tabuada.html"
+          >Exercício 6: Robô da Tabuada</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/estruturas-de-dados/array/index.html"
+          >Próxima aula: Arrays no JavaScript</a
+        >
+      </nav>
+      <h1>Exercício 10: Procurando Palíndromos</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este exercício identifica se uma palavra é um palíndromo, ou seja, se
+        lida de trás para frente possui as mesmas letras na mesma ordem.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+let palavra = prompt("Digite uma palavra:");
+let palavraInvertida = palavra.split("").reverse().join("");
+
+if (palavra === palavraInvertida) {
+    alert(palavra + " é um palíndromo!");
+} else {
+    alert(palavra + " não é um palíndromo. Invertida: " + palavraInvertida);
+}
+            </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>
+        O código acima pede uma palavra ao usuário e verifica se é um
+        palíndromo.
+      </p>
+      <ul>
+        <li>A palavra é lida usando <code>prompt</code>.</li>
+        <li>
+          A palavra invertida é criada usando métodos de manipulação de strings.
+        </li>
+        <li>
+          Uma condição verifica se a palavra original é igual à palavra
+          invertida.
+        </li>
+        <li>O resultado é exibido em um alerta.</li>
+      </ul>
+    </div>
+
+    <script src="procurando_palindromos.js"></script>
+  </body>
+</html>

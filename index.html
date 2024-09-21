@@ -3,238 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Site utilizado somente para postar recursos sobre estudos de linguagens de programação."
-    />
+    <meta name="description" content="Site utilizado somente para postar recursos sobre estudos de linguagens de programação." />
+    <!-- Incluindo Font Awesome no <head> -->
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <link rel="stylesheet" href="style.css" />
-    <title>links das aulas</title>
+    <title>Estudo de Programação</title>
   </head>
   <body>
     <header>
       <h1>Navegue entre as aulas</h1>
-      <nav>
-        <a href="#HTML">HTML</a> | <a href="#CSS">CSS</a> |
-        <a href="#Tailwind">Tailwind</a> |
-        <a href="#JavaScript">JavaScript</a>
-      </nav>
-      <p>
-        Acesse o meu
-        <a href="https://github.com/Guilherme-210" target="_blank">GitHub</a>
-      </p>
+      <div class="div_header">
+        <nav>
+          <a class="link_header" href="#HTML"><ion-icon name="logo-html5"></ion-icon> HTML</a> |
+          <a class="link_header" href="#CSS"><ion-icon name="logo-css3"></ion-icon> CSS</a> |
+          <a class="link_header" href="#JavaScript"><ion-icon name="logo-javascript"></ion-icon> JavaScript</a>
+          <p>
+            Acesse o meu
+            <a class="link_header" href="https://github.com/Guilherme-210" target="_blank">GitHub <ion-icon name="logo-github"></ion-icon></a>
+          </p>
+        </nav>
+      </div>
+      <input type="text" id="search" placeholder="Buscar aulas..." onkeyup="filterFunction()">
     </header>
+
     <main>
       <section id="HTML">
-        <h2>HTML</h2>
+        <h2>HTML <ion-icon name="logo-html5"></ion-icon></h2>
+        
         <h3>Aulas</h3>
         <nav>
           <ul>
-            <li>
-              <a href="html/titulos_e_paragrafo/index.html"
-                >Aula 1: Elementos de títulos e parágrafos.</a
-              >
-            </li>
-            <li>
-              <a href="html/elementos_de_formatacao/index.html"
-                >Aula 2: Elementos de formatação.</a
-              >
-            </li>
-            <li>
-              <a href="html/Comentarios/index.html">Aula 3: Comentários.</a>
-            </li>
-            <li>
-              <a href="html/imagens_e_atributos/index.html"
-                >Aula 4: Elementos de imagens e atributos.</a
-              >
-            </li>
-            <li>
-              <a href="html/Quebra_e_regua_horizontal/index.html"
-                >Aula 5: Quebras de linha e régua horizontal.</a
-              >
-            </li>
-            <li>
-              <a href="html/organizadores_de_codigo/div_e_span.html"
-                >Aula 6: Organizando o código com "div" e "span".</a
-              >
-            </li>
-            <li>
-              <a href="html/links_e_ancoragem/index.html"
-                >Aula 7: Trabalhando com links</a
-              >
-            </li>
-            <li>
-              <a href="html/ancoras_internas/index.html"
-                >Aula 8: Links internos</a
-              >
-            </li>
-            <li>
-              <a href="html/listas/index.html"
-                >Aula 9: Trabalhando com listas</a
-              >
-            </li>
-            <li>
-              <a href="html/tabela/index.html">Aula 10: Criação de tabelas</a>
-            </li>
-            <li>
-              <a href="html/formularios/index.html"
-                >Aula 11: Trabalhando com formulários no HTML</a
-              >
-            </li>
-            <li>
-              <a href="html/tipos_de_input/index.html"
-                >Aula 12: Conhecendo os tipos de input no HTML</a
-              >
-            </li>
-            <li>
-              <a href="html/semantica/index.html">Aula 13: Tags semânticas</a>
-            </li>
-            <li>
-              <a href="html/WAI-ARIA_e_acessibilidade/index.html"
-                >Aula 14: Atributos de acessibilidade WAI-ARIA</a
-              >
-            </li>
+            <li><a href="html/titulos_e_paragrafo/index.html">Aula 1: Elementos de títulos e parágrafos.</a></li>
+            <li><a href="html/elementos_de_formatacao/index.html">Aula 2: Elementos de formatação.</a></li>
+            <li><a href="html/Comentarios/index.html">Aula 3: Comentários.</a></li>
+            <li><a href="html/imagens_e_atributos/index.html">Aula 4: Elementos de imagens e atributos.</a></li>
+            <li><a href="html/Quebra_e_regua_horizontal/index.html">Aula 5: Quebras de linha e régua horizontal.</a></li>
+            <li><a href="html/organizadores_de_codigo/div_e_span.html">Aula 6: Organizando o código com "div" e "span".</a></li>
+            <li><a href="html/links_e_ancoragem/index.html">Aula 7: Trabalhando com links</a></li>
+            <li><a href="html/ancoras_internas/index.html">Aula 8: Links internos</a></li>
+            <li><a href="html/listas/index.html">Aula 9: Trabalhando com listas</a></li>
+            <li><a href="html/tabela/index.html">Aula 10: Criação de tabelas</a></li>
+            <li><a href="html/formularios/index.html">Aula 11: Trabalhando com formulários no HTML</a></li>
+            <li><a href="html/tipos_de_input/index.html">Aula 12: Conhecendo os tipos de input no HTML</a></li>
+            <li><a href="html/semantica/index.html">Aula 13: Tags semânticas</a></li>
+            <li><a href="html/WAI-ARIA_e_acessibilidade/index.html">Aula 14: Atributos de acessibilidade WAI-ARIA</a></li>
           </ul>
         </nav>
         <h3>Exercícios</h3>
         <nav>
           <ul>
-            <li>
-              <a href="html/exercicios/exercicio-1/Escrevendo_um_artigo.html"
-                >Exercício 1: Escreva um artigo.</a
-              >
-            </li>
-            <li>
-              <a href="html/exercicios/exercicio-2/index.html"
-                >Exercício 2: Criando um site com navegação.</a
-              >
-            </li>
-            <li>
-              <a href="html/exercicios/exercicio-3/index.html"
-                >Exercício 3: Criando uma lista de álbuns.</a
-              >
-            </li>
-            <li>
-              <a href="html/exercicios/exercicio-4/index.html"
-                >Exercício 4: Criando uma Tabela de Inscritos.</a
-              >
-            </li>
-            <li>
-              <a href="html/exercicios/exercicio-5/index.html"
-                >Exercício 5: Formulário de Inscrição.</a
-              >
-            </li>
-            <li>
-              <a href="html/exercicios/exercicio-final/index.html"
-                >Exercício final: Criando um site completo.</a
-              >
-            </li>
+            <li><a href="html/exercicios/exercicio-1/Escrevendo_um_artigo.html">Exercício 1: Escreva um artigo.</a></li>
+            <li><a href="html/exercicios/exercicio-2/index.html">Exercício 2: Criando um site com navegação.</a></li>
+            <li><a href="html/exercicios/exercicio-3/index.html">Exercício 3: Criando uma lista de álbuns.</a></li>
+            <li><a href="html/exercicios/exercicio-4/index.html">Exercício 4: Criando uma Tabela de Inscritos.</a></li>
+            <li><a href="html/exercicios/exercicio-5/index.html">Exercício 5: Formulário de Inscrição.</a></li>
+            <li><a href="html/exercicios/exercicio-final/index.html">Exercício final: Criando um site completo.</a></li>
           </ul>
         </nav>
       </section>
       <section id="CSS">
-        <h2>CSS</h2>
+        <h2>CSS <ion-icon name="logo-css3"></ion-icon></h2>
         <h3>Aulas</h3>
         <nav>
           <ul>
-            <li>
-              <a href="css/primeiro_código_CSS/index.html"
-                >Aula 1: Seu Primeiro Código CSS.</a
-              >
-            </li>
-            <li>
-              <a href="css/background_e_border/index.html"
-                >Aula 2: Background e Border.</a
-              >
-            </li>
-            <li>
-              <a href="css/margin_e_padding/index.html"
-                >Aula 3: Margin e padding.</a
-              >
-            </li>
-            <li>
-              <a href="css/tipos_de_display/index.html"
-                >Aula 4: Tipos de display.</a
-              >
-            </li>
-            <li>
-              <a href="css/seletores_basicos/index.html"
-                >Aula 5: Seletores básicos.</a
-              >
-            </li>
-            <li>
-              <a href="css/textos_e_fontes/index.html"
-                >Aula 6: Textos e fontes.</a
-              >
-            </li>
-            <li>
-              <a href="css/google_fonts/index.html"
-                >Aula 7: Usando o Google Fonts.</a
-              >
-            </li>
-            <li>
-              <a href="css/unidades_de_medida/index.html"
-                >Aula 8: Unidades de Medida.</a
-              >
-            </li>
-            <li>
-              <a href="css/heranca/index.html">Aula 9: Herança.</a>
-            </li>
-            <li>
-              <a href="css/especificidade/index.html"
-                >Aula 10: Especificidade.</a
-              >
-            </li>
-            <li>
-              <a href="css/seletores_avançados/index.html"
-                >Aula 11: Seletores avançados.</a
-              >
-            </li>
-            <li>
-              <a href="css/variaveis/index.html">Aula 11: Variáveis.</a>
-            </li>
+            <li><a href="css/primeiro_código_CSS/index.html">Aula 1: Seu Primeiro Código CSS.</a></li>
+            <li><a href="css/background_e_border/index.html">Aula 2: Background e Border.</a></li>
+            <li><a href="css/margin_e_padding/index.html">Aula 3: Margin e padding.</a></li>
+            <li><a href="css/tipos_de_display/index.html">Aula 4: Tipos de display.</a></li>
+            <li><a href="css/seletores_basicos/index.html">Aula 5: Seletores básicos.</a></li>
+            <li><a href="css/textos_e_fontes/index.html">Aula 6: Textos e fontes.</a></li>
+            <li><a href="css/google_fonts/index.html">Aula 7: Usando o Google Fonts.</a></li>
+            <li><a href="css/unidades_de_medida/index.html">Aula 8: Unidades de Medida.</a></li>
+            <li><a href="css/heranca/index.html">Aula 9: Herança.</a></li>
+            <li><a href="css/especificidade/index.html">Aula 10: Especificidade.</a></li>
+            <li><a href="css/seletores_avançados/index.html">Aula 11: Seletores avançados.</a></li>
+            <li><a href="css/variaveis/index.html">Aula 12: Variáveis.</a></li>
           </ul>
         </nav>
         <h3>Exercícios</h3>
         <nav>
           <ul>
-            <li>
-              <a href="css/exercicios/exercicio_1/index.html"
-                >Exercício 1: Estilizando um cartão postal.</a
-              >
-            </li>
-            <li>
-              <a href="css/exercicios/exercicio_2/index.html"
-                >Exercício 2: Sistema Administrativo.</a
-              >
-            </li>
-            <li>
-              <a href="css/exercicios/exercicio_3/index.html"
-                >Exercício 3: Catálogo de leitura Bookshelf.</a
-              >
-            </li>
-            <li>
-              <a href="css/exercicios/exercicio_final/index.html"
-                >Exercício final: Criando um site com HTML e CSS.</a
-              >
-            </li>
+            <li><a href="css/exercicios/exercicio_1/index.html">Exercício 1: Estilizando um cartão postal.</a></li>
+            <li><a href="css/exercicios/exercicio_2/index.html">Exercício 2: Sistema Administrativo.</a></li>
+            <li><a href="css/exercicios/exercicio_3/index.html">Exercício 3: Catálogo de leitura Bookshelf.</a></li>
+            <li><a href="css/exercicios/exercicio_final/index.html">Exercício final: Criando um site com HTML e CSS.</a></li>
           </ul>
         </nav>
       </section>
       <section id="JavaScript">
-        <h2>JavaScript</h2>
+        <h2>JavaScript <ion-icon name="logo-javascript"></ion-icon></h2>
         <h3>Aulas</h3>
         <nav>
           <ul>
-            <li>
-              <a href="/js/tipos_de_dasos/index.html">Tipos de dados</a>
-            </li>
+            <li><a href="/js/tipos_de_dasos/index.html">Aula 1: Tipos de dados.</a></li>
+            <li><a href="/js/variaveis/index.html">Aula 2: Variáveis.</a></li>
+            <li><a href="/js/operadores_e_expressoes/index.html">Aula 3: Operadores e expressões.</a></li>
+            <li><a href="/js/Usando_js_no_html/index.html">Aula 4: Usando JavaScript no HTML.</a></li>
+            <li><a href="/js/recursos_nativos/index.html">Aula 5: Recursos nativos do navegador.</a></li>
+            <li><a href="/js/comparação_de_dados/index.html">Aula 6: Comparação de dados.</a></li>
+            <li><a href="/js/operadores_logicos/index.html">Aula 7: Operadores Lógicos.</a></li>
+            <li><a href="/js/condicionais/if_else/index.html">Aula 8: Estruturas Condicionais (IF e ELSE).</a></li>
+            <li><a href="/js/condicionais/switch/index.html">Aula 9: Estruturas Condicionais (Switch).</a></li>
+            <li><a href="/js/estruturas_de_repetição/while/index.html">Aula 10: Estruturas de Repetição (While).</a></li>
+            <li><a href="/js/estruturas_de_repetição/do-while/index.html">Aula 11: Estruturas de Repetição (Do While).</a></li>
+            <li><a href="/js/estruturas_de_repetição/for/index.html">Aula 12: Estrutura de Repetição (FOR).</a></li>
+            <li><a href="/js/estruturas-de-dados/array/index.html">Aula 13: Arrays no JavaScript.</a></li>
+            <li><a href="/js/estruturas-de-dados/trabalhando_com_array/index.html">Aula 14: Novas Formas de Trabalhar com Arrays.</a></li>
+            <li><a href="/js/estruturas-de-dados/array_bidimensionais-matrizes/index.html">Aula 15: Arrays Bidimensionais (Matrizes).</a></li>
+            <li><a href="/js/estruturas-de-dados/objetos/index.html">Aula 16: Objetos no JavaScript.</a></li>
+            <li><a href="/js">Aula : .</a></li>
           </ul>
         </nav>
         <h3>Exercícios</h3>
         <nav>
-          <ul></ul>
+          <ul>
+            <li><a href="/js/exercicios/exercicio-1/p1-cadastro.html">Exercício 1: Cadastro de Recrutas.</a></li>
+            <li><a href="/js/exercicios/exercicio-1/p2-calculadora.html">Exercício 2: Calculadora de 4 Operações.</a></li>
+            <li><a href="/js/exercicios/exercicio-2/p1-teste_de_velocidade.html">Exercício 3: Teste de Velocidade.</a></li>
+            <li><a href="/js/exercicios/exercicio-2/p2-calculo_de_dano.html">Exercício 4: Cálculo de Dano.</a></li>
+            <li><a href="/js/exercicios/exercicio-3/conversor.html">Exercício 5: Conversor de Medidas.</a></li>
+            <li><a href="/js/exercicios/exercicio-4/novas_cidades.html">Exercício 6: Visitando Novas Cidades.</a></li>
+            <li><a href="/js/exercicios/exercicio-5/menu_interativo.html">Exercício 7: Menu Interativo.</a></li>
+            <li><a href="/js/exercicios/exercicio-5/controle_financeiro.html">Exercício 8: Controle Financeiro.</a></li>
+            <li><a href="/js/exercicios/exercicio-6/robo_da_tabuada.html">Exercício 9: Robô da Tabuada.</a></li>
+            <li><a href="/js/exercicios/exercicio-6/procurando_palindromos.html">Exercício 10: Procurando Palíndromos.</a></li>
+            <li><a href="/js/exercicios/exercicio-7/fila_de_espera.html">Exercício 11: Fila de Espera.</a></li>
+            <li><a href="/js/exercicios/exercicio-7/pilha_de_cartas.html">Exercício 12: Pilha de Cartas.</a></li>
+            <li><a href="/js/exercicios/exercicio-8/cadastro_de_imoveis.html">Exercício 13: Cadastro de Imóveis.</a></li>
+            <li><a href="/js/exercicios/exercicio-">Exercício : .</a></li>
+            <li><a href="/js/exercicios/exercicio-">Exercício : .</a></li>
+          </ul>
         </nav>
       </section>
     </main>
+
+    <footer>
+    <p>© 2024 Por Guilherme Reis.</p>
+    <p>Siga-me no<a class="link_footer" href="https://github.com/Guilherme-210" target="_blank"><ion-icon name="logo-github"></ion-icon> GitHub</a></p>
+</footer>
   </body>
 </html>

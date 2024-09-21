@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Teste de Velocidade</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/condicionais/if_else/index.html"
+          >Aula anterior: Estruturas Condicionais: IF e ELSE.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-2/p2-calculo_de_dano.html"
+          >Exercício 2: Cálculo de Dano.</a
+        >
+      </nav>
+      <h1>Exercício 3: Teste de velocidade</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Escreva um programa em JavaScript que permita inserir o nome e a
+        velocidade de dois veículos e exiba na tela uma mensagem dizendo qual
+        dos dois é mais rápido (ou que as velocidades são iguais se este for o
+        caso).
+      </p>
+
+      <h3>Exemplo de Lógica em JavaScript</h3>
+      <div class="code">
+        <pre>
+let nomeVeiculo1 = prompt("Digite o nome do primeiro veículo:");
+let velocidadeVeiculo1 = prompt("Digite a velocidade do primeiro veículo (em km/h):");
+
+let nomeVeiculo2 = prompt("Digite o nome do segundo veículo:");
+let velocidadeVeiculo2 = prompt("Digite a velocidade do segundo veículo (em km/h):");
+
+if (velocidadeVeiculo1 > velocidadeVeiculo2) {
+  alert(nomeVeiculo1 + " é mais rápido do que " + nomeVeiculo2);
+} else if (velocidadeVeiculo2 > velocidadeVeiculo1) {
+  alert(nomeVeiculo2 + " é mais rápido do que " + nomeVeiculo1);
+} else {
+  alert("Os dois veículos têm a mesma velocidade!");
+}
+            </pre
+        >
+      </div>
+    </div>
+
+    <script src="./velocidade.js"></script>
+  </body>
+</html>

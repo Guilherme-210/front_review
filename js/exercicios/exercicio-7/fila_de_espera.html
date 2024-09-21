@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <title>Fila de Espera</title>
+</head>
+    <header>
+        <nav>
+            <a class="nav_pages" href="/js/estruturas-de-dados/trabalhando_com_array/index.html">Aula anterior: Novas Formas de Trabalhar com Arrays</a>
+            <a class="nav_pages" href="/">Central de aulas</a>
+            <a class="nav_pages" href="/js/exercicios/exercicio-7/pilha_de_cartas.html">Exercício 7: Pilha de Cartas</a>
+        </nav>
+        <h1>Exercício 11: Fila de Espera</h1>
+    </header>
+
+    <div class="section">
+        <h2>Descrição</h2>
+        <p>Este exercício simula uma fila de espera em um consultório médico, permitindo gerenciar os pacientes através de um menu interativo.</p>
+    </div>
+
+    <div class="section">
+        <h2>Exemplo de Código JavaScript</h2>
+        <div class="code">
+            <pre>
+let fila = [];
+
+function mostrarMenu() {
+    let opcoes = "Escolha uma opção:\n";
+    for (let i = 0; i < fila.length; i++) {
+        opcoes += (i + 1) + "º " + fila[i] + "\n";
+    }
+    opcoes += "Novo paciente\nConsultar paciente\nSair";
+    return prompt(opcoes);
+}
+
+function adicionarPaciente() {
+    let nome = prompt("Digite o nome do paciente:");
+    if (nome) {
+        fila.push(nome);
+        alert(nome + " adicionado à fila.");
+    }
+}
+
+function consultarPaciente() {
+    if (fila.length > 0) {
+        let paciente = fila.shift();
+        alert("Paciente consultado: " + paciente);
+    } else {
+        alert("Nenhum paciente na fila.");
+    }
+}
+
+let opcao;
+do {
+    opcao = mostrarMenu();
+    if (opcao === "Novo paciente") {
+        adicionarPaciente();
+    } else if (opcao === "Consultar paciente") {
+        consultarPaciente();
+    }
+} while (opcao !== "Sair");
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Explicação</h2>
+        <p>O programa mantém uma lista de pacientes em espera e permite ao usuário adicionar novos pacientes, consultar o próximo paciente e sair do programa.</p>
+        <ul>
+            <li>O menu é mostrado ao usuário em forma de prompt.</li>
+            <li>Os pacientes são armazenados em um array e gerenciados conforme as ações escolhidas.</li>
+            <li>A opção de sair encerra o programa.</li>
+        </ul>
+    </div>
+
+  <script src="fila_de_espera.js"></script>
+</body>
+</html>

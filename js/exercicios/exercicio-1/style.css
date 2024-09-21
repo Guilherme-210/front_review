@@ -36,8 +36,9 @@ header {
   text-align: center;
 }
 
-h1 {
-  font-size: 2em;
+h2 {
+  font-size: 1.5em;
+  color: #333;
 }
 
 .section {
@@ -46,11 +47,6 @@ h1 {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  font-size: 1.5em;
-  color: #333;
 }
 
 p,
@@ -62,15 +58,9 @@ ul {
 ul {
   list-style: disc inside;
 }
-
 .code {
   background-color: #e8e8e8;
   padding: 15px;
   border-radius: 5px;
   font-family: "Courier New", monospace;
-}
-
-pre {
-  margin: 0;
-  font-size: 1.1em;
 }

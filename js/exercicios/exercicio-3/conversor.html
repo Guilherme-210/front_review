@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Conversor de medidas</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/condicionais/switch/index.html"
+          >Exercício 2: Estruturas Condicionais: Switch.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/estruturas_de_repetição/while/index.html"
+          >Proxima aula: Estruturas de Repetição: While.</a
+        >
+      </nav>
+      <h1>Exercício 5: Conversor de medidas</h1>
+    </header>
+
+    <div class="section">
+      <h2>Objetivo</h2>
+      <p>
+        Escrever um programa em JavaScript que funcione como um conversor de
+        medidas. O usuário deverá inserir um valor em metros e escolher para
+        qual unidade de medida deseja converter.
+      </p>
+      <p>As opções disponíveis são:</p>
+      <ul>
+        <li>Milímetro (mm)</li>
+        <li>Centímetro (cm)</li>
+        <li>Decímetro (dm)</li>
+        <li>Decâmetro (dam)</li>
+        <li>Hectômetro (hm)</li>
+        <li>Quilômetro (km)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Regras</h2>
+      <p>O programa deverá:</p>
+      <ul>
+        <li>Pedir um valor em metros.</li>
+        <li>O usuário escolherá a unidade de medida para a conversão.</li>
+        <li>Converter o valor de acordo com a opção escolhida.</li>
+        <li>
+          Se uma opção inválida for inserida, exibir a mensagem "Opção
+          inválida".
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Estrutura de Código</h3>
+      <div class="code">
+        <pre>
+// Pedir um valor em metros
+let valorMetros = prompt("Insira o valor em metros:");
+
+// Opções de conversão
+let opcao = prompt("Escolha a unidade de conversão:\n1 - milímetros (mm)\n2 - centímetros (cm)\n3 - decímetros (dm)\n4 - decâmetros (dam)\n5 - hectômetros (hm)\n6 - quilômetros (km)");
+
+// Conversão com switch
+switch(opcao) {
+  case "1":
+    alert(`${valorMetros} metros = ${valorMetros * 1000} milímetros`);
+    break;
+  case "2":
+    alert(`${valorMetros} metros = ${valorMetros * 100} centímetros`);
+    break;
+  case "3":
+    alert(`${valorMetros} metros = ${valorMetros * 10} decímetros`);
+    break;
+  case "4":
+    alert(`${valorMetros} metros = ${valorMetros / 10} decâmetros`);
+    break;
+  case "5":
+    alert(`${valorMetros} metros = ${valorMetros / 100} hectômetros`);
+    break;
+  case "6":
+    alert(`${valorMetros} metros = ${valorMetros / 1000} quilômetros`);
+    break;
+  default:
+    alert("Opção inválida!");
+}
+            </pre
+        >
+      </div>
+    </div>
+
+    <script src="./conversor.js"></script>
+  </body>
+</html>

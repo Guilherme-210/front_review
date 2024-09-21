@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Visitando novas cidades</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/estruturas_de_repetição/while/index.html"
+          >Estruturas de Repetição: While.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/estruturas_de_repetição/do-while/index.html"
+          >Estruturas de Repetição: Do While.</a
+        >
+      </nav>
+      <h1>Exercício 6: Visitando novas cidades</h1>
+    </header>
+
+    <div class="section">
+      <h2>Requisitos</h2>
+      <ul>
+        <li>Pedir o nome do turista.</li>
+        <li>Perguntar se ele já visitou alguma cidade.</li>
+        <li>Se sim, pedir o nome da cidade e armazená-la.</li>
+        <li>
+          Repetir a pergunta até que o turista responda que não visitou mais
+          cidades.
+        </li>
+        <li>
+          Exibir o nome do turista, o número de cidades visitadas e a lista de
+          cidades no final.
+        </li>
+      </ul>
+
+      <h2>Exemplo de Código</h2>
+      <div class="code">
+        <pre>
+// Exemplo de código em JavaScript
+let nomeTurista = prompt("Qual é o seu nome?");
+let cidades = [];
+let visitou = prompt("Você já visitou alguma cidade? (Sim/Não)");
+
+while (visitou.toLowerCase() === "sim") {
+    let cidade = prompt("Qual é o nome da cidade?");
+    cidades.push(cidade);
+    visitou = prompt("Você visitou mais alguma cidade? (Sim/Não)");
+}
+
+let mensagem = "Turista: " + nomeTurista + "\n";
+mensagem += "Número de cidades visitadas: " + cidades.length + "\n";
+mensagem += "Cidades: " + cidades.join(", ");
+
+alert(mensagem);
+            </pre
+        >
+      </div>
+    </div>
+
+    <script src="novas_cidades.js"></script>
+  </body>
+</html>

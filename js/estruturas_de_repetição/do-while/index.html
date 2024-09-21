@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Estruturas de Repetição: Do While</title>
+  </head>
+  <body> 
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-4/novas_cidades.html"
+          >Exercício 4: Visitando novas cidades.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-5/menu_interativo.html"
+          >Exercício 5: Menu Interativo.</a
+        >
+      </nav>
+      <h1>Estruturas de Repetição: Do While</h1>
+    </header>
+
+    <div class="section">
+        <h2>Conceito</h2>
+        <p>A estrutura de repetição <code>do while</code> garante a execução de um bloco de código pelo menos uma vez, mesmo que a condição seja falsa na primeira verificação.</p>
+
+        <h2>Sintaxe</h2>
+        <div class="code">
+            <pre>
+do {
+    // código a ser executado
+} while (condição);
+            </pre>
+        </div>
+
+        <h2>Exemplo</h2>
+        <div class="code">
+            <pre>
+let velocidade = 0;
+do {
+    alert("Velocidade: " + velocidade);
+    velocidade -= 20;
+} while (velocidade > 0);
+alert("Velocidade final: " + velocidade); // -20
+            </pre>
+        </div>
+
+        <h2>Diferenças para While</h2>
+        <ul>
+            <li><strong>While:</strong> Verifica a condição antes de executar o código.</li>
+            <li><strong>Do While:</strong> Executa o código antes de verificar a condição.</li>
+        </ul>
+
+        <h2>Utilidade</h2>
+        <p>Utilizado quando é necessário garantir que o código dentro do laço seja executado pelo menos uma vez, independentemente da condição inicial.</p>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Estruturas de Repetição: While</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-3/conversor.html"
+          >Exercício 3: Conversor de medidas.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-4/novas_cidades.html"
+          >Exercício 4: Visitando novas cidades.</a
+        >
+      </nav>
+      <h1>Estruturas de Repetição: While</h1>
+    </header>
+
+    <div class="section">
+        <h2>O que é?</h2>
+        <p>A estrutura <code>while</code> no JavaScript é uma estrutura de repetição que executa um bloco de código enquanto uma condição específica for verdadeira.</p>
+
+        <h2>Funcionamento</h2>
+        <p>O laço <code>while</code> é executado repetidamente enquanto a condição for verdadeira. Se a condição nunca se tornar falsa, o loop continuará indefinidamente, causando o que chamamos de "loop infinito".</p>
+
+        <h2>Sintaxe</h2>
+        <div class="code">
+            <pre>
+while (condição) {
+    // código a ser repetido
+}
+            </pre>
+        </div>
+
+        <h2>Características</h2>
+        <ul>
+            <li>Aceita o uso de <code>break</code> para interromper a repetição.</li>
+            <li>Pode ser combinado com outras estruturas como <code>if</code> e <code>switch</code>.</li>
+        </ul>
+
+        <h2>Utilizações</h2>
+        <p>Usado quando precisamos repetir um trecho de código por tempo indeterminado, em programas que precisam ficar executando até que o usuário decida sair, ou dentro de outras estruturas para criar repetições mais complexas.</p>
+
+        <h2>Exemplo</h2>
+        <div class="code">
+            <pre>
+// Exemplo de loop while
+let contador = 0;
+while (contador &lt; 5) {
+    console.log("O contador é: " + contador);
+    contador++; // Incrementa o contador para evitar loop infinito
+}
+            </pre>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

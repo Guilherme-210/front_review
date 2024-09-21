@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+    <title>Operadores Lógicos</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/comparação_de_dados/index.html"
+          >Aula anterior: Comparação de dados.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/condicionais/if_else/index.html"
+          >Proxima aula: Estruturas Condicionais: IF e ELSE.</a
+        >
+      </nav>
+      <h1>Operadores Lógicos</h1>
+    </header>
+
+    <div class="section">
+        <h2>Descrição</h2>
+        <p>Este exercício aborda os operadores lógicos em JavaScript.</p>
+
+        <h3>E (AND)</h3>
+        <p>O operador <code>&&</code> retorna <code>true</code> somente se ambas as partes forem verdadeiras.</p>
+        <table>
+            <tr>
+                <th>p</th>
+                <th>q</th>
+                <th>p && q</th>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>T</td>
+                <td>T</td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>F</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>T</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>F</td>
+                <td>F</td>
+            </tr>
+        </table>
+        <h4>Exemplos</h4>
+        <pre>
+true && true === true
+false && true === false
+        </pre>
+
+        <h3>Ou (OR)</h3>
+        <p>O operador <code>||</code> retorna <code>true</code> se pelo menos uma das partes for verdadeira.</p>
+        <table>
+            <tr>
+                <th>p</th>
+                <th>q</th>
+                <th>p || q</th>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>T</td>
+                <td>T</td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>F</td>
+                <td>T</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>T</td>
+                <td>T</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>F</td>
+                <td>F</td>
+            </tr>
+        </table>
+        <h4>Exemplos</h4>
+        <pre>
+true || false === true
+false || false === false
+        </pre>
+
+        <h3>Não (NOT)</h3>
+        <p>O operador <code>!</code> inverte o resultado.</p>
+        <table>
+            <tr>
+                <th>p</th>
+                <th>!p</th>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>T</td>
+            </tr>
+        </table>
+        <h4>Exemplos</h4>
+        <pre>
+!true === false
+!false === true
+        </pre>
+    </div>
+    
+  </body>
+</html>

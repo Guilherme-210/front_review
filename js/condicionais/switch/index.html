@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Estruturas Condicionais: Switch</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages"
+          href="/js/exercicios/exercicio-2/p2-calculo_de_dano.html"
+          >Exercício 2: p2-calculo_de_dano.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/exercicios/exercicio-3/conversor.html"
+          >Exercício 3: Conversor de medidas.</a
+        >
+      </nav>
+      <h1>Estruturas Condicionais: Switch</h1>
+    </header>
+    
+    <div class="section">
+        <h2>Descrição</h2>
+        <p>A estrutura condicional <code>switch</code> testa uma expressão/valor contra vários casos possíveis, executando o bloco de código correspondente ao primeiro caso que combina.</p>
+        <p>É útil quando há várias opções possíveis que podem ser testadas, ao invés de usar múltiplas condições com <code>if</code>.</p>
+
+        <h3>Vantagens</h3>
+        <ul>
+            <li>Testa múltiplos casos de forma mais simples que vários <code>ifs</code> encadeados.</li>
+            <li>Permite definir um comportamento padrão com o <code>default</code>.</li>
+            <li>Permite interromper a execução de outros casos com o <code>break</code>.</li>
+        </ul>
+
+        <h3>Exemplo de Estrutura Básica</h3>
+        <div class="code">
+            <pre>
+switch (expressao) {
+  case "valor1":
+    // código a ser executado
+    break;
+  case "valor2":
+    // código a ser executado
+    break;
+  default:
+    // código a ser executado se nenhum caso for correspondido
+}
+            </pre>
+        </div>
+
+        <h3>Funcionamento</h3>
+        <p>A estrutura <code>switch</code>:</p>
+        <ul>
+            <li>Avalia a expressão e testa contra os casos (<code>case</code>).</li>
+            <li>Executa o código do primeiro caso correspondente.</li>
+            <li>Se não houver <code>break</code>, continuará executando os próximos casos.</li>
+            <li>O bloco <code>default</code> é executado quando nenhum caso corresponde à expressão.</li>
+        </ul>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

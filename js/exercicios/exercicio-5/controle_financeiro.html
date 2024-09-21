@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Controle Financeiro</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-5/menu_interativo.html"
+          >Exercício 5: Menu interativo.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/estruturas_de_repetição/for/index.html"
+          >Proxima aula: Estrutura de repetição: for.</a
+        >
+      </nav>
+      <h1>Exercício 8: Controle Financeiro</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este é um exemplo de um programa de controle financeiro. O usuário pode
+        adicionar ou remover dinheiro e o programa exibirá o saldo atualizado
+        até que o usuário escolha a opção de sair.
+      </p>
+
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+function mostrarMenu(saldo) {
+    return prompt(
+        "Saldo atual: R$ " + saldo + "\n" +
+        "Escolha uma das opções abaixo:\n" +
+        "1. Adicionar dinheiro\n" +
+        "2. Remover dinheiro\n" +
+        "3. Sair"
+    );
+}
+
+let saldo = parseFloat(prompt("Digite a quantidade inicial de dinheiro disponível:"));
+let opcao = "";
+
+do {
+    opcao = mostrarMenu(saldo);
+
+    switch (opcao) {
+        case "1":
+            let adicionar = parseFloat(prompt("Quanto deseja adicionar?"));
+            if (!isNaN(adicionar)) {
+                saldo += adicionar;
+                alert("Você adicionou R$ " + adicionar + ". Saldo atual: R$ " + saldo);
+            } else {
+                alert("Valor inválido.");
+            }
+            break;
+        case "2":
+            let remover = parseFloat(prompt("Quanto deseja remover?"));
+            if (!isNaN(remover)) {
+                if (remover <= saldo) {
+                    saldo -= remover;
+                    alert("Você removeu R$ " + remover + ". Saldo atual: R$ " + saldo);
+                } else {
+                    alert("Você não pode remover mais do que o saldo disponível.");
+                }
+            } else {
+                alert("Valor inválido.");
+            }
+            break;
+        case "3":
+            alert("Saindo do programa...");
+            break;
+        default:
+            alert("Opção inválida! Tente novamente.");
+    }
+} while (opcao !== "3");
+            </pre
+        >
+      </div>
+
+      <h2>Explicação</h2>
+      <p>
+        O código JavaScript cria um controle financeiro simples que permite ao
+        usuário adicionar ou remover dinheiro e exibir o saldo atualizado.
+      </p>
+      <ul>
+        <li>O saldo inicial é inserido pelo usuário no início do programa.</li>
+        <li>
+          O menu interativo permite adicionar, remover dinheiro ou sair do
+          programa.
+        </li>
+        <li>
+          Se o usuário tentar remover mais dinheiro do que o saldo disponível,
+          uma mensagem de erro é exibida.
+        </li>
+        <li>
+          A opção de sair encerra o programa com uma mensagem de despedida.
+        </li>
+      </ul>
+    </div>
+
+    <script src="./controle_financeiro.js"></script>
+  </body>
+</html>

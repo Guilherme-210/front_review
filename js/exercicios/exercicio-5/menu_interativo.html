@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Menu Interativo</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          class="nav_pages"
+          href="/js/estruturas_de_repetição/do-while/index.html"
+          >Aula anterior: Estruturas de Repetição: Do While.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-5/controle_financeiro.html"
+          >Exercício 7: Controle Financeiro.</a
+        >
+      </nav>
+      <h1>Menu Interativo</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este é um exemplo de um programa que simula um menu interativo com 5
+        opções diferentes. A última opção encerra o programa.
+      </p>
+
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+function mostrarMenu() {
+    return prompt(
+        "Escolha uma das opções abaixo:\n" +
+        "1. Opção 1\n" +
+        "2. Opção 2\n" +
+        "3. Opção 3\n" +
+        "4. Opção 4\n" +
+        "5. Encerrar"
+    );
+}
+
+let opcao = "";
+
+do {
+    opcao = mostrarMenu();
+
+    switch (opcao) {
+        case "1":
+            alert("Você escolheu a Opção 1");
+            break;
+        case "2":
+            alert("Você escolheu a Opção 2");
+            break;
+        case "3":
+            alert("Você escolheu a Opção 3");
+            break;
+        case "4":
+            alert("Você escolheu a Opção 4");
+            break;
+        case "5":
+            alert("Encerrando o sistema...");
+            break;
+        default:
+            alert("Opção inválida! Tente novamente.");
+    }
+} while (opcao !== "5");
+            </pre
+        >
+      </div>
+
+      <h2>Explicação</h2>
+      <p>
+        O código JavaScript cria um menu interativo que permite ao usuário
+        escolher entre 5 opções. O loop <code>do while</code> continua exibindo
+        o menu até que o usuário escolha a opção de encerrar (opção 5).
+      </p>
+      <ul>
+        <li>
+          As opções 1 a 4 apenas mostram mensagens indicando qual opção foi
+          selecionada.
+        </li>
+        <li>A opção 5 exibe uma mensagem de encerramento e finaliza o loop.</li>
+        <li>
+          Se o usuário inserir uma opção inválida, uma mensagem de erro é
+          exibida.
+        </li>
+      </ul>
+    </div>
+
+    <script src="./menu_interativo.js"></script>
+  </body>
+</html>

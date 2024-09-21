@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cadastro de Recrutas</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/recursos_nativos/index.html"
+          >Aula anterior: Recursos nativos do navegador</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/exercicios/exercicio-1/p2-calculadora.html"
+          >Exercício 1: Calculadora de 4 Operações.</a
+        >
+      </nav>
+      <h1>Exercício 1: Cadastro de Recrutas</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Escreva um programa em JavaScript que permita salvar informações de um
+        recruta. As informações a serem salvas são:
+      </p>
+      <ul>
+        <li>O primeiro nome</li>
+        <li>O sobrenome</li>
+        <li>O campo de estudo</li>
+        <li>O ano de nascimento</li>
+      </ul>
+      <p>
+        Depois o programa deve exibir o nome completo do recruta, seu campo de
+        estudo e sua idade (apenas baseada no ano de nascimento).
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+let primeiroNome = prompt("Digite o primeiro nome do recruta:");
+let sobrenome = prompt("Digite o sobrenome do recruta:");
+let campoDeEstudo = prompt("Digite o campo de estudo do recruta:");
+let anoDeNascimento = prompt("Digite o ano de nascimento do recruta:");
+
+let anoAtual = new Date().getFullYear();
+let idade = anoAtual - anoDeNascimento;
+
+alert(
+  "Nome Completo: " + primeiroNome + " " + sobrenome + "\n" +
+  "Campo de Estudo: " + campoDeEstudo + "\n" +
+  "Idade: " + idade
+);
+        </pre>
+      </div>
+    </div>
+
+    <script src="./p1-cadastro.js"></script>
+  </body>
+</html>

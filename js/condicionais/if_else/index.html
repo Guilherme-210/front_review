@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Estruturas Condicionais: IF e ELSE</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          class="nav_pages"
+          href="/js/operadores_logicos/index.html"
+          >Aula anterior: Operadores Lógicos.</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/exercicios/exercicio-2/p1-teste_de_velocidade.html"
+          >Exercício 2: teste de velocidade.</a
+        >
+      </nav>
+      <h1>Estruturas Condicionais: IF e ELSE</h1>
+    </header>
+
+    <div class="section">
+        <h2>Descrição</h2>
+        <p>As estruturas condicionais permitem criar blocos de código que serão executados somente quando uma determinada operação lógica for verdadeira.</p>
+
+        <h3>Sintaxe IF</h3>
+        <pre>
+if (condicao) {
+  // código a ser executado
+}
+        </pre>
+
+        <h3>Sintaxe IF ELSE</h3>
+        <pre>
+if (condicao) {
+  // código se a condição for verdadeira
+} else {
+  // código se a condição for falsa
+}
+        </pre>
+
+        <h3>Sintaxe IF ELSE IF</h3>
+        <pre>
+if (condicao1) {
+  // código se condicao1 for verdadeira
+} else if (condicao2) {
+  // código se condicao1 for falsa e condicao2 for verdadeira
+} else {
+  // código se todas as condições forem falsas
+}
+        </pre>
+
+        <h3>Operador Ternário</h3>
+        <p>Forma abreviada e autoavaliada do IF ELSE:</p>
+        <pre>
+const resultado = condicao ? resultado_verdadeiro : resultado_falso;
+        </pre>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

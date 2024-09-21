@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculadora de 4 Operações</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-1/p1-cadastro.html"
+          >Exercício 1: Cadastro de Recrutas</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/comparação_de_dados/index.html"
+          >Proxima aula: Comparação de dados</a
+        >
+      </nav>
+      <h1>Exercício 2: Calculadora de 4 Operações.</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Escreva um programa em JavaScript que permita inserir dois valores
+        numéricos e então calcule o resultado das quatro operações básicas:
+      </p>
+      <ul>
+        <li>Soma</li>
+        <li>Subtração</li>
+        <li>Multiplicação</li>
+        <li>Divisão</li>
+      </ul>
+      <p>Após calcular os resultados, o programa deve exibi-los na tela.</p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+let valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+let valor2 = parseFloat(prompt("Digite o segundo valor:"));
+
+let soma = valor1 + valor2;
+let subtracao = valor1 - valor2;
+let multiplicacao = valor1 * valor2;
+let divisao = valor2 !== 0 ? (valor1 / valor2) : "Erro: Divisão por zero!";
+
+alert(
+  "Resultados:\n" +
+  "Soma: " + soma + "\n" +
+  "Subtração: " + subtracao + "\n" +
+  "Multiplicação: " + multiplicacao + "\n" +
+  "Divisão: " + divisao
+);
+        </pre>
+      </div>
+    </div>
+
+    <script src="./p2-calculadora.js"></script>
+  </body>
+</html>
