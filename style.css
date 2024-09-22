@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Estilo do body */
 body {
   font-family: Arial, sans-serif;
@@ -12,9 +16,7 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 /* Estilo do header */
 header {
   display: flex;
@@ -29,38 +31,54 @@ header {
   padding: 20px 0;
 }
 
-.div_header{
-  align-items: center;
-  
+.div_section,
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.div_header {
+  align-items: center;
+}
+/* Campo de Busca */
 #search {
+  width: 100%;
+  max-width: 300px;
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin-left: auto;
-  color: #333;
+  margin: 10px 15px;
 }
 
 /* Estilo dos links do nav */
-.link_footer,
-.link_header {
+
+.link_git {
   color: #fff;
   text-decoration: none;
   padding: 0 10px;
   transition: color 0.3s ease;
 }
-
 nav a {
   color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 0 15px;
   transition: color 0.3s ease;
 }
-
-.link_footer:hover,
+.link_git:hover,
 nav a:hover {
   text-decoration: underline;
   color: #007bff;
+}
+.html{
+  color: #f37f3d;
+}
+.css{
+  color: #32bae5;
+}
+.js{
+  color: #f6cf39;
 }
 
 /* Estilo do main */
@@ -72,13 +90,16 @@ main {
 h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
+  text-align: center;
+  padding: 20px;
 }
-
 h2 {
   font-size: 1.8em;
   color: #333;
   margin-top: 20px;
+  text-align: center;
 }
+
 
 h3 {
   font-size: 1.4em;
