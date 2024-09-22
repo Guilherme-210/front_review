@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Retorno de uma função</title>
+</head>
+<body> 
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/funcao/parametros_em_Funcoes/index.html">Aula anterior: Parâmetros de uma função</a>
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/escopo/index.html">Próxima aula: Escopo</a>
+      </nav>
+      <h1>Retorno de Funções no JavaScript</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>Este exercício exemplifica como o retorno de uma função funciona no JavaScript, incluindo o uso de <code>return</code>, suas regras e implicações.</p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+function calcularMedia(a, b) {
+    const media = (a + b) / 2;
+    return media;
+}
+
+const resultado = calcularMedia(5, 9);
+console.log("A média é:", resultado);
+
+function criarProduto(nome, preco) {
+    const produto = { nome, preco, estoque: 1 };
+    return produto;
+}
+
+const notebook = criarProduto("Notebook Intel Core i3 8GB", 3000);
+console.log(notebook);
+
+function areaRetangular(base, altura) {
+    return base * altura;
+}
+
+console.log(areaRetangular(3, 5));
+
+function areaQuadrada(lado) {
+    return areaRetangular(lado, lado);
+}
+
+console.log(areaQuadrada(8));
+
+function maioridade(idade) {
+    if (idade >= 18) {
+        return "Maior de idade";
+    } else {
+        return "Menor de idade";
+    }
+}
+
+console.log(maioridade(20));
+console.log(maioridade(13));
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>O código mostra como funções retornam valores em diferentes cenários:</p>
+      <ul>
+        <li>Funções sem retorno explícito retornam <code>undefined</code>.</li>
+        <li>O <code>return</code> define a saída da função.</li>
+        <li>O valor retornado pode ser armazenado em uma variável ou usado diretamente em outras funções ou expressões.</li>
+        <li>Funções só podem ter um retorno, mas diferentes blocos condicionais (<code>if/else</code>) podem ter retornos diferentes.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Tema Central: Retorno de Funções no JavaScript</h2>
+      <p>O que é o retorno de uma função (<code>return</code>)</p>
+      <ul>
+        <li>É o valor de saída que a função devolve.</li>
+        <li>Permite trabalhar com valores gerados dentro da função em outros locais do código.</li>
+      </ul>
+      <h3>Utilizando return</h3>
+      <ul>
+        <li>Atribuindo a uma variável para usar depois: <code>resultado = calcularMedia(5, 7)</code></li>
+        <li>Chamando a função diretamente: <code>console.log(calcularMedia(5, 7))</code></li>
+        <li>Pode retornar qualquer expressão, não precisa ser uma variável.</li>
+        <li>Pode chamar outra função: <code>return areaRetangular(lado, lado)</code></li>
+      </ul>
+      <h3>Regras do return</h3>
+      <ul>
+        <li>Função só pode ter um único <code>return</code>.</li>
+        <li>Depois que é chamado, a função é finalizada.</li>
+        <li><strong>Exceção:</strong> Blocos condicionais (<code>if/else</code>) podem ter vários retornos. Cada ramificação pode ter seu próprio <code>return</code>.</li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  
+</body>
+</html>
