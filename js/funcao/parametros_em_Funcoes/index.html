@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Parâmetros de uma função</title>
+</head>
+<body> 
+    <header>
+        <nav>
+          <a class="nav_pages" href="/js/funcao/index.html">Aula anterior: Funções no JavaScript</a>
+          <a class="nav_pages" href="/">Central de aulas</a>
+          <a class="nav_pages" href="/js/funcao/retorno_da_funcao/index.html">Próxima aula: Retorno de uma função</a>
+        </nav>
+        <h1>Parâmetros de uma função</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este exercício explora os parâmetros em funções JavaScript, mostrando como usá-los, definir valores padrão e como organizar múltiplos parâmetros.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+// O parâmetro é a entrada da função
+// Ele é como uma variável que fica disponível dentro da função
+// mas que é informada na hora de chamar a função
+
+function dobro(x) {
+  console.log("O dobro de " + x + " é " + (x * 2));
+}
+dobro(5);
+dobro(7);
+
+// Parâmetro não informado tem valor undefined
+dobro();
+
+// Valor padrão para os parâmetros
+function dizerOla(nome = "mundo") {
+  console.log("Olá, " + nome + "!");
+}
+dizerOla("Isaac");
+dizerOla();
+
+// Vários parâmetros
+function soma(a, b) {
+  console.log(a + b);
+}
+soma(1, 1);
+soma(34, 5);
+
+// A ordem dos parâmetros é importante
+function criarUsuario(nome, email, senha, tipo = "leitor") {
+  const usuario = { nome, email, senha, tipo };
+  console.log(usuario);
+}
+
+function novoUsuario(nome, tipo = "leitor", email, senha) {
+  const usuario = { nome, email, senha, tipo };
+  console.log(usuario);
+}
+
+criarUsuario("Isaac", "isaac@email.com", "1234");
+novoUsuario("Isaac", "isaac@email.com", "1234");
+
+// Funções com muitos parâmetros
+function parametrosDoJeitoErrado(nome, telefone, endereco, aniversario, email, senha) {
+  // ...
+}
+
+function parametrosDoJeitoCerto(usuario) {
+  // ...
+}
+
+const dadosDoUsuario = {
+  nome: "",
+  telefone: "",
+  email: "",
+  senha: "",
+  aniversario: "",
+  endereco: ""
+};
+parametrosDoJeitoCerto(dadosDoUsuario);
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>
+        Parâmetros em funções permitem passar dados para dentro das funções no momento em que elas são chamadas. Eles podem ter valores padrão e a ordem dos parâmetros é importante, especialmente quando se define vários parâmetros.
+      </p>
+      <ul>
+        <li>Funções podem ter um ou mais parâmetros.</li>
+        <li>Parâmetros não informados ficam com o valor <code>undefined</code> por padrão.</li>
+        <li>Podemos atribuir valores padrão para parâmetros não informados.</li>
+        <li>Em funções com muitos parâmetros, usar um objeto facilita a organização.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Explicação Adicional: Parâmetros de Funções</h2>
+      <p>
+        <strong>Tema central:</strong> Parâmetros de funções
+      </p>
+      <ul>
+        <li><strong>O que são parâmetros:</strong> Entradas de uma função, variáveis disponíveis dentro da função, informadas quando a função é chamada.</li>
+        <li><strong>Declarando parâmetros:</strong> São declarados dentro dos parênteses na função. Pode ter quantos parâmetros quiser, separados por vírgula.</li>
+        <li><strong>Chamando a função com parâmetros:</strong> Os valores são passados dentro dos parênteses, na mesma ordem em que foram declarados. A ordem é muito importante!</li>
+        <li><strong>Parâmetros opcionais:</strong> Podem ter valores padrão, e devem ser declarados por último!</li>
+        <li><strong>Dica:</strong> Ao usar muitos parâmetros, transforme-os em um objeto. Isso facilita a chamada da função e torna o código mais legível.</li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
