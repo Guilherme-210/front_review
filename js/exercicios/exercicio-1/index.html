@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Cadastro de Recrutas</title>
   </head>
@@ -15,9 +21,7 @@
           >Recursos nativos do navegador</a
         >
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
-        <a
-          class="nav_pages"
-          href="/js/exercicios/exercicio-2/index.html"
+        <a class="nav_pages" href="/js/exercicios/exercicio-2/index.html"
           >Exercício 2: Calculadora de 4 Operações</a
         >
       </nav>
@@ -62,6 +66,42 @@ alert(
         </pre>
       </div>
     </div>
+
+    <div class="section">
+      <h2>Resolução</h2>
+      <div class="code">
+        <pre>
+let pname = window.prompt('Insira o seu primeiro nome:')
+let sname = window.prompt('Insira o seu sobrenome:')
+let cstudy = window.prompt('Insira o seu campo de estudo:')
+let birth = window.prompt('Insira o seu nascimento:')
+
+idade = 2024 - birth
+
+console.log('O ' + pname, sname + ', esta estudando ' + cstudy + ', e ele tem ' + idade + ' anos.');
+
+/*coreção da aula */
+alert(
+  'Recruta cadastrado com sucasso!\n' +
+  '\nNome completo: ' + pname + ' ' + sname +
+  '\nCampo de estudos: ' + cstudy +
+  '\nIdade: ' + idade
+)
+        </pre>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

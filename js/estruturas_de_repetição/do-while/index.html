@@ -3,21 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Estruturas de Repetição: Do While</title>
   </head>
-  <body> 
+  <body>
     <header>
       <nav>
         <a class="nav_pages" href="/js/exercicios/exercicio-6/index.html"
           >Exercício 6: Visitando novas cidades</a
         >
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
-        <a
-          class="nav_pages"
-          href="/js/exercicios/exercicio-7/index.html"
+        <a class="nav_pages" href="/js/exercicios/exercicio-7/index.html"
           >Exercício 7: Menu Interativo</a
         >
       </nav>
@@ -25,39 +29,66 @@
     </header>
 
     <div class="section">
-        <h2>Conceito</h2>
-        <p>A estrutura de repetição <code>do while</code> garante a execução de um bloco de código pelo menos uma vez, mesmo que a condição seja falsa na primeira verificação.</p>
+      <h2>Conceito</h2>
+      <p>
+        A estrutura de repetição <code>do while</code> garante a execução de um
+        bloco de código pelo menos uma vez, mesmo que a condição seja falsa na
+        primeira verificação.
+      </p>
 
-        <h2>Sintaxe</h2>
-        <div class="code">
-            <pre>
+      <h2>Sintaxe</h2>
+      <div class="code">
+        <pre>
 do {
     // código a ser executado
 } while (condição);
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
 
-        <h2>Exemplo</h2>
-        <div class="code">
-            <pre>
+      <h2>Exemplo</h2>
+      <div class="code">
+        <pre>
 let velocidade = 0;
 do {
     alert("Velocidade: " + velocidade);
     velocidade -= 20;
 } while (velocidade > 0);
 alert("Velocidade final: " + velocidade); // -20
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
 
-        <h2>Diferenças para While</h2>
-        <ul>
-            <li><strong>While:</strong> Verifica a condição antes de executar o código.</li>
-            <li><strong>Do While:</strong> Executa o código antes de verificar a condição.</li>
-        </ul>
+      <h2>Diferenças para While</h2>
+      <ul>
+        <li>
+          <strong>While:</strong> Verifica a condição antes de executar o
+          código.
+        </li>
+        <li>
+          <strong>Do While:</strong> Executa o código antes de verificar a
+          condição.
+        </li>
+      </ul>
 
-        <h2>Utilidade</h2>
-        <p>Utilizado quando é necessário garantir que o código dentro do laço seja executado pelo menos uma vez, independentemente da condição inicial.</p>
+      <h2>Utilidade</h2>
+      <p>
+        Utilizado quando é necessário garantir que o código dentro do laço seja
+        executado pelo menos uma vez, independentemente da condição inicial.
+      </p>
     </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
 
     <script src="script.js"></script>
   </body>

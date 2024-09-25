@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Teste de Velocidade</title>
   </head>
@@ -16,9 +22,7 @@
           >Estruturas Condicionais: IF e ELSE</a
         >
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
-        <a
-          class="nav_pages"
-          href="/js/exercicios/exercicio-4/index.html"
+        <a class="nav_pages" href="/js/exercicios/exercicio-4/index.html"
           >Exercício 4: Cálculo de Dano</a
         >
       </nav>
@@ -54,6 +58,43 @@ if (velocidadeVeiculo1 > velocidadeVeiculo2) {
         >
       </div>
     </div>
+
+    <div class="section">
+      <h2>Resolução</h2>
+      <div class="code">
+        <pre>
+let veiculo1, veiculo2, velocidade1, velocidade2, dif_velocidade
+
+veiculo1 = prompt('Insira o nome do primeiro veiculo: ')
+velocidade1 = prompt('Insira a velocidade do primeiro veiculo: ')
+
+veiculo2 = prompt('insira o nome do segundo veiculo: ')
+velocidade2 = prompt('Insira a velocidade do segundo veiculo: ')
+
+if (velocidade1 > velocidade2){
+  dif_velocidade = velocidade1 - velocidade2
+  alert(`O ${veiculo1} e mais rapido do que o ${veiculo2} por uma diferança de ${dif_velocidade} km/h.`)
+} else if (velocidade1 < velocidade2){
+  dif_velocidade = velocidade2 - velocidade1
+  alert(`O ${veiculo2} e mais rapido do que o ${veiculo1} por uma diferança de ${dif_velocidade} km/h.`)
+} else {
+  alert("Os dois veículos têm a mesma velocidade!");
+}
+        </pre>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

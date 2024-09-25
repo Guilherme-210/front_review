@@ -39,10 +39,3 @@ while (fazer === '1' || fazer === '2' || fazer === '3' || fazer === '4' || fazer
     'Escolha a opição referente ao que deseja fazer:\n' +
     '1. Adicionar um novo paciente\n 2. Remover um paciente\n 3. consultar um paciente\n 4. Listar pacientes\n 5. sair do sistema')
 }
-
-
-
-
-
-
-

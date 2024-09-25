@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Controle Financeiro</title>
   </head>
   <body>
     <header>
       <nav>
-        <a
-          class="nav_pages"
-          href="/js/exercicios/exercicio-7/index.html"
+        <a class="nav_pages" href="/js/exercicios/exercicio-7/index.html"
           >Exercício 7: Menu interativo</a
         >
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
@@ -105,6 +109,51 @@ do {
         </li>
       </ul>
     </div>
+
+    <div class="section">
+      <h2>Resolução</h2>
+      <div class="code">
+        <pre>
+let saldo = parseFloat(prompt('Informe o valor inicial da conta:'))
+let option 
+
+do {
+  option = prompt(`Saldo atual na conta R$:${saldo}\n
+    O que deseja fazer a seguir\n
+    1. Adicionar dinheiro\n
+    2. Remover dinheiro\n
+    3. Sair`
+  )
+
+  switch (option) {
+    case '1':
+      saldo += parseFloat(prompt('Informe o valor a ser adicionado:'))
+      break
+    case '2':
+      saldo -= parseFloat(prompt('Informe o valor a ser retirado:'))
+      break
+    case '3':
+      alert('Saindo...')
+      break
+    default:
+      alert('Opição invalida!')
+  }
+} while (option !== '3')
+        </pre>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

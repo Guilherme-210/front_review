@@ -13,7 +13,7 @@ html {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #e9e9e9;
   color: #333;
 }
 
@@ -27,7 +27,7 @@ header {
   top: 0;
   z-index: 1000;
   background-color: #333;
-  color: white;
+  color: #fff;
   padding: 20px 0;
 }
 
@@ -35,9 +35,12 @@ header {
 section {
   margin: 20px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.102);
+}
+section {
+  background-color: #f7f7f7;
 }
 .div_header {
   align-items: center;
@@ -121,4 +124,5 @@ footer {
   color: white;
   padding: 10px 0;
   text-align: center;
+  font-family: monospace;
 }

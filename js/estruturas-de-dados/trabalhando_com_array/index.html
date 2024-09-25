@@ -1,143 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="../style.css">
-  <title>trabalhando com array</title>
-</head>
-<body> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="../style.css" />
+    <title>trabalhando com array</title>
+  </head>
+  <body>
     <header>
-        <nav>
-            <a class="nav_pages" href="/js/estruturas-de-dados/array/index.html">Arrays no JavaScript</a>
-            <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
-            <a class="nav_pages" href="/js/exercicios/exercicio-11/index.html">Exercício 11: Fila de Espera</a>
-        </nav>
-        <h1>Novas Formas de Trabalhar com Arrays</h1>
+      <nav>
+        <a class="nav_pages" href="/js/estruturas-de-dados/array/index.html"
+          >Arrays no JavaScript</a
+        >
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a class="nav_pages" href="/js/exercicios/exercicio-11/index.html"
+          >Exercício 11: Fila de Espera</a
+        >
+      </nav>
+      <h1>Novas Formas de Trabalhar com Arrays</h1>
     </header>
 
     <div class="section">
-        <h2>Descrição</h2>
-        <p>Esta aula aborda novas formas de manipular arrays no JavaScript, permitindo uma maior flexibilidade e dinamismo.</p>
+      <h2>Descrição</h2>
+      <p>
+        Esta aula aborda novas formas de manipular arrays no JavaScript,
+        permitindo uma maior flexibilidade e dinamismo.
+      </p>
     </div>
 
     <div class="section">
-        <h2>Adicionar Elementos</h2>
-        <div class="code">
-            <pre>
+      <h2>Adicionar Elementos</h2>
+      <div class="code">
+        <pre>
 let frutas = ["maçã", "banana"];
 frutas.push("laranja"); // adiciona "laranja" no final
 frutas.unshift("morango"); // adiciona "morango" no começo
 console.log(frutas); // ["morango", "maçã", "banana", "laranja"]
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
     </div>
 
     <div class="section">
-        <h2>Remover Elementos</h2>
-        <div class="code">
-            <pre>
+      <h2>Remover Elementos</h2>
+      <div class="code">
+        <pre>
 frutas.pop(); // remove "laranja" do final
 frutas.shift(); // remove "morango" do começo
 console.log(frutas); // ["maçã", "banana"]
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
     </div>
 
     <div class="section">
-        <h2>Pesquisar por um Elemento</h2>
-        <div class="code">
-            <pre>
+      <h2>Pesquisar por um Elemento</h2>
+      <div class="code">
+        <pre>
 console.log(frutas.includes("banana")); // true
 console.log(frutas.indexOf("maçã")); // 0
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
     </div>
 
     <div class="section">
-        <h2>Cortar e Concatenar Arrays</h2>
-        <div class="code">
-            <pre>
+      <h2>Cortar e Concatenar Arrays</h2>
+      <div class="code">
+        <pre>
 let frutasCortadas = frutas.slice(0, 1); // cria uma cópia da parte do array
 console.log(frutasCortadas); // ["maçã"]
-            </pre>
-        </div>
-        <p>O método <code>slice()</code> não modifica o array original, apenas retorna uma cópia.</p>
+            </pre
+        >
+      </div>
+      <p>
+        O método <code>slice()</code> não modifica o array original, apenas
+        retorna uma cópia.
+      </p>
     </div>
 
     <div class="section">
-        <h2>Adicionando Elementos</h2>
-        <div class="code">
-            <pre>
+      <h2>Adicionando Elementos</h2>
+      <div class="code">
+        <pre>
 let frutas = ["maçã", "banana"];
 frutas.push("laranja"); // adiciona no final
 frutas.unshift("morango"); // adiciona no início
 console.log(frutas); // ["morango", "maçã", "banana", "laranja"]
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
     </div>
 
     <div class="section">
-        <h2>Removendo Elementos</h2>
-        <div class="code">
-            <pre>
+      <h2>Removendo Elementos</h2>
+      <div class="code">
+        <pre>
 frutas.pop(); // remove do final
 frutas.shift(); // remove do início
 console.log(frutas); // ["maçã", "banana"]
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
     </div>
 
     <div class="section">
-        <h2>Pesquisando Elementos</h2>
-        <div class="code">
-            <pre>
+      <h2>Pesquisando Elementos</h2>
+      <div class="code">
+        <pre>
 console.log(frutas.indexOf("banana")); // 1
 console.log(frutas.includes("maçã")); // true
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
     </div>
 
     <div class="section">
-        <h2>Cortando e Concatenando</h2>
-        <div class="code">
-            <pre>
+      <h2>Cortando e Concatenando</h2>
+      <div class="code">
+        <pre>
 let frutasCortadas = frutas.slice(0, 1); // ["maçã"]
 let novasFrutas = frutas.concat(["kiwi", "abacaxi"]); // ["maçã", "banana", "kiwi", "abacaxi"]
-            </pre>
-        </div>
-        <p>O método <code>slice()</code> retorna uma parte do array existente, enquanto <code>concat()</code> concatena arrays e valores.</p>
+            </pre
+        >
+      </div>
+      <p>
+        O método <code>slice()</code> retorna uma parte do array existente,
+        enquanto <code>concat()</code> concatena arrays e valores.
+      </p>
     </div>
 
     <div class="section">
-        <h2>Substituindo Elementos</h2>
-        <div class="code">
-            <pre>
+      <h2>Substituindo Elementos</h2>
+      <div class="code">
+        <pre>
 frutas.splice(1, 1, "manga"); // remove 1 elemento no índice 1 e adiciona "manga"
 console.log(frutas); // ["maçã", "manga"]
-            </pre>
-        </div>
+            </pre
+        >
+      </div>
     </div>
 
     <div class="section">
-        <h2>Iterando Sobre Elementos</h2>
-        <div class="code">
-            <pre>
+      <h2>Iterando Sobre Elementos</h2>
+      <div class="code">
+        <pre>
 for (let i = 0; i < frutas.length; i++) {
     console.log(frutas[i]);
 }
-            </pre>
-        </div>
-        <p>Utilizando um loop <code>for</code> para percorrer o array.</p>
+            </pre
+        >
+      </div>
+      <p>Utilizando um loop <code>for</code> para percorrer o array.</p>
     </div>
 
     <div class="section">
-        <h2>Conclusão</h2>
-        <p>Essas operações permitem trabalhar com arrays de forma dinâmica e flexível em seus programas.</p>
+      <h2>Conclusão</h2>
+      <p>
+        Essas operações permitem trabalhar com arrays de forma dinâmica e
+        flexível em seus programas.
+      </p>
     </div>
-  
-  <script src="script.js"></script>
-</body>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

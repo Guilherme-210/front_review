@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Retorno de uma função</title>
-</head>
-<body> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Retorno de uma função</title>
+  </head>
+  <body>
     <header>
       <nav>
-        <a class="nav_pages" href="/js/funcao/parametros_em_Funcoes/index.html">Parâmetros de uma função</a>
+        <a class="nav_pages" href="/js/funcao/parametros_em_Funcoes/index.html"
+          >Parâmetros de uma função</a
+        >
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
         <a class="nav_pages" href="/js/escopo/index.html">Escopo</a>
       </nav>
@@ -20,7 +28,11 @@
 
     <div class="section">
       <h2>Descrição</h2>
-      <p>Este exercício exemplifica como o retorno de uma função funciona no JavaScript, incluindo o uso de <code>return</code>, suas regras e implicações.</p>
+      <p>
+        Este exercício exemplifica como o retorno de uma função funciona no
+        JavaScript, incluindo o uso de <code>return</code>, suas regras e
+        implicações.
+      </p>
     </div>
 
     <div class="section">
@@ -71,12 +83,20 @@ console.log(maioridade(13));
 
     <div class="section">
       <h2>Explicação</h2>
-      <p>O código mostra como funções retornam valores em diferentes cenários:</p>
+      <p>
+        O código mostra como funções retornam valores em diferentes cenários:
+      </p>
       <ul>
         <li>Funções sem retorno explícito retornam <code>undefined</code>.</li>
         <li>O <code>return</code> define a saída da função.</li>
-        <li>O valor retornado pode ser armazenado em uma variável ou usado diretamente em outras funções ou expressões.</li>
-        <li>Funções só podem ter um retorno, mas diferentes blocos condicionais (<code>if/else</code>) podem ter retornos diferentes.</li>
+        <li>
+          O valor retornado pode ser armazenado em uma variável ou usado
+          diretamente em outras funções ou expressões.
+        </li>
+        <li>
+          Funções só podem ter um retorno, mas diferentes blocos condicionais
+          (<code>if/else</code>) podem ter retornos diferentes.
+        </li>
       </ul>
     </div>
 
@@ -85,24 +105,51 @@ console.log(maioridade(13));
       <p>O que é o retorno de uma função (<code>return</code>)</p>
       <ul>
         <li>É o valor de saída que a função devolve.</li>
-        <li>Permite trabalhar com valores gerados dentro da função em outros locais do código.</li>
+        <li>
+          Permite trabalhar com valores gerados dentro da função em outros
+          locais do código.
+        </li>
       </ul>
       <h3>Utilizando return</h3>
       <ul>
-        <li>Atribuindo a uma variável para usar depois: <code>resultado = calcularMedia(5, 7)</code></li>
-        <li>Chamando a função diretamente: <code>console.log(calcularMedia(5, 7))</code></li>
+        <li>
+          Atribuindo a uma variável para usar depois:
+          <code>resultado = calcularMedia(5, 7)</code>
+        </li>
+        <li>
+          Chamando a função diretamente:
+          <code>console.log(calcularMedia(5, 7))</code>
+        </li>
         <li>Pode retornar qualquer expressão, não precisa ser uma variável.</li>
-        <li>Pode chamar outra função: <code>return areaRetangular(lado, lado)</code></li>
+        <li>
+          Pode chamar outra função:
+          <code>return areaRetangular(lado, lado)</code>
+        </li>
       </ul>
       <h3>Regras do return</h3>
       <ul>
         <li>Função só pode ter um único <code>return</code>.</li>
         <li>Depois que é chamado, a função é finalizada.</li>
-        <li><strong>Exceção:</strong> Blocos condicionais (<code>if/else</code>) podem ter vários retornos. Cada ramificação pode ter seu próprio <code>return</code>.</li>
+        <li>
+          <strong>Exceção:</strong> Blocos condicionais (<code>if/else</code>)
+          podem ter vários retornos. Cada ramificação pode ter seu próprio
+          <code>return</code>.
+        </li>
       </ul>
     </div>
 
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
+
     <script src="script.js"></script>
-  
-</body>
+  </body>
 </html>

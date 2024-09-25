@@ -58,3 +58,24 @@ ul {
 ul {
   list-style: disc inside;
 }
+
+.p_footer {
+  color: #fff;
+}
+.link_git {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+.link_git:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-family: monospace;
+}

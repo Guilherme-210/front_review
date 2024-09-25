@@ -1,4 +1,3 @@
-
 const baralho = []
 let opcao = ""
 

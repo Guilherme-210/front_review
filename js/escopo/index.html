@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Escopo em JavaScript</title>
-</head>
-<body> 
-  <header>
-    <nav>
-      <a class="nav_pages" href="/js/funcao/retorno_da_funcao/index.html">Retorno de uma Funções</a>
-      <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
-      <a class="nav_pages" href="/js/exercicios/exercicio-14/index.html">Exercício 14: Calculadora Geométrica</a>
-    </nav>
-    <h1>Escopo em JavaScript</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Escopo em JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/funcao/retorno_da_funcao/index.html"
+          >Retorno de uma Funções</a
+        >
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a class="nav_pages" href="/js/exercicios/exercicio-14/index.html"
+          >Exercício 14: Calculadora Geométrica</a
+        >
+      </nav>
+      <h1>Escopo em JavaScript</h1>
+    </header>
 
-  <div class="section">
-    <h2>Descrição</h2>
-    <p>Este exercício explora o conceito de escopo em JavaScript, mostrando como variáveis podem ser acessadas ou não dependendo do contexto em que foram declaradas, e como o escopo influencia o comportamento de variáveis no código.</p>
-  </div>
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este exercício explora o conceito de escopo em JavaScript, mostrando
+        como variáveis podem ser acessadas ou não dependendo do contexto em que
+        foram declaradas, e como o escopo influencia o comportamento de
+        variáveis no código.
+      </p>
+    </div>
 
-  <div class="section">
-    <h2>Exemplo de Código JavaScript</h2>
-    <div class="code">
-      <pre>
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
 // Escopo global e escopo local
 let pokemon = "Charmander";
 
@@ -75,37 +90,72 @@ var nome = "Isaac";
 let sobrenome = "Pontes";
 console.log(nome); // Isaac
 console.log(sobrenome); // Pontes
-      </pre>
+      </pre
+        >
+      </div>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>Explicação</h2>
-    <p>O código acima demonstra o funcionamento do escopo em JavaScript:</p>
-    <ul>
-      <li>Escopo global: Variáveis declaradas fora de funções podem ser acessadas em qualquer parte do código.</li>
-      <li>Escopo local: Variáveis declaradas dentro de funções ou blocos (<code>let</code>/<code>const</code>) não podem ser acessadas fora do seu contexto.</li>
-      <li>O <code>var</code> permite o acesso fora de blocos, mas não fora de funções.</li>
-      <li>As variáveis <code>let</code> e <code>const</code> respeitam o escopo de bloco.</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>O código acima demonstra o funcionamento do escopo em JavaScript:</p>
+      <ul>
+        <li>
+          Escopo global: Variáveis declaradas fora de funções podem ser
+          acessadas em qualquer parte do código.
+        </li>
+        <li>
+          Escopo local: Variáveis declaradas dentro de funções ou blocos
+          (<code>let</code>/<code>const</code>) não podem ser acessadas fora do
+          seu contexto.
+        </li>
+        <li>
+          O <code>var</code> permite o acesso fora de blocos, mas não fora de
+          funções.
+        </li>
+        <li>
+          As variáveis <code>let</code> e <code>const</code> respeitam o escopo
+          de bloco.
+        </li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Tema Central: Escopo em JavaScript</h2>
-    <p>O que é o escopo de uma variável?</p>
-    <ul>
-      <li>É o contexto no qual a variável foi declarada.</li>
-      <li>Define se a variável pode ou não ser acessada em outras partes do código.</li>
-    </ul>
+    <div class="section">
+      <h2>Tema Central: Escopo em JavaScript</h2>
+      <p>O que é o escopo de uma variável?</p>
+      <ul>
+        <li>É o contexto no qual a variável foi declarada.</li>
+        <li>
+          Define se a variável pode ou não ser acessada em outras partes do
+          código.
+        </li>
+      </ul>
 
-    <h3>Diferenças entre var, let e const</h3>
-    <ul>
-      <li><strong>var:</strong> Permite que a variável seja acessada fora do bloco onde foi declarada, mas é limitada ao escopo da função.</li>
-      <li><strong>let/const:</strong> Variáveis declaradas com <code>let</code> ou <code>const</code> ficam limitadas ao escopo do bloco onde foram definidas.</li>
-    </ul>
-  </div>
+      <h3>Diferenças entre var, let e const</h3>
+      <ul>
+        <li>
+          <strong>var:</strong> Permite que a variável seja acessada fora do
+          bloco onde foi declarada, mas é limitada ao escopo da função.
+        </li>
+        <li>
+          <strong>let/const:</strong> Variáveis declaradas com
+          <code>let</code> ou <code>const</code> ficam limitadas ao escopo do
+          bloco onde foram definidas.
+        </li>
+      </ul>
+    </div>
 
-  <script src="script.js"></script>
-  
-</body>
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

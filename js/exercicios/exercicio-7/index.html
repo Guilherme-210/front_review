@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Menu Interativo</title>
   </head>
@@ -17,9 +23,7 @@
           >Estruturas de Repetição: Do While</a
         >
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
-        <a
-          class="nav_pages"
-          href="/js/exercicios/exercicio-8/index.html"
+        <a class="nav_pages" href="/js/exercicios/exercicio-8/index.html"
           >Exercício 8: Controle Financeiro</a
         >
       </nav>
@@ -94,6 +98,58 @@ do {
         </li>
       </ul>
     </div>
+
+    <div class="section">
+      <h2>Resolução</h2>
+      <div class="code">
+        <pre>
+let option = ''
+
+do {
+  option = prompt(
+    `Escolha uma das opições a seguir\n
+    1. Primeira opição
+    2. Segunda opição
+    3. Terceira opição
+    4. Quarta opição
+    5. Parar`)
+
+  switch (option) {
+    case '1':
+      alert('Voçê escolheu a primeira opição');
+      break
+    case '2':
+      alert('Voçê escolheu a Segunda opição');
+      break
+    case '3':
+      alert('Voçê escolheu a Terceira opição');
+      break
+    case '4':
+      alert('Voçê escolheu a Quarta opição');
+      break
+    case '5':
+      alert('Voçê escolheu parar');
+      alert('Encerrando...')
+      break
+    default:
+      alert('Opição invalida')
+  }
+} while (option !== '5')
+        </pre>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

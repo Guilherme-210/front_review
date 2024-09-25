@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Calculadora de 4 Operações</title>
   </head>
@@ -59,6 +65,60 @@ alert(
         </pre>
       </div>
     </div>
+
+    <div class="section">
+      <h2>Resolução</h2>
+      <div class="code">
+        <pre>
+let val1 = null
+val2 = null
+addition = null
+subtraction = null
+let multiplication = null
+let division = null
+
+val1 = window.prompt('Insira o primeiro valor:')
+val2 = window.prompt('Insira o segundo valor:')
+
+/*soma*/
+addition = Number(val1) + Number(val2)
+console.log('A soma de ' + val1 + ' com ' + val2 + ', e igual a ' + addition)
+
+/*subitração*/
+subtraction = Number(val1) - Number(val2)
+console.log('A subitração de ' + val1 + ' por ' + val2 + ', e igual a ' + subtraction)
+
+/*multiplicação*/
+multiplication = Number(val1) * Number(val2)
+console.log('A multiplicação de ' + val1 + ' por ' + val2 + ', e igual a ' + multiplication)
+
+/*divisão*/
+division = Number(val1) / Number(val2)
+console.log('A divisão de ' + val1 + ' por ' + val2 + ', e igual a ' + division)
+
+/*coreção da aula */
+alert(
+  "Resultados:\n" +
+  "\nSoma: " + addition +
+  "\nSubtração: " + subtraction +
+  "\nMultiplicação: " + multiplication +
+  "\nDivisão: " + division
+)
+        </pre>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong></a
+        >
+      </p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>
