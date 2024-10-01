@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Criando Novos Elementos no DOM</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+      </nav>
+      <h1>Criando Novos Elementos no DOM</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        No JavaScript, podemos criar dinamicamente novos elementos na página HTML usando o DOM. Isso permite adicionar conteúdo e funcionalidades sem a necessidade de recarregar a página.
+      </p>
+      <p>Os passos para criar e adicionar novos elementos são:</p>
+      <ul>
+        <li><strong>Criar</strong> o novo elemento usando <code>document.createElement()</code>.</li>
+        <li><strong>Adicionar</strong> conteúdo ou atributos ao novo elemento.</li>
+        <li><strong>Anexar</strong> o novo elemento a um elemento pai existente usando <code>appendChild()</code>.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+function addInput() {
+  const ul = document.getElementById("inputs")
+
+  // Criar um novo elemento <strong>li</strong>
+  const newLi = document.createElement("li")
+  newLi.className = "list-item"
+  newLi.innerText = "Novo input: "
+
+  // Criar um novo elemento <input>
+  const newInput = document.createElement("input")
+  newInput.type = "text"
+  newInput.name = "input"
+
+  // Adicionar o input ao <strong>li</strong>
+  newLi.appendChild(newInput);
+
+  // Adicionar o <strong>li</strong> à lista <strong>ul</strong>
+  ul.appendChild(newLi)
+}
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo Prático</h2>
+      <p>Ao clicar no botão abaixo, um novo campo de input será adicionado à lista:</p>
+      <button onclick="addInput()">Adicionar Input</button>
+
+      <ul id="inputs"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <ul>
+        <li><strong>createElement</strong>: Cria um novo elemento HTML. No exemplo, usamos para criar um <code>&lt;li&gt;</code> e um <code>&lt;input&gt;</code>.</li>
+        <li><strong>appendChild</strong>: Adiciona um elemento como filho de um elemento pai existente. O <code>&lt;li&gt;</code> é adicionado à <code>&lt;ul&gt;</code>.</li>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu <a class="link_git" href="https://github.com/Guilherme-210" target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong>.</a
+        >
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
