@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Eventos no HTML</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-15/index.html"
+          ><i class="fi fi-rr-angle-left"></i> Exercicio 15: Sistema de vagas de
+          emprego
+        </a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a
+          class="nav_pages prox"
+          href="/js/dom/obtendo_elementos_html_do_dom/index.html"
+        >
+          Obtendo elementos HTML do DOM <i class="fi fi-rr-angle-right"></i>
+        </a>
+      </nav>
+      <h1>Eventos no HTML</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Eventos no HTML permitem interatividade e ações dinâmicas em uma página
+        web. Ao acionar eventos, é possível executar códigos JavaScript sem
+        travar o carregamento da página, criando uma experiência mais fluida.
+      </p>
+      <p>Os principais eventos são:</p>
+      <ul>
+        <li>
+          <strong>onMouseEnter</strong>: ao passar o mouse sobre um elemento
+        </li>
+        <li><strong>onChange</strong>: ao mudar o valor de um elemento</li>
+        <li><strong>onFocus</strong>: ao colocar foco em um elemento</li>
+        <li><strong>onBlur</strong>: ao tirar o foco de um elemento</li>
+        <li><strong>onClick</strong>: ao clicar em um elemento</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+function mouseEnterEvent() {
+  console.log("mouse entered")
+}
+
+function changeEvent() {
+  console.log("value changed")
+}
+
+function focusEvent() {
+  console.log("gained focus")
+}
+
+function blurEvent() {
+  console.log("lost focus")
+}
+
+function clickEvent() {
+  alert("clicked")
+}
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo Prático</h2>
+      <div>
+        <label for="onMouseEnter">Entrada do Mouse:</label>
+        <input type="text" id="onMouseEnter" onmouseenter="mouseEnterEvent()" />
+      </div>
+      <br />
+      <div>
+        <label for="onChange">Mudança de Valor:</label>
+        <input type="text" id="onChange" onchange="changeEvent()" />
+      </div>
+      <br />
+      <div>
+        <label for="onFocus">Entrada de Foco:</label>
+        <input type="text" id="onFocus" onfocus="focusEvent()" />
+      </div>
+      <br />
+      <div>
+        <label for="onBlur">Saída de Foco:</label>
+        <input type="text" id="onBlur" onblur="blurEvent()" />
+      </div>
+      <br />
+      <button onclick="clickEvent()">Clique-me!</button>
+
+      <script src="./index.js"></script>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <ul>
+        <li>
+          O evento <strong>onMouseEnter</strong> é disparado quando o mouse
+          entra no botão.
+        </li>
+        <li>
+          O evento <strong>onClick</strong> é acionado ao clicar no botão.
+        </li>
+        <li>
+          O evento <strong>onFocus</strong> ocorre ao colocar foco no campo de
+          texto.
+        </li>
+        <li>
+          O evento <strong>onBlur</strong> é acionado ao tirar o foco do campo
+          de texto.
+        </li>
+        <li>
+          O evento <strong>onChange</strong> é acionado ao alterar o valor do
+          campo.
+        </li>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu
+        <a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong>.</a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

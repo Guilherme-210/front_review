@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>High-Order Functions</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/funcao/funções_anonimas/index.html"
+          ><i class="fi fi-rr-angle-left"></i> Funções Anônimas</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a
+          class="nav_pages"
+          href="/js/high-order_functions/high-order_functions_e_Arrays/index.html"
+          >High-Order Functions e Arrays <i class="fi fi-rr-angle-right"></i></a
+        >
+      </nav>
+      <h1>High-Order Functions</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Nesta aula, vamos explorar o conceito de High Order Functions (Funções
+        de Alta Ordem) em JavaScript. Funções de Alta Ordem são funções que
+        recebem outras funções como parâmetro e as executam dentro delas.
+      </p>
+      <p>
+        Elas são uma parte essencial do paradigma funcional e permitem criar
+        código mais modular, flexível e reutilizável.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+function calcular(a, b, operacao) {
+  console.log("Realizando uma operação.")
+  const resultado = operacao(a, b)
+  return resultado
+}
+
+function somar(x, y) {
+  console.log("Realizando soma.")
+  return x + y
+}
+
+calcular(3, 5, somar)
+
+calcular(9, 2, function (x, y) {
+  console.log("Realizando subtração.")
+  return x - y
+})
+
+const lista = ["Maçã", "Banana", "Laranja", "Limão", "Uva"]
+
+lista.forEach(function (elemento, indice) {
+  console.log("Elemento:", elemento, "- Índice:", indice)
+})
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <ul>
+        <li>
+          A função <code>calcular</code> é uma High Order Function, pois recebe
+          a função <code>operacao</code> como parâmetro e a executa.
+        </li>
+        <li>
+          Usamos a função <code>somar</code> como um exemplo de callback, e
+          também passamos uma função anônima para realizar a subtração.
+        </li>
+        <li>
+          O método <code>forEach</code> percorre o array <code>lista</code>,
+          executando uma função callback para cada elemento.
+        </li>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong>.</a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

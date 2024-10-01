@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Obtendo elementos HTML do DOM</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/eventos_no_html/index.html"
+          ><i class="fi fi-rr-angle-left"></i> Exercicio 15: Sistema de vagas de
+          emprego
+        </a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a
+          class="nav_pages prox"
+          href="/js/dom/criando_novos_elementos_no_dom/index.html"
+        >
+          Criando novos elementos no DOM <i class="fi fi-rr-angle-right"></i>
+        </a>
+      </nav>
+      <h1>Obtendo elementos HTML do DOM</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        O DOM (Document Object Model) permite acessar e manipular elementos de
+        uma página HTML usando JavaScript. Através de métodos específicos,
+        podemos obter elementos individuais ou coleções de elementos com base em
+        atributos, tags, classes, ou seletores.
+      </p>
+      <p>Os principais métodos para obter elementos do DOM são:</p>
+      <ul>
+        <li><strong>getElementById</strong>: Obter um elemento pelo seu ID.</li>
+        <li>
+          <strong>getElementsByTagName</strong>: Obter vários elementos pela tag
+          HTML.
+        </li>
+        <li>
+          <strong>getElementsByClassName</strong>: Obter vários elementos por
+          nome de classe.
+        </li>
+        <li>
+          <strong>getElementsByName</strong>: Obter vários elementos pelo
+          atributo name.
+        </li>
+        <li>
+          <strong>querySelector</strong>: Obter o primeiro elemento que
+          corresponde a uma query CSS.
+        </li>
+        <li>
+          <strong>querySelectorAll</strong>: Obter todos os elementos que
+          correspondem a uma query CSS.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+function show() {
+  // Obter um elemento único a partir do seu id
+  const contactList = document.getElementById("contact-list")
+  console.log(contactList)
+
+  // Obter vários elementos (HTMLCollection) a partir de um nome de tag
+  const liElements = document.getElementsByTagName("li")
+  console.log(liElements)
+
+  // Obter vários elementos (HTMLCollection) a partir de uma classe
+  const contactInputs = document.getElementsByClassName("contact-input")
+  console.log(contactInputs)
+
+  // Obter vários elementos (NodeList) a partir do atributo name
+  const contact1 = document.getElementsByName("contact1")
+  console.log(contact1)
+
+  // Obter vários elementos (NodeList) a partir de uma query (semelhante aos seletores do CSS)
+  const contacts = document.querySelectorAll("#contact-list > li > label")
+  console.log(contacts)
+
+  // Obter um elemento a partir de uma query (o primeiro elemento a corresponder)
+  const contact = document.querySelector("#contact-list > li > label")
+  console.log(contact)
+  console.log(contact.textContent)
+}
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo Prático</h2>
+      <p>
+        Precione <strong>F12</strong> e apos isso click no botão abaixo para ver
+        a função <strong>show()</strong> em ação:
+      </p>
+      <ul id="contact-list">
+        <li>
+          <label for="contact1">Contato 1</label>
+          <input
+            type="text"
+            id="contact1"
+            name="contact1"
+            class="contact-input"
+          />
+        </li>
+        <li>
+          <label for="contact2">Contato 2</label>
+          <input
+            type="text"
+            id="contact2"
+            name="contact2"
+            class="contact-input"
+          />
+        </li>
+        <li>
+          <label for="contact3">Contato 3</label>
+          <input
+            type="text"
+            id="contact3"
+            name="contact3"
+            class="contact-input"
+          />
+        </li>
+        <button onclick="show()">Exibir Elementos</button>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu
+        <a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong>.</a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <title>High-Order Functions e Arrays</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/high-order_functions/index.html"
+          ><i class="fi fi-rr-angle-left"></i> High-Order Functions</a
+        >
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a class="nav_pages" href="/js/exercicios/exercicio-15/index.html"
+          >Exercicio 15: Sistema de vagas de emprego <i class="fi fi-rr-angle-right"></i></a
+        >
+      </nav>
+      <h1>High-Order Functions e Arrays</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Nesta aula, vamos aprender sobre 4 métodos importantes para trabalhar
+        com arrays em JavaScript: <code>map</code>, <code>filter</code>,
+        <code>reduce</code> e <code>sort</code>.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+const personagens = [
+  { nivel: 42, nome: "Thrall", raca: "Orc", classe: "Xamã" },
+  { nivel: 28, nome: "Garrosh", raca: "Orc", classe: "Guerreiro" },
+  { nivel: 35, nome: "Varok", raca: "Orc", classe: "Guerreiro" },
+  { nivel: 35, nome: "Uther", raca: "Humano", classe: "Paladino" },
+  { nivel: 26, nome: "Jaina", raca: "Humano", classe: "Maga" },
+  { nivel: 39, nome: "Tyrande", raca: "Elfo Noturno", classe: "Sacerdotisa" },
+  { nivel: 29, nome: "Muradin", raca: "Anão", classe: "Guerreiro" }
+];
+
+
+// map: Cria um novo array com os nomes dos personagens
+const nomes = personagens.map(function (personagem) {
+  return personagem.nome;
+});
+
+
+// filter: Cria um novo array apenas com os personagens da raça "Orc"
+const orcs = personagens.filter(function (personagem) {
+  return personagem.raca === "Orc";
+});
+
+
+// reduce: Calcula o nível total dos personagens
+const nivelTotal = personagens.reduce(function (acumulador, personagem) {
+  return acumulador + personagem.nivel;
+}, 0);
+
+
+// sort: Ordena os personagens pelo nível
+personagens.sort(function (a, b) {
+  return a.nivel - b.nivel;
+});
+
+
+console.log(nomes);
+console.log(orcs);
+console.log(nivelTotal);
+console.log(personagens);
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <ul>
+        <li>
+          <code>map</code>: Retorna um novo array com o resultado de uma função
+          aplicada a cada elemento do array original.
+        </li>
+        <li>
+          <code>filter</code>: Retorna um novo array com elementos que passaram
+          no teste fornecido por uma função.
+        </li>
+        <li>
+          <code>reduce</code>: Acumula os valores de um array em um único
+          resultado final, conforme definido por uma função.
+        </li>
+        <li>
+          <code>sort</code>: Ordena os elementos do array. Modifica o array
+          original.
+        </li>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong>.</a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

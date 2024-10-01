@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Funções Anônimas</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/funcao/funções_recursivas/index.html"
+          ><i class="fi fi-rr-angle-left"></i> Funções Recursivas</a
+        >
+        <a class="nav_pages" href="/">Central de aulas</a>
+        <a class="nav_pages" href="/js/high-order_functions/index.html"
+          >High Order Functions <i class="fi fi-rr-angle-right"></i></a
+        >
+      </nav>
+      <h1>Funções Anônimas</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        Este exercício aborda o conceito de funções anônimas no JavaScript,
+        explicando como utilizá-las, os perigos associados e as diferenças em
+        relação a funções nomeadas.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código JavaScript</h2>
+      <div class="code">
+        <pre>
+// No javascript as funções podem ser atribuidas
+// a variáveis como se elas fosse valores
+function somar(a, b) {
+  return a + b
+}
+// Repare que não usamos os () ao lado do nome da função,
+// porque ao fazer isso estaríamos executando a função
+const operacao = somar
+console.log(operacao(4, 5))
+
+// Para isso, podemos usar as funções anônimas, que
+// nada mais são do que funções que não possuem um nome
+const subtrair = function (a, b) {
+  return a - b
+}
+console.log(subtrair(36, 13))
+
+// Com as funções anônimas podemos, por exemplo,
+// atribuir uma função a uma chave de objeto
+const calculadora = {}
+calculadora.somar = somar
+calculadora.subtrair = subtrair
+calculadora.multiplicar = function (a, b) {
+  return a * b
+}
+console.log(calculadora.multiplicar(3, 7))
+
+// Funções anônimas só podem ser chamadas após a atribuição da variável,
+// elas não são jogadas para o topo do arquivo como funções normais
+olaMundo()
+oiMundo()
+
+function olaMundo() {
+  console.log("Olá, mundo!")
+}
+
+const oiMundo = function () {
+  console.log("Oi, mundo!")
+}
+      </pre
+        >
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <p>
+        O código ilustra o uso de funções anônimas no JavaScript, com exemplos
+        práticos sobre:
+      </p>
+      <ul>
+        <li>Atribuir funções a variáveis.</li>
+        <li>
+          Usar funções anônimas para simplificar o código e armazená-las em
+          variáveis ou objetos.
+        </li>
+        <li>
+          Atenção para os perigos das funções anônimas, que só podem ser
+          chamadas após sua declaração.
+        </li>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu<a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+          ><strong><ion-icon name="logo-github"></ion-icon> GitHub</strong>.</a
+        >
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
