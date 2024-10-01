@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <title>Manipulação do DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a
+          class="nav_pages"
+          href="/js/dom/criando_novos_elementos_no_dom/index.html"
+          ><i class="fi fi-rr-angle-left"></i> Criando Novos Elementos no DOM</a
+        >
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a class="nav_pages prox" href="/js/exercicios/exercicio-16/index.html"
+          >Exercício 16: Escalação de Times <i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+      <h1>Manipulação do DOM</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição</h2>
+      <p>
+        A manipulação do DOM permite que você crie, adicione ou remova elementos
+        dinamicamente. Aqui está um exemplo simples de como adicionar e remover
+        contatos em uma lista de agenda.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo de Código</h2>
+      <div class="code">
+        <pre><code>
+// Adicionando um contato a lista
+
+function addContact() {
+  const contactSection = document.getElementById("contacts-list")
+
+  const h3 = document.createElement("h3")
+  h3.innerText = "Contato"
+
+  const ul = document.createElement("ul")
+
+  const nameLi = document.createElement("li")
+  nameLi.innerText = "Nome: "
+  const nameInput = document.createElement("input")
+  nameInput.type = "text"
+  nameInput.name = "fullname"
+  nameLi.appendChild(nameInput)
+  ul.appendChild(nameLi)
+  ul.appendChild(document.createElement("br"))
+
+  const phoneLi = document.createElement("li")
+  phoneLi.innerText = "Telefone: "
+  const phoneInput = document.createElement("input")
+  phoneInput.type = "text"
+  phoneInput.name = "phone"
+  phoneLi.appendChild(phoneInput)
+  ul.appendChild(phoneLi)
+  ul.appendChild(document.createElement("br"))
+
+  const addressLi = document.createElement("li")
+  addressLi.innerHTML = '<label for="address">Endereço: </label>'
+  const addressInput = document.createElement("input")
+  addressInput.type = "text"
+  addressInput.name = "address"
+  addressInput.id = "address"
+  addressLi.appendChild(addressInput)
+  ul.appendChild(addressLi)
+  ul.appendChild(document.createElement("br"))
+
+  contactSection.append(h3, ul)
+}
+
+// Removendo um contato da lista
+
+// Codigo da aula, nâo remove completamente os contatos
+// function removeContact() {
+//   const contactSection = document.getElementById("contacts-list")
+
+//   const titles = document.getElementsByTagName("h3")
+//   const contacts = document.getElementsByTagName("ul")
+
+//   contactSection.removeChild(titles[titles.length - 1])
+//   contactSection.removeChild(contacts[contacts.length - 1])
+// }
+
+// Apos pesquisas, consegui resolver o problema de não estar removendo os imputs e nem seus respectivos textos de identificação.
+function removeContact() {
+  const contactSection = document.getElementById("contacts-list")
+
+  const lastH3 = contactSection.querySelector("h3:last-of-type")
+  const lastUl = contactSection.querySelector("ul:last-of-type")
+
+  if (lastH3 && lastUl) {
+    contactSection.removeChild(lastH3)
+    contactSection.removeChild(lastUl)
+  }
+}
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Exemplo Prático</h2>
+      <h3>Praticando a Manipulação do DOM</h3>
+      <hr>
+
+      <h4>Minha Agenda</h4>
+
+      <button onclick="addContact()">Novo Contato</button>
+      <button onclick="removeContact()">Remover Contato</button>
+
+      <section id="contacts-list"></section>
+    </div>
+
+    <div class="section">
+      <h2>Explicação</h2>
+      <ul>
+        <li>
+          Criamos elementos dinâmicos com <code>document.createElement()</code>.
+        </li>
+        <li>
+          Usamos <code>appendChild()</code> para adicionar novos contatos.
+        </li>
+        <li>
+          O botão de remover contatos usa <code>.removeChild()</code> para
+          excluir o último contato.
+        </li>
+      </ul>
+    </div>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu
+        <a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+        >
+          <strong><ion-icon name="logo-github"></ion-icon> GitHub</strong> </a
+        >.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
