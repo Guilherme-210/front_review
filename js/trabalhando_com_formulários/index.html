@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Trabalhando com Formulários no JavaScript</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/dom/eventos_no_js/index.html"><i class="fi fi-rr-angle-left"></i> Eventos no Javascript</a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a class="nav_pages prox" href="/js/exercicios/exercicio-17/index.html"
+          >Exercício 17: Cadastro de devs <i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+      <h1>Trabalhando com Formulários no JavaScript</h1>
+    </header>
+
+    <div class="section">
+      <h2>Conteúdo central</h2>
+      <ul>
+        <li>
+          Manipular formulários com JavaScript para ter comportamentos dinâmicos
+          sem recarregar a página
+        </li>
+      </ul>
+
+      <h2>Tópicos abordados</h2>
+      <ul>
+        <li>
+          <p>Comportamento padrão do formulário</p>
+          <ul>
+            <li>
+              Ao clicar em "Enviar", envia os dados preenchidos para a action
+              definida
+            </li>
+            <li>
+              Se não definir action, envia para a própria página, causando
+              recarregamento
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Selecionando elementos do formulário</p>
+          <ul>
+            <li>getElementById</li>
+            <li>querySelector</li>
+            <li>querySelectorAll</li>
+          </ul>
+        </li>
+        <li>
+          <p>Escutando o evento de submit</p>
+          <ul>
+            <li>addEventListener de "submit"</li>
+            <li>Usa preventDefault() para impedir comportamento padrão</li>
+          </ul>
+        </li>
+        <li>
+          <p>Exibindo os dados</p>
+          <ul>
+            <li>Console.log para testar</li>
+            <li>InnerHTML para mostrar na tela</li>
+            <li>Pode limpar formulário resetando valores</li>
+          </ul>
+        </li>
+        <li>
+          <p>Benefícios</p>
+          <ul>
+            <li>Experiência mais dinâmica, sem recarregamentos</li>
+            <li>Maior controle sobre os dados com JavaScript</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="section">
+        <h2>Montar Pedido</h2>
+
+        <form id="orderForm">
+          <label for="name">Nome:</label>
+          <br />
+          <input type="text" name="name" id="name" />
+          <br /><br />
+
+          <label for="address">Endereço de Entrega:</label>
+          <br />
+          <input type="text" name="address" id="address" />
+          <br /><br />
+
+          <label for="breadType">Tipo de Pão</label>
+          <br />
+          <select name="breadType" id="breadType">
+            <option selected disabled>Selecione uma opção...</option>
+            <option value="3 queijos">3 queijos</option>
+            <option value="Parmesão e orégano">Parmesão e orégano</option>
+            <option value="9 grãos">9 grãos</option>
+            <option value="Italiano branco">Italiano branco</option>
+            <option value="Granola salgada">Granola salgada</option>
+            <option value="Manteiga temperada">Manteiga temperada</option>
+          </select>
+          <br /><br />
+
+          <label for="main">Principal:</label>
+          <br />
+          <input type="radio" name="main" id="main1" value="Carne" />
+          <label for="main1">Carne</label>
+          <input type="radio" name="main" id="main2" value="Frango" />
+          <label for="main2">Frango</label>
+          <input type="radio" name="main" id="main3" value="Vegano" />
+          <label for="main3">Vegano</label>
+          <br /><br />
+
+          <label for="salad">Salada:</label>
+          <br />
+          <input type="checkbox" name="salad" id="salad1" value="Alface" />
+          <label for="salad1">Alface</label>
+          <input type="checkbox" name="salad" id="salad2" value="Tomate" />
+          <label for="salad2">Tomate</label>
+          <input type="checkbox" name="salad" id="salad3" value="Azeitonas" />
+          <label for="salad3">Azeitonas</label>
+          <input type="checkbox" name="salad" id="salad4" value="Cenoura" />
+          <label for="salad4">Cenoura</label>
+          <input type="checkbox" name="salad" id="salad5" value="Picles" />
+          <label for="salad5">Picles</label>
+          <br /><br />
+
+          <label for="observations">Observações:</label>
+          <br />
+          <textarea
+            name="observations"
+            id="observations"
+            cols="30"
+            rows="6"
+          ></textarea>
+          <br /><br />
+
+          <button type="submit">Fechar Pedido</button>
+        </form>
+      </div>
+
+      <div class="section">
+        <h2>Resolução do código script.js</h2>
+        <div class="code">
+          <pre><code>
+const form = document.getElementById("orderForm")
+
+form.addEventListener("submit", function (ev) {
+  ev.preventDefault()
+
+  const name = document.querySelector("input[name='name']").value
+  const address = document.querySelector("input[name='address']").value
+  const breadType = document.querySelector("select[name='breadType']").value
+  const main = document.querySelector("input[name='main']").value
+  const observations = document.querySelector(
+    "textarea[name='observations']"
+  ).value
+
+  let salad = ""
+  document
+    .querySelectorAll("input[name='salad']:checked")
+    .forEach(function (item) {
+      salad += " - " + item.value + "\n"
+    })
+
+  console.log({
+    name,
+    address,
+    breadType,
+    main,
+    salad,
+    observations,
+  })
+
+  alert(
+    "Pedido Realizado!" +
+      "\nNome do cliente: " +
+      name +
+      "\nEndereço de entrega: " +
+      address +
+      "\nTipo de pão: " +
+      breadType +
+      "\nRecheio: \n - " +
+      main +
+      "\n" +
+      salad +
+      "Observações: " +
+      observations
+  )
+})
+          </code></pre>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu
+        <a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+        >
+          <strong><ion-icon name="logo-github"></ion-icon> GitHub</strong> </a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>

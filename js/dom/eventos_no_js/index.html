@@ -32,20 +32,61 @@
     </header>
 
     <div class="section">
-      <h2>Descrição do exercício</h2>
-      <p>
-        Vamos aprender a criar eventos dinamicamente no JavaScript e removê-los
-        quando necessário.
-      </p>
-      <ul class="ul__div">
-        <li>Adicionando eventos com <code>addEventListener(evento)</code>.</li>
-        <li>Removendo eventos com <code>removeEventListener(evento)</code>.</li>
-      </ul>
+      <main>
+    <h1>Trabalhando com eventos no JavaScript</h1>
+    <h2>Introdução</h2>
+    <ul>
+      <li>Até agora colocávamos os eventos diretamente no HTML, o que pode ficar bagunçado em projetos complexos</li>
+      <li>Vamos aprender a criar os eventos dinamicamente pelo JavaScript</li>
+      <li>Também vamos aprender a remover eventos dos elementos</li>
+    </ul>
+
+    <h2>Adicionando eventos</h2>
+    <ul>
+      <li>Selecionamos o elemento com <code>getElementById()</code></li>
+      <li>Usamos o método <code>addEventListener()</code> para adicionar o evento
+        <ul>
+          <li>Passamos como parâmetro:
+            <ul>
+              <li>O tipo do evento (click, mouseover etc)</li>
+              <li>A função de callback a ser executada</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Podemos criar a função callback separadamente e passar seu nome</li>
+      <li>O parâmetro <strong>event</strong> contém informações sobre o evento disparado</li>
+    </ul>
+
+    <h2>Removendo eventos</h2>
+    <ul>
+      <li>Usamos o método <code>removeEventListener()</code>, passando:
+        <ul>
+          <li>O tipo do evento</li>
+          <li>A função de callback a ser removida</li>
+        </ul>
+      </li>
+      <li>Podemos ter vários eventos no mesmo elemento</li>
+      <li><code>removeEventListener()</code> remove apenas o evento específico</li>
+    </ul>
+
+    <h2>Observações</h2>
+    <ul>
+      <li>Scripts devem ter o atributo <code>defer</code> ou estar no final da página</li>
+      <li>Isso evita problemas com elementos não carregados ainda</li>
+      <li>VS Code auxilia no autocompletar das propriedades de evento</li>
+    </ul>
+
+    <h2>Conclusão</h2>
+    <ul>
+      <li>Eventos são muito importantes em JavaScript</li>
+      <li>Aprenda e pratique os conceitos de adicionar e remover eventos dinamicamente</li>
+    </ul>
     </div>
 
     <main>
       <div class="section">
-        <h2>Execução do exercício</h2>
+        <h2>Execução do código</h2>
         <section>
           <label for="username">Nome de Usuário:</label>
           <input type="text" name="username" id="username" />
@@ -66,10 +107,10 @@
       </div>
 
       <div class="section">
-        <h2>Resolução do código</h2>
+        <h2>Resolução do código script.js</h2>
         <div class="code">
           <pre><code>
-            function register(ev) {
+function register(ev) {
   console.log(ev)
   const sectionElement = ev.currentTarget.parentNode
   const username = sectionElement.children.username.value
