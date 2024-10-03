@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <title>Trabalhando com Eventos no Javascript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/dom/enviando_valores_do_dom_para_o_js/index.html"><i class="fi fi-rr-angle-left"></i> Enviando valores do DOM para o Javascript</a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a class="nav_pages prox" href="/js/trabalhando_com_formulários/index.html"
+          >Trabalhando com formulários no Javascript <i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+      <h1>Trabalhando com Eventos no Javascript</h1>
+    </header>
+
+    <div class="section">
+      <h2>Descrição do exercício</h2>
+      <p>
+        Vamos aprender a criar eventos dinamicamente no JavaScript e removê-los
+        quando necessário.
+      </p>
+      <ul class="ul__div">
+        <li>Adicionando eventos com <code>addEventListener(evento)</code>.</li>
+        <li>Removendo eventos com <code>removeEventListener(evento)</code>.</li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="section">
+        <h2>Execução do exercício</h2>
+        <section>
+          <label for="username">Nome de Usuário:</label>
+          <input type="text" name="username" id="username" />
+          <br />
+          <label for="password">Senha:</label>
+          <input type="password" name="password" id="password" />
+          <br />
+          <label for="passwordConfirmation">Confirme sua senha:</label>
+          <input
+            type="password"
+            name="passwordConfirmation"
+            id="passwordConfirmation"
+          />
+          <br />
+          <button id="register-button">Registrar</button>
+          <button onclick="removeEvent()">Remover Event Listener</button>
+        </section>
+      </div>
+
+      <div class="section">
+        <h2>Resolução do código</h2>
+        <div class="code">
+          <pre><code>
+            function register(ev) {
+  console.log(ev)
+  const sectionElement = ev.currentTarget.parentNode
+  const username = sectionElement.children.username.value
+  const password = sectionElement.children.password.value
+  const passwordConfirmation =
+    sectionElement.children.passwordConfirmation.value
+
+  if (password === passwordConfirmation) {
+    alert(`Usuário ${username} registrado com sucesso!`)
+  } else {
+    alert("As senhas não conferem")
+  }
+}
+
+function removeEvent() {
+  button.removeEventListener("click", register)
+  alert("Event Removed")
+}
+
+const button = document.getElementById("register-button")
+
+button.addEventListener("click", register)
+
+button.addEventListener("mouseover", function (ev) {
+  console.log(ev)
+})
+        </code></pre>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer">© 2024 Desenvolvido por Guilherme Reis.</p>
+      <p class="footer">
+        Acesse o meu
+        <a
+          class="link_git"
+          href="https://github.com/Guilherme-210"
+          target="_blank"
+        >
+          <strong><ion-icon name="logo-github"></ion-icon> GitHub</strong> </a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
