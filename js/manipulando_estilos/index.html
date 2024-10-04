@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <title>Manipulando Estilos com JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages prox" href="/js/exercicios/exercicio-17/index.html"
+          ><i class="fi fi-rr-angle-left"></i>Exercício 17: Cadastro de
+          desenvolvedores></a
+        >
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+        <a class="nav_pages" href="/js/manipulando_atributos/index.html"
+          >Manipulando Atributos com Javascript
+          <i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+      <h1>Manipulando estilos com JavaScript</h1>
+    </header>
+
+    <main>
+      <div class="section">
+        <h2>Introdução</h2>
+        <ul>
+          <li>
+            Até agora trabalhamos com comportamentos das páginas (eventos,
+            formulários, etc)
+          </li>
+          <li>Também podemos manipular os estilos e CSS com JavaScript</li>
+          <li>
+            Vamos ver como implementar temas claro e escuro alternando estilos
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Formas de manipular estilos</h2>
+        <h3>Editando propriedade style</h3>
+        <ul>
+          <li>
+            Elementos possuem propriedade <code>style</code> para acessar e
+            manipular estilos inline
+          </li>
+          <li>
+            Propriedades CSS são mapeadas para camelCase (ex:
+            <code>background-color</code> vira <code>backgroundColor</code>)
+          </li>
+        </ul>
+
+        <h3>Alternando classes</h3>
+        <ul>
+          <li>
+            Podemos acessar lista de classes com <code>element.classList</code>
+          </li>
+          <li>
+            Método <code>toggle</code> adiciona classe se não tiver e remove se
+            tiver
+          </li>
+          <li>Útil quando usamos frameworks CSS como Bootstrap</li>
+        </ul>
+
+        <h2>Implementação</h2>
+        <ul>
+          <li>
+            Função <code>useLightTheme</code> define cores para tema claro
+          </li>
+          <li>Função <code>useDarkTheme</code> inverte cores para escuro</li>
+          <li>
+            Função <code>switchTheme</code> alterna classes
+            <code>isLight</code> e
+            <code>isDark</code>
+          </li>
+          <li>Adição de eventos de clique nos botões para chamar funções</li>
+        </ul>
+
+        <h2>Observação</h2>
+        <ul>
+          <li>Mistura de estilos inline e classes pode causar bugs</li>
+          <li>Melhor optar por uma abordagem só</li>
+        </ul>
+      </div>
+
+      <div class="section-dark">
+        <h2>Manipulando Estilos com Javascript</h2>
+        <hr />
+        <button id="lightBtn">Tema Claro</button>
+        <button id="darkBtn">Tema Escuro</button>
+        <button id="switchBtn">Alternar Tema Claro/Escuro</button>
+        <h3>Título da Página</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sed,
+          labore blanditiis hic perspiciatis error veritatis eum animi aliquam
+          consequuntur non facere sit nisi nam similique at obcaecati odit
+          debitis.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Resolução do código</h2>
+        <div class="code">
+          <pre><code>
+// Seleciona a primeira div com a classe 'section is-light'
+const themeDiv = document.querySelector(".section-dark")
+
+// Manipulando estilos diretamente pela propriedade style
+function useLightTheme() {
+  themeDiv.style.color = "#000000"
+  themeDiv.style.backgroundColor = "#f1f5f9"
+}
+
+function useDarkTheme() {
+  themeDiv.style.color = "#f4f4f4"
+  themeDiv.style.backgroundColor = "#2e2e2e"
+}
+
+// Manipulando estilos através das classes utilizadas pelo CSS
+function switchTheme() {
+  themeDiv.classList.toggle("section-light")
+  themeDiv.classList.toggle("section-dark")
+}
+
+// Adicionando os eventos
+document.getElementById("lightBtn").addEventListener("click", useLightTheme)
+document.getElementById("darkBtn").addEventListener("click", useDarkTheme)
+document.getElementById("switchBtn").addEventListener("click", switchTheme)
+          </code></pre>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
