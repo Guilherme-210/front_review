@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Jogo da Velha</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="btn-nav">
+        <a href="/js/projeto_pratico/calculadora-js/index.html" class="btn-nav"
+          ><i class="fi fi-rr-angle-left"></i> Projeto prático:
+          Calculadora.js</a
+        >
+        <a href="/" class="btn-nav"><ion-icon name="home"></ion-icon> Home</a>
+        <a href="/js" class="btn-nav"
+          > <i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+      <br />
+      <h1>Exercício 18: Jogo da Velha</h1>
+    </header>
+
+    <main>
+      <div class="section">
+        <label for="player1">X</label>
+        <input type="text" id="player1" placeholder="Nome do Jogador 1" />
+        <label for="player2">O</label>
+        <input type="text" id="player2" placeholder="Nome do Jogador 2" />
+        <button id="start">Começar!</button>
+        <h2>Vez de: <span id="turnPlayer"></span></h2>
+        <hr />
+        <section id="gameBoard">
+          <span class="cursor-pointer" data-region="0.0"></span>
+          <span class="cursor-pointer" data-region="0.1"></span>
+          <span class="cursor-pointer" data-region="0.2"></span>
+          <span class="cursor-pointer" data-region="1.0"></span>
+          <span class="cursor-pointer" data-region="1.1"></span>
+          <span class="cursor-pointer" data-region="1.2"></span>
+          <span class="cursor-pointer" data-region="2.0"></span>
+          <span class="cursor-pointer" data-region="2.1"></span>
+          <span class="cursor-pointer" data-region="2.2"></span>
+        </section>
+      </div>
+
+      <div class="section">
+        <h2>Resolução do código</h2>
+        <div class="code">
+          <pre><code>
+// Variáveis globais úteis
+const boardRegions = document.querySelectorAll("#gameBoard span")
+let vBoard = []
+let turnPlayer = ""
+
+function updateTitle() {
+  const playerInput = document.getElementById(turnPlayer)
+  document.getElementById("turnPlayer").innerText = playerInput.value
+}
+
+function initializeGame() {
+  // Inicializa as variáveis globais
+  vBoard = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""],
+  ]
+  turnPlayer = "player1"
+  // Ajusta o título da página (caso seja necessário)
+  document.querySelector("h2").innerHTML =
+    'Vez de: <span id="turnPlayer"></span>'
+  updateTitle()
+  // Limpa o tabuleiro (caso seja necessário) e adiciona os eventos de clique
+  boardRegions.forEach(function (element) {
+    element.classList.remove("win")
+    element.innerText = ""
+    element.classList.add("cursor-pointer")
+    element.addEventListener("click", handleBoardClick)
+  })
+}
+// Verifica se existem três regiões iguais em sequência e devolve as regiões
+function getWinRegions() {
+  const winRegions = []
+  if (
+    vBoard[0][0] &&
+    vBoard[0][0] === vBoard[0][1] &&
+    vBoard[0][0] === vBoard[0][2]
+  )
+    winRegions.push("0.0", "0.1", "0.2")
+  if (
+    vBoard[1][0] &&
+    vBoard[1][0] === vBoard[1][1] &&
+    vBoard[1][0] === vBoard[1][2]
+  )
+    winRegions.push("1.0", "1.1", "1.2")
+  if (
+    vBoard[2][0] &&
+    vBoard[2][0] === vBoard[2][1] &&
+    vBoard[2][0] === vBoard[2][2]
+  )
+    winRegions.push("2.0", "2.1", "2.2")
+  if (
+    vBoard[0][0] &&
+    vBoard[0][0] === vBoard[1][0] &&
+    vBoard[0][0] === vBoard[2][0]
+  )
+    winRegions.push("0.0", "1.0", "2.0")
+  if (
+    vBoard[0][1] &&
+    vBoard[0][1] === vBoard[1][1] &&
+    vBoard[0][1] === vBoard[2][1]
+  )
+    winRegions.push("0.1", "1.1", "2.1")
+  if (
+    vBoard[0][2] &&
+    vBoard[0][2] === vBoard[1][2] &&
+    vBoard[0][2] === vBoard[2][2]
+  )
+    winRegions.push("0.2", "1.2", "2.2")
+  if (
+    vBoard[0][0] &&
+    vBoard[0][0] === vBoard[1][1] &&
+    vBoard[0][0] === vBoard[2][2]
+  )
+    winRegions.push("0.0", "1.1", "2.2")
+  if (
+    vBoard[0][2] &&
+    vBoard[0][2] === vBoard[1][1] &&
+    vBoard[0][2] === vBoard[2][0]
+  )
+    winRegions.push("0.2", "1.1", "2.0")
+  return winRegions
+}
+// Desabilita uma região do tabuleiro para que não seja mais clicável
+function disableRegion(element) {
+  element.classList.remove("cursor-pointer")
+  element.removeEventListener("click", handleBoardClick)
+}
+// Pinta as regiões onde o jogador venceu e mostra seu nome na tela
+function handleWin(regions) {
+  regions.forEach(function (region) {
+    document
+      .querySelector('[data-region="' + region + '"]')
+      .classList.add("win")
+  })
+  const playerName = document.getElementById(turnPlayer).value
+  document.querySelector("h2").innerHTML = playerName + " venceu!"
+}
+
+function handleBoardClick(ev) {
+  // Obtém os índices da região clicada
+  const span = ev.currentTarget
+  const region = span.dataset.region // N.N
+  const rowColumnPair = region.split(".") // ["N", "N"]
+  const row = rowColumnPair[0]
+  const column = rowColumnPair[1]
+  // Marca a região clicada com o símbolo do jogador
+  if (turnPlayer === "player1") {
+    span.innerText = "X"
+    vBoard[row][column] = "X"
+  } else {
+    span.innerText = "O"
+    vBoard[row][column] = "O"
+  }
+  // Limpa o console e exibe nosso tabuleiro virtual
+  console.clear()
+  console.table(vBoard)
+  // Desabilita a região clicada
+  disableRegion(span)
+  // Verifica se alguém venceu
+  const winRegions = getWinRegions()
+  if (winRegions.length > 0) {
+    handleWin(winRegions)
+  } else if (vBoard.flat().includes("")) {
+    turnPlayer = turnPlayer === "player1" ? "player2" : "player1"
+    updateTitle()
+  } else {
+    document.querySelector("h2").innerHTML = "Empate!"
+  }
+}
+// Adiciona o evento no botão que inicia o jogo
+document.getElementById("start").addEventListener("click", initializeGame)
+        </code></pre>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+  </body>
+</html>
