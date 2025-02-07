@@ -17,8 +17,6 @@
 
   // workbench
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "vs-seti",
-  "workbench.colorTheme": "Dracula Theme Soft",
 
   // prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -39,5 +37,6 @@
   "emmet.variables": {
     "lang": "pt-br",
     "charset": "UTF-8"
-  }
+  },
+  "liveServer.settings.port": 5501
 }
