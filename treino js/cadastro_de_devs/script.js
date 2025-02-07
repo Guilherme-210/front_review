@@ -14,3 +14,27 @@ function createImput(id, value, name, type = 'text', placeholder = '') {
   input.placeholder = placeholder
   return input
 }
+
+const add__technology = document.getElementById("add__technology")
+const form = document.getElementById("dev__form")
+const developers = []
+let inputRows = 0
+
+add__technology.addEventListener('click', function (ev) {
+  const stackInput = document.getElementById("stack__inputs")
+
+  const newRow = document.createElement('li')
+  const rowIndex = inputRows
+  inputRows++
+  newRow.id = 'inputRow-' + rowIndex
+  newRow.className = 'inputRow'
+
+  const techNameLabel = createLabel('Nome: ', 'techName-' + rowIndex)
+  const tachNameInput = createImput('techName-' + rowIndex, null, 'techName')
+
+  newRow.append(
+    techNameLabel, tachNameInput
+  )
+
+  stackInput.appendChild(newRow)
+})
