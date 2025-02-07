@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5969/5969113.png">
+    <title>Cadastro de Devs</title>
+  </head>
+  <body>
+    <header>
+      <h1>Cadastor de Devs</h1>
+    </header>
+
+    <main>
+      <div>
+        <h2>Cadastrar novo desenvolvedor</h2>
+        <form id="dev__form">
+          <div>
+            <label for="fullname">Nome Completo</label>
+            <input type="text" name="fullname" id="fullname">
+          </div>
+          <br>
+          <div>
+            <label>Tecnologias</label>br
+            <button id="add__technology" type="button">Adicionar nova</button>
+            <ul id="stack__inputs"></ul>
+          </div>
+          <br>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </main>
+    
+
+    <script src="./script.js" defer></script>
+    <script type="módulo"  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
