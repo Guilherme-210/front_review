@@ -39,7 +39,7 @@ add__technology.addEventListener("click", function (ev) {
   const tachNameInput = createInput("techName-" + rowIndex, null, "techName")
 
   // Criação dos opições de tempo de esperiencia
-  const expLabel = createLabel("Nome: ", "techName-" + rowIndex)
+  const expLabel = createLabel("Tempo: ", "techName-" + rowIndex)
   // Radio 1
   const id1 = "expRadio-" + rowIndex + ".1"
   const expRadio1 = createInput(id1, "0-2 anos", "techExp-" + rowIndex, "radio")
