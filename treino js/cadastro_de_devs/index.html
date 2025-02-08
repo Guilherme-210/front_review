@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5969/5969113.png">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/5969/5969113.png"
+    />
     <title>Cadastro de Devs</title>
   </head>
   <body>
@@ -12,28 +17,79 @@
     </header>
 
     <main>
-      <div>
-        <h2>Cadastrar novo desenvolvedor</h2>
+      <!-- Explicação do exercício -->
+      <section>
+        <fieldset>
+          <legend>Explicação do exercício</legend>
+          <div>
+            <p>
+              Construa uma página web que permita cadastrar desenvolvedores,
+              suas tecnologias e tempos de experiência.
+            </p>
+            <p>
+              A página deve ter um input para o nome completo do desenvolvedor e
+              um botão para adicionar uma nova tecnologia.
+            </p>
+            <p>
+              Ao clicar no botão um evento deve ser disparado criando no
+              formulário uma nova linha de inputs contendo:
+            </p>
+          </div>
+          <div>
+            <ul>
+              <li>Um campo de texto para o nome da tecnologia</li>
+              <li>
+                Um grupo de botões tipo “radio” com opções de tempo de
+                experiência (por exemplo, “0-2 anos”, “3-4 anos” e “5+ anos”)
+              </li>
+              <li>Um botão de remover que deve excluir essa linha.</li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              O formulário também deve ter um botão de cadastrar que salva as
+              informações do dev em um array e limpa o formulário. Para testar o
+              funcionamento você pode utilizar um simples console.log()
+            </p>
+            <p>
+              Para esse exercício você deve utilizar apenas eventos adicionados
+              via javascript e a página deve funcionar sem acionar um
+              recarregamento.
+            </p>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- Execução do Exercício -->
+      <section>
         <form id="dev__form">
-          <div>
-            <label for="fullname">Nome Completo</label>
-            <input type="text" name="fullname" id="fullname">
-          </div>
-          <br>
-          <div>
-            <label>Tecnologias</label>br
-            <button id="add__technology" type="button">Adicionar nova</button>
-            <ul id="stack__inputs"></ul>
-          </div>
-          <br>
-          <button type="submit">Cadastrar</button>
+          <fieldset>
+            <legend>Cadastrar novo desenvolvedor</legend>
+            <div>
+              <label for="fullname">Nome Completo</label>
+              <input type="text" name="fullname" id="fullname" />
+            </div>
+            <br />
+            <div>
+              <label>Tecnologias</label>
+              <button id="add__technology" type="button">Adicionar nova</button>
+              <ul id="stack__inputs"></ul>
+            </div>
+            <br/>
+            <button type="submit">Cadastrar</button>
+          </fieldset>
         </form>
-      </div>
+      </section>
     </main>
-    
 
     <script src="./script.js" defer></script>
-    <script type="módulo"  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="módulo"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
