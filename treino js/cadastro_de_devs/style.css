@@ -1,0 +1,107 @@
+/* Importação das fontes */
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* Estilização geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilizando o body */
+body {
+  background-color: #f5f2ee;
+  color: #798252;
+
+  font-family: "Cabin", serif;
+  font-weight: 400;
+}
+
+/* Estilizando o header */
+header {
+  background-color: #331f19;
+
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Estilizando o main */
+main {
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Estilizando as section */
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+/* Estilizando o fieldset */
+fieldset {
+  border: 2px solid #ccd595;
+  border-radius: 5px;
+  padding: 1rem;
+}
+/* Estilizando a legenda do fieldset */
+legend {
+  color: #331f19;
+  padding: 0 .5rem;
+}
+
+
+/* Estilizando o button do feedback */
+button {
+  background-color: #ccd595;
+  color: #331f19;
+
+  border: 2px solid #ccd595;
+  border-radius: 5px;
+  padding: 0.8rem;
+  margin: .5rem;
+}
+button:hover {
+  background-color: #bbd12b;
+  border: 2px solid #79c523;
+  padding: .8rem;
+}
+
+ul {
+  margin: 1rem 0;
+}
+
+/* Estilizando lista */
+.list{
+  margin-left: 2rem;
+}
+.inputRows {
+  list-style: none;
+}
+
+/* Estilizando os inputs */
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #798252;
+  margin: .5rem;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 0.6rem;
+  
+  border: 2px solid #ccd595;
+  border-radius: 5px;
+  background-color: transparent;
+}
+input[type="text"]::placeholder {
+  color: #cbbba7;
+}
+input[name="techName"] {
+  width: 30%;
+
+}
