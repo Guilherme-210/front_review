@@ -102,7 +102,7 @@ form.addEventListener("submit", function (ev) {
   // Cadastrando um novo desenvolvedor
   const newDev = {fullname: fullnameInput.value, technologies: technologies}
   developers.push(newDev)
-  alert('Dev cadastrado com sucesso!')
+  alert("Dev " + fullnameInput.value + " cadastrado com sucesso!")
 
   // Limpeza do formulario
   fullnameInput.value = ''
