@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #212529;
+  --border-color: #666;
+  --font-color: #f1f5f9;
+  --primary-color: #4dff91;
+  --error-color: #ff0043;
+}
+
+.calc {
+  display: flex;
+  margin: 1rem;
+}
+
+#operador_1,
+#operador_2  {
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.calc_button, .calc_1, .calc_2{
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--font-color);
+  display: block;
+  font-size: .75rem;
+  margin: 0 auto;
+  padding: .75rem;
+  text-align: end;
+}
+.calc_1:hover,
+.calc_2:hover,
+#operador_1:hover,
+#operador_2:hover {
+  border: 2px solid #00ff00;
+}
+
+
+.calc_3 {
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--font-color);
+  display: block;
+  font-size: 1.75rem;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: end;
+  width: 100%;
+}
+
+fieldset section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+/* Estilizando o body */
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Ubuntu", sans-serif;
+}
+h1 {
+  color: #00ff00;
+  text-align: center;
+  padding: 8px;
+  padding-right: 4rem;
+}
+
+/* estilizando o header */
+header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+/* estilizando o nav - header */
+.nav_pages {
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #00ff00;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.nav_pages:hover {
+  background-color: #00ff00;
+  color: #000;
+}
+
+/* Estilizando a main */
+main {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Estilizando a fieldset */
+fieldset {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  color: #f1f5f9;
+}
+fieldset section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+/* Estilizando a legend - fieldset */
+legend {
+  color: #00ff00;
+  text-align: center;
+  padding: 8px;
+  padding-right: 4rem;
+}
+
+/* Estilizando os button */
+.calc_button,
+button {
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  background-color: #00ff00;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.calc_button:hover,
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* Estilização 3° calculadora */
+#keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+#keys button:hover {
+  filter: brightness(0.8);
+}
+
+#result_3 {
+  border-width: 2px 2px 2px 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+#copyToClipboard {
+  background-color: transparent;
+  border: solid var(--border-color);
+  border-width: 2px;
+  border-radius: 0.5rem 0 0 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  height: 4.25rem;
+  width: 6rem;
+}
+
+
+.error {
+  background-color: var(--error-color);
+}
+.success {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* Estilização do footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+footer a {
+  color: #00ff00;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}

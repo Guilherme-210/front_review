@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Esta pagina demontra tipos de calculadora usando o JavaScript"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Calculadoras Com JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/treino_js/cadastro_de_devs/index.html"
+          >Cadasrto de desenvolvedores</a
+        >
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
+      </nav>
+
+      <h1>Modelos de Calculadoras Com JavaScript</h1>
+    </header>
+    <main>
+      <!-- 1° calculadora -->
+      <section>
+        <fieldset>
+          <legend>Calculadora OnClick</legend>
+          <p>
+            <strong>OnClick</strong>: É acionado quando um elemento é clicado. É
+            comumente usado em botões, links ou qualquer elemento que possa
+            receber um clique do usuário.
+          </p>
+          <div class="calc">
+            <input
+              type="text"
+              class="calc_1"
+              id="Num_1"
+              placeholder="1° Valor"
+            />
+            <select id="operador_1" class="calc_1">
+              <option>+</option>
+              <option>-</option>
+              <option>*</option>
+              <option>/</option>
+            </select>
+            <input
+              type="text"
+              class="calc_1"
+              id="Num_2"
+              placeholder="2° Numero"
+            />
+            <input
+              type="text"
+              class="calc_1"
+              id="result_1"
+              placeholder="Resultado"
+            />
+            <button class="calc_button" id="calcButton_1" onclick="calculate1()">Calcular</button>
+            <button class="calc_button" id="clearButton_1" onclick="erase1()">Limpar</button>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- 2° calculadora -->
+      <section>
+        <fieldset>
+          <legend>Calculadora OnChange</legend>
+          <p>
+            <strong>OnChange</strong>: É acionado quando o valor de um elemento
+            muda, como em campos de entrada de texto ou caixas de seleção. Ele é
+            útil para detectar quando o usuário altera um valor.
+          </p>
+          <div class="calc">
+            <input
+              type="text"
+              class="calc_2"
+              id="Num_3"
+              onchange="calculate2()"
+              placeholder="1° Valor"
+            />
+            <select id="operador_2" class="calc_2">
+              <option>+</option>
+              <option>-</option>
+              <option>*</option>
+              <option>/</option>
+            </select>
+            <input
+              type="text"
+              class="calc_2"
+              id="Num_4"
+              onchange="calculate2()"
+              placeholder="2° Numero"
+            />
+            <input
+              type="text"
+              class="calc_2"
+              id="result_2"
+              placeholder="Resultado"
+            />
+            <button class="calc_button" id="clearButton_2" onclick="erase2()">Limpar</button>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- 3° Calculadora -->
+      <section>
+        <fieldset>
+          <legend>Calculadora Aula</legend>
+          <input class="calc_3" type="text" id="input" />
+          <div id="keys">
+            <button id="clear">C</button>
+            <button class="charKey" data-value=" ( ">(</button>
+            <button class="charKey" data-value=" ) ">)</button>
+            <button class="charKey" data-value=" / ">/</button>
+            <button class="charKey" data-value="7">7</button>
+            <button class="charKey" data-value="8">8</button>
+            <button class="charKey" data-value="9">9</button>
+            <button class="charKey" data-value=" * ">*</button>
+            <button class="charKey" data-value="4">4</button>
+            <button class="charKey" data-value="5">5</button>
+            <button class="charKey" data-value="6">6</button>
+            <button class="charKey" data-value=" - ">-</button>
+            <button class="charKey" data-value="1">1</button>
+            <button class="charKey" data-value="2">2</button>
+            <button class="charKey" data-value="3">3</button>
+            <button class="charKey" data-value=" + ">+</button>
+            <button class="charKey" data-value="0">0</button>
+            <button class="charKey" data-value=".">.</button>
+            <button class="charKey" data-value=" % ">mod</button>
+            <button id="equal">=</button>
+          </div>
+          <section>
+            <button id="copyToClipboard">Copy</button>
+            <input class="calc_3" type="text" id="result_3" disabled />
+          </section>
+        </fieldset>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="calc3.js"></script>
+  </body>
+</html>
