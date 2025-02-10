@@ -2,6 +2,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
 
+/* Variaveis de estilo - Tema claro */
+:root {
+    --bg-color: #f5f2ee;
+    --text-color: #798252;
+    --header-bg: #331f19;
+    --fieldset-border: #becc62;
+    --legend-text: #331f19;
+    --button-bg: #ccd595;
+    --button-text: #331f19;
+    --button-border: #becc62;
+    --button-hover-bg: #bbd12b;
+    --button-hover-border: #5de21f;
+    --input-border: #becc62;
+    --input-placeholder: #cbbba7;
+    --input-accent: #798252;
+    --input-hover-border: #5de21f;
+}
+
+/* Variáveis de estilo - Tema escuro */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #1f1b18;
+    --fieldset-border: #becc62;
+    --legend-text: #ffffff;
+    --button-bg: #555a33;
+    --button-text: #ffffff;
+    --button-border: #becc62;
+    --button-hover-bg: #798a2c;
+    --button-hover-border: #5de21f;
+    --input-border: #becc62;
+    --input-placeholder: #b0a58c;
+    --input-accent: #c0c0c0;
+    --input-hover-border: #5de21f;
+}
+
 /* Estilização geral */
 * {
   margin: 0;
@@ -11,8 +47,8 @@
 
 /* Estilizando o body */
 body {
-  background-color: #f5f2ee;
-  color: #798252;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   font-family: "Cabin", serif;
   font-weight: 400;
@@ -20,7 +56,7 @@ body {
 
 /* Estilizando o header */
 header {
-  background-color: #331f19;
+  background-color: var(--header-bg);
 
   padding: 2rem;
   text-align: center;
@@ -30,25 +66,6 @@ h1 {
   margin: 1rem;
 }
 
-/* Estilização das ancoras */
-.nav_pages {
-  text-decoration: none;
-
-  background-color: #ccd595;
-  color: #331f19;
-
-  border: 2px solid #ccd595;
-  border-radius: 5px;
-  padding: 0.8rem;
-  margin: .5rem;
-}
-
-.nav_pages:hover {
-  background-color: #bbd12b;
-  border: 2px solid #79c523;
-  padding: .8rem;
-  transition: background-color 0.5s ease, border-color 0.5s ease;
-}
 
 /* Estilizando o main */
 main {
@@ -69,30 +86,33 @@ section {
 
 /* Estilizando o fieldset */
 fieldset {
-  border: 2px solid #ccd595;
+  border: 2px solid var(--fieldset-border);
   border-radius: 5px;
   padding: 1rem;
 }
 /* Estilizando a legenda do fieldset */
 legend {
-  color: #331f19;
+  color: var(--legend-text);
   padding: 0 .5rem;
 }
 
 
-/* Estilizando o button do feedback */
-button {
-  background-color: #ccd595;
-  color: #331f19;
+/* Estilizando dos buttons e das ancoras do feedback */
+.nav_pages, button {
+  background-color: var(--bg-color);
+  color: var(--button-text);
+  text-decoration: none;
 
-  border: 2px solid #ccd595;
+  border: 2px solid var(--button-border);
   border-radius: 5px;
   padding: 0.8rem;
   margin: .5rem;
 }
-button:hover {
-  background-color: #bbd12b;
-  border: 2px solid #79c523;
+.nav_pages:hover, button:hover {
+  background-color: var(--button-hover-bg);
+  border: 2px solid var(--button-hover-border);
+  border-color: var(--button-hover-border);
+
   padding: .8rem;
   transition: background-color 0.5s ease, border-color 0.5s ease;
 }
@@ -112,19 +132,26 @@ ul {
 /* Estilizando os inputs */
 input[type="radio"],
 input[type="checkbox"] {
-  accent-color: #798252;
+  accent-color: var(--input-accent);
   margin: .5rem;
+}
+input[type="radio"]:hover {
+  accent-color: var(--input-hover-border);
 }
 input[type="text"] {
   width: 100%;
   padding: 0.6rem;
-  
-  border: 2px solid #ccd595;
+  margin-right: .5rem;
+
+  border: 2px solid var(--input-border);
   border-radius: 5px;
   background-color: transparent;
 }
+input[type="text"]:hover {
+  border-color: var(--input-hover-border);
+}
 input[type="text"]::placeholder {
-  color: #cbbba7;
+  color: var(--input-placeholder);
 }
 input[name="techName"] {
   width: 30%;
