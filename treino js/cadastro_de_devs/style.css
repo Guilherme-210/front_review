@@ -57,6 +57,10 @@ body {
 /* Estilizando o header */
 header {
   background-color: var(--header-bg);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
   padding: 2rem;
   text-align: center;
