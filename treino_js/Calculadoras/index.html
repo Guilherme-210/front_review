@@ -75,10 +75,11 @@
               id="result_1"
               placeholder="Resultado"
             />
-            <button class="calc_button" id="calcButton_1" onclick="calculate1()">Calcular</button>
+            
+          <button class="calc_button" id="calcButton_1" onclick="calculate1()">Calcular</button>
             <button class="calc_button" id="clearButton_1" onclick="erase1()">Limpar</button>
           </div>
-        </fieldset>
+          </fieldset>
       </section>
 
       <!-- 2° calculadora -->
@@ -117,6 +118,7 @@
               id="result_2"
               placeholder="Resultado"
             />
+            
             <button class="calc_button" id="clearButton_2" onclick="erase2()">Limpar</button>
           </div>
         </fieldset>
@@ -149,8 +151,8 @@
             <button class="charKey" data-value=" % ">mod</button>
             <button id="equal">=</button>
           </div>
-          <section>
-            <button id="copyToClipboard">Copy</button>
+          <section class="copy_result">
+            <button class="calc_3" id="copyToClipboard">Copy</button>
             <input class="calc_3" type="text" id="result_3" disabled />
           </section>
         </fieldset>

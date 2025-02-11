@@ -14,7 +14,7 @@
 
 .calc {
   display: flex;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 #operador_1,
@@ -23,24 +23,26 @@
   cursor: pointer;
 }
 
-.calc_button, .calc_1, .calc_2{
+.calc_button, .calc_1, .calc_2 {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
   border-radius: 0.5rem;
   color: var(--font-color);
   display: block;
   font-size: .75rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: .75rem;
   text-align: end;
+  width: 100%; 
+  margin: .5rem; 
 }
+
 .calc_1:hover,
 .calc_2:hover,
 #operador_1:hover,
 #operador_2:hover {
   border: 2px solid #00ff00;
 }
-
 
 .calc_3 {
   background-color: var(--bg-color);
@@ -55,19 +57,13 @@
   width: 100%;
 }
 
-fieldset section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-}
-
 /* Estilizando o body */
 body {
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: "Ubuntu", sans-serif;
 }
+
 h1 {
   color: #00ff00;
   text-align: center;
@@ -84,23 +80,12 @@ header {
 
 /* estilizando o nav - header */
 .nav_pages {
-  background-color: #222;
-  color: #fff;
-  border: 2px solid #00ff00;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 10px;
   text-decoration: none;
-  transition: background 0.3s;
-}
-.nav_pages:hover {
-  background-color: #00ff00;
-  color: #000;
 }
 
 /* Estilizando a main */
 main {
-  max-width: 90%;
+  max-width: 70%;
   margin: 40px auto;
   padding: 20px;
 }
@@ -108,17 +93,10 @@ main {
 /* Estilizando a fieldset */
 fieldset {
   background-color: #333;
-  padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   color: #f1f5f9;
-}
-fieldset section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+  padding: 1rem;
 }
 
 /* Estilizando a legend - fieldset */
@@ -130,23 +108,27 @@ legend {
 }
 
 /* Estilizando os button */
+.nav_pages,
 .calc_button,
 button {
   font-weight: 700;
   padding: 0.5rem 1rem;
   background-color: #00ff00;
   color: #000;
-  border: none;
+  border: solid .5px #00ff00;
   cursor: pointer;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: background 0.5s;
 }
+
+.nav_pages:hover,
 .calc_button:hover,
 button:hover {
   background-color: #333;
   color: #fff;
+  border: solid .5px #00ff00;
+  transition: background 0.6s;
 }
-
 
 /* Estilização 3° calculadora */
 #keys {
@@ -159,8 +141,12 @@ button:hover {
   filter: brightness(0.8);
 }
 
+.copy_result {
+  display: flex;
+}
+
 #result_3 {
-  border-width: 2px 2px 2px 0;
+  border-width: 2px 2px 2px 2px;
   border-radius: 0 0.5rem 0.5rem 0;
 }
 
@@ -171,11 +157,9 @@ button:hover {
   border-radius: 0.5rem 0 0 0.5rem;
   color: #fff;
   cursor: pointer;
-  display: block;
   height: 4.25rem;
   width: 6rem;
 }
-
 
 .error {
   background-color: var(--error-color);
@@ -199,4 +183,90 @@ footer a {
 }
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) { 
+  main {
+    max-width: 90%; 
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem; 
+    padding-right: 0; 
+  }
+
+  .nav_pages {
+    font-size: 0.9rem; 
+    padding: 5px 10px;
+    margin: 1rem; 
+  }
+
+  fieldset {
+    padding: 10px; 
+    width: 100%; 
+  }
+
+  legend {
+    font-size: 1rem; 
+    padding-right: 0; 
+  }
+
+  p {
+    width: auto; 
+    margin: 0 10px;
+  }
+
+  .calc {
+    flex-direction: column; 
+    margin: 10px 0; 
+  }
+
+  .calc_1, .calc_2, #operador_1, #operador_2 {
+    width: auto; 
+    font-size: 1rem; 
+  }
+
+  #result_3, #input_3 {
+    height: 68px;
+  }
+
+  #copyToClipboard{
+    text-align: center;
+  }
+
+  .calc_button {
+    width: auto; 
+    font-size: 1rem; 
+    padding: 0.5rem; 
+  }
+
+  fieldset section {
+    align-items: flex-start;
+  }
+
+  #keys {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem; 
+  }
+
+  #keys button, #copyToClipboard {
+    font-size: 1rem; 
+    padding: 0.5rem; 
+  }
+
+  .copy_result {
+    display: flex;
+    width: 100% auto;
+    flex-direction: row;
+  }
+
+  
+
+  footer {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
 }
