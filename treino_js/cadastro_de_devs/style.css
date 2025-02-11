@@ -161,3 +161,10 @@ input[name="techName"] {
   width: 30%;
 
 }
+
+/* Aplicação de tempo de transição do style mode */
+body, header, fieldset, button, input, .nav_pages {
+  transition: background-color 0.7s ease, 
+              color 0.7s ease, 
+              border-color 0.7s ease;
+}
