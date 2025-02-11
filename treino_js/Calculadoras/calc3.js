@@ -1,29 +1,13 @@
-const main = document.querySelector("main")
+// Entrada de elementos da calculadora
+const input = document.getElementById("input_3")
+const resultInput = document.getElementById("result_3")
 const root = document.querySelector(":root")
-const input = document.getElementById("input")
-const resultInput = document.getElementById("result")
-const allowedKeys = [
-  "(",
-  ")",
-  "/",
-  "*",
-  "-",
-  "+",
-  "9",
-  "8",
-  "7",
-  "6",
-  "5",
-  "4",
-  "3",
-  "2",
-  "1",
-  "0",
-  ".",
-  "%",
-  " ",
-]
 
+
+// Definição das teclas permitidas para a digitação
+const allowedKeys = ["(", ")", "/", "*", "-", "+", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", ".", "%", " "]
+
+// Criação do evento de click dos botões da calculadora
 document.querySelectorAll(".charKey").forEach(function (charKeyBtn) {
   charKeyBtn.addEventListener("click", function () {
     const value = charKeyBtn.dataset.value
@@ -31,25 +15,31 @@ document.querySelectorAll(".charKey").forEach(function (charKeyBtn) {
   })
 })
 
+// Cria o evento do botão clear com foco para digitar na calculadora
 document.getElementById("clear").addEventListener("click", function () {
   input.value = ""
   input.focus()
 })
 
+// criação do evento de keydown 'tecla precionada'
 input.addEventListener("keydown", function (ev) {
   ev.preventDefault()
+  // verificação se esta entre as teclas listadas na allowedKeys
   if (allowedKeys.includes(ev.key)) {
     input.value += ev.key
     return
   }
+  // configura a tecla de espaço para apagar o ultimo caracter
   if (ev.key === "Backspace") {
     input.value = input.value.slice(0, -1)
   }
+  // configura a tecla enter para executar o comando de calcular
   if (ev.key === "Enter") {
     calculate()
   }
 })
 
+// Função de calcular
 document.getElementById("equal").addEventListener("click", calculate)
 
 function calculate() {
@@ -60,6 +50,7 @@ function calculate() {
   resultInput.classList.remove("error")
 }
 
+// configuração do botão de copia
 document
   .getElementById("copyToClipboard")
   .addEventListener("click", function (ev) {
