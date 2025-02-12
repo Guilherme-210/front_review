@@ -20,7 +20,8 @@
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
-
+    
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
@@ -40,6 +41,7 @@
 
       <h1>Modelos de Calculadoras Com JavaScript</h1>
     </header>
+    
     <main>
       <!-- 1° calculadora -->
       <section>
@@ -52,10 +54,11 @@
           </p>
           <div class="calc">
             <input
-              type="text"
+              required
+              type="number"
               class="calc_1"
               id="val_1"
-              placeholder="1° Valor"
+              placeholder="1° Número"
             />
             <select id="operator_1" class="calc_1">
               <option>+</option>
@@ -64,22 +67,35 @@
               <option>/</option>
             </select>
             <input
-              type="text"
+              type="number"
               class="calc_1"
               id="val_2"
-              placeholder="2° Numero"
+              placeholder="2° Número"
             />
             <input
+              readonly
               type="text"
               class="calc_1"
               id="result_1"
               placeholder="Resultado"
             />
-            
-          <button class="calc_button" id="calcButton_1" onclick="calculate1()">Calcular</button>
-            <button class="calc_button" id="clearButton_1" onclick="erase1()">Limpar</button>
+
+            <button
+              class="calc_button"
+              id="calcButton_1"
+              onclick="calculate1()"
+            >
+              Calcular
+            </button>
+            <button class="calc_button" id="clearButton_1" onclick="clear1()">
+              Limpar
+            </button>
           </div>
-          </fieldset>
+          <div id="carregamento" style="display: none; text-align: center;">
+          <div class="spinner"></div>
+            <p>Carregando...</p>
+          </div>
+        </fieldset>
       </section>
 
       <!-- 2° calculadora -->
@@ -97,7 +113,7 @@
               class="calc_2"
               id="Num_3"
               onchange="calculate2()"
-              placeholder="1° Valor"
+              placeholder="1° Número"
             />
             <select id="operator_2" class="calc_2">
               <option>+</option>
@@ -110,7 +126,7 @@
               class="calc_2"
               id="Num_4"
               onchange="calculate2()"
-              placeholder="2° Numero"
+              placeholder="2° Número"
             />
             <input
               type="text"
@@ -118,8 +134,10 @@
               id="result_2"
               placeholder="Resultado"
             />
-            
-            <button class="calc_button" id="clearButton_2" onclick="erase2()">Limpar</button>
+
+            <button class="calc_button" id="clearButton_2" onclick="erase2()">
+              Limpar
+            </button>
           </div>
         </fieldset>
       </section>
@@ -169,6 +187,7 @@
       </p>
     </footer>
 
+    <script src="calc1.js"></script>
     <script src="calc3.js"></script>
   </body>
 </html>

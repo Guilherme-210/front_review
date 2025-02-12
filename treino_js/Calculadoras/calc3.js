@@ -35,14 +35,14 @@ input.addEventListener("keydown", function (ev) {
   }
   // configura a tecla enter para executar o comando de calcular
   if (ev.key === "Enter") {
-    calculate()
+    calculate3()
   }
 })
 
 // Função de calcular
-document.getElementById("equal").addEventListener("click", calculate)
+document.getElementById("equal").addEventListener("click", calculate3)
 
-function calculate() {
+function calculate3() {
   resultInput.value = "ERROR"
   resultInput.classList.add("error")
   const result = eval(input.value)

@@ -80,14 +80,19 @@ h1 {
 
 /* estilizando o header */
 header {
+  display: flex;
   background-color: #333;
   padding: 20px;
   text-align: center;
+  gap: 1rem;
 }
 
 /* estilizando o nav - header */
 .nav_pages {
   text-decoration: none;
+}
+.nav_pages {
+  margin: 0.5rem;
 }
 
 /* Estilizando a main */
@@ -153,8 +158,8 @@ button:hover {
   display: flex;
 }
 #input_3 {
-    font-size: 1rem;
-    padding: 0.75rem;
+  font-size: 1rem;
+  padding: 0.75rem;
 }
 
 #result_3 {
@@ -208,6 +213,11 @@ footer a:hover {
     padding: 10px;
   }
 
+  header {
+    gap: 1rem;
+    height: auto;
+  }
+
   h1 {
     font-size: 1.5rem;
     padding-right: 0;
@@ -217,6 +227,12 @@ footer a:hover {
     font-size: 0.9rem;
     padding: 5px 10px;
     margin: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .nav_pages a {
+    width: auto; 
+    flex-grow: 1; 
   }
 
   fieldset {
@@ -261,7 +277,6 @@ footer a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
   }
-
 
   #result_3,
   #input_3,
