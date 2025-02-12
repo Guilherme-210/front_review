@@ -26,14 +26,14 @@ function calculate1() {
       break
   }
 
-  document.getElementById("carregamento").style.display = "block";
+  document.getElementById("carregamento_1").style.display = "block";
 
   setTimeout(function() {
     // Exibe o resultado no input
     document.getElementById("result_1").value = result
 
     // Oculta o elemento de carregamento após a conclusão
-    document.getElementById("carregamento").style.display = "none"
+    document.getElementById("carregamento_1").style.display = "none"
   }, 2000); // 2000 milissegundos = 2 segundos
 }
 
@@ -43,7 +43,6 @@ function calculate1() {
 //   val_2.value = ""
 //   result_1.value = ""
 // }
-
 document.getElementById("clearButton_1").addEventListener("click", function () {
   val_1.value = ""
   val_2.value = ""
@@ -52,6 +51,6 @@ document.getElementById("clearButton_1").addEventListener("click", function () {
   setTimeout(function () {
       val_1.focus()
 
-  }, 1000) // 2000 milissegundos = 2 segundos
+  }, 1000) // 1000 milissegundos = 1 segundos
 
 })

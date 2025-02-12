@@ -34,6 +34,12 @@
   margin: 0.5rem;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .calc_1:hover,
 .calc_2:hover,
 #operador_1:hover,

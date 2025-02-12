@@ -52,6 +52,9 @@
             comumente usado em botões, links ou qualquer elemento que possa
             receber um clique do usuário.
           </p>
+          <P>
+            O calculo e executado automaticamente apos clicar no butão <strong>"Calcular"</strong>
+          </P>
           <div class="calc">
             <input
               required
@@ -91,7 +94,7 @@
               Limpar
             </button>
           </div>
-          <div id="carregamento" style="display: none; text-align: center;">
+          <div id="carregamento_1" style="display: none; text-align: center;">
           <div class="spinner"></div>
             <p>Carregando...</p>
           </div>
@@ -107,12 +110,14 @@
             muda, como em campos de entrada de texto ou caixas de seleção. Ele é
             útil para detectar quando o usuário altera um valor.
           </p>
+          <P>
+            O calculo e executado automaticamente apos sair do campo <strong>"2° número"</strong>
+          </P>
           <div class="calc">
             <input
-              type="text"
+              type="number"
               class="calc_2"
-              id="Num_3"
-              onchange="calculate2()"
+              id="val_3"
               placeholder="1° Número"
             />
             <select id="operator_2" class="calc_2">
@@ -122,9 +127,9 @@
               <option>/</option>
             </select>
             <input
-              type="text"
+              type="number"
               class="calc_2"
-              id="Num_4"
+              id="val_4"
               onchange="calculate2()"
               placeholder="2° Número"
             />
@@ -188,6 +193,7 @@
     </footer>
 
     <script src="calc1.js"></script>
+    <script src="calc2.js"></script>
     <script src="calc3.js"></script>
   </body>
 </html>
