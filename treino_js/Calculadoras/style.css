@@ -27,11 +27,10 @@
   color: var(--font-color);
   display: block;
   font-size: 0.75rem;
-  margin: 1rem auto;
+  margin: .5rem;
   padding: 0.75rem;
   text-align: end;
   width: 100%;
-  margin: 0.5rem;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -64,7 +63,6 @@ input[type="number"] {
   color: var(--font-color);
   display: block;
   font-size: 1.75rem;
-  margin: 0 auto;
   padding: 1rem;
   text-align: end;
   width: 100%;
@@ -103,7 +101,7 @@ header {
 
 /* Estilizando a main */
 main {
-  max-width: 70%;
+  max-width: 90%;
   margin: 40px auto;
   padding: 20px;
 }
@@ -147,6 +145,10 @@ button:hover {
   color: #fff;
   border: solid 0.5px #00ff00;
   transition: background 0.6s;
+}
+
+p {
+  margin: 10px;
 }
 
 /* Estilização 3° calculadora */
@@ -193,6 +195,12 @@ button:hover {
 .success {
   border-color: var(--primary-color) !important;
   color: var(--primary-color) !important;
+}
+
+#calcButton_1, 
+#clearButton_1, 
+#clearButton_2 {
+  width: 90px;
 }
 
 /* Estilização do footer */
@@ -253,7 +261,6 @@ footer a:hover {
 
   p {
     width: auto;
-    margin: 0 10px;
   }
 
   .calc {
@@ -273,6 +280,12 @@ footer a:hover {
     width: auto;
     font-size: 1rem;
     padding: 0.5rem;
+  }
+  
+  #calcButton_1, 
+  #clearButton_1, 
+  #clearButton_2 {
+    width: auto;
   }
 
   fieldset section {
