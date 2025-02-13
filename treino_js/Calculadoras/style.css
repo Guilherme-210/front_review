@@ -6,20 +6,6 @@
 
 /* Variaveis globais */
 :root {
-  /* Cores */
-  --bg-color: #212529;
-  --border-color: #666;
-  --font-color: #f1f5f9;
-  --primary-color: #4dff91;
-  --error-color: #ff0043;
-  --success-color: #00ff00; /* Cor de sucesso */
-  --header-bg-color: #333; /* Cor de fundo do header */
-  --footer-bg-color: #333; /* Cor de fundo do footer */
-  --button-bg-color: #00ff00; /* Cor de fundo dos botões */
-  --button-hover-bg-color: #333; /* Cor de fundo dos botões ao passar o mouse */
-  --text-color: #000; /* Cor do texto */
-  --hover-text-color: #fff; /* Cor do texto ao passar o mouse */
-  
   /* Tamanhos */
   --font-size-small: 0.75rem; /* Tamanho de fonte pequeno */
   --font-size-medium: 1rem; /* Tamanho de fonte médio */
@@ -39,6 +25,47 @@
   --border-radius-medium: 1rem; /* Raio de borda médio */
   --border-width: 0.5px; /* Largura da borda */
 }
+/* Variáveis de estilo - Tema escuro */
+[data-theme="light"] {
+  /* Cores */
+  --bg-color: #dedfe0; /* Cor de fundo clara */
+  --border-color: #ccc; /* Cor de borda mais clara */
+  --header-bg-color: #ffffff; /* Cor de fundo do header (branco) */
+  --footer-bg-color: #ffffff; /* Cor de fundo do footer (branco) */
+  --font-color: #212529; /* Cor do texto escura */
+  --primary-color: #007bff; /* Cor primária (azul) */
+  --error-color: #dc3545; /* Cor de erro (vermelho) */
+  --success-color: #28a745; /* Cor de sucesso (verde) */
+  --footer-text-color: #212529; /* Cor do texto do footer */
+  --footer-link-color: #007bff; /* Cor dos links do footer */
+  --footer-link-hover-color: #0056b3; /* Cor dos links do footer ao passar o mouse */
+  --button-bg-color: #007bff; /* Cor de fundo dos botões (azul) */
+  --button-hover-bg-color: #0056b3; /* Cor de fundo dos botões ao passar o mouse (azul escuro) */
+  --text-color: #000; /* Cor do texto (preto) */
+  --hover-text-color: #000000;
+  --toggle-theme-icon: #007bff;
+}
+/* Variáveis de estilo - Tema escuro */
+[data-theme="dark"] {
+  /* Cores */
+  --bg-color: #212529;
+  --border-color: #666;
+  --font-color: #f1f5f9;
+  --primary-color: #4dff91;
+  --error-color: #ff0043;
+  --success-color: #00ff00; /* Cor de sucesso */
+  --header-bg-color: #333; /* Cor de fundo do header */
+  --footer-bg-color: #333; /* Cor de fundo do footer */
+  --footer-text-color: #f1f5f9; /* Cor do texto do footer */
+  --footer-link-color: #00ff00; /* Cor dos links do footer */
+  --footer-link-hover-color: #ffffff; /* Cor dos links do footer ao passar o mouse */
+  --button-bg-color: #00ff00; /* Cor de fundo dos botões */
+  --button-hover-bg-color: #333; /* Cor de fundo dos botões ao passar o mouse */
+  --text-color: #000; /* Cor do texto */
+  --hover-text-color: #fff; /* Cor do texto ao passar o mouse */
+  --toggle-theme-icon: #ffd700;
+}
+
 
 /* estilização do body */
 body {
@@ -74,6 +101,7 @@ header {
   border-radius: var(--border-radius-small);
   transition: background 0.5s;
 }
+.toggle_Theme:hover,
 .nav_pages:hover {
   background-color: var(--header-bg-color);
   color: var(--hover-text-color);
@@ -87,12 +115,21 @@ h1 {
   text-align: center;
   margin: var(--margin-small);
   padding: var(--padding-small) var(--padding-medium);
+  font-size: var(--font-size-xlarge);
 }
 
 /* estilizando o toggle-Thema */
 .toggle_Theme {
   margin: var(--margin-small);
   padding: var(--padding-small) var(--padding-medium);
+  transition: background 0.5s;
+}
+.toggle_Theme:hover {
+  color: var(--toggle-theme-icon);
+  transition: background 0.5s;
+}
+.icon_Theme {
+  font-size: var(--font-size-large);
 }
 
 /* estilização da main */
@@ -116,7 +153,8 @@ legend {
   color: var(--button-bg-color);
   text-align: center;
   padding: var(--padding-small);
-  padding-right: var(--margin-large);
+  font-size: var(--font-size-large);
+  font-weight: 700;
 }
 
 /* estilização do fieldset - p */
@@ -301,17 +339,20 @@ button:hover {
 
 /* estilização do footer */
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: var(--padding-large); /* Você pode definir essa variável se necessário */
+  margin-top: var(--margin-large); /* Você pode definir essa variável se necessário */
 }
+
 footer a {
-  color: #00ff00;
+  color: var(--footer-link-color);
   text-decoration: none;
 }
+
 footer a:hover {
+  color: var(--footer-link-hover-color);
   text-decoration: underline;
 }
 

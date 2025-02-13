@@ -20,8 +20,8 @@
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
-    
-    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
@@ -30,7 +30,7 @@
     />
     <title>Calculadoras Com JavaScript</title>
   </head>
-  <body>
+  <body data-theme="light">
     <header>
       <nav>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
@@ -41,13 +41,14 @@
       </nav>
 
       <h1>Modelos de Calculadoras Com JavaScript</h1>
-<!-- Alternar Tema -->
+      <!-- Alternar Tema -->
       <div>
-        <button class="toggle_Theme" onclick="toggleTheme"></button>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="icon_Theme" name="moon"></ion-icon>
+        </button>
       </div>
-      
     </header>
-    
+
     <main>
       <!-- 1° calculadora -->
       <section>
@@ -58,9 +59,10 @@
             comumente usado em botões, links ou qualquer elemento que possa
             receber um clique do usuário.
           </p>
-          <P>
-            O calculo e executado automaticamente apos clicar no butão <strong>"Calcular"</strong>
-          </P>
+          <p>
+            O calculo e executado automaticamente apos clicar no butão
+            <strong>"Calcular"</strong>
+          </p>
           <div class="calc">
             <input
               required
@@ -69,9 +71,7 @@
               id="val_1"
               placeholder="1° Número"
             />
-            <select 
-            id="operator_1" 
-            class="calc_1">
+            <select id="operator_1" class="calc_1">
               <option>+</option>
               <option>-</option>
               <option>*</option>
@@ -98,13 +98,11 @@
             >
               Calcular
             </button>
-            <button 
-            class="calc_button" id="clearButton_1" 
-            onclick="clear1()">
+            <button class="calc_button" id="clearButton_1" onclick="clear1()">
               Limpar
             </button>
           </div>
-          <div id="carregamento_1"  class="div_load">
+          <div id="carregamento_1" class="div_load">
             <div class="spinner"></div>
             <p class="load">Carregando...</p>
           </div>
@@ -120,9 +118,10 @@
             muda, como em campos de entrada de texto ou caixas de seleção. Ele é
             útil para detectar quando o usuário altera um valor.
           </p>
-          <P>
-            O calculo e executado automaticamente apos sair do campo <strong>"2° número"</strong>
-          </P>
+          <p>
+            O calculo e executado automaticamente apos sair do campo
+            <strong>"2° número"</strong>
+          </p>
           <div class="calc">
             <input
               type="number"
@@ -130,9 +129,7 @@
               id="val_3"
               placeholder="1° Número"
             />
-            <select 
-              id="operator_2" 
-              class="calc_2">
+            <select id="operator_2" class="calc_2">
               <option>+</option>
               <option>-</option>
               <option>*</option>
@@ -153,17 +150,12 @@
               placeholder="Resultado"
             />
 
-            <button 
-            class="calc_button" 
-            id="clearButton_2" 
-            onclick="erase2()">
+            <button class="calc_button" id="clearButton_2" onclick="erase2()">
               Limpar
             </button>
           </div>
-          <div id="carregamento_2" 
-          style="display: none; 
-          text-align: center;">
-          <div class="spinner"></div>
+          <div id="carregamento_2" style="display: none; text-align: center">
+            <div class="spinner"></div>
             <p class="load">Carregando...</p>
           </div>
         </fieldset>
@@ -217,5 +209,6 @@
     <script src="calc1.js"></script>
     <script src="calc2.js"></script>
     <script src="calc3.js"></script>
+    <script src="toggleTheme.js"></script>
   </body>
 </html>
