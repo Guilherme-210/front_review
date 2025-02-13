@@ -1,6 +1,7 @@
 function toggle_Theme() {
   const toggleButton = document.getElementById("toggle_Theme")
   const body = document.body
+  let icon = document.getElementById("icon_Theme")
 
   // Verifica o tema salvo no localStorage
   let savedTheme = localStorage.getItem("theme")
@@ -21,4 +22,10 @@ function toggle_Theme() {
         break
     }
   })
+
+  // Execução da troca do icone ao mudar o tema
+  icon.setAttribute(
+    "name",
+    icon.getAttribute("name") === "moon" ? "sunny" : "moon"
+  )
 }
