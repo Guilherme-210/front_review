@@ -1,16 +1,43 @@
 /* Estilização global */
 * {
-  font-size: 1rem;
+  font-size: var(--font-size-medium);
   box-sizing: border-box;
 }
 
 /* Variaveis globais */
 :root {
+  /* Cores */
   --bg-color: #212529;
   --border-color: #666;
   --font-color: #f1f5f9;
   --primary-color: #4dff91;
   --error-color: #ff0043;
+  --success-color: #00ff00; /* Cor de sucesso */
+  --header-bg-color: #333; /* Cor de fundo do header */
+  --footer-bg-color: #333; /* Cor de fundo do footer */
+  --button-bg-color: #00ff00; /* Cor de fundo dos botões */
+  --button-hover-bg-color: #333; /* Cor de fundo dos botões ao passar o mouse */
+  --text-color: #000; /* Cor do texto */
+  --hover-text-color: #fff; /* Cor do texto ao passar o mouse */
+  
+  /* Tamanhos */
+  --font-size-small: 0.75rem; /* Tamanho de fonte pequeno */
+  --font-size-medium: 1rem; /* Tamanho de fonte médio */
+  --font-size-large: 1.5rem; /* Tamanho de fonte grande */
+  --font-size-xlarge: 1.75rem; /* Tamanho de fonte extra grande */
+  
+  /* Espaçamentos */
+  --padding-small: 0.5rem; /* Padding pequeno */
+  --padding-medium: 0.75rem; /* Padding médio */
+  --padding-large: 1rem; /* Padding grande */
+  --margin-small: 0.5rem; /* Margin pequeno */
+  --margin-medium: 1rem; /* Margin médio */
+  --margin-large: 2rem; /* Margin grande */
+  
+  /* Bordas */
+  --border-radius-small: 0.5rem; /* Raio de borda pequeno */
+  --border-radius-medium: 1rem; /* Raio de borda médio */
+  --border-width: 0.5px; /* Largura da borda */
 }
 
 /* estilização do body */
@@ -23,75 +50,84 @@ body {
 /* estilização do header */
 header {
   display: flex;
-  background-color: #333;
-  padding: 20px;
-  text-align: center;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--margin-small);
+  
+  padding: var(--padding-large);
+  background-color: var(--header-bg-color);
 }
-
 
 /* estilização do header - nav */
 .nav_pages {
+  margin: var(--margin-small);
+  padding: var(--padding-small) var(--padding-medium);
+
   text-decoration: none;
-  margin: 0.5rem;
   text-align: center;
   font-weight: 700;
-  padding: 0.5rem 1rem;
-  background-color: #00ff00;
-  color: #000;
-  border: solid 0.5px #00ff00;
+  color: var(--text-color);
+
+  background-color: var(--button-bg-color);
+  border: solid var(--border-width) var(--button-bg-color);
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: var(--border-radius-small);
   transition: background 0.5s;
 }
 .nav_pages:hover {
-  background-color: #333;
-  color: #fff;
-  border: solid 0.5px #00ff00;
+  background-color: var(--header-bg-color);
+  color: var(--hover-text-color);
+  border: solid var(--border-width) var(--button-bg-color);
   transition: background 0.6s;
 }
 
 /* estilização do header - h1 */
 h1 {
-  color: #00ff00;
+  color: var(--button-bg-color);
   text-align: center;
-  padding: 8px;
-  padding-right: 4rem;
+  margin: var(--margin-small);
+  padding: var(--padding-small) var(--padding-medium);
+}
+
+/* estilizando o toggle-Thema */
+.toggle_Theme {
+  margin: var(--margin-small);
+  padding: var(--padding-small) var(--padding-medium);
 }
 
 /* estilização da main */
 main {
   max-width: 90%;
-  margin: 40px auto;
-  padding: 20px;
+  margin: var(--margin-large) auto;
+  padding: var(--padding-large);
 }
 
 /* estilização do fieldset */
 fieldset {
-  background-color: #333;
-  border-radius: 10px;
+  background-color: var(--header-bg-color);
+  border-radius: var(--border-radius-medium);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  color: #f1f5f9;
-  padding: 1rem;
+  color: var(--font-color);
+  padding: var(--padding-medium);
 }
 
 /* estilização do fieldset - legend */
 legend {
-  color: #00ff00;
+  color: var(--button-bg-color);
   text-align: center;
-  padding: 8px;
-  padding-right: 4rem;
+  padding: var(--padding-small);
+  padding-right: var(--margin-large);
 }
 
 /* estilização do fieldset - p */
 p {
-  margin: 10px;
+  margin: var(--margin-small);
 }
 
 /* estilização do fieldset - div.calc */
 .calc {
   display: flex;
-  margin: 1rem 0;
+  margin: var(--margin-medium) 0;
 }
 
 /* estilização do fieldset - .calc_1 & .calc_2 & .calc_3 */
@@ -99,30 +135,30 @@ p {
 .calc_2 {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-small);
   color: var(--font-color);
   display: block;
-  font-size: 0.75rem;
-  margin: 0.5rem;
-  padding: 0.75rem;
+  font-size: var(--font-size-small);
+  margin: var(--margin-small);
+  padding: var(--padding-medium);
   text-align: end;
   width: 100%;
 }
 .calc_3 {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-small);
   color: var(--font-color);
   display: block;
-  font-size: 1.75rem;
-  padding: 1rem;
+  font-size: var(--font-size-xlarge);
+  padding: var(--padding-large);
   text-align: end;
   width: 100%;
 }
 .calc_1:hover,
 .calc_2:hover,
 .calc_3:hover {
-  border: 2px solid #00ff00;
+  border: 2px solid var(--button-bg-color);
 }
 
 /* estilização do fieldset - operadores */
@@ -137,7 +173,7 @@ p {
 }
 #operador_1:hover,
 #operador_2:hover {
-  border: 2px solid #00ff00;
+  border: 2px solid var(--button-bg-color);
 }
 
 /* estilização do fieldset - input */
@@ -147,32 +183,32 @@ input[type="number"] {
   appearance: none;
 }
 #input_3 {
-  font-size: 1rem;
-  padding: 0.75rem;
+  font-size: var(--font-size-medium);
+  padding: var(--padding-medium);
 }
 #result_3 {
-  border-width: 2px 2px 2px 2px;
-  border-radius: 0 0.5rem 0.5rem 0;
-  font-size: 1rem;
-  padding: 0.5rem;
+  border-width: 2px;
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+  font-size: var(--font-size-medium);
+  padding: var(--padding-small);
 }
 
 /* estilização do fieldset - button */
 button {
   text-align: center;
   font-weight: 700;
-  padding: 0.5rem 1rem;
-  background-color: #00ff00;
-  color: #000;
-  border: solid 0.5px #00ff00;
+  padding: var(--padding-small) var(--padding-medium);
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: solid var(--border-width) var(--button-bg-color);
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: var(--border-radius-small);
   transition: background 0.5s;
 }
 button:hover {
-  background-color: #333;
-  color: #fff;
-  border: solid 0.5px #00ff00;
+  background-color: var(--header-bg-color);
+  color: var(--hover-text-color);
+  border: solid var(--border-width) var(--button-bg-color);
   transition: background 0.6s;
 }
 
@@ -180,30 +216,30 @@ button:hover {
 .calc_button {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-small);
   color: var(--font-color);
   display: block;
-  font-size: 0.75rem;
-  margin: 0.5rem;
-  padding: 0.75rem;
+  font-size: var(--font-size-small);
+  margin: var(--margin-small);
+  padding: var(--padding-medium);
   text-align: end;
   width: 100%;
 }
 .calc_button {
   text-align: center;
   font-weight: 700;
-  padding: 0.5rem 1rem;
-  background-color: #00ff00;
-  color: #000;
-  border: solid 0.5px #00ff00;
+  padding: var(--padding-small) var(--padding-medium);
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: solid var(--border-width) var(--button-bg-color);
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: var(--border-radius-small);
   transition: background 0.5s;
 }
 .calc_button:hover {
-  background-color: #333;
-  color: #fff;
-  border: solid 0.5px #00ff00;
+  background-color: var(--header-bg-color);
+  color: var(--hover-text-color);
+  border: solid var(--border-width) var(--button-bg-color);
   transition: background 0.6s;
 }
 
@@ -211,8 +247,8 @@ button:hover {
 #keys {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1rem;
-  margin: 2rem 0;
+  gap: var(--margin-small);
+  margin: var(--margin-large) 0;
 }
 #keys button:hover {
   filter: brightness(0.8);
@@ -227,11 +263,11 @@ button:hover {
   background-color: transparent;
   border: solid var(--border-color);
   border-width: 2px;
-  border-radius: 0.5rem 0 0 0.5rem;
-  color: #fff;
+  border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+  color: var(--hover-text-color);
   cursor: pointer;
-  font-size: 1rem;
-  padding: 0.5rem;
+  font-size: var(--font-size-medium);
+  padding: var(--padding-small);
   width: 6rem;
 }
 
@@ -243,7 +279,7 @@ button:hover {
 }
 
 /* estilização do fieldset - load */
-.div_load{
+.div_load {
   display: none; 
   text-align: center;
   margin: 0;
@@ -254,7 +290,6 @@ button:hover {
   padding: 0;
 }
 
-
 /* estilização das mensagens de erro */
 .error {
   background-color: var(--error-color);
@@ -263,8 +298,6 @@ button:hover {
   border-color: var(--primary-color) !important;
   color: var(--primary-color) !important;
 }
-
-
 
 /* estilização do footer */
 footer {
@@ -295,11 +328,7 @@ footer a:hover {
     height: auto;
   }
 
-  h1 {
-    font-size: 1.5rem;
-    padding-right: 0;
-  }
-
+  .toggle_Theme,
   .nav_pages {
     font-size: 0.9rem;
     padding: 5px 10px;
