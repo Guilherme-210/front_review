@@ -33,13 +33,19 @@
   <body>
     <header>
       <nav>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+
         <a class="nav_pages" href="/treino_js/cadastro_de_devs/index.html"
           >Cadasrto de desenvolvedores</a
         >
-        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon> Home</a>
       </nav>
 
       <h1>Modelos de Calculadoras Com JavaScript</h1>
+<!-- Alternar Tema -->
+      <div>
+        <button class="toggle_Theme" onclick="toggleTheme"></button>
+      </div>
+      
     </header>
     
     <main>
@@ -63,7 +69,9 @@
               id="val_1"
               placeholder="1° Número"
             />
-            <select id="operator_1" class="calc_1">
+            <select 
+            id="operator_1" 
+            class="calc_1">
               <option>+</option>
               <option>-</option>
               <option>*</option>
@@ -90,13 +98,15 @@
             >
               Calcular
             </button>
-            <button class="calc_button" id="clearButton_1" onclick="clear1()">
+            <button 
+            class="calc_button" id="clearButton_1" 
+            onclick="clear1()">
               Limpar
             </button>
           </div>
-          <div id="carregamento_1" style="display: none; text-align: center;">
+          <div id="carregamento_1"  class="div_load">
             <div class="spinner"></div>
-            <p>Carregando...</p>
+            <p class="load">Carregando...</p>
           </div>
         </fieldset>
       </section>
@@ -120,7 +130,9 @@
               id="val_3"
               placeholder="1° Número"
             />
-            <select id="operator_2" class="calc_2">
+            <select 
+              id="operator_2" 
+              class="calc_2">
               <option>+</option>
               <option>-</option>
               <option>*</option>
@@ -134,20 +146,25 @@
               placeholder="2° Número"
             />
             <input
+              readonly
               type="text"
               class="calc_2"
               id="result_2"
               placeholder="Resultado"
             />
 
-            <button class="calc_button" id="clearButton_2" onclick="erase2()">
+            <button 
+            class="calc_button" 
+            id="clearButton_2" 
+            onclick="erase2()">
               Limpar
             </button>
           </div>
-          </div>
-          <div id="carregamento_2" style="display: none; text-align: center;">
+          <div id="carregamento_2" 
+          style="display: none; 
+          text-align: center;">
           <div class="spinner"></div>
-            <p>Carregando...</p>
+            <p class="load">Carregando...</p>
           </div>
         </fieldset>
       </section>

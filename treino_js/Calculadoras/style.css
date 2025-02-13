@@ -1,10 +1,10 @@
+/* Estilização global */
 * {
-  margin: 0;
-  padding: 0;
   font-size: 1rem;
   box-sizing: border-box;
 }
 
+/* Variaveis globais */
 :root {
   --bg-color: #212529;
   --border-color: #666;
@@ -13,12 +13,88 @@
   --error-color: #ff0043;
 }
 
+/* estilização do body */
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* estilização do header */
+header {
+  display: flex;
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  gap: 1rem;
+}
+
+
+/* estilização do header - nav */
+.nav_pages {
+  text-decoration: none;
+  margin: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  background-color: #00ff00;
+  color: #000;
+  border: solid 0.5px #00ff00;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.5s;
+}
+.nav_pages:hover {
+  background-color: #333;
+  color: #fff;
+  border: solid 0.5px #00ff00;
+  transition: background 0.6s;
+}
+
+/* estilização do header - h1 */
+h1 {
+  color: #00ff00;
+  text-align: center;
+  padding: 8px;
+  padding-right: 4rem;
+}
+
+/* estilização da main */
+main {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* estilização do fieldset */
+fieldset {
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  color: #f1f5f9;
+  padding: 1rem;
+}
+
+/* estilização do fieldset - legend */
+legend {
+  color: #00ff00;
+  text-align: center;
+  padding: 8px;
+  padding-right: 4rem;
+}
+
+/* estilização do fieldset - p */
+p {
+  margin: 10px;
+}
+
+/* estilização do fieldset - div.calc */
 .calc {
   display: flex;
   margin: 1rem 0;
 }
 
-.calc_button,
+/* estilização do fieldset - .calc_1 & .calc_2 & .calc_3 */
 .calc_1,
 .calc_2 {
   background-color: var(--bg-color);
@@ -27,35 +103,11 @@
   color: var(--font-color);
   display: block;
   font-size: 0.75rem;
-  margin: .5rem;
+  margin: 0.5rem;
   padding: 0.75rem;
   text-align: end;
   width: 100%;
 }
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"] {
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.calc_1:hover,
-.calc_2:hover,
-#operador_1:hover,
-#operador_2:hover {
-  border: 2px solid #00ff00;
-}
-#operador_1,
-#operador_2 {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-#operator_1,
-#operator_2 {
-  width: 4rem;
-}
-
 .calc_3 {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
@@ -67,65 +119,45 @@ input[type="number"] {
   text-align: end;
   width: 100%;
 }
-
-/* Estilizando o body */
-body {
-  background-color: var(--bg-color);
-  color: var(--font-color);
-  font-family: "Ubuntu", sans-serif;
+.calc_1:hover,
+.calc_2:hover,
+.calc_3:hover {
+  border: 2px solid #00ff00;
 }
 
-h1 {
-  color: #00ff00;
-  text-align: center;
-  padding: 8px;
-  padding-right: 4rem;
+/* estilização do fieldset - operadores */
+#operador_1,
+#operador_2 {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+#operator_1,
+#operator_2 {
+  width: 4rem;
+}
+#operador_1:hover,
+#operador_2:hover {
+  border: 2px solid #00ff00;
 }
 
-/* estilizando o header */
-header {
-  display: flex;
-  background-color: #333;
-  padding: 20px;
-  text-align: center;
-  gap: 1rem;
+/* estilização do fieldset - input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+#input_3 {
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+#result_3 {
+  border-width: 2px 2px 2px 2px;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
-/* estilizando o nav - header */
-.nav_pages {
-  text-decoration: none;
-}
-.nav_pages {
-  margin: 0.5rem;
-}
-
-/* Estilizando a main */
-main {
-  max-width: 90%;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-/* Estilizando a fieldset */
-fieldset {
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  color: #f1f5f9;
-  padding: 1rem;
-}
-
-/* Estilizando a legend - fieldset */
-legend {
-  color: #00ff00;
-  text-align: center;
-  padding: 8px;
-  padding-right: 4rem;
-}
-
-/* Estilizando os button */
-.nav_pages,
-.calc_button,
+/* estilização do fieldset - button */
 button {
   text-align: center;
   font-weight: 700;
@@ -137,9 +169,6 @@ button {
   border-radius: 5px;
   transition: background 0.5s;
 }
-
-.nav_pages:hover,
-.calc_button:hover,
 button:hover {
   background-color: #333;
   color: #fff;
@@ -147,11 +176,38 @@ button:hover {
   transition: background 0.6s;
 }
 
-p {
-  margin: 10px;
+/* estilização do fieldset - .calc_button */
+.calc_button {
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--font-color);
+  display: block;
+  font-size: 0.75rem;
+  margin: 0.5rem;
+  padding: 0.75rem;
+  text-align: end;
+  width: 100%;
+}
+.calc_button {
+  text-align: center;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  background-color: #00ff00;
+  color: #000;
+  border: solid 0.5px #00ff00;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.5s;
+}
+.calc_button:hover {
+  background-color: #333;
+  color: #fff;
+  border: solid 0.5px #00ff00;
+  transition: background 0.6s;
 }
 
-/* Estilização 3° calculadora */
+/* estilização do fieldset - div#keys */
 #keys {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -162,21 +218,11 @@ p {
   filter: brightness(0.8);
 }
 
+/* estilização do fieldset>section - div#keys */
 .copy_result {
   display: flex;
 }
-#input_3 {
-  font-size: 1rem;
-  padding: 0.75rem;
-}
-
-#result_3 {
-  border-width: 2px 2px 2px 2px;
-  border-radius: 0 0.5rem 0.5rem 0;
-  font-size: 1rem;
-  padding: 0.5rem;
-}
-
+/* estilização do fieldset>section */
 #copyToClipboard {
   background-color: transparent;
   border: solid var(--border-color);
@@ -189,6 +235,27 @@ p {
   width: 6rem;
 }
 
+/* estilização do fieldset - f=calcbutton & f=clearButton */
+#calcButton_1,
+#clearButton_1,
+#clearButton_2 {
+  width: 90px;
+}
+
+/* estilização do fieldset - load */
+.div_load{
+  display: none; 
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.load {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* estilização das mensagens de erro */
 .error {
   background-color: var(--error-color);
 }
@@ -197,13 +264,9 @@ p {
   color: var(--primary-color) !important;
 }
 
-#calcButton_1, 
-#clearButton_1, 
-#clearButton_2 {
-  width: 90px;
-}
 
-/* Estilização do footer */
+
+/* estilização do footer */
 footer {
   background-color: #333;
   color: #fff;
@@ -219,7 +282,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Ajustes para telas menores */
+/* === estilização do media viewport === */
 @media (max-width: 768px) {
   main {
     max-width: 90%;
@@ -245,13 +308,16 @@ footer a:hover {
     flex-wrap: nowrap;
   }
   .nav_pages a {
-    width: auto; 
-    flex-grow: 1; 
+    width: auto;
+    flex-grow: 1;
   }
 
   fieldset {
     padding: 10px;
     width: 100%;
+  }
+  fieldset section {
+    align-items: flex-start;
   }
 
   legend {
@@ -267,7 +333,6 @@ footer a:hover {
     flex-direction: column;
     margin: 10px 0;
   }
-
   .calc_1,
   .calc_2,
   #operator_1,
@@ -276,37 +341,21 @@ footer a:hover {
     font-size: 1rem;
   }
 
+
   .calc_button {
     width: auto;
     font-size: 1rem;
     padding: 0.5rem;
   }
-  
-  #calcButton_1, 
-  #clearButton_1, 
+  #calcButton_1,
+  #clearButton_1,
   #clearButton_2 {
     width: auto;
   }
-
-  fieldset section {
-    align-items: flex-start;
-  }
-
+  
   #keys {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
-  }
-
-  #result_3,
-  #input_3,
-  #keys button,
-  #copyToClipboard {
-    font-size: 1rem;
-    padding: 0.75rem;
-  }
-
-  .copy_result {
-    display: flex;
   }
 
   footer {
