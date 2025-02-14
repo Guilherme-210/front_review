@@ -1,5 +1,7 @@
 /* Estilização global */
 * {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove padding padrão */
   font-size: var(--font-size-medium);
   box-sizing: border-box;
 }
@@ -35,40 +37,42 @@ body {
 /* estilização do header */
 header {
   display: flex;
-  flex-direction: column; /* Alinha os elementos verticalmente */
-  align-items: center; /* Centraliza horizontalmente */
-  padding: 20px; /* Espaçamento interno */
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   background-color: var(--header-bg-color);
 }
 
 /* estilização do header - nav */
 nav {
-  display: flex; /* Exibe os links de navegação lado a lado */
-  justify-content: space-around; /* Distribui os links igualmente */
-  width: 100%; /* Ocupa toda a largura do cabeçalho */
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .btn-nav {
-  margin: 10px; /* Espaçamento entre os links */
-  padding: 5px 10px; /* Espaçamento interno dos links */
-  text-decoration: none; /* Remove sublinhado dos links */
-  color: var(--font-color); /* Cor do texto dos links */
-  background-color: var(--button-bg-color); /* Cor de fundo dos links */
-  border-radius: 5px; /* Borda arredondada */
-  transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+  margin: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--font-color);
+  background-color: var(--button-bg-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--button-bg-color); /* Adiciona borda */
 }
 
 .btn-nav:hover {
-  background-color: var(--button-hover-bg-color); /* Cor de fundo ao passar o mouse */
+  background-color: var(--button-hover-bg-color);
   color: var(--hover-text-color);
+  border-color: var(--button-bg-color); /* Mantém a cor da borda no hover */
 }
 
 /* estilização do header - h1 */
 h1 {
   color: var(--button-bg-color);
   text-align: center;
-  margin: 10px 0; /* Espaçamento superior e inferior */
-  font-size: 2rem; /* Tamanho da fonte */
+  margin: 10px 0;
+  font-size: 2rem;
 }
 
 /* estilização da main */
@@ -85,7 +89,7 @@ fieldset {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: var(--font-color);
   padding: 20px;
-  margin-bottom: 20px; /* Espaçamento entre os fieldsets */
+  margin-bottom: 20px;
 }
 
 /* estilização do fieldset - legend */
@@ -99,12 +103,12 @@ legend {
 
 /* estilização do fieldset - p */
 p {
-  margin-bottom: 10px; /* Espaçamento inferior dos parágrafos */
+  margin-bottom: 10px;
 }
 
 /* estilização do fieldset - label */
 label {
-  display: block; /* Ocupa toda a largura */
+  display: block;
   margin-bottom: 5px;
 }
 
@@ -122,10 +126,10 @@ input[type="text"] {
 /* estilização do fieldset - button */
 button {
   padding: 10px 20px;
-  margin-right: 10px; /* Espaçamento entre os botões */
+  margin-right: 10px;
   background-color: var(--button-bg-color);
   color: var(--text-color);
-  border: none;
+  border: 1px solid var(--button-bg-color); /* Adiciona borda */
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -134,6 +138,7 @@ button {
 button:hover {
   background-color: var(--button-hover-bg-color);
   color: var(--hover-text-color);
+  border-color: var(--button-bg-color); /* Mantém a cor da borda no hover */
 }
 
 /* estilização do footer */
