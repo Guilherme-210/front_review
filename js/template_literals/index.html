@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+
+    <title>Template Literals no JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/js" class="btn-nav"><i class="fi fi-rr-angle-left"></i> </a>
+        <a href="/" class="btn-nav"><ion-icon name="home"></ion-icon> Home</a>
+        <a href="/js" class="btn-nav"> <i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+      <br />
+      <h1>Template Literals no JavaScript</h1>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que são Template Literals?</legend>
+        <p>
+          Os <strong>Template Literals</strong> (ou "Template Strings") são uma
+          funcionalidade do ES6 que permite criar strings de forma mais
+          flexível, utilizando crases (<code>` `</code>) em vez de aspas simples
+          ou duplas.
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Exemplo Básico</legend>
+        <div class="code">
+          <pre><code>
+const nome = "João";
+const idade = 25;
+
+// Uso de Template Literals
+const mensagem = `Meu nome é ${nome} e eu tenho ${idade} anos.`;
+console.log(mensagem);
+                </code></pre>
+        </div>
+        <p>
+          No exemplo acima, usamos <code>${nome}</code> e
+          <code>${idade}</code> para interpolar variáveis dentro da string.
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Quebra de Linha Facilitada</legend>
+        <div class="code">
+          <pre><code>
+const texto = `Esta é uma string
+que possui múltiplas linhas
+sem precisar de concatenação.`;
+console.log(texto);
+                </code></pre>
+        </div>
+        <p>
+          Usando Template Literals, podemos criar strings com múltiplas linhas
+          sem precisar de caracteres especiais.
+        </p>
+      </fieldset>
+
+      <fieldset class="example">
+        <legend>Executando um Exemplo</legend>
+        <label for="nomeInput">Digite seu nome:</label>
+        <input type="text" id="nomeInput" placeholder="Seu nome" />
+        <button onclick="mostrarMensagem()">Exibir Mensagem</button>
+        <p id="resultado"></p>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>Explicação sobre Template Literals - JavaScript</p>
+      <p>
+        Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
