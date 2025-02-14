@@ -1,6 +1,6 @@
 /* Estilização global */
 * {
-  font-size: var(--font-size-medium); /* Tamanho de fonte médio */
+  font-size: var(--font-size-medium);
   box-sizing: border-box;
 }
 
@@ -42,6 +42,12 @@ header {
 }
 
 /* estilização do header - nav */
+nav {
+  display: flex; /* Exibe os links de navegação lado a lado */
+  justify-content: space-around; /* Distribui os links igualmente */
+  width: 100%; /* Ocupa toda a largura do cabeçalho */
+}
+
 .btn-nav {
   margin: 10px; /* Espaçamento entre os links */
   padding: 5px 10px; /* Espaçamento interno dos links */
@@ -72,12 +78,6 @@ main {
   padding: 20px;
 }
 
-/* estilização do hr */
-hr {
-  border: 1px solid var(--border-color);
-  margin: 20px 0;
-}
-
 /* estilização do fieldset */
 fieldset {
   background-color: var(--header-bg-color);
@@ -95,6 +95,11 @@ legend {
   padding: 5px;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+/* estilização do fieldset - p */
+p {
+  margin-bottom: 10px; /* Espaçamento inferior dos parágrafos */
 }
 
 /* estilização do fieldset - label */
