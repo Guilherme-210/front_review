@@ -47,6 +47,23 @@
           ou duplas.
         </p>
       </fieldset>
+
+      <fieldset>
+        <legend>Quebra de Linha Facilitada</legend>
+        <div class="code">
+          <pre><code>
+const texto = `Esta é uma string
+que possui múltiplas linhas
+sem precisar de concatenação.`;
+console.log(texto);
+                </code></pre>
+        </div>
+        <p>
+          Usando Template Literals, podemos criar strings com múltiplas linhas
+          sem precisar de caracteres especiais.
+        </p>
+      </fieldset>
+
       <fieldset>
         <legend>Exemplo Básico</legend>
         <div class="code">
@@ -64,26 +81,13 @@ console.log(mensagem);
           <code>${idade}</code> para interpolar variáveis dentro da string.
         </p>
       </fieldset>
-      <fieldset>
-        <legend>Quebra de Linha Facilitada</legend>
-        <div class="code">
-          <pre><code>
-const texto = `Esta é uma string
-que possui múltiplas linhas
-sem precisar de concatenação.`;
-console.log(texto);
-                </code></pre>
-        </div>
-        <p>
-          Usando Template Literals, podemos criar strings com múltiplas linhas
-          sem precisar de caracteres especiais.
-        </p>
-      </fieldset>
 
       <fieldset class="example">
         <legend>Executando um Exemplo</legend>
         <label for="nomeInput">Digite seu nome:</label>
         <input type="text" id="nomeInput" placeholder="Seu nome" />
+        <label for="idadeInput">Digite sua idade:</label>
+        <input type="number" id="idadeInput" placeholder="Sea idade" />
         <button onclick="mostrarMensagem()">Exibir Mensagem</button>
         <p id="resultado"></p>
       </fieldset>

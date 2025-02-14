@@ -112,17 +112,6 @@ label {
   margin-bottom: 5px;
 }
 
-/* estilização do fieldset - input */
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  color: var(--font-color);
-  border-radius: 5px;
-}
-
 /* estilização do fieldset - button */
 button {
   padding: 10px 20px;
@@ -162,6 +151,44 @@ code {
   line-height: 1.6; /* Espaçamento entre linhas */
 }
 
+/* estilização do fieldset - input */
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* estilização do fieldset - .example */
+.example {
+  text-align: center;
+}
+
+.example label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.example input[type="number"],
+.example input[type="text"] {
+  width: auto;
+  display: inline-block;
+}
+
+.example button {
+  margin-right: 0;
+}
+
+#resultado {
+  margin-top: 10px;
+}
+
 /* estilização do footer */
 footer {
   background-color: var(--footer-bg-color);
@@ -183,26 +210,4 @@ footer a {
 footer a:hover {
   color: var(--footer-link-hover-color);
   text-decoration: underline;
-}
-
-/* estilização do fieldset - .example */
-.example {
-  text-align: center;
-}
-
-.example label {
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 0;
-}
-
-.example input[type="text"] {
-  width: auto;
-  display: inline-block;
-  margin-bottom: 0;
-  margin-right: 10px;
-}
-
-.example button {
-  margin-right: 0;
 }
