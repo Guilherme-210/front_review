@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+
+    <title>Recursos de Armazenamento do Navegador</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/js/projeto_pratico/calculadora-js/index.html" class="btn-nav"
+          ><i class="fi fi-rr-angle-left"></i> Exercício 18: Jogo da Velha</a
+        >
+        <a href="/" class="btn-nav"><ion-icon name="home"></ion-icon> Home</a>
+        <a href="/js" class="btn-nav"> <i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+      <br />
+      <h1>Recursos de Armazenamento do Navegador</h1>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>Session Storage</legend>
+        <label for="session">Digite uma informação:</label>
+        <input type="text" id="session" />
+        <button id="sessionBtn">Guardar!</button>
+        <button id="readSesssion">Ler</button>
+      </fieldset>
+      <fieldset>
+        <legend>Local Storage</legend>
+        <label for="local">Digite uma informação:</label>
+        <input type="text" id="local" />
+        <button id="localBtn">Guardar!</button>
+        <button id="readLocal">Ler</button>
+      </fieldset>
+      <fieldset>
+        <legend>Cookies</legend>
+        <label for="cookie">Digite uma informação:</label>
+        <input type="text" id="cookie" />
+        <button id="cookieBtn">Guardar!</button>
+        <br /><br />
+        <label for="cookie2">Digite uma informação:</label>
+        <input type="text" id="cookie2" />
+        <button id="cookie2Btn">Guardar!</button>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>
+        Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
