@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+
+    <title>Arrow Functions no JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/js/desestruturacao_objetos_arrays/index.html" class="btn-nav"><i class="fi fi-rr-angle-left"></i> Desestruturação de Objetos e Arrays</a>
+        <a href="/" class="btn-nav"><ion-icon name="home"></ion-icon> Home</a>
+        <a href="/js/proximo_tema/index.html" class="btn-nav">Próximo Tema <i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+      <br />
+      <h1>Arrow Functions no JavaScript</h1>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que são Arrow Functions?</legend>
+        <p>
+          As <strong>Arrow Functions</strong> são uma sintaxe mais curta para escrever funções no JavaScript, introduzidas no ES6. Elas utilizam a seta (<code>=></code>) para definir funções de forma mais concisa.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Comparação de Sintaxes</legend>
+        <div class="code">
+          <pre><code>
+function normalSum(a, b) {
+  return a + b;
+}
+
+const arrowSum = (a, b) => {
+  return a + b;
+};
+
+const conciseArrowSum = (a, b) => a + b;
+          </code></pre>
+        </div>
+        <p>
+          A primeira função segue a sintaxe tradicional, a segunda usa Arrow Function com um bloco de código e a terceira versão é ainda mais curta.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exemplo Prático</legend>
+        <div class="code">
+          <pre><code>
+const towns = ['Prontera', 'Izlude', 'Payon', 'Alberta', 'Geffen', 'Morroc'];
+const startingWithP = towns.filter(town => town[0] === 'P');
+console.log(startingWithP);
+          </code></pre>
+        </div>
+        <p>
+          Neste exemplo, usamos uma Arrow Function dentro do método <code>filter</code> para selecionar apenas as cidades que começam com a letra "P".
+        </p>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>Explicação sobre Arrow Functions - JavaScript</p>
+      <p>
+        Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
