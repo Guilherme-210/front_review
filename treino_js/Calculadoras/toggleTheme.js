@@ -1,31 +1,29 @@
 function toggle_Theme() {
-  const toggleButton = document.getElementById("toggle_Theme")
   const body = document.body
-  let icon = document.getElementById("icon_Theme")
+  const icon = document.getElementById("icon_Theme")
 
-  // Verifica o tema salvo no localStorage
-  let savedTheme = localStorage.getItem("theme")
-  if (savedTheme) {
-    body.setAttribute("data-theme", savedTheme)
-  }
+  // Obtém o tema atual
+  let currentTheme = body.getAttribute("data-theme") || "light"
 
-  // Execução da troca de tema
-  toggleButton.addEventListener("click", () => {
-    const currentTheme = body.getAttribute("data-theme")
+  // Alterna o tema
+  let newTheme = currentTheme === "light" ? "dark" : "light"
+  body.setAttribute("data-theme", newTheme)
 
-    switch (currentTheme) {
-      case "light":
-        document.body.setAttribute("data-theme", "dark") // Adiciona a classe do tema escuro
-        break
-      case "dark":
-        document.body.setAttribute("data-theme", "light") // Remove a classe do tema escuro
-        break
-    }
-  })
+  // Salva no localStorage
+  localStorage.setItem("theme", newTheme)
 
-  // Execução da troca do icone ao mudar o tema
-  icon.setAttribute(
-    "name",
-    icon.getAttribute("name") === "moon" ? "sunny" : "moon"
-  )
+  // Alterna o ícone
+  icon.setAttribute("name", newTheme === "dark" ? "sunny" : "moon")
 }
+
+// Aplicar o tema salvo ao carregar a página
+window.addEventListener("DOMContentLoaded", () => {
+  let savedTheme = localStorage.getItem("theme") || "light"
+  document.body.setAttribute("data-theme", savedTheme)
+
+  // Ajusta o ícone corretamente
+  const icon = document.getElementById("icon_Theme")
+  if (icon) {
+    icon.setAttribute("name", savedTheme === "dark" ? "sunny" : "moon")
+  }
+})
