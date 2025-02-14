@@ -1,0 +1,151 @@
+/* Estilização global */
+* {
+  font-size: var(--font-size-medium); /* Tamanho de fonte médio */
+  box-sizing: border-box;
+}
+
+/* Variaveis globais */
+:root {
+  /* Cores */
+  --bg-color: #212529;
+  --border-color: #666;
+  --font-color: #f1f5f9;
+  --primary-color: #4dff91;
+  --error-color: #ff0043;
+  --success-color: #00ff00;
+  --header-bg-color: #333;
+  --footer-bg-color: #333;
+  --footer-text-color: #f1f5f9;
+  --footer-link-color: #00ff00;
+  --footer-link-hover-color: #ffffff;
+  --button-bg-color: #00ff00;
+  --button-hover-bg-color: #333;
+  --text-color: #000;
+  --hover-text-color: #fff;
+  --toggle-theme-icon: #ffd700;
+}
+
+/* estilização do body */
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* estilização do header */
+header {
+  display: flex;
+  flex-direction: column; /* Alinha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  padding: 20px; /* Espaçamento interno */
+  background-color: var(--header-bg-color);
+}
+
+/* estilização do header - nav */
+.btn-nav {
+  margin: 10px; /* Espaçamento entre os links */
+  padding: 5px 10px; /* Espaçamento interno dos links */
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: var(--font-color); /* Cor do texto dos links */
+  background-color: var(--button-bg-color); /* Cor de fundo dos links */
+  border-radius: 5px; /* Borda arredondada */
+  transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+.btn-nav:hover {
+  background-color: var(--button-hover-bg-color); /* Cor de fundo ao passar o mouse */
+  color: var(--hover-text-color);
+}
+
+/* estilização do header - h1 */
+h1 {
+  color: var(--button-bg-color);
+  text-align: center;
+  margin: 10px 0; /* Espaçamento superior e inferior */
+  font-size: 2rem; /* Tamanho da fonte */
+}
+
+/* estilização da main */
+main {
+  max-width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* estilização do hr */
+hr {
+  border: 1px solid var(--border-color);
+  margin: 20px 0;
+}
+
+/* estilização do fieldset */
+fieldset {
+  background-color: var(--header-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: var(--font-color);
+  padding: 20px;
+  margin-bottom: 20px; /* Espaçamento entre os fieldsets */
+}
+
+/* estilização do fieldset - legend */
+legend {
+  color: var(--button-bg-color);
+  text-align: center;
+  padding: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* estilização do fieldset - label */
+label {
+  display: block; /* Ocupa toda a largura */
+  margin-bottom: 5px;
+}
+
+/* estilização do fieldset - input */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
+  border-radius: 5px;
+}
+
+/* estilização do fieldset - button */
+button {
+  padding: 10px 20px;
+  margin-right: 10px; /* Espaçamento entre os botões */
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+  color: var(--hover-text-color);
+}
+
+/* estilização do footer */
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--footer-link-hover-color);
+  text-decoration: underline;
+}
