@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+
+    <title>Desestruturação de Objetos e Arrays</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/js/arrow_functions/index.html" class="btn-nav"><i class="fi fi-rr-angle-left"></i> Arrow functions</a>
+        <a href="/" class="btn-nav"><ion-icon name="home"></ion-icon> Home</a>
+        <a href="/js/" class="btn-nav"> <i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+      <br />
+      <h1>Desestruturação de Objetos e Arrays</h1>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que é Desestruturação?</legend>
+        <p>
+          A <strong>desestruturação</strong> é uma funcionalidade do JavaScript que permite extrair dados de objetos e arrays de forma mais conveniente e legível.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exemplo de Desestruturação de Objetos</legend>
+        <div class="code">
+          <pre><code>
+const person = {
+  name: "Luke",
+  job: "Farmer",
+  parents: ["Anakin", "Padme"]
+}
+
+const { job, parents } = person;
+console.log(job, parents);
+          </code></pre>
+        </div>
+        <p>
+          No exemplo acima, estamos extraindo as propriedades <code>job</code> e <code>parents</code> diretamente do objeto <code>person</code>.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exemplo de Desestruturação de Arrays</legend>
+        <div class="code">
+          <pre><code>
+const [father, mother] = parents;
+console.log(father, mother);
+          </code></pre>
+        </div>
+        <p>
+          Aqui, estamos desestruturando o array <code>parents</code>, atribuindo cada valor a variáveis individuais.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Uso de Desestruturação em Funções</legend>
+        <div class="code">
+          <pre><code>
+function createUser({ name, job, parents }) {
+  const id = Math.floor(Math.random() * 9999);
+  return {
+    id,
+    name,
+    job,
+    parents
+  };
+}
+
+const luke = createUser(person);
+console.log(luke);
+          </code></pre>
+        </div>
+        <p>
+          A desestruturação pode ser usada como parâmetro de funções para facilitar a manipulação de objetos.
+        </p>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>Explicação sobre Desestruturação de Objetos e Arrays - JavaScript</p>
+      <p>
+        Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank">
+          Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
