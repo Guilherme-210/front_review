@@ -1,0 +1,178 @@
+/*      Estilização Global      */
+
+* {
+  font-size: var(--font-size-medium);
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* ============================ */
+/*         Variáveis Globais    */
+:root {
+  /* Tamanhos de Fonte */
+  --font-size-small: 0.75rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-xlarge: 1.75rem;
+
+  /* Espaçamentos */
+  --padding-small: 0.5rem;
+  --padding-medium: 0.75rem;
+  --padding-large: 1rem;
+  --margin-small: 0.5rem;
+  --margin-medium: 1rem;
+  --margin-large: 2rem;
+
+  /* Bordas */
+  --border-radius-small: 0.5rem;
+  --border-radius-medium: 1rem;
+  --border-width: 0.5px;
+}
+/*         Tema Claro           */
+[data-theme="light"] {
+  /* body */
+  --bg-color: #dedfe0;
+  --font-color: #212529;
+  /* header */
+  --header-bg-color: #fff;
+  --title-color: #007bff;
+  --button-bg-color: #007bff;
+  --hover-button-bg-color: #fff;
+  --text-color: #000;
+  --hover-text-color: #007bff;
+  --toggle-theme-icon: #000;
+  --toggle-theme-houver-icon: #007bff;
+  /* main */
+  /* footer */
+  --footer-bg-color: #fff;
+  --footer-text-color: #212529;
+  --footer-link-color: #007bff;
+  --footer-link-hover-color: #0039b3;
+}
+/*         Tema Escuro          */
+[data-theme="dark"] {
+  /* body */
+  --bg-color: #212529;
+  --font-color: #f1f5f9;
+  /* header */
+  --header-bg-color: #333;
+  --title-color: #f1f5f9;
+  --button-bg-color: #00ff00;
+  --hover-button-bg-color: #333;
+  --text-color: #000;
+  --hover-text-color: #00ff00;
+  --toggle-theme-icon: #000;
+  --toggle-theme-houver-icon: #ffd700;
+  /* main */
+  /* footer */
+  --footer-bg-color: #333;
+  --footer-text-color: #f1f5f9;
+  --footer-link-color: #00ff00;
+  --footer-link-hover-color: #ffffff;
+}
+
+/* ============================ */
+/*    Estilização da Header     */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--margin-small);
+  padding: var(--padding-large);
+
+  background-color: var(--header-bg-color);
+}
+/*      Estilização do h1       */
+h1 {
+  margin: var(--margin-small);
+  padding: var(--padding-small) var(--padding-medium);
+
+  text-align: center;
+  font-size: var(--font-size-xlarge);
+
+  color: var(--title-color);
+}
+/*   Estilização da Navegação     */
+.nav_pages {
+  padding: var(--padding-small) var(--padding-medium);
+  margin: var(--margin-small);
+
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+
+  background-color: var(--button-bg-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  color: var(--text-color);
+
+  border-radius: var(--border-radius-small);
+  transition: 0.5s;
+}
+.nav_pages:hover {
+  background-color: var(--hover-button-bg-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  color: var(--hover-text-color);
+
+  transition: 0.6s;
+}
+/* ============================ */
+/*         Botão Tema           */
+.button_Theme {
+  padding: var(--padding-small) var(--padding-medium);
+  
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+
+  background-color: var(--button-bg-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  color: var(--toggle-theme-icon);
+  
+  border-radius: var(--border-radius-small);
+  transition: background 0.5s;
+}
+.button_Theme:hover {
+  background-color: var(--hover-button-bg-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  color: var(--toggle-theme-houver-icon);
+
+  transition: background 0.6s;
+}
+
+/* ============================ */
+/*    Estilização da main       */
+main {
+  max-width: 100%;
+  width: 90%;
+  margin: var(--margin-large) auto;
+  padding: var(--padding-large);
+}
+
+/* ============================ */
+/*    Estilização da Footer     */
+footer {
+  bottom: 0;
+  width: 100%;
+  margin-top: var(--margin-large);
+  padding: var(--padding-large);
+
+  text-align: center;
+
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+}
+footer a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--footer-link-hover-color);
+  
+  text-decoration: underline;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Esta pagina demonstrar tipos de calculadora usando o JavaScript"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Formulario de cadastro</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/treino_js/Calculadoras/index.html"
+          >calculadoras</a
+        >
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+      </nav>
+
+      <h1>Modelos de Calculadoras Com JavaScript</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="button_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="icon_Theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <!-- IMAGEM -->
+        <div class="form_image">
+          <img src="public/img/undraw_fill-forms_npwp.svg" alt="">
+        </div>
+        <!-- FORMULARIO -->
+        <div class="form">
+            <form action="#">
+              <!-- header formulario -->
+              <div class="form_header">
+                <div class="title">
+                  <h2>Cadastre-se</h2>
+                </div>
+
+                <div class="login_button">
+                  <button><a href="#" class="login_botton">Entrar</a></button>
+                </div>
+              </div>
+              <!-- Inputs formulario -->
+              <div class="input_grup">
+                <div class="input_box">
+                  <label for="fristname">Primeiro nome:</label>
+                  <input required type="text" id="fristname" name="fristname" placeholder="Digite o seu primeiro nome*">
+                </div>
+
+                <div class="input_box">
+                  <label for="lastname">Sobrenome:</label>
+                  <input required type="text" id="lastname" name="lastname" placeholder="Digite o seu sobrenome*">
+                </div>
+
+                <div class="input_box">
+                  <label for="email">Email:</label>
+                  <input required type="email" id="email" name="email" placeholder="Digite o seu email*">
+                </div>
+
+                <div class="input_box">
+                  <label for="number">Celular:</label>
+                  <input required type="tel" id="number" name="number" placeholder="(xx) xxxxx-xxxx">
+                </div>
+
+                <div class="input_box">
+                  <label for="password">Senha:</label>
+                  <input required type="password" id="password" name="password" placeholder="Digite sua senha*">
+                </div>
+
+                <div class="input_box">
+                  <label for="confirmpassword">Confime sua senha:</label>
+                  <input required type="password" id="confirmpassword" name="confirmpassword" placeholder="Confime a sua senha*">
+                </div>
+              </div>
+              <!-- genere Input -->
+               <div class="geder_inputs">
+                <div class="geder_title">
+                  <h3>Gêneros</h3>
+                </div>
+                <div class="geder_group">
+                  <div class="gender_input">
+                    <input type="radio" name="gender" id="female" class="female">
+                    <label for="female">Feminino</label>
+                  </div>
+
+                  <div class="gender_input">
+                    <input type="radio" name="gender" id="male" class="female">
+                    <label for="male">Masculino</label>
+                  </div>
+
+                  <div class="gender_input">
+                    <input type="radio" name="gender" id="others" class="female">
+                    <label for="others">Outros</label>
+                  </div>
+
+                  <div class="gender_input">
+                    <input type="radio" name="gender" id="none" class="female">
+                    <label for="none">Prefiro não dizer</label>
+                  </div>
+                </div>
+               </div>
+
+               <div class="continue_button">
+                <button><a href="#">Continuar</a></button>
+               </div>
+            </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
