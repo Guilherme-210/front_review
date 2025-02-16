@@ -25,7 +25,7 @@
   --border-radius-medium: 1rem; /* Raio de borda médio */
   --border-width: 0.5px; /* Largura da borda */
 }
-/* Variáveis de estilo - Tema escuro */
+/* Variáveis de estilo - Tema claro */
 [data-theme="light"] {
   /* Cores */
   --bg-color: #dedfe0; /* Cor de fundo clara */
@@ -134,7 +134,8 @@ h1 {
 
 /* estilização da main */
 main {
-  max-width: 90%;
+  max-width: 100%;
+  width: 90%;
   margin: var(--margin-large) auto;
   padding: var(--padding-large);
 }
@@ -200,8 +201,8 @@ p {
 }
 
 /* estilização do fieldset - operadores */
-#operador_1,
-#operador_2 {
+#operator_1,
+#operator_2 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
