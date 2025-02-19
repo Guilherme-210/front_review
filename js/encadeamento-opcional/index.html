@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aprenda sobre Encadeamento Opcional em JavaScript. Veja exemplos práticos e explicações detalhadas para aprimorar suas habilidades." />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png" />
+  <title>Encadeamento Opcional com JavaScript</title>
+</head>
+<body data-theme="light">
+  <header>
+    <nav>
+      <a class="nav_pages" href="/"></a>
+      <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+      <a class="nav_pages" href="/"></a>
+    </nav>
+    <h1>Encadeamento Opcional com JavaScript</h1>
+    <div>
+      <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+        <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+      </button>
+    </div>
+  </header>
+  <main>
+    <fieldset>
+      <legend>O que é Encadeamento Opcional?</legend>
+      <p>
+        O <strong>Encadeamento Opcional</strong> é uma funcionalidade do JavaScript que permite acessar propriedades aninhadas de um objeto sem causar erros caso alguma delas seja <code>undefined</code> ou <code>null</code>. Isso evita a necessidade de verificações repetitivas.
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>Exemplo usado na aula</legend>
+      <div class="code">
+        <pre><code>const user = {
+  name: "John Doe",
+  email: "doejohn@email.com",
+  friends: [{
+    name: "Mary",
+    address: {
+      street: "Some Street",
+      number: 89
+    }
+  }],
+  age: 42,
+  phone: {
+    countryCode: "+55",
+    ddd: "22",
+    number: "998765432"
+  }
+};
+
+console.log(user.friends[0].phone?.ddd);
+console.log(user?.brothers?.length);
+console.log(user.brothers?.[5].name);</code></pre>
+      </div>
+      <p>
+        Neste exemplo, o operador <code>?.</code> é utilizado para verificar se determinadas propriedades existem antes de acessá-las. Caso contrário, ele retorna <code>undefined</code> ao invés de lançar um erro.
+      </p>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Exemplo de treino</legend>
+      <div class="code">
+        <pre><code>const person = {
+  name: "Alice",
+  job: {
+    title: "Developer",
+    company: "TechCorp"
+  }
+};
+
+console.log(person.job?.title); // "Developer"
+console.log(person.address?.street); // undefined</code></pre>
+      </div>
+    </fieldset>
+  </main>
+  <footer>
+    <p>© Baseado nas aulas da One Bit Code.</p>
+    <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+    <br />
+    <p>
+      <a href="https://github.com/Guilherme-210" target="_blank">Acesse meu GitHub <ion-icon name="logo-github"></ion-icon></a>
+    </p>
+  </footer>
+  <script src="script.js"></script>
+  <script src="toggleTheme.js"></script>
+</body>
+</html>
