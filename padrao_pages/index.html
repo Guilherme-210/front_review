@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Página base para as aulas da One Bit Code. Explore diversos modelos de  e outros exemplos práticos de JavaScript para aprimorar suas habilidades de programação."
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title> Com JavaScript</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"></a>
+      </nav>
+
+      <h1> Com JavaScript</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que é (tema)?</legend>
+        <p>
+          O <strong>tema</strong> é uma funcionalidade do JavaScript que permite extrair dados de objetos e arrays de forma mais conveniente e legível.
+        </p>
+      </fieldset>
+
+      <!-- Exemplo usado na aula -->
+      <fieldset>
+        <legend>Exemplo usado na aula</legend>
+        <div class="code">
+          <pre><code>
+          </code></pre>
+        </div>
+        <p>
+          Explicação do <strong>exemplo</strong> usado na aula
+        </p>
+      </fieldset>
+
+      <!-- Execução -->
+      <fieldset>
+        <legend>Execução da aula</legend>
+      </fieldset>
+
+      <!-- Exemplo de treino -->
+      <fieldset>
+        <legend>Exemplo de treino</legend>
+        <div class="code">
+          <pre><code>
+          </code></pre>
+        </div>
+      </fieldset>
+
+      <!-- Execução -->
+      <fieldset>
+        <legend>Execução</legend>
+      </fieldset>
+
+      <!-- Execução inputs -->
+      <section>
+        <fieldset>
+          <legend>Execução inputs tema</legend>
+          <p>
+            <strong>tema</strong>: .
+          </p>
+          <div class="inputs">
+            <input
+              required
+              type="number"
+              class="input_1"
+              placeholder="1° Número"
+            />
+            <select class="select">
+              <option>+</option>
+              <option>-</option>
+              <option>*</option>
+              <option>/</option>
+            </select>
+            <input
+              type="number"
+              class="input_2"
+              id="val_2"
+              placeholder="2° Número"
+            />
+            <input
+              readonly
+              type="text"
+              class="input_3"
+              placeholder="Resultado"
+            />
+
+            <button
+              class="calc_button"
+              id="calcButton_1"
+              onclick="calculate1()"
+            >
+              Calcular
+            </button>
+            <button class="calc_button" id="clearButton_1" onclick="clear1()">
+              Limpar
+            </button>
+          </div>
+          <div id="carregamento_1" class="div_load">
+            <div class="spinner"></div>
+            <p class="load">Carregando...</p>
+          </div>
+        </fieldset>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>
+        © Baseado nas aulas da One Bit Code.
+      </p> 
+      <p>
+        © 2025 Desenvolvido por Guilherme Reis.
+      </p>  <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
