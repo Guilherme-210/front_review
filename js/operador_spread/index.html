@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aula sobre o operador spread em JavaScript. Aprenda como usar o operador spread para manipular arrays e objetos de forma eficiente." />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png" />
+    <title>Operador Spread com JavaScript</title>
+</head>
+<body data-theme="light">
+    <header>
+        <nav>
+            <a class="nav_pages" href="/"></a>
+            <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+            <a class="nav_pages" href="/"></a>
+        </nav>
+        <h1>Operador Spread com JavaScript</h1>
+        <div>
+            <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+                <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+            </button>
+        </div>
+    </header>
+    <main>
+        <fieldset>
+            <legend>O que é o operador spread?</legend>
+            <p>
+                O <strong>operador spread</strong> (<code>...</code>) permite expandir elementos de um array ou propriedades de um objeto, tornando a manipulação de dados mais eficiente e legível.
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Exemplo usado na aula</legend>
+            <div class="code">
+                <pre><code>
+const towns = ['Prontera', 'Izlude', 'Payon', 'Alberta', 'Geffen', 'Morroc'];
+
+console.log(towns);
+console.log(...towns);
+console.log(...towns[0]);
+
+const townsCopy = towns;
+townsCopy.pop();
+townsCopy.pop();
+townsCopy.push('Juno');
+
+console.log({ towns, townsCopy });
+
+const townsClone = [...towns];
+townsClone.push('Aldebaran');
+
+console.log({ towns, townsCopy, townsClone });
+
+const townsObj = { ...towns };
+const townsObjClone = { ...townsObj };
+
+townsObjClone.test = 'Test';
+
+console.log({ townsObj, townsObjClone });
+                </code></pre>
+            </div>
+            <p>
+                O código demonstra o uso do operador spread para copiar e manipular arrays e objetos de maneira eficiente.
+            </p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Exemplo de treino</legend>
+            <div class="code">
+                <pre><code>
+const numbers = [1, 2, 3, 4, 5];
+const newNumbers = [...numbers, 6, 7, 8];
+
+console.log(newNumbers);
+                </code></pre>
+            </div>
+        </fieldset>
+    </main>
+    <footer>
+        <p>© Baseado nas aulas da One Bit Code.</p>
+        <p>© 2025 Desenvolvido por Guilherme Reis.</p><br />
+        <p><a href="https://github.com/Guilherme-210" target="_blank">Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon></a></p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+</body>
+</html>
