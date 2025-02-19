@@ -1,117 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página base para as aulas da One Bit Code. Explore diversos modelos de e outros exemplos práticos de JavaScript para aprimorar suas habilidades de programação." />
+  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+  
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png" />
+  
+  <title>Desestruturação de Objetos e Arrays</title>
+</head>
+<body data-theme="light">
+  <header>
+    <nav>
+      <a class="nav_pages" href="/"></a>
+      <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+      <a class="nav_pages" href="/"></a>
+    </nav>
+    <h1>Desestruturação de Objetos e Arrays</h1>
+    <div>
+      <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+        <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+      </button>
+    </div>
+  </header>
+  
+  <main>
+    <fieldset>
+      <legend>O que é Desestruturação?</legend>
+      <p>
+        A <strong>Desestruturação</strong> é uma funcionalidade do JavaScript que permite extrair dados de objetos e arrays de forma mais conveniente e legível. 
+        Com ela, podemos acessar propriedades específicas sem precisar referenciá-las diretamente através do objeto ou array original.
+      </p>
+    </fieldset>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
-    />
-
-    <title>Desestruturação de Objetos e Arrays</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/js/arrow_functions/index.html" class="btn-nav"><i class="fi fi-rr-angle-left"></i> Arrow functions</a>
-        <a href="/" class="btn-nav"><ion-icon name="home"></ion-icon> Home</a>
-        <a href="/js/" class="btn-nav"> <i class="fi fi-rr-angle-right"></i></a>
-      </nav>
-      <br />
-      <h1>Desestruturação de Objetos e Arrays</h1>
-    </header>
-
-    <main>
-      <fieldset>
-        <legend>O que é Desestruturação?</legend>
-        <p>
-          A <strong>desestruturação</strong> é uma funcionalidade do JavaScript que permite extrair dados de objetos e arrays de forma mais conveniente e legível.
-        </p>
-      </fieldset>
-
-      <fieldset>
-        <legend>Exemplo de Desestruturação de Objetos</legend>
-        <div class="code">
-          <pre><code>
+    <fieldset>
+      <legend>Exemplo usado na aula</legend>
+      <div class="code">
+        <pre><code>
 const person = {
   name: "Luke",
   job: "Farmer",
-  parents: ["Anakin", "Padme"]
+  parents: ["Anakin", "Padme"],
 }
 
-const { job, parents } = person;
-console.log(job, parents);
-          </code></pre>
-        </div>
-        <p>
-          No exemplo acima, estamos extraindo as propriedades <code>job</code> e <code>parents</code> diretamente do objeto <code>person</code>.
-        </p>
-      </fieldset>
+const name = person.name
+const { job, parents } = person
+console.log(name, job, parents)
 
-      <fieldset>
-        <legend>Exemplo de Desestruturação de Arrays</legend>
-        <div class="code">
-          <pre><code>
-const [father, mother] = parents;
-console.log(father, mother);
-          </code></pre>
-        </div>
-        <p>
-          Aqui, estamos desestruturando o array <code>parents</code>, atribuindo cada valor a variáveis individuais.
-        </p>
-      </fieldset>
+const [father, mother] = parents
+console.log(father, mother)
 
-      <fieldset>
-        <legend>Uso de Desestruturação em Funções</legend>
-        <div class="code">
-          <pre><code>
 function createUser({ name, job, parents }) {
-  const id = Math.floor(Math.random() * 9999);
+  const id = Math.floor(Math.random() * 9999)
   return {
     id,
     name,
     job,
-    parents
-  };
+    parents,
+  }
 }
 
-const luke = createUser(person);
-console.log(luke);
-          </code></pre>
-        </div>
-        <p>
-          A desestruturação pode ser usada como parâmetro de funções para facilitar a manipulação de objetos.
-        </p>
-      </fieldset>
-    </main>
-
-    <footer>
-      <p>Explicação sobre Desestruturação de Objetos e Arrays - JavaScript</p>
+const luke = createUser(person)
+console.log(luke)
+        </code></pre>
+      </div>
       <p>
-        Desenvolvido por Guilherme Reis.
-        <br />
-        <a href="https://github.com/Guilherme-210" target="_blank">
-          Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon>
-        </a>
+        O código acima mostra como desestruturar objetos e arrays para extrair seus valores de maneira simplificada.
       </p>
-    </footer>
+    </fieldset>
 
-    <script src="script.js"></script>
-  </body>
+    <fieldset>
+      <legend>Exemplo de treino</legend>
+      <div class="code">
+        <pre><code>
+// Exemplo de treino: Extraindo dados de um objeto de carro
+const car = {
+  brand: "Tesla",
+  model: "Model S",
+  specs: {
+    horsepower: 1020,
+    range: "396 miles"
+  }
+}
+
+const { brand, model, specs: { horsepower, range } } = car
+console.log(brand, model, horsepower, range)
+        </code></pre>
+      </div>
+    </fieldset>
+  </main>
+  
+  <footer>
+    <p>
+      © Baseado nas aulas da One Bit Code.
+    </p>
+    <p>
+      © 2025 Desenvolvido por Guilherme Reis.
+    </p> <br />
+    <p>
+      <a href="https://github.com/Guilherme-210" target="_blank">Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon></a>
+    </p>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script src="toggleTheme.js"></script>
+</body>
 </html>
