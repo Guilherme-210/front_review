@@ -2,6 +2,7 @@
 * {
   font-size: var(--font-size-medium);
   box-sizing: border-box;
+  transition: 0.6s; 
 }
 
 /* Variaveis globais */
@@ -30,13 +31,13 @@
   /* Cores */
   --bg-color: #dedfe0; 
   --border-color: #ccc; 
-  --text-color: #000; 
+  --text-color: #fff; 
   --font-color: #212529;
   
   --header-bg-color: #ffffff;
   --button-bg-color: #007bff;
   --button-hover-bg-color: #0056b3;
-  --hover-text-color: #000000;
+  --hover-text-color: #000;
   --toggle-theme-icon: #007bff;
 
   --code-background-color: #cfcdcd;
@@ -107,14 +108,12 @@ header {
   border: solid var(--border-width) var(--button-bg-color);
   cursor: pointer;
   border-radius: var(--border-radius-small);
-  transition: background 0.5s;
 }
 .toggle_Theme:hover,
 .nav_pages:hover {
   background-color: var(--header-bg-color);
   color: var(--hover-text-color);
   border: solid var(--border-width) var(--button-bg-color);
-  transition: background 0.6s;
 }
 
 /* estilização do header - h1 */
@@ -130,11 +129,9 @@ h1 {
 .toggle_Theme {
   margin: var(--margin-small);
   padding: var(--padding-small) var(--padding-medium);
-  transition: background 0.5s;
 }
 .toggle_Theme:hover {
   color: var(--toggle-theme-icon);
-  transition: background 0.5s;
 }
 .icon_Theme {
   font-size: var(--font-size-large);
@@ -247,13 +244,11 @@ button {
   border: solid var(--border-width) var(--button-bg-color);
   cursor: pointer;
   border-radius: var(--border-radius-small);
-  transition: background 0.5s;
 }
 button:hover {
   background-color: var(--header-bg-color);
   color: var(--hover-text-color);
   border: solid var(--border-width) var(--button-bg-color);
-  transition: background 0.6s;
 }
 
 /* estilização do fieldset - .calc_button */
@@ -278,13 +273,11 @@ button:hover {
   border: solid var(--border-width) var(--button-bg-color);
   cursor: pointer;
   border-radius: var(--border-radius-small);
-  transition: 0.5s;
 }
 .calc_button:hover {
   background-color: var(--header-bg-color);
   color: var(--hover-text-color);
   border: solid var(--border-width) var(--button-bg-color);
-  transition: 0.6s;
 }
 
 /* estilização do footer */
@@ -298,11 +291,9 @@ footer {
 footer a {
   color: var(--footer-link-color);
   text-decoration: none;
-  transition: 0.5s;
 }
 
 footer a:hover {
   color: var(--footer-link-hover-color);
   text-decoration: underline;
-  transition: 0.5s;
 }
