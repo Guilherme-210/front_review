@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aprenda sobre o Operador de Coalescência Nula no JavaScript. Veja exemplos práticos para entender seu funcionamento." />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png" />
+  <title>Operador de Coalescência Nula com JavaScript</title>
+</head>
+<body data-theme="light">
+  <header>
+    <nav>
+      <a class="nav_pages" href="/"></a>
+      <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+      <a class="nav_pages" href="/"></a>
+    </nav>
+    <h1>Operador de Coalescência Nula com JavaScript</h1>
+    <div>
+      <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+        <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+      </button>
+    </div>
+  </header>
+  <main>
+    <fieldset>
+      <legend>O que é Operador de Coalescência Nula?</legend>
+      <p>
+        O <strong>Operador de Coalescência Nula (??)</strong> é um operador do JavaScript que retorna o lado direito apenas se o lado esquerdo for <strong>null</strong> ou <strong>undefined</strong>. 
+        Caso contrário, retorna o próprio valor da esquerda. 
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>Exemplo usado na aula</legend>
+      <div class="code">
+        <pre><code>
+let a = 0
+
+let b = a || 42
+
+console.log({ a, b })
+
+b = a ?? 42
+
+console.log({a, b})
+
+let c = false ?? 42
+
+console.log({c})
+        </code></pre>
+      </div>
+      <p>
+        Neste exemplo, a variável <code>a</code> é 0. Quando usamos <code>||</code>, ele retorna 42 porque 0 é um valor "falsy". 
+        Já com <code>??</code>, ele mantém 0, pois apenas <code>null</code> ou <code>undefined</code> acionam a substituição. 
+        No último caso, <code>false ?? 42</code> retorna <code>false</code>, pois <code>false</code> não é <code>null</code> nem <code>undefined</code>.
+      </p>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Exemplo de treino</legend>
+      <div class="code">
+        <pre><code>
+let x = null ?? "Valor padrão"
+console.log(x) // "Valor padrão"
+
+let y = undefined ?? "Outro padrão"
+console.log(y) // "Outro padrão"
+
+let z = "Texto" ?? "Nada"
+console.log(z) // "Texto"
+        </code></pre>
+      </div>
+    </fieldset>
+  </main>
+  <footer>
+    <p>© Baseado nas aulas da One Bit Code.</p>
+    <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+    <br />
+    <p>
+      <a href="https://github.com/Guilherme-210" target="_blank">Acesse meu GitHub <ion-icon name="logo-github"></ion-icon></a>
+    </p>
+  </footer>
+  <script src="script.js"></script>
+  <script src="toggleTheme.js"></script>
+</body>
+</html>
