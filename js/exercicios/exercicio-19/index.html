@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Exercício 19 - Estatística na Programação. Aprenda como calcular média, mediana e moda em JavaScript."
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Exercício 19 - Estatística na Programação</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/">Home</a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/">Estatística</a>
+      </nav>
+
+      <h1>Exercício 19 - Estatística na Programação</h1>
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que é Estatística na Programação?</legend>
+        <p>
+          Estatística na programação envolve o uso de conceitos matemáticos para
+          realizar cálculos como média, mediana e moda, permitindo uma análise
+          eficiente de dados.
+        </p>
+      </fieldset>
+
+      <!-- Média simples -->
+      <fieldset>
+        <legend>Função da Média Simples</legend>
+        <p>
+          A Média Simples, também conhecida como Média Aritmética, é uma medida
+          de tendência central que é utilizada para encontrar o valor médio de
+          um conjunto de números. Para calcular a Média Simples, você deve:
+        </p>
+        <p>1° Somar todos os números do conjunto.</p>
+        <p>
+          2° Depois dividi a soma pelo número total de elementos no conjunto.
+        </p>
+        <div class="code">
+          <pre><code>
+const simpleAverage = (...numbers) => {
+  const sum = numbers.reduce((accum, num) => accum + num, 0)
+  return sum / numbers.length
+}
+
+function calculateSimpleAverage() {
+  const num1 = parseFloat(document.getElementById("num1").value)
+  const num2 = parseFloat(document.getElementById("num2").value)
+  const num3 = parseFloat(document.getElementById("num3").value)
+  const num4 = parseFloat(document.getElementById("num4").value)
+  const result = simpleAverage(num1, num2, num3, num4)
+  document.getElementById(
+    "averageResult"
+  ).innerText = `Média Aritmética Simples: ${result}`
+}
+          </code></pre>
+        </div>
+        <p>
+          Neste exemplo, calculamos a <strong>média simples</strong> de
+          conjuntos de números usando JavaScript.
+        </p>
+        <div class="inputs">
+          <input type="number" id="num1" placeholder="Número 1" />
+          <input type="number" id="num2" placeholder="Número 2" />
+          <input type="number" id="num3" placeholder="Número 3" />
+          <input type="number" id="num4" placeholder="Número 4" />
+        </div>
+        <button onclick="calculateSimpleAverage()">
+          Calcular Média Simples
+        </button>
+        <p id="averageResult"></p>
+        <button id="clearButton_1">Limpar</button>
+      </fieldset>
+
+      <!-- Média Ponderada -->
+      <fieldset>
+        <legend>Função da Média Ponderada</legend>
+        <p>
+          A Média Ponderada é uma média em que cada número do conjunto de dados
+          tem um peso diferente, ou seja, alguns números têm mais importância
+          (peso) do que outros. Para calcular a Média Ponderada, você deve:
+        </p>
+        <p>1° Multiplicar cada número pelo seu peso correspondente.</p>
+        <p>2° Somar todos os resultados das multiplicações.</p>
+        <p>3° Dividir essa soma pela soma dos pesos.</p>
+        <div class="code">
+          <pre><code>
+const weightedAverage = (...entries) => {
+  const sum = entries.reduce(
+    (accum, { number, weight }) => accum + number * (weight ?? 1),
+    0
+  )
+  const weightSum = entries.reduce(
+    (accum, entry) => accum + (entry.weight ?? 1),
+    0
+  )
+  return sum / weightSum
+}
+
+function calculateWeightedAverage() {
+  const entries = [
+    {
+      number: parseFloat(document.getElementById("number1").value),
+      weight: parseFloat(document.getElementById("weight1").value),
+    },
+    {
+      number: parseFloat(document.getElementById("number2").value),
+      weight: parseFloat(document.getElementById("weight2").value),
+    },
+    {
+      number: parseFloat(document.getElementById("number3").value),
+      weight: parseFloat(document.getElementById("weight3").value),
+    },
+  ]
+  const result = weightedAverage(...entries)
+  document.getElementById(
+    "weightedAverageResult"
+  ).innerText = `Média Ponderada: ${result}`
+}
+          </code></pre>
+        </div>
+        <p>
+          Neste exemplo, calculamos a <strong>média ponderada</strong> de
+          conjuntos de números usando JavaScript.
+        </p>
+        <div class="inputs">
+          <input type="number" id="number1" placeholder="Número 1" />
+          <input type="number" id="weight1" placeholder="Peso 1" />
+          <input type="number" id="number2" placeholder="Número 2" />
+          <input type="number" id="weight2" placeholder="Peso 2" />
+          <input type="number" id="number3" placeholder="Número 3" />
+          <input type="number" id="weight3" placeholder="Peso 3" />
+        </div>
+        <button onclick="calculateWeightedAverage()">
+          Calcular Média Ponderada
+        </button>
+        <p id="weightedAverageResult"></p>
+        <button id="clearButton_2">Limpar</button>
+      </fieldset>
+
+      <!-- Função para Mediana -->
+      <fieldset>
+        <legend>Função para Mediana</legend>
+        <p>
+          A Mediana é uma medida de tendência central que representa o valor do
+          meio em um conjunto de dados ordenado. Diferente da média, a mediana
+          não é afetada por valores extremamente altos ou baixos, o que a torna
+          uma boa opção quando se trata de dados com outliers (valores fora do
+          padrão). Para encontrar a Mediana:
+        </p>
+        <p>1° Ordene o conjunto de números em ordem crescente.</p>
+        <p>
+          2° Se o número total de elementos for ímpar, a mediana é o número do
+          meio.
+        </p>
+        <p>
+          3° Se o número total de elementos for par, a mediana é a média dos
+          dois números do meio.
+        </p>
+        <div class="code">
+          <pre><code>
+const average = (...numbers) => {
+  const sum = numbers.reduce((accum, num) => accum + num, 0)
+  return sum / numbers.length
+}
+
+const median = (...numbers) => {
+  const orderedNumbers = [...numbers].sort((a, b) => a - b)
+  const middle = Math.floor(orderedNumbers.length / 2)
+  if (orderedNumbers.length % 2 !== 0) {
+    return orderedNumbers[middle]
+  }
+  const firstMedian = orderedNumbers[middle - 1]
+  const secondMedian = orderedNumbers[middle]
+  return average(firstMedian, secondMedian)
+}
+
+function calculateMedian() {
+  const numbers = [
+    parseFloat(document.getElementById("medianNum1").value),
+    parseFloat(document.getElementById("medianNum2").value),
+    parseFloat(document.getElementById("medianNum3").value),
+    parseFloat(document.getElementById("medianNum4").value),
+    parseFloat(document.getElementById("medianNum5").value),
+    parseFloat(document.getElementById("medianNum6").value),
+    parseFloat(document.getElementById("medianNum7").value),
+  ].filter((num) => !isNaN(num)) 
+
+  const result = median(...numbers)
+  document.getElementById("medianResult").innerText = `Mediana: ${result}`
+}
+          </code></pre>
+        </div>
+        <p>
+          Neste exemplo, calculamos a <strong>Mediana</strong> de conjuntos de
+          números usando JavaScript.
+        </p>
+        <div class="inputs">
+          <input type="number" id="medianNum1" placeholder="Número 1" />
+          <input type="number" id="medianNum2" placeholder="Número 2" />
+          <input type="number" id="medianNum3" placeholder="Número 3" />
+          <input type="number" id="medianNum4" placeholder="Número 4" />
+          <input type="number" id="medianNum5" placeholder="Número 5" />
+          <input type="number" id="medianNum6" placeholder="Número 6" />
+          <input type="number" id="medianNum7" placeholder="Número 7" />
+        </div>
+        <button onclick="calculateMedian()">Calcular Mediana</button>
+        <p id="medianResult"></p>
+        <button id="clearButton_3">Limpar</button>
+      </fieldset>
+
+      <!-- Função para Moda -->
+      <fieldset>
+        <legend>Função para Moda</legend>
+        <p>
+          A Moda é uma medida de tendência central que representa o valor que
+          aparece com maior frequência em um conjunto de dados. Em outras
+          palavras, é o número que mais se repete. Para encontrar a Moda:
+        </p>
+        <p>1° Liste todos os números do conjunto de dados.</p>
+        <p>2° Conte quantas vezes cada número aparece.</p>
+        <p>3° O número que aparece mais vezes é a moda.</p>
+
+        <div class="code">
+          <pre><code>
+            const mode = (...numbers) => {
+  const quantities = numbers.map((num) => [
+    num,
+    numbers.filter((n) => num === n).length,
+  ])
+  quantities.sort((a, b) => b[1] - a[1])
+  return quantities[0][0]
+}
+
+function calculateMode() {
+  const input = document.getElementById("modeInput").value
+  const numbers = input
+    .split(",")
+    .map((num) => parseFloat(num.trim()))
+    .filter((num) => !isNaN(num))
+  const result = mode(...numbers)
+  document.getElementById("modeResult").innerText = `Moda: ${result}`
+}
+          </code></pre>
+        </div>
+        <p>
+          Neste exemplo, calculamos a <strong>Moda</strong> de conjuntos de
+          números usando JavaScript.
+        </p>
+        <input
+          type="text"
+          id="modeInput"
+          placeholder="Insira números separados por vírgula"
+        />
+        <button onclick="calculateMode()">Calcular Moda</button>
+        <p id="modeResult"></p>
+        <button id="clearButton_4">Limpar</button>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© Baseado nas aulas da One Bit Code.</p>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
