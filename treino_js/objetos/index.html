@@ -28,7 +28,7 @@
       type="image/x-icon"
       href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
     />
-    <title>Com JavaScript</title>
+    <title></title>
   </head>
   <body data-theme="light">
     <header>
@@ -48,52 +48,194 @@
     </header>
 
     <main>
-      <!--
       <fieldset>
-        <legend>O que é (tema)?</legend>
-        <p>
-          O <strong>tema</strong> é uma funcionalidade do JavaScript que permite
-          extrair dados de objetos e arrays de forma mais conveniente e legível.
-        </p>
+        <legend></legend>
+        <p>O <strong>tema</strong> exolicação</p>
       </fieldset>
-      -->
 
       <!-- Exemplo usado na aula -->
-      <!--<fieldset>
-        <legend>Exemplo usado na aula</legend>
-        <div class="code">
-          <pre><code>
-          </code></pre>
+      <fieldset>
+        <legend>Função: Adicionar um novo aluno à lista</legend>
+        <div class="code_type">
+          <p>js</p>
+          <div class="code">
+            <pre><code>const form = document.getElementById("form");
+
+form.addEventListener("submit", function (ev) {
+  ev.preventDefault(); // Evita o recarregamento da página
+
+  // Captura dos valores dos inputs
+  const aluno = {
+    nome: document.getElementById("inputName").value,
+    idade: document.getElementById("inputAge").value,
+    materia: document.getElementById("inputMatter").value,
+    tempo: document.getElementById("inputTemp").value,
+  };
+
+  alunos.push(aluno); // Adiciona o aluno ao array
+
+  // Limpa os campos do formulário e foca no primeiro input
+  form.reset();
+  document.getElementById("inputName").focus();
+});</code></pre>
+          </div>
         </div>
-        <p>
-          Explicação do <strong>exemplo</strong> usado na aula
-        </p>
-      </fieldset>-->
+        <ol>
+          <li>
+            Evita o recarregamento da página (ev.preventDefault()) para manter
+            os dados na tela.
+          </li>
+          <li>
+            Coleta os valores dos inputs e cria um objeto aluno contendo nome,
+            idade, matéria e tempo de estudos.
+          </li>
+          <li>Adiciona o aluno ao array alunos.</li>
+          <li>
+            Limpa os campos do formulário (form.reset()) e coloca o foco no
+            primeiro input.
+          </li>
+        </ol>
+      </fieldset>
 
       <!-- Execução -->
-      <!--
-      <fieldset> 
-        <legend>Execução da aula</legend>
-      </fieldset> 
-      -->
+
+      <fieldset>
+        <legend>Função: Exibir os alunos cadastrados na textArea</legend>
+        <div class="code_type">
+          <p>js</p>
+          <div class="code">
+            <pre><code>const textArea = document.getElementById("textAlunos");
+const pullButton = document.getElementById("pullButton");
+const clearButton = document.getElementById("clearButton");
+
+pullButton.addEventListener("click", function () {
+  let texto = alunos.map(aluno => 
+    `Nome: ${aluno.nome},\nIdade: ${aluno.idade},\nMatéria: ${aluno.materia},\nTempo de estudos: ${aluno.tempo}\n\n`
+  ).join("");
+
+  startLoading(); // Inicia a animação da barra de progresso
+
+  setTimeout(() => {
+    textArea.value += texto; // Exibe os dados no textarea
+    clearButton.style.display = "inline-block"; // Exibe o botão "Apagar"
+  }, 2000);
+});         </code></pre>
+          </div>
+        </div>
+        <ol>
+          <li>
+            Percorre o array alunos e cria uma string formatada com os dados de
+            cada aluno.
+          </li>
+          <li>Inicia a animação da barra de progresso (startLoading()).</li>
+          <li>Após 2 segundos (setTimeout), adiciona o texto na textArea.</li>
+          <li>
+            Torna o botão "Apagar" visível (clearButton.style.display =
+            "inline-block").
+          </li>
+        </ol>
+      </fieldset>
 
       <!-- Exemplo de treino -->
-      <!--
-      <fieldset>
-        <legend>Exemplo de treino</legend>
-        <div class="code">
-          <pre><code>
-          </code></pre>
-        </div>
-      </fieldset>
-      -->
 
-      <!-- Execução -->
-      <!--
       <fieldset>
-        <legend>Execução</legend>
+        <legend>Função: Limpar a textArea e ocultar o botão</legend>
+        <div class="code_type">
+          <p>js</p>
+          <div class="code">
+            <pre><code>clearButton.addEventListener("click", function () {
+  textArea.value = ""; // Limpa a textArea
+  clearButton.style.display = "none"; // Esconde o botão "Apagar"
+
+  setTimeout(() => {
+    document.getElementById("inputName").focus();
+  }, 1000);
+});          </code></pre>
+          </div>
+        </div>
+        <ul>
+          <li>Apaga todo o conteúdo da textArea (textArea.value = "").</li>
+          <li>Oculta o botão "Apagar" (clearButton.style.display = "none").</li>
+          <li>
+            Após 1 segundo, coloca o foco no primeiro input para facilitar a
+            digitação.
+          </li>
+        </ul>
       </fieldset>
-      -->
+
+      <!-- Exemplo de treino -->
+
+      <fieldset>
+        <legend>
+          Função: Criar uma animação de carregamento antes de exibir os alunos
+        </legend>
+        <div class="code_type">
+          <p>js</p>
+          <div class="code">
+            <pre><code>function startLoading() {
+  const progressBar = document.getElementById("progressBar");
+
+  progressBar.style.background = "#007bff";
+  progressBar.style.width = "0%";
+
+  // Anima a barra de progresso
+  setTimeout(() => {
+    progressBar.style.width = "100%";
+  }, 10);
+
+  setTimeout(() => {
+    progressBar.style.background = "#00ff00"; // Muda para verde ao concluir
+
+    setTimeout(() => {
+      progressBar.style.width = "0%";
+    }, 500);
+
+    setTimeout(() => {
+      progressBar.style.background = "none";
+    }, 1000);
+  }, 2030);
+}          </code></pre>
+          </div>
+        </div>
+        <ol>
+          <li>Inicia a barra com 0% de largura e cor azul (#007bff).</li>
+          <li>Aumenta a largura da barra até 100% (efeito de carregamento).</li>
+          <li>
+            Após 2 segundos, muda a cor para verde (#00ff00) para indicar
+            sucesso.
+          </li>
+          <li>Depois de 0,5s, reduz a largura para 0% e some com a barra.</li>
+        </ol>
+      </fieldset>
+
+      <fieldset>
+        <legend>Resumo</legend>
+        <table>
+          <tr>
+            <th>Botão</th>
+            <th>Evento</th>
+            <th>O que faz?</th>
+          </tr>
+          <tr>
+            <td>Enviar</td>
+            <td>submit</td>
+            <td>Adiciona um aluno ao array e limpa os inputs.</td>
+          </tr>
+          <tr>
+            <td>Puxar</td>
+            <td>click</td>
+            <td>
+              Mostra os alunos cadastrados na textArea e exibe o botão "Apagar".
+            </td>
+          </tr>
+          <tr>
+            <td>Apagar</td>
+            <td>click</td>
+            <td>Limpa a textArea e esconde o botão "Apagar".</td>
+          </tr>
+        </table>
+      </fieldset>
+
       <!-- Execução inputs -->
       <section>
         <fieldset>
@@ -137,19 +279,27 @@
 
             <div class="div_buttons">
               <button class="arquiv_button" id="submit">enviar</button>
-              
-              <button class="arquiv_button" id="pullButton" onclick="startLoading()">puxar</button>
 
-              <button class="arquiv_button" id="clearButton"  style="display: none">apagar</button>
+              <button
+                class="arquiv_button"
+                id="pullButton"
+                onclick="startLoading()"
+              >
+                puxar
+              </button>
+
+              <button
+                class="arquiv_button"
+                id="clearButton"
+                style="display: none"
+              >
+                apagar
+              </button>
             </div>
 
             <div class="textArea">
-              
               <div class="progress-container">
-                <div 
-                  class="progress-bar"
-                  id="progressBar"
-                ></div>
+                <div class="progress-bar" id="progressBar"></div>
               </div>
 
               <textarea

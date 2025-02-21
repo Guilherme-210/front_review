@@ -1,87 +1,85 @@
+// Seleção de elementos
 const form = document.getElementById("form")
 const textArea = document.getElementById("textAlunos")
-clearButton = document.getElementById("clearButton");
-let alunos = [] // Array para armazenar os alunosconst 
+const clearButton = document.getElementById("clearButton")
+const pullButton = document.getElementById("pullButton")
+const progressBar = document.getElementById("progressBar")
 
+let alunos = [] // Array para armazenar os alunos
 
+// Evento de envio do formulário
 form.addEventListener("submit", function (ev) {
   ev.preventDefault()
-  const name = document.getElementById("inputName").value
-  const age = document.getElementById("inputAge").value
-  const matter = document.getElementById("inputMatter").value
-  const temp = document.getElementById("inputTemp").value
 
+  // Captura dos valores dos inputs
   const aluno = {
-    nome: name,
-    idade: age,
-    materia: matter,
-    tempo: temp,
+    nome: document.getElementById("inputName").value,
+    idade: document.getElementById("inputAge").value,
+    materia: document.getElementById("inputMatter").value,
+    tempo: document.getElementById("inputTemp").value,
   }
 
   alunos.push(aluno) // Adiciona o aluno ao array
 
-  // Limpa os inputs do formulário (opcional)
-  document.getElementById("inputName").value = ""
-  document.getElementById("inputAge").value = ""
-  document.getElementById("inputMatter").value = ""
-  document.getElementById("inputTemp").value = ""
+  // Limpa os campos do formulário e foca no primeiro input
+  form.reset()
   document.getElementById("inputName").focus()
 })
 
+// Evento do botão "Puxar"
+pullButton.addEventListener("click", function () {
+  let texto = alunos
+    .map(
+      (aluno) =>
+        `Nome: ${aluno.nome},\nIdade: ${aluno.idade},\nMatéria: ${aluno.materia},\nTempo de estudos: ${aluno.tempo}\n\n`
+    )
+    .join("")
 
-document.getElementById("pullButton").addEventListener("click", function () {
-  let texto = ""
-  alunos.forEach((aluno) => {
-    texto += `Nome: ${aluno.nome},\nIdade: ${aluno.idade}, \nMatéria: ${aluno.materia},\nTempo de estudos: ${aluno.temp}\n\n`
-  })
-  
-  
+  startLoading() // Inicia a animação da barra de progresso
 
-  setTimeout(function () {
-    // Exibe o resultado na text area
+  setTimeout(() => {
     textArea.value += texto
-
-    // Mostra o botão "Apagar"
-    clearButton.style.display = "inline-block"
+    clearButton.style.display = "inline-block" // Exibe o botão "Apagar"
   }, 2000)
 })
 
+// Função de animação da barra de progresso
 function startLoading() {
-  let bar = document.getElementById("progressBar")
+  progressBar.style.background = "#007bff"
+  progressBar.style.width = "0%"
 
-  // Redefine a largura para 0% antes de iniciar a animação
-  bar.style.background = "#007bff"
-  bar.style.width = "0%"
-  // transition: width 2s ease-in-out;
-
-  // Agora inicia a animação
-  bar.style.width = "100%"
+  // Anima a barra de progresso
+  setTimeout(() => {
+    progressBar.style.width = "100%"
+  }, 10)
 
   setTimeout(() => {
-    // Altera o fundo após a animação
-    bar.style.background = "#00ff00"
+    progressBar.style.background = "#00ff00" // Muda para verde ao concluir
+
     setTimeout(() => {
-      // redefine o fundo novamente
-      bar.style.width = "0%"
+      progressBar.style.width = "0%"
     }, 500)
+
     setTimeout(() => {
-      // redefine o fundo novamente
-      bar.style.background = "none"
-    }, 500)
+      progressBar.style.background = "none"
+    }, 1000)
   }, 2030)
 }
 
-  
-  const textAlunos = parseFloat(document.getElementById("textAlunos").value)
-  
-  document.getElementById("clearButton").addEventListener("click", function () {
-    // Limpa a textArea
-    textArea.value = "" 
+// Evento do botão "Apagar"
+clearButton.addEventListener("click", function () {
+  if (textArea.value.trim() === "") {
+    clearButton.style.display = "none";
+    return;
+  }
 
-    // Esconde o botão "Apagar"
-    clearButton.style.display = "none"
+  textArea.value = "" // Limpa a textArea
+  clearButton.style.display = "none" // Oculta o botão "Apagar"
 
-    setTimeout(function () {
-      val_1.focus()
-    }, 1000) // 1000 milissegundos = 1 segundos
-  })
+  setTimeout(() => {
+    document.getElementById("inputName").focus()
+  }, 1000)
+})
+
+// Oculta o botão "Apagar" ao carregar a página
+clearButton.style.display = "none"

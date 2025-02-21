@@ -40,8 +40,8 @@
   --hover-text-color: #000000;
   --toggle-theme-icon: #007bff;
 
-  --code-background-color: #cfcdcd;
-  --code-border-color: #929090;
+  --code-background-color: #e4e4e4;
+  --code-border-color: #a7a5a5;
   --code-color: #007bff; 
   --strong-code-color: #007bff; 
 
@@ -64,8 +64,8 @@
   --hover-text-color: #fff;
   --toggle-theme-icon: #ffd700;
 
-  --code-background-color: #282c34;
-  --code-border-color: #3e4451;
+  --code-background-color: #0d0d0d;
+  --code-border-color: #5c5c5c;
   --code-color: #00ff00; 
   --strong-code-color: #00ff00; 
   
@@ -177,13 +177,23 @@ p {
 }
 
 /* estilização do fieldset - .code */
+.code_type {
+  background-color: var(--code-border-color);
+  color: #ccc;
+  width: 100%;
+  padding: .3rem;
+  margin-bottom: 10px;
+  border-radius: 10px;
+} 
+.code_type p {
+  margin: 10px 15px;
+  color: var(--font-color);
+}
 .code {
   background-color: var(--code-background-color);
-  border-radius: 5px;
+  border-radius: 0 0 10px 10px;
   padding: 20px;
-  margin-bottom: 10px;
   overflow-x: auto;
-  border: 1px solid var(--code-border-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
