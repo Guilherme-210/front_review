@@ -78,6 +78,9 @@
 
 /* estilização do body */
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: "Ubuntu", sans-serif;
