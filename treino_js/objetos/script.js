@@ -35,7 +35,7 @@ document.getElementById("pullButton").addEventListener("click", function () {
     texto += `Nome: ${aluno.nome},\nIdade: ${aluno.idade}, \nMatéria: ${aluno.materia},\nTempo de estudos: ${aluno.temp}\n\n`
   })
   
-  document.getElementById("carregamento").style.display = "block"
+  
 
   setTimeout(function () {
     // Exibe o resultado na text area
@@ -43,11 +43,20 @@ document.getElementById("pullButton").addEventListener("click", function () {
 
     // Mostra o botão "Apagar"
     clearButton.style.display = "inline-block"
-
-    // Oculta o elemento de carregamento após a conclusão
-    document.getElementById("carregamento").style.display = "none"
   }, 2000)
 })
+
+function startLoading() {
+  let bar = document.getElementById("progressBar")
+  bar.style.width = "100%"
+
+  setTimeout(() => {
+    bar.style.background = "#00ff00" // Reseta depois de 3s
+    setTimeout(() => {
+      bar.style.background = "none" // Reseta depois de 3s
+    }, 1000)
+  }, 2030)
+}
 
   
   const textAlunos = parseFloat(document.getElementById("textAlunos").value)

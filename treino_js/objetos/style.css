@@ -274,15 +274,21 @@ textarea {
 }
 
 /* estilização do fieldset - load */
-.div_load {
-  display: none; 
-  text-align: center;
-  margin: 0;
-  padding: 0;
+
+.progress-container {
+  width: 100%;
+  height: 5px;
+  background: #ddd;
+  margin-bottom: 5px;
+  border-radius: 60px;
 }
-.load {
-  margin: 0;
-  padding: 0;
+
+.progress-bar {
+  width: 0%;
+  height: 5px;
+  background: #007bff;
+  border-radius: 60px;
+  transition: width 2s ease-in-out;
 }
 
 

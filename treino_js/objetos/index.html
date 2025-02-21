@@ -124,37 +124,40 @@
                 type="text"
                 class="matter"
                 id="inputMatter"
-                placeholder="Escreva a materia"
+                placeholder="Digite a materia"
               />
               <label for="matter">Tempo de estudo:</label>
               <input
                 type="text"
                 class="temp"
                 id="inputTemp"
-                placeholder="Escreva a materia"
+                placeholder="A quanto tempo vc estuda"
               />
             </div>
 
             <div class="div_buttons">
               <button class="arquiv_button" id="submit">enviar</button>
               
-              <button class="arquiv_button" id="pullButton"">puxar</button>
+              <button class="arquiv_button" id="pullButton" onclick="startLoading()">puxar</button>
 
               <button class="arquiv_button" id="clearButton"  style="display: none">apagar</button>
             </div>
 
             <div class="textArea">
+              
+              <div class="progress-container">
+                <div 
+                  class="progress-bar"
+                  id="progressBar"
+                ></div>
+              </div>
+
               <textarea
                 readonly
                 name="textAlunos"
                 id="textAlunos"
                 placeholder="alunos"
               ></textarea>
-              <div class="div_load"
-                id="carregamento">
-                <div class="spinner"></div>
-                <p class="load">Carregando...</p>
-              </div>
             </div>
           </form>
         </fieldset>
