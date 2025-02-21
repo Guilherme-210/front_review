@@ -48,13 +48,26 @@ document.getElementById("pullButton").addEventListener("click", function () {
 
 function startLoading() {
   let bar = document.getElementById("progressBar")
+
+  // Redefine a largura para 0% antes de iniciar a animação
+  bar.style.background = "#007bff"
+  bar.style.width = "0%"
+  // transition: width 2s ease-in-out;
+
+  // Agora inicia a animação
   bar.style.width = "100%"
 
   setTimeout(() => {
-    bar.style.background = "#00ff00" // Reseta depois de 3s
+    // Altera o fundo após a animação
+    bar.style.background = "#00ff00"
     setTimeout(() => {
-      bar.style.background = "none" // Reseta depois de 3s
-    }, 1000)
+      // redefine o fundo novamente
+      bar.style.width = "0%"
+    }, 500)
+    setTimeout(() => {
+      // redefine o fundo novamente
+      bar.style.background = "none"
+    }, 500)
   }, 2030)
 }
 
