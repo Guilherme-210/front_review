@@ -167,6 +167,10 @@ legend {
   font-weight: 700;
 }
 
+form {
+  text-align: center;
+}
+
 /* estilização do fieldset - p */
 p {
   margin: var(--margin-small);
@@ -203,6 +207,15 @@ strong {
   gap: var(--margin-small);
   text-align: center;
   align-items: center;
+}
+
+/* estilização dos div inputs */
+.div_buttons {
+  display: flex;
+  gap: var(--margin-small);
+  text-align: center;
+  align-items: center;
+  width: 60%;
 }
 /* estilização do fieldset - input */
 input,
@@ -300,7 +313,7 @@ button:hover {
   font-size: var(--font-size-small);
   padding: var(--padding-medium);
   text-align: end;
-  width: 100%;
+  width: 30%;
 }
 .arquiv_button {
   text-align: center;
