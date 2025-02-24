@@ -227,6 +227,15 @@ strong {
   align-items: center;
   width: 60%;
 }
+/* estilização dos div inputs */
+.div_busca {
+  display: flex;
+  gap: var(--margin-small);
+  text-align: center;
+  align-items: center;
+  width: 40%;
+}
+
 /* estilização do fieldset - input */
 input,
 select {

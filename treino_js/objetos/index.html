@@ -277,24 +277,47 @@ pullButton.addEventListener("click", function () {
               />
             </div>
 
-            <div class="div_buttons">
-              <button class="arquiv_button" id="submit">enviar</button>
-
-              <button
-                class="arquiv_button"
-                id="pullButton"
-                onclick="startLoading()"
-              >
-                puxar
-              </button>
-
-              <button
-                class="arquiv_button"
-                id="clearButton"
-                style="display: none"
-              >
-                apagar
-              </button>
+            <div class="inputs">
+              <div class="div_buttons">
+                <button 
+                  class="arquiv_button" 
+                  id="submit"
+                  type="submit"
+                >
+                  Enviar
+                </button>
+  
+                <button
+                  class="arquiv_button"
+                  id="pullButton"
+                  type="button"
+                  onclick="startLoading()"
+                >
+                  Puxar
+                </button>
+  
+                <button
+                  class="arquiv_button"
+                  id="clearButton"
+                  type="button"
+                  style="display: none"
+                >
+                  Apagar
+                </button>
+              </div>
+              <div class="div_busca">
+                <input
+                  type="text"
+                  class="Search"
+                  id="inputSearch"
+                  placeholder="Digite um nome para buscar"
+                />
+                <button 
+                  id="buttonSearch" 
+                  type="button">
+                  <i class="fi fi-rr-search"></i>
+                </button>
+              </div>
             </div>
 
             <div class="textArea">

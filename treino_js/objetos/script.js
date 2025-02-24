@@ -38,6 +38,7 @@ pullButton.addEventListener("click", function () {
   startLoading() // Inicia a animação da barra de progresso
 
   setTimeout(() => {
+    textArea.value = ""
     textArea.value += texto
     clearButton.style.display = "inline-block" // Exibe o botão "Apagar"
   }, 2000)
@@ -83,3 +84,31 @@ clearButton.addEventListener("click", function () {
 
 // Oculta o botão "Apagar" ao carregar a página
 clearButton.style.display = "none"
+
+// Busca de aluno
+document.getElementById("buttonSearch").addEventListener("click", function () {
+  const nomeBuscado = document.getElementById("inputSearch").value.trim().toLowerCase();
+
+  if (!nomeBuscado) {
+    alert("Digite um nome para buscar!");
+    return;
+  }
+
+  startLoading(); // Inicia animação da barra de progresso
+
+  setTimeout(() => {
+    const alunoEncontrado = alunos.find(
+      (aluno) => aluno.nome.toLowerCase() === nomeBuscado
+    );
+
+    textArea.value = ""; // Limpa a área de texto
+
+    if (alunoEncontrado) {
+      textArea.value = `Nome: ${alunoEncontrado.nome}\nIdade: ${alunoEncontrado.idade}\nMatéria: ${alunoEncontrado.materia}\nTempo de estudo: ${alunoEncontrado.tempo}\n\n`;
+    } else {
+      textArea.value = "Aluno não encontrado!";
+    }
+
+    clearButton.style.display = "inline-block"; // Exibe o botão "Apagar"
+  }, 2000);
+});
