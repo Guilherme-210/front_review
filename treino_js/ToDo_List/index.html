@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Esta aplicação interativa permite que você gerencie suas tarefas de forma eficiente. Crie e organize sua lista de tarefas com facilidade usando o To-Do List."
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>ToDo List</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Crie a sua lista de tarefas</h1>
+
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <fieldset>
+          <legend>Sobre o Projeto</legend>
+          <p>
+            Esta aplicação interativa permite que você gerencie suas tarefas de
+            forma eficiente. Com ela, você pode adicionar novas tarefas,
+            organizá-las em diferentes categorias e removê-las quando
+            concluídas.
+          </p>
+          <p>O To-Do List está dividido em três seções:</p>
+          <ul>
+            <li>
+              <p>
+                <strong>Projetos a Concluir:</strong> Aqui você adiciona novas
+                tarefas que precisam ser realizadas.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Em Processo:</strong> Movimente as tarefas para cá
+                quando estiver trabalhando nelas.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Concluídas:</strong> Após finalizar uma tarefa, mova-a
+                para esta seção.
+              </p>
+            </li>
+          </ul>
+          <p>
+            Utilize os botões para adicionar, mover e excluir tarefas conforme
+            necessário. Dessa forma, você pode manter um controle mais preciso
+            das suas atividades diárias.
+          </p>
+        </fieldset>
+      </section>
+
+      <section class="listas">
+        <fieldset>
+          <legend>lista de afazeres</legend>
+          <form action="submit" id="form">
+            <div class="div_inputs">
+              <input
+                required
+                type="text"
+                class="Name"
+                id="inputName"
+                placeholder="Digite o seu primeiro afazer."
+              />
+              <button class="create_button" id="createButton" type="submit">
+                Enviar
+              </button>
+            </div>
+          </form>
+          <div class="listArea">
+            <ul>
+              <li>
+                <div class="tag_list"><p>casa</p></div>
+                <button class="clear_button" id="clearButton">excluir</button>
+              </li>
+
+              <li>
+                <div class="tag_list"><p>casa</p></div>
+                <button class="clear_button">excluir</button>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
