@@ -40,7 +40,6 @@ header {
   width: 100%;
 }
 
-.div_section,
 section {
   margin: 20px;
   padding: 20px;
@@ -84,7 +83,7 @@ button:hover {
 /* Estilo dos links do nav */
 
 .link_git {
-  color: #fff;
+  color: #f1f1f1;
   text-decoration: none;
   padding: 0 10px;
   transition: color 0.3s ease;
@@ -131,14 +130,99 @@ h3 {
   font-size: 1.4em;
 }
 
-/* Estilo das listas */
-ul {
-  list-style: none;
-  padding: 0;
+.div_fieldset {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
-ul li {
-  margin-bottom: 10px;
+.fieldset_scroll {
+  width: 45%;
+  max-height: calc(1.6em * 20); 
+  overflow-y: auto;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  position: relative; 
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.icon_aula_html {
+  position: absolute; 
+  color: #f37f3d;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 90%;
+  font-size: 15rem;
+  opacity: 0.1;
+  z-index: +1; 
+}
+
+.icon_aula_css {
+  position: absolute; 
+  color: #32bae5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 90%;
+  font-size: 15rem;
+  opacity: 0.1;
+  z-index: +1; 
+}
+
+.icon_aula_js {
+  position: absolute; 
+  color: #ffd325;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 90%;
+  font-size: 15rem;
+  opacity: 0.1;
+  z-index: +1; 
+}
+
+.fieldset_scroll legend {
+  font-weight: bold;
+}
+
+/* Estilo das listas */
+.fieldset_scroll ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: +2; 
+}
+.fieldset_scroll ul li {
+  margin-bottom: 5px;
+}
+.fieldset_scroll ul.ul_html li a {
+  text-decoration: none;
+  color: #f37f3d;
+  font-weight: bold;
+}
+.fieldset_scroll ul.ul_html li a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+.fieldset_scroll ul.ul_css li a {
+  text-decoration: none;
+  color: #32bae5;
+  font-weight: bold;
+}
+.fieldset_scroll ul.ul_css li a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+.fieldset_scroll ul.ul_javascript li a {
+  text-decoration: none;
+  color: #f6cf39;
+  font-weight: bold;
+}
+.fieldset_scroll ul.ul_javascript li a:hover {
+  text-decoration: underline;
+  color: #007bff;
 }
 
 footer {
