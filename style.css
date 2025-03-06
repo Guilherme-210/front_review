@@ -54,15 +54,32 @@ section {
 .div_header {
   align-items: center;
 }
-/* Campo de Busca */
-#search {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px 15px;
+
+/* estiliza o formulario de busca */
+form {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background: #0056b3;
+}
+
 
 /* Estilo dos links do nav */
 
