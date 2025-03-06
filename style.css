@@ -20,7 +20,7 @@ body {
 /* Estilo do header */
 header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   position: sticky;
@@ -28,7 +28,16 @@ header {
   z-index: 1000;
   background-color: #333;
   color: #fff;
-  padding: 20px 0;
+  gap: .5rem;
+  padding: 1rem 0;
+}
+
+.div_nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .div_section,
@@ -92,21 +101,17 @@ main {
 /* Estilo dos títulos */
 h1 {
   font-size: 2.5em;
-  margin-bottom: 10px;
   text-align: center;
-  padding: 15px;
 }
 h2 {
   font-size: 1.8em;
   color: #333;
-  margin-top: 20px;
   text-align: center;
 }
 
 
 h3 {
   font-size: 1.4em;
-  margin-top: 15px;
 }
 
 /* Estilo das listas */
