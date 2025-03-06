@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore o conceito de módulos no Common.JS e veja exemplos práticos de importação e exportação de código. Aprenda a organizar melhor seu projeto em JavaScript!"/>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Módulos Common.JS</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/introdução_aos_modulos/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Módulos Common.JS</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que é Módulos com Common.JS?</legend>
+        <p>
+          A utilização de importação e exportação usando o <code>Common.JS</code> é uma ferramenta a parte não suportada por padrão nos navegadores. Só que ele é a forma padrão de se trabalhar com módulos pelo <code>Node.JS</code>, mas mesmo no node ele não precisa ser utilizado necessariamente por haver outras ferramentas que podem ser utilizadas no lugar dele.
+        </p>
+        <p>
+          E ele pode ser totalmente substituído pela implementação nativa dos módulos do JavaScript, ao qual é preferível por serem ferramentas próprias da linguagem.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exemplo sem importação de código</legend>
+        <div class="code">
+          <pre><code>function render1() {
+  console.log('Renderizando a interface da aplicação...')
+}
+
+function store1() {
+  console.log("Salvando as informações no banco de dados...")
+}
+
+console.log("Aplicação 1 iniciada.")
+render1()
+store1()
+console.log("Aplicação finalizada.")</code></pre>
+        </div>
+        <p>No exemplo a cima, é mais utilizado em códigos pequenos e de fácil manuseio, o qual acaba por não ter muito conteúdo.</p>
+      </fieldset>
+
+      <!-- Exemplo usado na aula -->
+      <fieldset>
+        <legend>Exemplo com importação de código</legend>
+        <div class="code">
+          <pre><code>//script.js
+//requerimento de inportação
+            
+const render = require("./render.js")
+const store = require("./store.js")
+
+console.log("Aplicação 2 iniciada.")
+render()
+store()
+console.log("Aplicação finalizada.")</code></pre>
+        </div>
+
+        <div class="code">
+          <pre><code>//render.js
+//Código de exportação da função render()
+
+function render() {
+  console.log('Renderizando a interface da aplicação...')
+}
+
+module.exports = render</code></pre>
+        </div>
+
+        <div class="code">
+          <pre><code>//store.js
+//Código de exportação da função store()
+
+function store() {
+  console.log("Salvando as informações no banco de dados...")
+}
+
+module.exports = store</code></pre>
+        </div>
+        <p>Esse exemplo é mais utilizado quando há muito conteúdo, com o intuito de deixar o código mais legível e de fácil manutenção.</p>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="scripts/script1.js"></script>
+    <script src="scripts/script2.js"></script>
+    <script src="scripts/toggleTheme.js"></script>
+  </body>
+</html>
