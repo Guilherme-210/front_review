@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aprenda sobre a introdução aos módulos em JavaScript. Descubra como dividir seu código em arquivos reutilizáveis." />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png" />
-  <title>Introdução aos Módulos</title>
-</head>
-<body data-theme="light">
-  <header>
-    <nav>
-      <a class="nav_pages" href="/"></a>
-      <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-      <a class="nav_pages" href="/"></a>
-    </nav>
-    <h1>Introdução aos Módulos</h1>
-    <div>
-      <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
-        <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
-      </button>
-    </div>
-  </header>
-  <main>
-    <fieldset>
-      <legend>O que são Módulos?</legend>
-      <p>
-        Módulos são uma forma de dividir o código JavaScript em arquivos reutilizáveis. Com módulos, podemos separar funcionalidades específicas, tornando o código mais organizado e fácil de manter.
-      </p>
-    </fieldset>
-    <fieldset>
-      <legend>Exemplo de Uso</legend>
-      <div class="code">
-        <pre><code>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aprenda sobre a introdução aos módulos em JavaScript. Descubra como dividir seu código em arquivos reutilizáveis."
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Introdução aos Módulos</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-19/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+      <h1>Introdução aos Módulos</h1>
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+    <main>
+      <fieldset>
+        <legend>O que são Módulos?</legend>
+        <p>
+          Módulos são uma forma de dividir o código JavaScript em arquivos
+          reutilizáveis. Com módulos, podemos separar funcionalidades
+          específicas, tornando o código mais organizado e fácil de manter.
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Exemplo de Uso</legend>
+        <div class="code">
+          <pre><code>
 // arquivo math.js
 export function soma(a, b) {
   return a + b;
@@ -45,18 +67,18 @@ export function soma(a, b) {
 import { soma } from "./math.js";
 console.log(soma(2, 3)); // 5
         </code></pre>
-      </div>
-      <p>
-        No exemplo acima, o arquivo <code>math.js</code> exporta a função <code>soma</code>, e no <code>main.js</code> nós importamos essa função para utilizá-la.
-      </p>
-    </fieldset>
-    <fieldset>
-      <legend>Execução da Aula</legend>
-    </fieldset>
-    <fieldset>
-      <legend>Exemplo de Treino</legend>
-      <div class="code">
-        <pre><code>
+        </div>
+        <p>
+          No exemplo acima, o arquivo <code>math.js</code> exporta a função
+          <code>soma</code>, e no <code>main.js</code> nós importamos essa
+          função para utilizá-la.
+        </p>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Exemplo de Treino</legend>
+        <div class="code">
+          <pre><code>
 // arquivo saudacoes.js
 export function saudacao(nome) {
   return `Olá, ${nome}!`;
@@ -66,21 +88,22 @@ export function saudacao(nome) {
 import { saudacao } from "./saudacoes.js";
 console.log(saudacao("Guilherme"));
         </code></pre>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Execução</legend>
-    </fieldset>
-  </main>
-  <footer>
-    <p>© Baseado nas aulas da One Bit Code.</p>
-    <p>© 2025 Desenvolvido por Guilherme Reis.</p>
-    <br />
-    <p>
-      <a href="https://github.com/Guilherme-210" target="_blank">Acesse meu GitHub <ion-icon name="logo-github"></ion-icon></a>
-    </p>
-  </footer>
-  <script src="script.js"></script>
-  <script src="toggleTheme.js"></script>
-</body>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© Baseado nas aulas da One Bit Code.</p>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
 </html>
