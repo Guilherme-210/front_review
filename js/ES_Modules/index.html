@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content=""
-    />
+    <meta name="description" content="Aprenda a utilizar Módulos com ES Modules no JavaScript. Descubra como importar e exportar código de maneira eficiente e moderna para criar projetos bem estruturados." />
 
     <script
       type="module"
@@ -33,11 +30,11 @@
   <body data-theme="light">
     <header>
       <nav>
-        <a class="nav_pages" href="/js/modulos_common-js/index.html"><i class="fi fi-rr-angle-left"></i
+        <a class="nav_pages" href="/js/modulos_common-js/index.html"
+          ><i class="fi fi-rr-angle-left"></i
         ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i
-        ></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
       </nav>
 
       <h1>Módulos com ES Modules</h1>
@@ -53,49 +50,105 @@
       <fieldset>
         <legend></legend>
         <p>
-          
+          O <code>ES Modules</code> (ECMAScript Modules) é um sistema de módulos
+          nativo do JavaScript que permite dividir o código em arquivos
+          reutilizáveis e organizados. Ele usa as palavras-chave
+          <code>export</code> e <code>import</code> para compartilhar e carregar
+          funcionalidades entre arquivos.
+        </p>
+        <p>
+          Para usar ES Modules no HTML, você deve definir a chamada da tag
+          <code>&lt;script&gt;</code> com o <code>type="module"</code>
         </p>
       </fieldset>
 
       <!-- Exemplo usado na aula -->
       <fieldset>
-        <legend>Exemplo usado na aula</legend>
-        <div class="code">
-          <pre><code>
-          </code></pre>
-        </div>
+        <legend>Exemplo sem a utilização dos ES Modules</legend>
         <p>
-          
+          Vamos imaginar que na nossa aplicação temos um arquivo javascript com
+          várias funções e que utilizamos essas funções várias vezes:
         </p>
-      </fieldset>
-
-      <!-- Execução -->
-      <fieldset>
-        <legend>Execução da aula</legend>
-      </fieldset>
-
-      <!-- Exemplo de treino -->
-      <fieldset>
-        <legend>Exemplo de treino</legend>
         <div class="code">
-          <pre><code>
-          </code></pre>
+          <pre><code>// script1.js
+
+function label(attributes) {
+  const element = document.createElement('label')
+  Object.assign(element, attributes)
+  return element
+}
+
+function input(attributes) {
+  const element = document.createElement('input')
+  Object.assign(element, attributes)
+  return element
+}
+
+function br() {
+  const element = document.createElement('br')
+  return element
+}
+
+console.log(label({ for: 'fullname', textContent: 'Nome Completo'}))
+console.log(input({ id: 'fullname', name: 'fullname', placeholder: 'Digite seu nome completo...'}))
+console.log(br())</code></pre>
         </div>
-        <p>
-          
-        </p>
       </fieldset>
 
-      <!-- Execução -->
       <fieldset>
-        <legend>Execução</legend>
+        <legend>Exemplo utilizando os ES Modules</legend>
+        <p>
+          Vamos modularizar nosso código javascript utilizando os ES Modules:
+        </p>
+        <div class="code">
+          <pre><code>// index.html
+            
+&lt;script src="scripts/script2.js" type="module"&gt;&lt;/script&gt;</code></pre>
+        </div>
+        <div class="code">
+          <pre><code>// script2.js
+
+import { name, label, input, br } from "./functions.js"
+
+console.log(name)
+console.log(label({ for: "fullname", textContent: "Nome Completo" }))
+console.log(
+  input({
+    id: "fullname",
+    name: "fullname",
+    placeholder: "Digite seu nome completo...",
+  })
+)
+console.log(br())</code></pre>
+        </div>
+        <div class="code">
+          <pre><code>// functions.js
+
+export const name = "Guilherme"
+
+export function label(attributes) {
+  const element = document.createElement("label")
+  Object.assign(element, attributes)
+  return element
+}
+
+export function input(attributes) {
+  const element = document.createElement("input")
+  Object.assign(element, attributes)
+  return element
+}
+
+export function br() {
+  const element = document.createElement("br")
+  return element
+}</code></pre>
+        </div>
       </fieldset>
     </main>
 
     <footer>
-      <p>
-        © 2025 Desenvolvido por Guilherme Reis.
-      </p>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
       <p>
         <a href="https://github.com/Guilherme-210" target="_blank"
           >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
@@ -104,7 +157,7 @@
     </footer>
 
     <script src="scripts/script1.js"></script>
-    <script src="scripts/script2.js"></script>
+    <script src="scripts/script2.js" type="module"></script>
     <script src="scripts/toggleTheme.js"></script>
   </body>
 </html>

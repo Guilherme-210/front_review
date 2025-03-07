@@ -1,12 +1,26 @@
-function render1() {
-  console.log('Renderizando a interface da aplicação...')
-}
+// function label(attributes) {
+//   const element = document.createElement("label")
+//   Object.assign(element, attributes)
+//   return element
+// }
 
-function store1() {
-  console.log("Salvando as informações no banco de dados...")
-}
+// function input(attributes) {
+//   const element = document.createElement("input")
+//   Object.assign(element, attributes)
+//   return element
+// }
 
-console.log("Aplicação 1 iniciada.")
-render1()
-store1()
-console.log("Aplicação finalizada.")
+// function br() {
+//   const element = document.createElement("br")
+//   return element
+// }
+
+// console.log(label({ for: "fullname", textContent: "Nome Completo" }))
+// console.log(
+//   input({
+//     id: "fullname",
+//     name: "fullname",
+//     placeholder: "Digite seu nome completo...",
+//   })
+// )
+// console.log(br())
