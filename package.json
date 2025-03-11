@@ -1,0 +1,27 @@
+{
+  "name": "primeiro-projeto-npm",
+  "version": "1.0.0",
+  "description": "Primeiro projeto com o uso do npm",
+  "main": "searchInput.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guilherme-210/front_review.git"
+  },
+  "author": "Guilherme Reis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guilherme-210/front_review/issues"
+  },
+  "homepage": "https://github.com/Guilherme-210/front_review#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0"
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Saiba tudo sobre o NPM: instalação, uso e principais comandos. Explore pacotes como ESLint e Lodash para melhorar seu fluxo de trabalho em JavaScript." />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Guia NPM</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-20/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+      <h1>Guia do NPM</h1>
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que é o NPM?</legend>
+        <p>
+          O <strong>NPM</strong> (Node Package Manager) é o gerenciador de
+          pacotes padrão para o Node.js. Ele permite instalar, compartilhar e
+          gerenciar dependências de projetos JavaScript.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Como instalar o NPM?</legend>
+        <p>
+          O NPM já vem instalado com o <strong>Node.js</strong>. Para verificar
+          se ele está instalado, use o seguinte comando no terminal:
+        </p>
+        <div class="code">
+          <pre><code>npm -v</code></pre>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Comandos básicos</legend>
+        <p><strong>Instalar um pacote:</strong></p>
+        <div class="code">
+          <pre><code>npm install nome-do-pacote</code></pre>
+        </div>
+        <p><strong>Instalar um pacote globalmente:</strong></p>
+        <div class="code">
+          <pre><code>npm install -g nome-do-pacote</code></pre>
+        </div>
+        <p><strong>Atualizar pacotes:</strong></p>
+        <div class="code">
+          <pre><code>npm update</code></pre>
+        </div>
+        <p><strong>Remover um pacote:</strong></p>
+        <div class="code">
+          <pre><code>npm uninstall nome-do-pacote</code></pre>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>O que é o ESLint?</legend>
+        <p>
+          O <strong>ESLint</strong> é uma ferramenta que analisa o código
+          JavaScript/TypeScript para encontrar erros e garantir boas práticas.
+          Ele ajuda a manter um código padronizado e evita bugs.
+        </p>
+        <p><strong>Instalação:</strong></p>
+        <div class="code">
+          <pre><code>npm install eslint --save-dev</code></pre>
+        </div>
+        <p><strong>Inicializar configuração:</strong></p>
+        <div class="code">
+          <pre><code>npx eslint --init</code></pre>
+        </div>
+        <p><strong>Corrigir erros automaticamente:</strong></p>
+        <div class="code">
+          <pre><code>npx eslint . --fix</code></pre>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>O que é o Lodash?</legend>
+        <p>
+          O <strong>Lodash</strong> é uma biblioteca JavaScript que fornece
+          funções utilitárias para trabalhar com arrays, objetos, strings e
+          muito mais. Ele ajuda a escrever código mais limpo e eficiente.
+        </p>
+        <p><strong>Instalação:</strong></p>
+        <div class="code">
+          <pre><code>npm install lodash</code></pre>
+        </div>
+        <p><strong>Importação no código:</strong></p>
+        <div class="code">
+          <pre><code>const Lodash = require('lodash'); // CommonJS
+import Lodash from 'lodash'; // ES Modules</code></pre>
+        </div>
+        <p>
+          <strong>Exemplo de uso (remover valores falsy de um array):</strong>
+        </p>
+        <div class="code">
+          <pre><code>const arr = [0, 1, false, 2, "", 3, null, undefined, NaN];
+console.log(Lodash.compact(arr)); // [1, 2, 3]</code></pre>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
