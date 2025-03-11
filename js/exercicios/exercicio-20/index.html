@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Esta pagina demonstrar tipos de calculadora usando o JavaScript fazendo o uso de export no ESM"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Calculadoras Com JavaScript</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/export_do_ESM/index.html"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="#"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Modelos de Calculadoras Com JavaScript</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1° calculadora -->
+      <section>
+        <fieldset>
+          <legend>Calculadora OnClick</legend>
+          <p>
+            <strong>OnClick</strong>: É acionado quando um elemento é clicado. É
+            comumente usado em botões, links ou qualquer elemento que possa
+            receber um clique do usuário.
+          </p>
+          <p>
+            O calculo e executado automaticamente apos clicar no butão
+            <strong>"Calcular"</strong>
+          </p>
+          <div class="calc">
+            <input
+              required
+              type="number"
+              class="calc_1"
+              id="val_1"
+              placeholder="1° Número"
+            />
+            <select id="operator_1" class="calc_1">
+              <option>+</option>
+              <option>-</option>
+              <option>*</option>
+              <option>/</option>
+            </select>
+            <input
+              type="number"
+              class="calc_1"
+              id="val_2"
+              placeholder="2° Número"
+            />
+            <input
+              readonly
+              type="text"
+              class="calc_1"
+              id="result_1"
+              placeholder="Resultado"
+            />
+
+            <button
+              class="calc_button"
+              id="calcButton_1"
+              onclick="calculate1()"
+            >
+              Calcular
+            </button>
+            <button class="calc_button" id="clearButton_1" onclick="clear1()">
+              Limpar
+            </button>
+          </div>
+          <div id="carregamento_1" class="div_load">
+            <div class="spinner"></div>
+            <p class="load">Carregando...</p>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- 2° calculadora -->
+      <section>
+        <fieldset>
+          <legend>Calculadora OnChange</legend>
+          <p>
+            <strong>OnChange</strong>: É acionado quando o valor de um elemento
+            muda, como em campos de entrada de texto ou caixas de seleção. Ele é
+            útil para detectar quando o usuário altera um valor.
+          </p>
+          <p>
+            O calculo e executado automaticamente apos sair do campo
+            <strong>"2° número"</strong>
+          </p>
+          <div class="calc">
+            <input
+              type="number"
+              class="calc_2"
+              id="val_3"
+              placeholder="1° Número"
+            />
+            <select id="operator_2" class="calc_2">
+              <option>+</option>
+              <option>-</option>
+              <option>*</option>
+              <option>/</option>
+            </select>
+            <input
+              type="number"
+              class="calc_2"
+              id="val_4"
+              onchange="calculate2()"
+              placeholder="2° Número"
+            />
+            <input
+              readonly
+              type="text"
+              class="calc_2"
+              id="result_2"
+              placeholder="Resultado"
+            />
+
+            <button class="calc_button" id="clearButton_2" onclick="erase2()">
+              Limpar
+            </button>
+          </div>
+          <div id="carregamento_2" style="display: none; text-align: center">
+            <div class="spinner"></div>
+            <p class="load">Carregando...</p>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- 3° Calculadora -->
+      <section>
+        <fieldset>
+          <legend>Calculadora Aula</legend>
+          <input class="calc_3" type="text" id="input_3" />
+          <div id="keys">
+            <button id="clear">C</button>
+            <button class="charKey" data-value=" ( ">(</button>
+            <button class="charKey" data-value=" ) ">)</button>
+            <button class="charKey" data-value=" / ">/</button>
+            <button class="charKey" data-value="7">7</button>
+            <button class="charKey" data-value="8">8</button>
+            <button class="charKey" data-value="9">9</button>
+            <button class="charKey" data-value=" * ">*</button>
+            <button class="charKey" data-value="4">4</button>
+            <button class="charKey" data-value="5">5</button>
+            <button class="charKey" data-value="6">6</button>
+            <button class="charKey" data-value=" - ">-</button>
+            <button class="charKey" data-value="1">1</button>
+            <button class="charKey" data-value="2">2</button>
+            <button class="charKey" data-value="3">3</button>
+            <button class="charKey" data-value=" + ">+</button>
+            <button class="charKey" data-value="0">0</button>
+            <button class="charKey" data-value=".">.</button>
+            <button class="charKey" data-value=" % ">mod</button>
+            <button id="equal">=</button>
+          </div>
+          <section class="copy_result">
+            <button class="calc_3" id="copyToClipboard">Copy</button>
+            <input class="calc_3" type="text" id="result_3" disabled />
+          </section>
+        </fieldset>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Desenvolvido por Guilherme Reis.
+        <br />
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="js/calc1.js"></script>
+    <script src="js/calc2.js"></script>
+    <script src="js/script3.js" type="module"></script>
+    <!-- <script src="js/toggleTheme.js"></script> -->
+  </body>
+</html>

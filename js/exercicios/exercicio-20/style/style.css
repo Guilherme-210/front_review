@@ -1,0 +1,436 @@
+/* Estilização global */
+* {
+  font-size: var(--font-size-medium);
+  box-sizing: border-box;
+}
+
+/* Variaveis globais */
+:root {
+  /* Tamanhos */
+  --font-size-small: 0.75rem; /* Tamanho de fonte pequeno */
+  --font-size-medium: 1rem; /* Tamanho de fonte médio */
+  --font-size-large: 1.5rem; /* Tamanho de fonte grande */
+  --font-size-xlarge: 1.75rem; /* Tamanho de fonte extra grande */
+  
+  /* Espaçamentos */
+  --padding-small: 0.5rem; /* Padding pequeno */
+  --padding-medium: 0.75rem; /* Padding médio */
+  --padding-large: 1rem; /* Padding grande */
+  --margin-small: 0.5rem; /* Margin pequeno */
+  --margin-medium: 1rem; /* Margin médio */
+  --margin-large: 2rem; /* Margin grande */
+  
+  /* Bordas */
+  --border-radius-small: 0.5rem; /* Raio de borda pequeno */
+  --border-radius-medium: 1rem; /* Raio de borda médio */
+  --border-width: 0.5px; /* Largura da borda */
+}
+/* Variáveis de estilo - Tema claro */
+[data-theme="light"] {
+  /* Cores */
+  --bg-color: #dedfe0; /* Cor de fundo clara */
+  --border-color: #ccc; /* Cor de borda mais clara */
+  --header-bg-color: #ffffff; /* Cor de fundo do header (branco) */
+  --footer-bg-color: #ffffff; /* Cor de fundo do footer (branco) */
+  --font-color: #212529; /* Cor do texto escura */
+  --primary-color: #007bff; /* Cor primária (azul) */
+  --error-color: #dc3545; /* Cor de erro (vermelho) */
+  --success-color: #28a745; /* Cor de sucesso (verde) */
+  --footer-text-color: #212529; /* Cor do texto do footer */
+  --footer-link-color: #007bff; /* Cor dos links do footer */
+  --footer-link-hover-color: #0056b3; /* Cor dos links do footer ao passar o mouse */
+  --button-bg-color: #007bff; /* Cor de fundo dos botões (azul) */
+  --button-hover-bg-color: #0056b3; /* Cor de fundo dos botões ao passar o mouse (azul escuro) */
+  --text-color: #000; /* Cor do texto (preto) */
+  --hover-text-color: #000000;
+  --toggle-theme-icon: #007bff;
+}
+/* Variáveis de estilo - Tema escuro */
+[data-theme="dark"] {
+  /* Cores */
+  --bg-color: #212529;
+  --border-color: #666;
+  --font-color: #f1f5f9;
+  --primary-color: #4dff91;
+  --error-color: #ff0043;
+  --success-color: #00ff00; /* Cor de sucesso */
+  --header-bg-color: #333; /* Cor de fundo do header */
+  --footer-bg-color: #333; /* Cor de fundo do footer */
+  --footer-text-color: #f1f5f9; /* Cor do texto do footer */
+  --footer-link-color: #00ff00; /* Cor dos links do footer */
+  --footer-link-hover-color: #ffffff; /* Cor dos links do footer ao passar o mouse */
+  --button-bg-color: #00ff00; /* Cor de fundo dos botões */
+  --button-hover-bg-color: #333; /* Cor de fundo dos botões ao passar o mouse */
+  --text-color: #000; /* Cor do texto */
+  --hover-text-color: #fff; /* Cor do texto ao passar o mouse */
+  --toggle-theme-icon: #ffd700;
+}
+
+
+/* estilização do body */
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* estilização do header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--margin-small);
+  
+  padding: var(--padding-large);
+  background-color: var(--header-bg-color);
+}
+
+/* estilização do header - nav */
+.nav_pages {
+  margin: var(--margin-small);
+  padding: var(--padding-small) var(--padding-medium);
+
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-color);
+
+  background-color: var(--button-bg-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  cursor: pointer;
+  border-radius: var(--border-radius-small);
+  transition: background 0.5s;
+}
+.toggle_Theme:hover,
+.nav_pages:hover {
+  background-color: var(--header-bg-color);
+  color: var(--hover-text-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  transition: background 0.6s;
+}
+
+/* estilização do header - h1 */
+h1 {
+  color: var(--button-bg-color);
+  text-align: center;
+  margin: var(--margin-small);
+  padding: var(--padding-small) var(--padding-medium);
+  font-size: var(--font-size-xlarge);
+}
+
+/* estilizando o toggle-Thema */
+.toggle_Theme {
+  margin: var(--margin-small);
+  padding: var(--padding-small) var(--padding-medium);
+  transition: background 0.5s;
+}
+.toggle_Theme:hover {
+  color: var(--toggle-theme-icon);
+  transition: background 0.5s;
+}
+.icon_Theme {
+  font-size: var(--font-size-large);
+}
+
+/* estilização da main */
+main {
+  max-width: 100%;
+  width: 90%;
+  margin: var(--margin-large) auto;
+  padding: var(--padding-large);
+}
+
+/* estilização do fieldset */
+fieldset {
+  background-color: var(--header-bg-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  color: var(--font-color);
+  padding: var(--padding-medium);
+}
+
+/* estilização do fieldset - legend */
+legend {
+  color: var(--button-bg-color);
+  text-align: center;
+  padding: var(--padding-small);
+  font-size: var(--font-size-large);
+  font-weight: 700;
+}
+
+/* estilização do fieldset - p */
+p {
+  margin: var(--margin-small);
+}
+
+/* estilização do fieldset - div.calc */
+.calc {
+  display: flex;
+  margin: var(--margin-medium) 0;
+}
+
+/* estilização do fieldset - .calc_1 & .calc_2 & .calc_3 */
+.calc_1,
+.calc_2 {
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-small);
+  color: var(--font-color);
+  display: block;
+  font-size: var(--font-size-small);
+  margin: var(--margin-small);
+  padding: var(--padding-medium);
+  text-align: end;
+  width: 100%;
+}
+.calc_3 {
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-small);
+  color: var(--font-color);
+  display: block;
+  font-size: var(--font-size-xlarge);
+  padding: var(--padding-large);
+  text-align: end;
+  width: 100%;
+}
+.calc_1:hover,
+.calc_2:hover,
+.calc_3:hover {
+  border: 2px solid var(--button-bg-color);
+}
+
+/* estilização do fieldset - operadores */
+#operator_1,
+#operator_2 {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+#operator_1,
+#operator_2 {
+  width: 4rem;
+}
+#operador_1:hover,
+#operador_2:hover {
+  border: 2px solid var(--button-bg-color);
+}
+
+/* estilização do fieldset - input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+#input_3 {
+  font-size: var(--font-size-medium);
+  padding: var(--padding-medium);
+}
+#result_3 {
+  border-width: 2px;
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+  font-size: var(--font-size-medium);
+  padding: var(--padding-small);
+}
+
+/* estilização do fieldset - button */
+button {
+  text-align: center;
+  font-weight: 700;
+  padding: var(--padding-small) var(--padding-medium);
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  cursor: pointer;
+  border-radius: var(--border-radius-small);
+  transition: background 0.5s;
+}
+button:hover {
+  background-color: var(--header-bg-color);
+  color: var(--hover-text-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  transition: background 0.6s;
+}
+
+/* estilização do fieldset - .calc_button */
+.calc_button {
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-small);
+  color: var(--font-color);
+  display: block;
+  font-size: var(--font-size-small);
+  margin: var(--margin-small);
+  padding: var(--padding-medium);
+  text-align: end;
+  width: 100%;
+}
+.calc_button {
+  text-align: center;
+  font-weight: 700;
+  padding: var(--padding-small) var(--padding-medium);
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  cursor: pointer;
+  border-radius: var(--border-radius-small);
+  transition: background 0.5s;
+}
+.calc_button:hover {
+  background-color: var(--header-bg-color);
+  color: var(--hover-text-color);
+  border: solid var(--border-width) var(--button-bg-color);
+  transition: background 0.6s;
+}
+
+/* estilização do fieldset - div#keys */
+#keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--margin-small);
+  margin: var(--margin-large) 0;
+}
+#keys button:hover {
+  filter: brightness(0.8);
+}
+
+/* estilização do fieldset>section - div#keys */
+.copy_result {
+  display: flex;
+}
+/* estilização do fieldset>section */
+#copyToClipboard {
+  background-color: transparent;
+  border: solid var(--border-color);
+  border-width: 2px;
+  border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+  color: var(--hover-text-color);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  padding: var(--padding-small);
+  width: 6rem;
+}
+
+/* estilização do fieldset - f=calcbutton & f=clearButton */
+#calcButton_1,
+#clearButton_1,
+#clearButton_2 {
+  width: 90px;
+}
+
+/* estilização do fieldset - load */
+.div_load {
+  display: none; 
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.load {
+  margin: 0;
+  padding: 0;
+}
+
+/* estilização das mensagens de erro */
+.error {
+  background-color: var(--error-color);
+}
+.success {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* estilização do footer */
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: var(--padding-large); /* Você pode definir essa variável se necessário */
+  margin-top: var(--margin-large); /* Você pode definir essa variável se necessário */
+}
+
+footer a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--footer-link-hover-color);
+  text-decoration: underline;
+}
+
+/* === estilização do media viewport === */
+@media (max-width: 768px) {
+  main {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  header {
+    gap: 1rem;
+    height: auto;
+  }
+
+  .toggle_Theme,
+  .nav_pages {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .nav_pages a {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  fieldset {
+    padding: 10px;
+    width: 100%;
+  }
+  fieldset section {
+    align-items: flex-start;
+  }
+
+  legend {
+    font-size: 1rem;
+    padding-right: 0;
+  }
+
+  p {
+    width: auto;
+  }
+
+  .calc {
+    flex-direction: column;
+    margin: 10px 0;
+  }
+  .calc_1,
+  .calc_2,
+  #operator_1,
+  #operator_2 {
+    width: auto;
+    font-size: 1rem;
+  }
+
+
+  .calc_button {
+    width: auto;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  #calcButton_1,
+  #clearButton_1,
+  #clearButton_2 {
+    width: auto;
+  }
+  
+  #keys {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
