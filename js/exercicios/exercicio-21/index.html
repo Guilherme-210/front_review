@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explicação sobre como calcular idade e próximo aniversário usando Day.js."
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+
+    <title>Calculando Aniversário com Day.js</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Calculando Aniversário com Day.js</h1>
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que é Day.js?</legend>
+        <p>
+          O <strong>Day.js</strong> é uma biblioteca JavaScript para manipulação de datas, semelhante ao Moment.js, mas mais leve e rápida.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exemplo usado na aula</legend>
+        <div class="code">
+          <pre><code>
+const dayjs = require("dayjs")
+
+function birthday(date) {
+  const birthday = dayjs(date)
+  const today = dayjs()
+  const ageInYears = today.diff(birthday, "year")
+  
+  let nextBirthday = birthday.add(ageInYears, "year")
+  if (nextBirthday.isBefore(today, "day")) {
+    nextBirthday = nextBirthday.add(1, "year")
+  }
+  
+  const daysToNextBirthday = nextBirthday.diff(today, "day")
+  
+  console.log(`Idade: ${ageInYears}`)
+  console.log(`Próximo aniversário: ${nextBirthday.format("DD/MM/YYYY")}`)
+  console.log(`Dias até completar ${ageInYears + 1} anos: ${daysToNextBirthday}`)
+}
+
+birthday("2000-02-23")
+          </code></pre>
+        </div>
+        <p>
+          Esse código usa o <strong>Day.js</strong> para calcular a idade de uma pessoa, determinar a data do próximo aniversário e quantos dias faltam para essa data.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Execução da aula</legend>
+        <p>
+          A função <code>birthday()</code> recebe uma data de nascimento como string e exibe no console:
+        </p>
+        <ul>
+          <li>A idade atual da pessoa.</li>
+          <li>A data do próximo aniversário.</li>
+          <li>Quantos dias faltam para o aniversário.</li>
+        </ul>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Desenvolvido por Guilherme Reis.
+      </p>  
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
