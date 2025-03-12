@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/Guilherme-210/front_review#readme",
   "dependencies": {
+    "dayjs": "^1.11.13",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
-    "eslint": "^9.22.0",
     "globals": "^16.0.0"
   }
 }
