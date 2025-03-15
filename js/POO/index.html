@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aprenda os conceitos fundamentais de Programação Orientada a Objetos (POO) no JavaScript, incluindo encapsulamento, abstração, herança e polimorfismo." />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Programação Orientada a Objetos (POO)</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-21/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Programação Orientada a Objetos (POO) no JavaScript</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>📌O que é Programação Orientada a Objetos (POO)?</legend>
+        <p>
+          POO é um paradigma de programação baseado no conceito de objetos , que
+          são estruturas que encapsulam dados (propriedades/atributos) e
+          comportamentos (métodos).
+        </p>
+        <p>Os quatro pilares do POO são:</p>
+        <ol>
+          <li>Encapsulamento 🏠 → Proteger dados dentro de uma estrutura.</li>
+          <li>
+            Abstração 🎭 → Ocultar detalhes desnecessários e expor apenas o
+            essencial.
+          </li>
+          <li>Herança 👨‍👦 → Reutilizar código de uma classe em outra.</li>
+          <li>
+            Polimorfismo 🦾 → Modificar comportamentos herdados de forma
+            diferente.
+          </li>
+        </ol>
+        <p>Agora vamos ver como isso funciona no JavaScript!</p>
+      </fieldset>
+
+      <fieldset>
+        <h3>🛠️ Criando Objetos no JavaScript</h3>
+        <p>
+          Antes da introdução classno ES6, os objetos eram criados de formas
+          mais simples, como objetos literários e funções construtoras .
+        </p>
+        <div class="div_fieldset">
+          <fieldset class="fieldset_1">
+            <legend>1️⃣ Objeto Literal</legend>
+            <p>
+              A forma mais simples de criar um objeto é com <code>{}</code>:
+            </p>
+            <div class="code">
+              <pre><code>const pessoa = {
+  nome: "Guilherme",
+  idade: 25,
+  falar: function() {
+    console.log(`Olá, meu nome é ${this.nome}`);
+  }
+};
+
+pessoa.falar(); // Saída: Olá, meu nome é Guilherme
+                </code></pre>
+            </div>
+            <p>
+              Aqui, <code>this</code> referência ao próprio objeto
+              <code>pessoa</code>.
+            </p>
+          </fieldset>
+          <fieldset class="fieldset_2">
+            <legend>2️⃣ Função Construtora</legend>
+            <p>
+              Antes das <code>class</code>, usávamos funções para criar "moldes"
+              de objetos:
+            </p>
+            <div class="code">
+              <pre><code>function Pessoa(nome, idade) {
+  this.nome = nome;
+  this.idade = idade;
+  this.falar = function() {
+    console.log(`Meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+  };
+}
+
+const pessoa1 = new Pessoa("Ana", 30);
+pessoa1.falar(); // Saída: Meu nome é Ana e tenho 30 anos.
+                </code></pre>
+            </div>
+            <p>
+              A palavra-chave <code>new</code> cria uma nova instância do objeto
+              com base na função <code>Pessoa</code>.
+            </p>
+          </fieldset>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔒 1. Encapsulamento</legend>
+        <p>
+          Encapsulamento protege os dados internos do objeto. Podemos usar <code>#</code> para tornar atributos privados:
+        </p>
+        <div class="code">
+          <pre><code>class ContaBancaria {
+  #saldo; // Atributo privado
+
+  constructor(saldoInicial) {
+    this.#saldo = saldoInicial;
+  }
+
+  depositar(valor) {
+    this.#saldo += valor;
+    console.log(`Depósito de R$${valor} realizado!`);
+  }
+
+  getSaldo() {
+    return this.#saldo;
+  }
+}
+
+const conta = new ContaBancaria(1000);
+conta.depositar(500);
+console.log(conta.getSaldo()); 
+
+// Saída: 1500
+// console.log(conta.#saldo); ❌ ERRO! O atributo é privado.
+          </code></pre>
+        </div>
+        <p>
+          O <code>#saldo</code> não pode ser acessado diretamente, apenas pelos métodos da
+          classe.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🎭 2. Abstração</legend>
+        <p>
+          A abstração significa esconder detalhes internos e expor apenas o
+          necessário.
+        </p>
+        <div class="code">
+          <pre><code>class Carro {
+  constructor(modelo) {
+    this.modelo = modelo;
+  }
+
+  ligar() {
+    this.#checarCombustivel();
+    console.log(`${this.modelo} está ligado!`);
+  }
+
+  #checarCombustivel() {
+    console.log("Verificando combustível...");
+  }
+}
+
+const carro = new Carro("Fusca");
+carro.ligar();
+
+// Saída: Verificando combustível...
+//         Fusca está ligado!
+// carro.#checarCombustivel(); ❌ ERRO! Método privado.
+          </code></pre>
+        </div>
+        <p>O método <code>#checarCombustivel()</code> está oculto do usuário.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>👨‍👦 3. Herança</legend>
+        <p>
+          Herança permite que uma classe herde atributos e métodos de outra.
+        </p>
+        <div class="code">
+          <pre><code>class Animal {
+  constructor(nome) {
+    this.nome = nome;
+  }
+
+  fazerSom() {
+    console.log("Som genérico de animal...");
+  }
+}
+
+class Cachorro extends Animal {
+  fazerSom() {
+    console.log("Au au! 🐶");
+  }
+}
+
+const rex = new Cachorro("Rex");
+rex.fazerSom(); 
+
+// Saída: Au au! 🐶
+          </code></pre>
+        </div>
+        <p>
+          A classe <code>Cachorro</code> herdou <code>Animal</code>, mas sobrescreveu o método <code>fazerSom()</code>.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🦾 4. Polimorfismo</legend>
+        <p>
+          Polimorfismo permite modificar métodos herdados sem mudar a interface
+          da classe.
+        </p>
+        <div class="code">
+          <pre><code>class Forma {
+  calcularArea() {
+    return 0;
+  }
+}
+
+class Quadrado extends Forma {
+  constructor(lado) {
+    super();
+    this.lado = lado;
+  }
+
+  calcularArea() {
+    return this.lado * this.lado;
+  }
+}
+
+class Circulo extends Forma {
+  constructor(raio) {
+    super();
+    this.raio = raio;
+  }
+
+  calcularArea() {
+    return Math.PI * this.raio ** 2;
+  }
+}
+
+const formas = [new Quadrado(4), new Circulo(3)];
+
+formas.forEach(forma => {
+  console.log(`Área: ${forma.calcularArea()}`);
+});
+
+// Saída: Área: 16
+//         Área: 28.274333882308138
+          </code></pre>
+        </div>
+        <p>A função <code>calcularArea()</code> funciona diferente dependendo da classe.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>⚡ Resumo</legend>
+        <ul>
+          <li>Objeto Literal → <code>{ chave: valor }</code></li>
+          <li>Função Construtora → <code>function Pessoa()</code></li>
+          <li>Classe → <code>class Pessoa</code></li>
+          <li>Encapsulamento → <code>#atributoPrivado</code></li>
+          <li>Abstração → Esconder detalhes internos</li>
+          <li>Herança → <code>class Filho extends Pai</code></li>
+          <li>Polimorfismo → Descrever métodos herdados</li>
+        </ul>
+        <p>Com esses conceitos, você já pode começar a estruturar seus projetos usando POO no JavaScript! 🚀</p>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
