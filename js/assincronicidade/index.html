@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aprenda os conceitos de assincronicidade no JavaScript. Entenda como trabalhar com callbacks, Promises, async/await e o funcionamento do Event Loop." />
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Assincronicidade no JavaScript</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/setTimeout_e_setInterval/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Assincronicidade no JavaScript</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>o que e Assincronicidade no JavaScript</legend>
+        <p>
+          O JavaScript é <strong>single-threaded</strong>, ou seja, executa
+          apenas uma instrução por vez na <strong>thread principal</strong>. No
+          entanto, ele permite <strong>operações assíncronas</strong>, que
+          ocorrem em segundo plano sem bloquear a execução do restante do
+          código. Isso é essencial para lidar com tarefas demoradas, como
+          <strong>requisições de APIs</strong>,
+          <strong>leitura de arquivos</strong>,
+          <strong>timers(setTimeout)</strong> e muito mais.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>📌 1. O que é Código Síncrono e Assíncrono?</legend>
+        <p>🕹️ Código Síncrono (Executa Passo a Passo)</p>
+        <p>
+          No código <strong>síncrono</strong>, cada linha de código precisa
+          esperar que a anterior seja concluída antes de executar.
+        </p>
+        <details>
+          <summary>✅ Exemplo:</summary>
+          <div class="code">
+            <pre><code>console.log("Início");
+console.log("Processando...");
+console.log("Fim");</code></pre>
+          </div>
+          <h3>Saída:</h3>
+          <div class="code">
+            <pre><code>// Início
+// Processando...
+// Fim</code></pre>
+          </div>
+        </details>
+        <p>
+          ✔️ Aqui, cada comando bloqueia a execução até que seja finalizado.
+        </p>
+        <legend>🔄 Código Assíncrono (Executa em Paralelo)</legend>
+        <p>
+          No código <strong>assíncrono</strong> , certas tarefas podem ser
+          delegadas para serem processadas enquanto o restante do código
+          continua sendo executado.
+        </p>
+        <details>
+          <summary>✅ Exemplo:</summary>
+          <div class="code">
+            <pre><code>console.log("Início");
+
+setTimeout(() => {
+  console.log("Executado após 2 segundos ⏳");
+}, 2000);
+
+console.log("Fim");</code></pre>
+          </div>
+          <h3>Saída:</h3>
+          <div class="code">
+            <pre><code>Início
+Fim
+(Depois de 2 segundos...)
+Executado após 2 segundos</code></pre>
+          </div>
+        </details>
+        <p>
+          ✔️ O <code>setTimeout()</code> é assíncrono, então o código não
+          precisa esperar por ele.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>⚙️ 2. Event Loop e Callbacks: Como Funciona?</legend>
+        <p>
+          O <strong>Event Loop</strong> gerencia a execução do código assíncrono
+          sem JavaScript. Ele monitora a
+          <strong>Pilha de Chamadas</strong> (pilha de execução) e a
+          <strong>Fila de Tarefas</strong> (fila de tarefas) para garantir que
+          as funções assíncronas sejam executadas no momento certo.
+        </p>
+        <p><strong>Fluxo básico:</strong></p>
+        <ol>
+          <li>O código síncrono é executado primeiro.</li>
+          <li>
+            Tarefas assíncronas (como <code>setTimeout()</code>,
+            <code>fetch()</code>, eventos) são enviadas para a Task Queue .
+          </li>
+          <li>
+            Quando uma Call Stack está vazia, o Event Loop pega as tarefas da
+            Task Queue e as executa.
+          </li>
+        </ol>
+        <details>
+          <summary>✅ Exemplo para entender o Event Loop</summary>
+          <div class="code">
+            <pre><code>console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+console.log("C");</code></pre>
+          </div>
+          <h3>Saída sem console:</h3>
+          <div class="code">
+            <pre><code>// A
+// C
+// B</code></pre>
+          </div>
+        </details>
+        <p>
+          Mesmo com <code>setTimeout(..., 0)</code>,
+          <strong>"B" não é impresso antes de "C"</strong>, pois a função vai
+          para a <strong>Task Queue</strong>, aguardando o Event Loop liberar a
+          execução.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>📞 3. Retornos de chamada: A Primeira Solução</legend>
+        <p>
+          Antes da introdução de <strong>Promises</strong> e
+          <strong>async/await</strong>, a forma tradicional de trabalhar com
+          código assíncrono era através de <strong>callbacks</strong> (funções
+          passadas como argumento para serem executadas depois).
+        </p>
+        <details>
+          <summary>✅ Exemplo de retorno de chamada</summary>
+          <div class="code">
+            <pre><code>function baixarArquivo(url, callback) {
+  console.log(`Baixando arquivo de ${url}...`);
+
+  setTimeout(() => {
+    console.log("Download concluído! ✅");
+    callback("Arquivo salvo!");
+  }, 2000);
+}
+
+baixarArquivo("https://meuarquivo.com", (mensagem) => {
+  console.log(mensagem);
+});</code></pre>
+          </div>
+          <h3>Saída sem console:</h3>
+          <div class="code">
+            <pre><code>// Baixando arquivo de https://meuarquivo.com...
+// (Depois de 2 segundos...)
+// Download concluído! ✅
+// Arquivo salvo!</code></pre>
+          </div>
+        </details>
+        <p>
+          ✔️ A função <strong>callbacké</strong> executada somente após o
+          download ser concluído .
+        </p>
+        <legend>❌ Problema dos Callbacks: Callback Hell</legend>
+        <details>
+          <summary>✅ Exemplo:</summary>
+          <p>
+            O uso excessivo de callbacks pode tornar o código difícil de
+            entender e manter, gerando o <strong>"Callback Hell"</strong>.
+          </p>
+          <div class="code">
+            <pre><code>buscarDados((dados) => {
+  processarDados(dados, (resultado) => {
+    salvarNoBanco(resultado, (resposta) => {
+      console.log("Dados salvos!", resposta);
+    });
+  });
+});</code></pre>
+          </div>
+        </details>
+        <p>
+          <strong>Problema</strong>: O código fica
+          <strong>aninhado</strong> demais e difícil de manter.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔮 4. Promessas: Melhorando a Assincronicidade</legend>
+        <p>
+          Uma <strong>Promessa</strong> (promessa) representa
+          <strong>uma operação que será resolvida no futuro</strong>. Ela pode
+          ter três estados:
+        </p>
+        <p></p>
+        <ul>
+          <li>
+            <strong>Pendente</strong> (Pendente) → A operação ainda não foi
+            concluída.
+          </li>
+          <li>
+            <strong>Cumprida</strong> (Resolvida) → A operação foi concluída com
+            sucesso.
+          </li>
+          <li>
+            <strong>Rejeitado</strong> (Rejeitada) → Ocorreu um erro na
+            operação.
+          </li>
+        </ul>
+        <details>
+          <summary>✅ Criando uma Promessa</summary>
+          <div class="code">
+            <pre><code>function baixarArquivo(url) {
+  return new Promise((resolve, reject) => {
+    console.log(`Baixando arquivo de ${url}...`);
+
+    setTimeout(() => {
+      let sucesso = true;
+      if (sucesso) {
+        resolve("Download concluído! ✅");
+      } else {
+        reject("Erro no download! ❌");
+      }
+    }, 2000);
+  });
+}
+
+baixarArquivo("https://meuarquivo.com")
+  .then((mensagem) => console.log(mensagem)) // Sucesso
+  .catch((erro) => console.error(erro)); // Erro</code></pre>
+          </div>
+          <h3>Saída sem console:</h3>
+          <div class="code">
+            <pre><code>Baixando arquivo de https://meuarquivo.com...
+(Depois de 2 segundos...)
+Download concluído! ✅</code></pre>
+          </div>
+        </details>
+        <p><strong>✔️ Vantagens das Promessas:</strong></p>
+        <ul>
+          <li>Código mais organizado e legível.</li>
+          <li>Evite o <strong>Callback Hell</strong>.</li>
+          <li>Fácil encadear operações (<code>.then()</code>).</li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>⏳ 5. Async/Await: Uma Solução Moderna</legend>
+        <p>
+          O async/awaitfacilita o uso de código assíncrono de maneira mais
+          síncrona e legível .
+        </p>
+        <details>
+          <summary>✅ Usandoa <strong>sync/await</strong>:</summary>
+          <div class="code">
+            <pre><code>function baixarArquivo() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Download concluído! ✅");
+    }, 2000);
+  });
+}
+
+async function executar() {
+  console.log("Baixando arquivo...");
+  let mensagem = await baixarArquivo();
+  console.log(mensagem);
+}
+
+executar();</code></pre>
+          </div>
+          <h3>Saída:</h3>
+          <div class="code">
+            <pre><code>// Baixando arquivo...
+// (Depois de 2 segundos...)
+// Download concluído! ✅</code></pre>
+          </div>
+        </details>
+        <p>✔️ Vantagens de <strong>async/await</strong>:</p>
+        <ul>
+          <li>Código mais <strong>legível e limpo</strong>.</li>
+          <li>Evita <code>.then()</code> encadeados.</li>
+          <li>
+            Se comporta como código síncrono, mas continua sendo assíncrono.
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>⚠️ 6. Tratando Erros comtry...catch</legend>
+        <p>
+          Podemos capturar erros em funções <strong>async</strong> com
+          <strong>try...catch</strong>.
+        </p>
+        <details>
+          <summary>✅ Exemplo: Tratamento de Erros</summary>
+          <div class="code">
+            <pre><code>function baixarArquivo() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let sucesso = false;
+      if (sucesso) {
+        resolve("Download concluído! ✅");
+      } else {
+        reject("Erro no download! ❌");
+      }
+    }, 2000);
+  });
+}
+
+async function executar() {
+  try {
+    console.log("Baixando arquivo...");
+    let mensagem = await baixarArquivo();
+    console.log(mensagem);
+  } catch (erro) {
+    console.error("Falha:", erro);
+  }
+}
+
+executar();</code></pre>
+          </div>
+          <h3>Saída sem console:</h3>
+          <div class="code">
+            <pre><code>// Baixando arquivo...
+// (Depois de 2 segundos...)
+// Falha: Erro no download! ❌</code></pre>
+          </div>
+        </details>
+        <p>✔️torna try...catcho tratamento de erros mais simples e elegante.</p>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>🚀 Conclusão</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Vantagens</th>
+                <th>Desvantagens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Retornos de chamada</strong></td>
+                <td>Simples, sem precisar de novas sintaxes</td>
+                <td>Pode gerar Callback Hell</td>
+              </tr>
+              <tr>
+                <td><strong>Promessas</strong></td>
+                <td>Evite aninhamento excessivo, fácil de encadear</td>
+                <td>Pode ficar verboso com <code>.then()</code></td>
+              </tr>
+              <tr>
+                <td><strong>Assíncrono/Aguardando</strong></td>
+                <td>Código mais legível e organizado</td>
+                <td>Precisa de <strong>try...catchpara</strong> tratar erros</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
