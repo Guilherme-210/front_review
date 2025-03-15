@@ -45,6 +45,10 @@
   --code-color: #007bff; 
   --strong-code-color: #007bff; 
 
+  --thead-background-color: #dedfe0;
+  --tbody-background-color: #cfcdcd;
+  --table-font-color: #212529;
+
   --footer-bg-color: #ffffff;
   --footer-text-color: #212529; 
   --footer-link-color: #007bff;
@@ -68,6 +72,10 @@
   --code-border-color: #3e4451;
   --code-color: #00ff00; 
   --strong-code-color: #00ff00; 
+
+  --thead-background-color: #212529;
+  --tbody-background-color: #282c34;
+  --table-font-color: #f1f5f9;
   
   --footer-bg-color: #333; 
   --footer-text-color: #f1f5f9;
@@ -164,17 +172,28 @@ h3, legend {
   font-weight: 700;
 }
 
+/* Estilizando lista de resposta */
+details {
+  background-color: var(--code-background-color);
+  border: 1px solid var(--code-border-color);
+  border-radius: 5px;
+  padding: 1rem;
+}
+summary {
+  color: var(--code-color);
+  margin: 0.5rem;
+}
 /* Estilizando as listas */
 ol {
-  list-style: decimal;
-  margin-left: 2.5rem;
+  list-style: none;
+  margin: 1rem 0 1rem 1.5rem;
 }
 ol li {
   margin: .5rem 0;
 }
 ul {
   list-style:circle;
-  margin-left: 2.5rem;
+  margin: 1rem 0 1rem 2.5rem;
 }
 ul li {
   margin: .5rem 0;
@@ -194,6 +213,8 @@ p {
   overflow-x: auto;
   border: 1px solid var(--code-border-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: calc(1.6em * 13); 
+  overflow-y: auto;
 }
 
 /* estilização do fieldset - pre & code */
@@ -206,48 +227,39 @@ code {
   line-height: 1.6;
 }
 
-strong {
-  color: var(--strong-code-color);
-}
+/* estilização da tabela */
+.div_table {
+  width: fit-content;
+  max-width: 100%;
 
-
-/* estilização dos div inputs */
-.inputs {
-  display: flex;
+  border: #000 1px solid;
+  border-radius: 10px;
   margin: var(--margin-medium) 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-/* estilização do fieldset - input */
-input,
-select {
-  background-color: var(--bg-color);
-  border: 2px solid var(--border-color);
-  border-radius: var(--border-radius-small);
-  color: var(--font-color);
-  display: block;
-  font-size: var(--font-size-small);
-  margin: var(--margin-small);
-  padding: var(--padding-medium);
-  text-align: end;
+table {
   width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-background-color); /* Usa a mesma cor de fundo dos fieldsets */
+  border-radius: var(--border-radius-small);
+  overflow: hidden; /* Garante que as bordas arredondadas funcionem */
+  table-layout: auto; 
 }
-input:hover,
-select:hover {
-  border: 2px solid var(--button-bg-color);
+thead{
+  background-color: var(--thead-background-color);
 }
-/* estilização do fieldset - operadores */
-select {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  width: 4rem;
+th, td {
+  padding: var(--padding-medium);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color); /* Usa a cor da borda das variáveis */
+  color: var(--table-font-color);
 }
-select:hover {
-  border: 2px solid var(--button-bg-color);
+th {
+  font-weight: bold;
+  color: var(--table-font-color);
 }
-/* estilização do fieldset - input */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"] {
-  -webkit-appearance: none;
-  appearance: none;
+tbody tr:nth-child(even) {
+  background-color: var(--tbody-background-color); /* Linhas pares com fundo levemente diferente */
 }
 
 /* estilização do fieldset - button */

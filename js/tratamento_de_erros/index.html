@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Entenda como tratar erros no JavaScript usando try, catch, finally e throw. Aprenda a evitar falhas inesperadas e melhorar a robustez do seu código." />
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Tratamento de Erros</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Tratamento de Erros no JavaScript</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>
+          🛠️ Tratamento de Erros no JavaScript: try, catchefinally
+        </legend>
+        <p>
+          O JavaScript, assim como outras linguagens de programação, permite
+          lidar com erros de forma controlada usando blocos de tratamento de
+          abordagens . Isso é essencial para evitar que um erro inesperado
+          aconteça na execução do código.
+        </p>
+        <p>O tratamento de erros no JavaScript é feito com:</p>
+        <ul>
+          <li>try→ Tente executar um bloco de código.</li>
+          <li>catch→ Captura e lida com erros caso ocorram no try.</li>
+          <li>
+            finally→ (Opcional) Sempre execute um bloco de código,
+            independentemente de ter ocorrido erro ou não.
+          </li>
+        </ul>
+        <details>
+          <summary>📌 Resumo</summary>
+          <ol>
+            <li>✔️ <code>try</code> → Tente executar um código que pode dar erro.</li>
+            <li>✔️ <code>catch</code> → Captura erros e impede que o código quebre.</li>
+            <li>✔️ <code>finally</code> → Sempre é executado (com ou sem erro).</li>
+            <li>✔️ <code>throw</code> → Lançamento de erros personalizados.</li>
+            <li>
+              ✔️ Os erros podem ser de diferentes tipos ( <code>ReferenceError</code>,
+              <code>TypeError</code>, etc.).
+            </li>
+          </ol>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>🎯 1. O Problema Sem Tratamento de Erros</legend>
+        <p>
+          Quando um erro ocorre no JavaScript, ele pode interromper
+          completamente a execução do código. Exemplo:
+        </p>
+        <div class="code">
+          <pre><code>console.log("Início do código...");
+
+let resultado = 10 / 2;
+console.log("Resultado:", resultado);
+
+let erro = x + 10; // ❌ ERRO: 'x' não está definido.
+
+// Retomo da função
+// ReferenceError: x is not defined
+
+console.log("Este código nunca será executado.");</code></pre>
+        </div>
+        <p>
+          💥 Erro no Console: <code>ReferenceError: x is not defined</code> O
+          erro faz com que o restante do código não seja executado .
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🛡️ 2. Como funciona try...catch?</legend>
+        <p>
+          O tryexecuta um bloco de código. Se ocorrer um erro, ele pula para o
+          catch, que captura a exceção sem quebrar o código.
+        </p>
+        <div class="code">
+          <pre><code>console.log("Início do código...")
+try {
+  let resultado = 10 / 2
+  console.log("Resultado:", resultado)
+
+  let erro = x + 10 // ❌ ERRO: 'x' não está definido.
+
+  console.log("Este código não será executado.")
+} catch (erro) {
+  console.log("⚠️ Ocorreu um erro:", erro.message)
+}
+console.log("O código continua normalmente! 🚀")
+
+// Início do código...
+// Resultado: 5
+// ⚠️ Ocorreu um erro: x is not defined
+// O código continua normalmente! 🚀</code></pre>
+        </div>
+        <p>✔️ O erro foi capturado sem quebrar o programa.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔍 3. O Objeto de Erro (Error)</legend>
+        <p>O catchrecebe um objeto com informações de erro, como:</p>
+        <ul>
+          <li>erro.message→ Mensagem de erro.</li>
+          <li>erro.name→ Tipo do erro ( ReferenceError, TypeError, etc.).</li>
+          <li>erro.stack→ Rastreamento de pilha (rastreamento de erro).</li>
+        </ul>
+        <div class="code">
+          <pre><code>try {
+  let resultado = x / 2 // ❌ ERRO: 'x' não está definido.
+} catch (erro) {
+  console.log("Nome do erro:", erro.name)
+  console.log("Mensagem:", erro.message)
+  console.log("Stack trace:", erro.stack)
+}
+
+// Nome do erro: ReferenceError
+// Mensagem: x is not defined
+// Stack trace: ReferenceError: x is not defined
+//     at &lt;anonymous&gt;:2:19</code></pre>
+        </div>
+        <p></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔁 4. O Blocofinally</legend>
+        <p>
+          O finallyé um bloco que sempre será executado, independentemente de
+          ocorrer erro ou não. Ele é útil para fechar conexões, liberar memória
+          ou limpar dados temporariamente .
+        </p>
+        <div class="code">
+          <pre><code>try {
+  console.log("Tentando executar o código...")
+  let resultado = 10 / 0 // Isso resulta em Infinity, mas não é um erro.
+  console.log("Resultado:", resultado)
+} catch (erro) {
+  console.log("Erro capturado:", erro.message)
+} finally {
+  console.log("Isso sempre será executado! ✅")
+}
+console.log("Fim do código!")
+
+// Tentando executar o código...
+// Resultado: Infinity
+// Isso sempre será executado! ✅
+// Fim do código!</code></pre>
+        </div>
+        <p>Mesmo sem erro, <code>finally</code> foi executado</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>⚙️ 5. Criando Erros Personalizados ( throw)</legend>
+        <p>
+          Podemos lançar nossos próprios erros usando throw, útil para validar
+          entradas e impedir ações indesejadas.
+        </p>
+        <div class="code">
+          <pre><code>function dividir(a, b) {
+  if (b === 0) {
+    throw new Error("Divisão por zero não é permitida! ❌")
+  }
+  return a / b
+}
+try {
+  console.log(dividir(10, 2)) // ✅ Ok
+  console.log(dividir(10, 0)) // ❌ ERRO!
+} catch (erro) {
+  console.log("Erro capturado:", erro.message)
+}
+
+// 5
+// Erro capturado: Divisão por zero não é permitida! ❌</code></pre>
+        </div>
+        <p>✔️ O erro foi tratado, evitando uma falha inesperada.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🧩 6. Diferentes tipos de erros no JavaScript</legend>
+        <p>O JavaScript possui vários tipos de erros, como:</p>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Erro</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>ReferenceError</code></td>
+                <td>Variável não definida</td>
+              </tr>
+              <tr>
+                <td><code>TypeError</code></td>
+                <td>Operação inválida para o tipo de dado.</td>
+              </tr>
+              <tr>
+                <td><code>SyntaxError</code></td>
+                <td>Código com erro de sintaxe.</td>
+              </tr>
+              <tr>
+                <td><code>RangeError</code></td>
+                <td>Valor fora do intervalo permitido.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p></p>
+        <div class="code">
+          <pre><code>try {
+  let lista = [1, 2, 3]
+  lista.length = -1 // ❌ ERRO: Tamanho de array negativo gera um RangeError.
+} catch (erro) {
+  if (erro instanceof RangeError) {
+    console.log("Erro de intervalo:", erro.message)
+  } else {
+    console.log("Outro erro:", erro.message)
+  }
+}
+
+// Erro de intervalo: Invalid array length</code></pre>
+        </div>
+        <p></p>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
