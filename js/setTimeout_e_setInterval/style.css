@@ -187,18 +187,44 @@ summary {
 }
 /* Estilizando as listas */
 ol {
-  list-style: decimal;
-  margin-left: 2.5rem;
+  list-style: none;
+  margin: 1rem 0 1rem 1.5rem;
 }
 ol li {
   margin: .5rem 0;
 }
 ul {
   list-style:circle;
-  margin-left: 2.5rem;
+  margin: 1rem 0 1rem 2.5rem;
 }
 ul li {
   margin: .5rem 0;
+}
+
+/* estilização do fieldset - p */
+p {
+  margin: var(--margin-small);
+}
+
+/* estilização do fieldset - .code */
+.code {
+  background-color: var(--code-background-color);
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  border: 1px solid var(--code-border-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* estilização do fieldset - pre & code */
+pre,
+code {
+  font-family: "Fira Code", monospace;
+  color: var(--button-bg-color);
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* estilização da tabela */
@@ -234,76 +260,6 @@ th {
 }
 tbody tr:nth-child(even) {
   background-color: var(--tbody-background-color); /* Linhas pares com fundo levemente diferente */
-}
-
-/* estilização do fieldset - p */
-p {
-  margin: var(--margin-small);
-}
-
-/* estilização do fieldset - .code */
-.code {
-  background-color: var(--code-background-color);
-  border-radius: 5px;
-  padding: 12px;
-  margin-bottom: 10px;
-  overflow-x: auto;
-  border: 1px solid var(--code-border-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* estilização do fieldset - pre & code */
-pre,
-code {
-  font-family: "Fira Code", monospace;
-  color: var(--button-bg-color);
-  white-space: pre-wrap;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-strong {
-  color: var(--strong-code-color);
-}
-
-
-/* estilização dos div inputs */
-.inputs {
-  display: flex;
-  margin: var(--margin-medium) 0;
-}
-/* estilização do fieldset - input */
-input,
-select {
-  background-color: var(--bg-color);
-  border: 2px solid var(--border-color);
-  border-radius: var(--border-radius-small);
-  color: var(--font-color);
-  display: block;
-  font-size: var(--font-size-small);
-  margin: var(--margin-small);
-  padding: var(--padding-medium);
-  text-align: end;
-  width: 100%;
-}
-input:hover,
-select:hover {
-  border: 2px solid var(--button-bg-color);
-}
-/* estilização do fieldset - operadores */
-select {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  width: 4rem;
-}
-select:hover {
-  border: 2px solid var(--button-bg-color);
-}
-/* estilização do fieldset - input */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"] {
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 /* estilização do fieldset - button */
