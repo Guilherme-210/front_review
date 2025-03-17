@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aprenda sobre Classes e Instâncias no JavaScript. Descubra como criar classes, instâncias, métodos e entender conceitos como herança e propriedades privadas." />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Classes e instâncias</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/POO/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/js/tratamento_de_erros/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+
+      <h1>Classes e instâncias</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>📌 Classes e instâncias sem JavaScript</legend>
+        <p>
+          Se você quer entender a orientação de objetos no JavaScript, precisa
+          conhecer classes e instâncias. Elas são uma base para criar objetos de
+          forma organizada e reutilizáveis.
+        </p>
+        <p>Bora entender isso de uma vez por todas! 🚀</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🏛️ 1. O Que São Classes?</legend>
+        <p>
+          Uma classe é um molde para criar objetos. Pense em uma aula como uma
+          receita de bolo : você pode seguir a receita várias vezes e criar
+          vários bolos (instâncias) .
+        </p>
+        <details>
+          <summary>📌 Criando uma aula no JavaScript</summary>
+          <p>
+            No JavaScript, usamos a palavra-chave classpara definir uma classe.
+          </p>
+          <div class="code">
+            <pre><code>class Carro {
+  constructor(marca, modelo, ano) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.ano = ano;
+  }
+}</code></pre>
+          </div>
+        </details>
+        <p>Explicação:</p>
+        <ul>
+          <li><code>class Carro {}</code> → Defina uma classe Carro.</li>
+          <li>
+            <code>constructor(marca, modelo, ano) {}</code> → O
+            <strong>método especial</strong> <code>constructor</code> é chamado
+            <strong>automaticamente</strong> quando criamos um carro novo.
+          </li>
+          <li>
+            <code>this.marca = marca;</code> → Definir uma
+            <strong>propriedade</strong> da instância baseada no parâmetro
+            recebido.
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>🚗 2. O Que São Instâncias?</legend>
+        <p>Uma instância é um objeto criado a partir de uma classe.</p>
+        <details>
+          <summary>✅ Criando uma Instância deCarro</summary>
+          <div class="code">
+            <pre><code>const meuCarro = new Carro("Toyota", "Corolla", 2022);
+console.log(meuCarro);</code></pre>
+          </div>
+          <h3>🔹 Saída sem console:</h3>
+          <div class="code">
+            <pre><code>// Carro { marca: 'Toyota', modelo: 'Corolla', ano: 2022 }</code></pre>
+          </div>
+          <p>
+            ✔️ Agora temos um <strong>objeto real</strong> baseado no modelo
+            Carro!
+          </p>
+          <h3>
+            Podemos criar quantas instâncias quisermos usando a mesma classe:
+          </h3>
+          <div class="code">
+            <pre><code>const carro1 = new Carro("Honda", "Civic", 2023);
+const carro2 = new Carro("Ford", "Mustang", 1969);
+
+console.log(carro1);
+console.log(carro2);</code></pre>
+          </div>
+          <h3>🔹 Saída:</h3>
+          <div class="code">
+            <pre><code>Carro { marca: 'Honda', modelo: 'Civic', ano: 2023 }
+Carro { marca: 'Ford', modelo: 'Mustang', ano: 1969 }</code></pre>
+          </div>
+          <p>
+            ✔️ Cada <strong>instância</strong> é um objeto
+            <strong>independente</strong> de outra.
+          </p>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>⚙️ 3. Adicionando métodos às aulas</legend>
+        <p>
+          Podemos adicionar funções dentro da classe para que todas as
+          instâncias tenham acesso a elas.
+        </p>
+        <details>
+          <summary>
+            ✅ Exemplo: Adicionando um Método <code>detalhes()</code>
+          </summary>
+          <div class="code">
+            <pre><code>class Carro {
+  constructor(marca, modelo, ano) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.ano = ano;
+  }
+
+  detalhes() {
+    return `🚗 ${this.marca} ${this.modelo}, Ano: ${this.ano}`;
+  }
+}
+
+const meuCarro = new Carro("Chevrolet", "Onix", 2024);
+console.log(meuCarro.detalhes());</code></pre>
+          </div>
+          <h3>🔹 Saída:</h3>
+          <div class="code">
+            <pre><code>// 🚗 Chevrolet Onix, Ano: 2024</code></pre>
+          </div>
+          <p>
+            ✔️ O método <code>detalhes()</code> pode ser chamado em qualquer
+            instância de <code>Carro</code>.
+          </p>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>🏗️ 4. Herança:</legend>
+        <p>
+          Criando Classes Filhas Podemos criar uma classe filha que herda
+          características da classe pai usando extends.
+        </p>
+        <details>
+          <summary>✅ Exemplo: Criando CarroEletricoque Herda deCarro</summary>
+          <div class="code">
+            <pre><code>class ContaBancaria {
+  #saldo; // Propriedade privada
+
+  constructor(nome, saldoInicial) {
+    this.nome = nome;
+    this.#saldo = saldoInicial;
+  }
+
+  depositar(valor) {
+    this.#saldo += valor;
+    console.log(`💰 Depósito de R$${valor} realizado.`);
+  }
+
+  verSaldo() {
+    return `💵 Saldo de ${this.nome}: R$${this.#saldo}`;
+  }
+}
+
+const conta = new ContaBancaria("Guilherme", 1000);
+conta.depositar(500);
+console.log(conta.verSaldo());
+
+// console.log(conta.#saldo); // ❌ ERRO: Propriedade privada!</code></pre>
+          </div>
+          <h3>🔹 Saída:</h3>
+          <div class="code">
+            <pre><code>// 💰 Depósito de R$500 realizado.
+// 💵 Saldo de Guilherme: R$1500</code></pre>
+          </div>
+        </details>
+        <p></p>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>🚀 Resumo Rápido</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Conceito</th>
+                <th>Explicação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Classe</strong></td>
+                <td>Um molde para criar objetos.</td>
+              </tr>
+              <tr>
+                <td><strong>Instância</strong></td>
+                <td>Um objeto criado a partir de uma classe.</td>
+              </tr>
+              <tr>
+                <td><strong>Construtor</strong></td>
+                <td>Função especial que roda ao criar uma instância.</td>
+              </tr>
+              <tr>
+                <td><strong>Método</strong></td>
+                <td>
+                  Uma função dentro da classe que pode ser usada nas instâncias.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Herança</strong></td>
+                <td>
+                  Criar uma classe baseada em outra, reaproveitando código.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Propriedades Privadas</strong></td>
+                <td>
+                  Usando <code>#</code>, criamos atributos protegidos da classe.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
