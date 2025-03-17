@@ -192,12 +192,12 @@ primeiraPromise()
           🔄 4. Promise.all() - Executando Múltiplas Promessas ao Mesmo Tempo
         </legend>
         <p>
-          Se tivermos várias promessas independentes , podemos
-          Promise.all()usá-las simultaneamente e obter os resultados quando
-          todas forem concluídas .
+          Se tivermos várias promessas independentes, podemos
+          <code>Promise.all()</code> usá-las simultaneamente e obter os
+          resultados quando todas forem concluídas.
         </p>
         <details>
-          <summary>📜 Exemplo comPromise.all()</summary>
+          <summary>📜 Exemplo com Promise.all()</summary>
           <div class="code">
             <pre><code>const promessa1 = new Promise((resolve) => setTimeout(() => resolve("🐢 Tarefa 1 concluída"), 3000));
 const promessa2 = new Promise((resolve) => setTimeout(() => resolve("🚀 Tarefa 2 concluída"), 2000));
@@ -223,7 +223,7 @@ Promise.all([promessa1, promessa2, promessa3])
           ⚡ 5. Promise.race() - Pegando a Primeira Promise que Resolver
         </legend>
         <p>
-          Se quisermos que apenas a primeira promessa resolvida seja usada ,
+          Se quisermos que apenas a primeira promessa resolvida seja usada,
           podemos utilizar <code>Promise.race()</code>.
         </p>
         <details>
@@ -253,8 +253,7 @@ Promise.race([promessa1, promessa2])
         </legend>
         <p>
           Uma abordagem ainda mais limpa para lidar com Promises é usando
-          <strong>async/await</strong>, tornando o código mais próximo do
-          síncrono.
+          <code>async/await</code>, tornando o código mais próximo do síncrono.
         </p>
         <details>
           <summary>📜 Exemplo com async/await</summary>
@@ -280,8 +279,8 @@ executar();</code></pre>
 // 📂 Arquivo baixado!</code></pre>
           </div>
           <p>
-            ✔️ Com <strong>async/await</strong>, o código fica mais limpo e
-            fácil de entender.
+            ✔️ Com <code>async/await</code>, o código fica mais limpo e fácil de
+            entender.
           </p>
         </details>
       </fieldset>
