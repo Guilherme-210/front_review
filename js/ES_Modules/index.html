@@ -77,8 +77,9 @@
         </p>
         <details>
           <summary>📜 Exemplo: script1.js</summary>
-          <div class="code">
-            <pre><code>function label(attributes) {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function label(attributes) {
   const element = document.createElement('label')
   Object.assign(element, attributes)
   return element
@@ -98,6 +99,7 @@ function br() {
 console.log(label({ for: 'fullname', textContent: 'Nome Completo'}))
 console.log(input({ id: 'fullname', name: 'fullname', placeholder: 'Digite seu nome completo...'}))
 console.log(br())</code></pre>
+            </div>
           </div>
         </details>
       </fieldset>
@@ -110,14 +112,17 @@ console.log(br())</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo: index.html</summary>
-          <div class="code">
-            <pre><code>&lt;script src="scripts/script2.js" type="module"&gt;&lt;/script&gt;</code></pre>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>&lt;script src="scripts/script2.js" type="module"&gt;&lt;/script&gt;</code></pre>
+            </div>
           </div>
         </details>
         <details>
           <summary>📜 Exemplo: script2.js</summary>
-          <div class="code">
-            <pre><code>import { name, label, input, br } from "./functions.js"
+          <div class="div_details">
+            <div class="code">
+              <pre><code>import { name, label, input, br } from "./functions.js"
 
 console.log(name)
 console.log(label({ for: "fullname", textContent: "Nome Completo" }))
@@ -129,12 +134,14 @@ console.log(
   })
 )
 console.log(br())</code></pre>
+            </div>
           </div>
         </details>
         <details>
           <summary>📜 Exemplo: functions.js</summary>
-          <div class="code">
-            <pre><code>export const name = "Guilherme"
+          <div class="div_details">
+            <div class="code">
+              <pre><code>export const name = "Guilherme"
 
 export function label(attributes) {
   const element = document.createElement("label")
@@ -152,6 +159,7 @@ export function br() {
   const element = document.createElement("br")
   return element
 }</code></pre>
+            </div>
           </div>
         </details>
       </fieldset>

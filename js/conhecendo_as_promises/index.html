@@ -85,8 +85,9 @@
         </ul>
         <details>
           <summary>📜Criando uma Promise Simples</summary>
-          <div class="code">
-            <pre><code>const minhaPromise = new Promise((resolve, reject) => {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>const minhaPromise = new Promise((resolve, reject) => {
   let sucesso = true; // Altere para false para testar o reject
   
   setTimeout(() => {
@@ -97,16 +98,17 @@
     }
   }, 2000);
 });</code></pre>
+            </div>
+            <p>Explicação:</p>
+            <ul>
+              <li>
+                <strong>resolve(valor)</strong> → Chama o sucesso da Promise.
+              </li>
+              <li>
+                <strong>reject(erro)</strong> → Chama a bloqueada da Promise
+              </li>
+            </ul>
           </div>
-          <p>Explicação:</p>
-          <ul>
-            <li>
-              <strong>resolve(valor)</strong> → Chama o sucesso da Promise.
-            </li>
-            <li>
-              <strong>reject(erro)</strong> → Chama a bloqueada da Promise
-            </li>
-          </ul>
         </details>
         <p>Mas... Como consumimos essa Promessa?</p>
       </fieldset>
@@ -125,24 +127,26 @@
           <summary>
             📜 Exemplo Usando <code>.then()</code> e <code>.catch()</code>
           </summary>
-          <div class="code">
-            <pre><code>minhaPromise
+          <div class="div_details">
+            <div class="code">
+              <pre><code>minhaPromise
   .then((mensagem) => {
     console.log(mensagem); // Executa se a Promise for resolvida
   })
   .catch((erro) => {
     console.error(erro); // Executa se a Promise for rejeitada
   });</code></pre>
-          </div>
-          <h3>🔹 Saída no console (caso sucesso = true):</h3>
-          <div class="code">
-            <pre><code>(Depois de 2 segundos...)
+            </div>
+            <h3>🔹 Saída no console (caso sucesso = true):</h3>
+            <div class="code">
+              <pre><code>(Depois de 2 segundos...)
 ✅ Sucesso! A promessa foi resolvida.</code></pre>
-          </div>
-          <h3>🔹 Saída no console (caso sucesso = false):</h3>
-          <div class="code">
-            <pre><code>// (Depois de 2 segundos...)
+            </div>
+            <h3>🔹 Saída no console (caso sucesso = false):</h3>
+            <div class="code">
+              <pre><code>// (Depois de 2 segundos...)
 // ❌ Erro! A promessa foi rejeitada.            </code></pre>
+            </div>
           </div>
         </details>
       </fieldset>
@@ -158,8 +162,9 @@
         </p>
         <details>
           <summary>📜 Exemplo com Encadeamento</summary>
-          <div class="code">
-            <pre><code>function primeiraPromise() {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function primeiraPromise() {
   return new Promise((resolve) => {
     setTimeout(() => resolve("Passo 1 concluído!"), 1000);
   });
@@ -175,15 +180,16 @@ primeiraPromise()
   .then((resultado) => segundaPromise(resultado))
   .then((resultadoFinal) => console.log(resultadoFinal))
   .catch((erro) => console.error("Erro:", erro));</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// (Depois de 2 segundos...)
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// (Depois de 2 segundos...)
 // Passo 1 concluído! ➡️ Passo 2 concluído!</code></pre>
+            </div>
+            <p>
+              ✔️ O código fica mais organizado do que usando apenas callbacks.
+            </p>
           </div>
-          <p>
-            ✔️ O código fica mais organizado do que usando apenas callbacks.
-          </p>
         </details>
       </fieldset>
 
@@ -198,23 +204,25 @@ primeiraPromise()
         </p>
         <details>
           <summary>📜 Exemplo com Promise.all()</summary>
-          <div class="code">
-            <pre><code>const promessa1 = new Promise((resolve) => setTimeout(() => resolve("🐢 Tarefa 1 concluída"), 3000));
+          <div class="div_details">
+            <div class="code">
+              <pre><code>const promessa1 = new Promise((resolve) => setTimeout(() => resolve("🐢 Tarefa 1 concluída"), 3000));
 const promessa2 = new Promise((resolve) => setTimeout(() => resolve("🚀 Tarefa 2 concluída"), 2000));
 const promessa3 = new Promise((resolve) => setTimeout(() => resolve("💡 Tarefa 3 concluída"), 1000));
 
 Promise.all([promessa1, promessa2, promessa3])
   .then((resultados) => console.log("✅ Todas concluídas:", resultados))
   .catch((erro) => console.error("Erro em alguma promessa:", erro));</code></pre>
+            </div>
+            <h3>Sair no console (após 3 segundos, quando todos terminam):</h3>
+            <div class="code">
+              <pre><code>// ✅ Todas concluídas: ['🐢 Tarefa 1 concluída', '🚀 Tarefa 2 concluída', '💡 Tarefa 3 concluída']</code></pre>
+            </div>
+            <p>
+              ✔️ As Promessas foram realizadas em paralelo, e o resultado só
+              aparece quando TODAS terminam.
+            </p>
           </div>
-          <h3>Sair no console (após 3 segundos, quando todos terminam):</h3>
-          <div class="code">
-            <pre><code>// ✅ Todas concluídas: ['🐢 Tarefa 1 concluída', '🚀 Tarefa 2 concluída', '💡 Tarefa 3 concluída']</code></pre>
-          </div>
-          <p>
-            ✔️ As Promessas foram realizadas em paralelo, e o resultado só
-            aparece quando TODAS terminam.
-          </p>
         </details>
       </fieldset>
 
@@ -228,22 +236,24 @@ Promise.all([promessa1, promessa2, promessa3])
         </p>
         <details>
           <summary>📜 Exemplo com Promise.race()</summary>
-          <div class="code">
-            <pre><code>const promessa1 = new Promise((resolve) => setTimeout(() => resolve("🏆 Primeira a terminar!"), 2000));
+          <div class="div_details">
+            <div class="code">
+              <pre><code>const promessa1 = new Promise((resolve) => setTimeout(() => resolve("🏆 Primeira a terminar!"), 2000));
 const promessa2 = new Promise((resolve) => setTimeout(() => resolve("🔄 Outra promessa"), 3000));
 
 Promise.race([promessa1, promessa2])
   .then((resultado) => console.log("✅ Vencedora:", resultado))
   .catch((erro) => console.error("Erro:", erro));</code></pre>
+            </div>
+            <h3>🔹 Saída no console (após 2 segundos):</h3>
+            <div class="code">
+              <pre><code>// ✅ Vencedora: 🏆 Primeira a terminar!</code></pre>
+            </div>
+            <p>
+              ✔️ Assim que a primeira promessa terminar, as outras serão
+              ignoradas.
+            </p>
           </div>
-          <h3>🔹 Saída no console (após 2 segundos):</h3>
-          <div class="code">
-            <pre><code>// ✅ Vencedora: 🏆 Primeira a terminar!</code></pre>
-          </div>
-          <p>
-            ✔️ Assim que a primeira promessa terminar, as outras serão
-            ignoradas.
-          </p>
         </details>
       </fieldset>
 
@@ -257,8 +267,9 @@ Promise.race([promessa1, promessa2])
         </p>
         <details>
           <summary>📜 Exemplo com async/await</summary>
-          <div class="code">
-            <pre><code>function baixarArquivo() {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function baixarArquivo() {
   return new Promise((resolve) => {
     setTimeout(() => resolve("📂 Arquivo baixado!"), 2000);
   });
@@ -271,17 +282,18 @@ async function executar() {
 }
 
 executar();</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// ⏳ Baixando...
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// ⏳ Baixando...
 // (Depois de 2 segundos...)
 // 📂 Arquivo baixado!</code></pre>
+            </div>
+            <p>
+              ✔️ Com <code>async/await</code>, o código fica mais limpo e fácil
+              de entender.
+            </p>
           </div>
-          <p>
-            ✔️ Com <code>async/await</code>, o código fica mais limpo e fácil de
-            entender.
-          </p>
         </details>
       </fieldset>
 
@@ -293,8 +305,9 @@ executar();</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo com Erro</summary>
-          <div class="code">
-            <pre><code>function falharDownload() {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function falharDownload() {
   return new Promise((_, reject) => {
     setTimeout(() => reject("❌ Erro no download!"), 2000);
   });
@@ -311,17 +324,18 @@ async function executar() {
 }
 
 executar();</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>⏳ Tentando baixar...
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>⏳ Tentando baixar...
 (Depois de 2 segundos...)
 ⚠️ Falha detectada: ❌ Erro no download!</code></pre>
+            </div>
+            <p>
+              ✔️ Com <code>try...catch</code>, o código trata erros de forma
+              clara e segura.
+            </p>
           </div>
-          <p>
-            ✔️ Com <code>try...catch</code>, o código trata erros de forma clara
-            e segura.
-          </p>
         </details>
       </fieldset>
 

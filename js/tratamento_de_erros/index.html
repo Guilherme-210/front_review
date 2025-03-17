@@ -75,23 +75,28 @@
         </ul>
         <details>
           <summary>⚡ Resumo</summary>
-          <ol>
-            <li>
-              ✔️ <code>try</code> → Tente executar um código que pode dar erro.
-            </li>
-            <li>
-              ✔️ <code>catch</code> → Captura erros e impede que o código
-              quebre.
-            </li>
-            <li>
-              ✔️ <code>finally</code> → Sempre é executado (com ou sem erro).
-            </li>
-            <li>✔️ <code>throw</code> → Lançamento de erros personalizados.</li>
-            <li>
-              ✔️ Os erros podem ser de diferentes tipos (
-              <code>ReferenceError</code>, <code>TypeError</code>, etc.).
-            </li>
-          </ol>
+          <div class="div_details">
+            <ol>
+              <li>
+                ✔️ <code>try</code> → Tente executar um código que pode dar
+                erro.
+              </li>
+              <li>
+                ✔️ <code>catch</code> → Captura erros e impede que o código
+                quebre.
+              </li>
+              <li>
+                ✔️ <code>finally</code> → Sempre é executado (com ou sem erro).
+              </li>
+              <li>
+                ✔️ <code>throw</code> → Lançamento de erros personalizados.
+              </li>
+              <li>
+                ✔️ Os erros podem ser de diferentes tipos (
+                <code>ReferenceError</code>, <code>TypeError</code>, etc.).
+              </li>
+            </ol>
+          </div>
         </details>
       </fieldset>
 
@@ -103,8 +108,9 @@
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>console.log("Início do código...");
+          <div class="div_details">
+            <div class="code">
+              <pre><code>console.log("Início do código...");
 
 let resultado = 10 / 2;
 console.log("Resultado:", resultado);
@@ -112,16 +118,18 @@ console.log("Resultado:", resultado);
 let erro = x + 10; // ❌ ERRO: 'x' não está definido.
 
 console.log("Este código nunca será executado.");</code></pre>
+            </div>
+            <h3>💥 Erro no Console:</h3>
+            <div class="code">
+              <pre><code>ReferenceError: x is not defined</code></pre>
+            </div>
+            <p>
+              O erro
+              <strong
+                >faz com que o restante do código não seja executado</strong
+              >. Para evitar isso, usamos <code>try...catch</code>.
+            </p>
           </div>
-          <h3>💥 Erro no Console:</h3>
-          <div class="code">
-            <pre><code>ReferenceError: x is not defined</code></pre>
-          </div>
-          <p>
-            O erro
-            <strong>faz com que o restante do código não seja executado</strong
-            >. Para evitar isso, usamos <code>try...catch</code>.
-          </p>
         </details>
       </fieldset>
 
@@ -134,8 +142,9 @@ console.log("Este código nunca será executado.");</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo: <code>try...catch</code></summary>
-          <div class="code">
-            <pre><code>console.log("Início do código...")
+          <div class="div_details">
+            <div class="code">
+              <pre><code>console.log("Início do código...")
 try {
   let resultado = 10 / 2
   console.log("Resultado:", resultado)
@@ -147,15 +156,16 @@ try {
   console.log("⚠️ Ocorreu um erro:", erro.message)
 }
 console.log("O código continua normalmente! 🚀")</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// Início do código...
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// Início do código...
 // Resultado: 5
 // ⚠️ Ocorreu um erro: x is not defined
 // O código continua normalmente! 🚀</code></pre>
+            </div>
+            <p>✔️ O erro foi capturado sem quebrar o programa.</p>
           </div>
-          <p>✔️ O erro foi capturado sem quebrar o programa.</p>
         </details>
       </fieldset>
 
@@ -175,23 +185,25 @@ console.log("O código continua normalmente! 🚀")</code></pre>
         </ul>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>try {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>try {
   let resultado = x / 2 // ❌ ERRO: 'x' não está definido.
 } catch (erro) {
   console.log("Nome do erro:", erro.name)
   console.log("Mensagem:", erro.message)
   console.log("Stack trace:", erro.stack)
 }</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Nome do erro: ReferenceError
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Nome do erro: ReferenceError
 // Mensagem: x is not defined
 // Stack trace: ReferenceError: x is not defined
 //     at &lt;anonymous&gt;:2:19</code></pre>
+            </div>
+            <p></p>
           </div>
-          <p></p>
         </details>
       </fieldset>
 
@@ -204,8 +216,9 @@ console.log("O código continua normalmente! 🚀")</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>try {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>try {
   console.log("Tentando executar o código...")
   let resultado = 10 / 0 // Isso resulta em Infinity, mas não é um erro.
   console.log("Resultado:", resultado)
@@ -215,15 +228,16 @@ console.log("O código continua normalmente! 🚀")</code></pre>
   console.log("Isso sempre será executado! ✅")
 }
 console.log("Fim do código!")</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Tentando executar o código...
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Tentando executar o código...
 // Resultado: Infinity
 // Isso sempre será executado! ✅
 // Fim do código!</code></pre>
+            </div>
+            <p>Mesmo sem erro, <code>finally</code> foi executado</p>
           </div>
-          <p>Mesmo sem erro, <code>finally</code> foi executado</p>
         </details>
       </fieldset>
 
@@ -235,8 +249,9 @@ console.log("Fim do código!")</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>function dividir(a, b) {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function dividir(a, b) {
   if (b === 0) {
     throw new Error("Divisão por zero não é permitida! ❌")
   }
@@ -248,13 +263,14 @@ try {
 } catch (erro) {
   console.log("Erro capturado:", erro.message)
 }</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// 5
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// 5
 // Erro capturado: Divisão por zero não é permitida! ❌</code></pre>
+            </div>
+            <p>✔️ O erro foi tratado, evitando uma falha inesperada.</p>
           </div>
-          <p>✔️ O erro foi tratado, evitando uma falha inesperada.</p>
         </details>
       </fieldset>
 
@@ -291,9 +307,9 @@ try {
         </div>
         <details>
           <summary>📜 Exemplo: Capturando Erros Diferentes:</summary>
-
-          <div class="code">
-            <pre><code>try {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>try {
             let lista = [1, 2, 3]
             lista.length = -1 // ❌ ERRO: Tamanho de array negativo gera um RangeError.
           } catch (erro) {
@@ -303,10 +319,11 @@ try {
     console.log("Outro erro:", erro.message)
   }
 }</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Erro de intervalo: Invalid array length</code></pre>
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Erro de intervalo: Invalid array length</code></pre>
+            </div>
           </div>
         </details>
       </fieldset>

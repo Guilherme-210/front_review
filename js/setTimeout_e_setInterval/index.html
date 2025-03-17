@@ -81,21 +81,23 @@
         </ul>
         <details>
           <summary>📜 Exemplo básico</summary>
-          <div class="code">
-            <pre><code>console.log("Iniciando...");
+          <div class="div_details">
+            <div class="code">
+              <pre><code>console.log("Iniciando...");
   
   setTimeout(() => {
     console.log("Executado após 3 segundos!");
   }, 3000);
   
   console.log("Aguardando...");</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// Iniciando...
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// Iniciando...
 // Aguardando...
 // (Depois de 3 segundos...)
 // Executado após 3 segundos!</code></pre>
+            </div>
           </div>
         </details>
         <p>
@@ -112,17 +114,19 @@
         </p>
         <details>
           <summary>📜 Exemplo: Cancelando umsetTimeout()</summary>
-          <div class="code">
-            <pre><code>let timeout = setTimeout(() => {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>let timeout = setTimeout(() => {
 console.log("Isso nunca será exibido! ❌");
 }, 5000);
 
 clearTimeout(timeout);
 console.log("O timeout foi cancelado! ✅");</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// O timeout foi cancelado! ✅</code></pre>
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// O timeout foi cancelado! ✅</code></pre>
+            </div>
           </div>
         </details>
         <p>
@@ -149,22 +153,24 @@ console.log("O timeout foi cancelado! ✅");</code></pre>
         </ul>
         <details>
           <summary>📜 Exemplo básico</summary>
-          <div class="code">
-            <pre><code>let contador = 0;
+          <div class="div_details">
+            <div class="code">
+              <pre><code>let contador = 0;
 
 let intervalo = setInterval(() => {
   contador++;
   console.log(`Executando pela ${contador}ª vez`);
 }, 2000);</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// Executando pela 1ª vez
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// Executando pela 1ª vez
 // (Depois de 2 segundos...)
 // Executando pela 2ª vez
 // (Depois de 2 segundos...)
 // Executando pela 3ª vez...
 // ...</code></pre>
+            </div>
           </div>
         </details>
         <p>
@@ -183,8 +189,9 @@ let intervalo = setInterval(() => {
           <summary>
             📜 Exemplo: Parando um setInterval() após 5 execuções
           </summary>
-          <div class="code">
-            <pre><code>let contador = 0;
+          <div class="div_details">
+            <div class="code">
+              <pre><code>let contador = 0;
 
 let intervalo = setInterval(() => {
   contador++;
@@ -195,15 +202,16 @@ let intervalo = setInterval(() => {
     console.log("Intervalo encerrado! ✅");
   }
 }, 1000);</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Executando pela 1ª vez
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Executando pela 1ª vez
 // Executando pela 2ª vez
 // Executando pela 3ª vez
 // Executando pela 4ª vez
 // Executando pela 5ª vez
 // Intervalo encerrado! ✅</code></pre>
+            </div>
           </div>
         </details>
         <p>
@@ -244,23 +252,26 @@ let intervalo = setInterval(() => {
         <p>Podemos passar parâmetros para a função executada.</p>
         <details>
           <summary>📜 Exemplo: setTimeout() com parâmetros</summary>
-          <div class="code">
-            <pre><code>function saudacao(nome) {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function saudacao(nome) {
   console.log(`Olá, ${nome}! 👋`);
 }
 
 setTimeout(saudacao, 2000, "Guilherme");</code></pre>
-          </div>
-          <h3>🔹 Saída após 2 segundos:</h3>
-          <div class="code">
-            <pre><code>// Olá, Guilherme! 👋</code></pre>
+            </div>
+            <h3>🔹 Saída após 2 segundos:</h3>
+            <div class="code">
+              <pre><code>// Olá, Guilherme! 👋</code></pre>
+            </div>
           </div>
         </details>
 
         <details>
           <summary>📜 Exemplo: setInterval() com parâmetros</summary>
-          <div class="code">
-            <pre><code>function contagem(numero) {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function contagem(numero) {
   console.log(`Número atual: ${numero}`);
 }
 
@@ -270,12 +281,13 @@ let intervalo = setInterval(() => {
   contador++;
   if (contador > 3) clearInterval(intervalo);
 }, 1000);</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Número atual: 1
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Número atual: 1
 // Número atual: 2
 // Número atual: 3</code></pre>
+            </div>
           </div>
         </details>
         <p>
@@ -293,8 +305,9 @@ let intervalo = setInterval(() => {
           <summary>
             📜 Exemplo: Criando um contador com pausa entre execuções
           </summary>
-          <div class="code">
-            <pre><code>let contador = 0;
+          <div class="div_details">
+            <div class="code">
+              <pre><code>let contador = 0;
 
 function iniciarContagem() {
   setTimeout(() => {
@@ -305,14 +318,15 @@ function iniciarContagem() {
 }
 
 iniciarContagem();</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// (Depois de 2 segundos...) Contagem: 1
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// (Depois de 2 segundos...) Contagem: 1
 // (Depois de 2 segundos...) Contagem: 2
 // (Depois de 2 segundos...) Contagem: 3
 // (Depois de 2 segundos...) Contagem: 4
 // (Depois de 2 segundos...) Contagem: 5</code></pre>
+            </div>
           </div>
         </details>
         <p>
@@ -324,27 +338,29 @@ iniciarContagem();</code></pre>
       <fieldset>
         <details>
           <summary>⚡ Resumo</summary>
-          <ul>
-            <li>
-              <code>setTimeout()</code> → Executa uma única vez após um tempo.
-            </li>
-            <li>
-              <code>clearTimeout()</code> → Cancelar um
-              <code>setTimeout()</code>.
-            </li>
-            <li>
-              <code>setInterval()</code> → Executa repetidamente a cada
-              intervalo de tempo.
-            </li>
-            <li>
-              <code>clearInterval()</code> → Cancelar um
-              <code>setInterval()</code>.
-            </li>
-            <li>
-              Ambos podem receber parâmetros e serem combinados para criar
-              lógicas mais complexas.
-            </li>
-          </ul>
+          <div class="div_details">
+            <ul>
+              <li>
+                <code>setTimeout()</code> → Executa uma única vez após um tempo.
+              </li>
+              <li>
+                <code>clearTimeout()</code> → Cancelar um
+                <code>setTimeout()</code>.
+              </li>
+              <li>
+                <code>setInterval()</code> → Executa repetidamente a cada
+                intervalo de tempo.
+              </li>
+              <li>
+                <code>clearInterval()</code> → Cancelar um
+                <code>setInterval()</code>.
+              </li>
+              <li>
+                Ambos podem receber parâmetros e serem combinados para criar
+                lógicas mais complexas.
+              </li>
+            </ul>
+          </div>
         </details>
       </fieldset>
     </main>

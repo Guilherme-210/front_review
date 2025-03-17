@@ -75,21 +75,23 @@
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>console.log("Início");
+          <div class="div_details">
+            <div class="code">
+              <pre><code>console.log("Início");
 console.log("Processando...");
 console.log("Fim");</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Início
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Início
 // Processando...
 // Fim</code></pre>
+            </div>
+            <p>
+              ✔️ Aqui, cada comando bloqueia a execução até que seja finalizado.
+            </p>
           </div>
         </details>
-        <p>
-          ✔️ Aqui, cada comando bloqueia a execução até que seja finalizado.
-        </p>
         <legend>🔄 Código Assíncrono (Executa em Paralelo)</legend>
         <p>
           No código <strong>assíncrono</strong>, certas tarefas podem ser
@@ -98,27 +100,29 @@ console.log("Fim");</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>console.log("Início");
+          <div class="div_details">
+            <div class="code">
+              <pre><code>console.log("Início");
 
 setTimeout(() => {
   console.log("Executado após 2 segundos ⏳");
 }, 2000);
 
 console.log("Fim");</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>Início
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>Início
 Fim
 (Depois de 2 segundos...)
 Executado após 2 segundos</code></pre>
+            </div>
+            <p>
+              ✔️ O <code>setTimeout()</code> é assíncrono, então o código não
+              precisa esperar por ele.
+            </p>
           </div>
         </details>
-        <p>
-          ✔️ O <code>setTimeout()</code> é assíncrono, então o código não
-          precisa esperar por ele.
-        </p>
       </fieldset>
 
       <fieldset>
@@ -144,28 +148,30 @@ Executado após 2 segundos</code></pre>
         </ol>
         <details>
           <summary>📜 Exemplo para entender o Event Loop</summary>
-          <div class="code">
-            <pre><code>console.log("A");
+          <div class="div_details">
+            <div class="code">
+              <pre><code>console.log("A");
 
 setTimeout(() => {
   console.log("B");
 }, 0);
 
 console.log("C");</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// A
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// A
 // C
 // B</code></pre>
+            </div>
+            <p>
+              Mesmo com <code>setTimeout(..., 0)</code>,
+              <strong>"B" não é impresso antes de "C"</strong>, pois a função
+              vai para a <strong>Task Queue</strong>, aguardando o Event Loop
+              liberar a execução.
+            </p>
           </div>
         </details>
-        <p>
-          Mesmo com <code>setTimeout(..., 0)</code>,
-          <strong>"B" não é impresso antes de "C"</strong>, pois a função vai
-          para a <strong>Task Queue</strong>, aguardando o Event Loop liberar a
-          execução.
-        </p>
       </fieldset>
 
       <fieldset>
@@ -178,8 +184,9 @@ console.log("C");</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo de retorno de chamada</summary>
-          <div class="code">
-            <pre><code>function baixarArquivo(url, callback) {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function baixarArquivo(url, callback) {
   console.log(`Baixando arquivo de ${url}...`);
 
   setTimeout(() => {
@@ -191,40 +198,43 @@ console.log("C");</code></pre>
 baixarArquivo("https://meuarquivo.com", (mensagem) => {
   console.log(mensagem);
 });</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// Baixando arquivo de https://meuarquivo.com...
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// Baixando arquivo de https://meuarquivo.com...
 // (Depois de 2 segundos...)
 // Download concluído! ✅
 // Arquivo salvo!</code></pre>
+            </div>
+            <p>
+              ✔️ A função <strong>callbacké</strong> executada somente após o
+              download ser concluído .
+            </p>
           </div>
         </details>
-        <p>
-          ✔️ A função <strong>callbacké</strong> executada somente após o
-          download ser concluído .
-        </p>
         <legend>❌ Problema dos Callbacks: Callback Hell</legend>
         <details>
           <summary>📜 Exemplo:</summary>
-          <p>
-            O uso excessivo de callbacks pode tornar o código difícil de
-            entender e manter, gerando o <strong>"Callback Hell"</strong>.
-          </p>
-          <div class="code">
-            <pre><code>buscarDados((dados) => {
+          <div class="div_details">
+            <p>
+              O uso excessivo de callbacks pode tornar o código difícil de
+              entender e manter, gerando o <strong>"Callback Hell"</strong>.
+            </p>
+            <div class="code">
+              <pre><code>buscarDados((dados) => {
   processarDados(dados, (resultado) => {
     salvarNoBanco(resultado, (resposta) => {
       console.log("Dados salvos!", resposta);
     });
   });
 });</code></pre>
+            </div>
+            <p>
+              <strong>Problema</strong>: O código fica
+              <strong>aninhado</strong> demais e difícil de manter.
+            </p>
           </div>
         </details>
-        <p>
-          <strong>Problema</strong>: O código fica
-          <strong>aninhado</strong> demais e difícil de manter.
-        </p>
       </fieldset>
 
       <fieldset>
@@ -251,8 +261,9 @@ baixarArquivo("https://meuarquivo.com", (mensagem) => {
         </ul>
         <details>
           <summary>📜 Criando uma Promessa</summary>
-          <div class="code">
-            <pre><code>function baixarArquivo(url) {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function baixarArquivo(url) {
   return new Promise((resolve, reject) => {
     console.log(`Baixando arquivo de ${url}...`);
 
@@ -270,15 +281,16 @@ baixarArquivo("https://meuarquivo.com", (mensagem) => {
 baixarArquivo("https://meuarquivo.com")
   .then((mensagem) => console.log(mensagem)) // Sucesso
   .catch((erro) => console.error(erro)); // Erro</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>Baixando arquivo de https://meuarquivo.com...
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>Baixando arquivo de https://meuarquivo.com...
 (Depois de 2 segundos...)
 Download concluído! ✅</code></pre>
+            </div>
+            <p><strong>✔️ Vantagens das Promessas:</strong></p>
           </div>
         </details>
-        <p><strong>✔️ Vantagens das Promessas:</strong></p>
         <ul>
           <li>Código mais organizado e legível.</li>
           <li>Evite o <strong>Callback Hell</strong>.</li>
@@ -294,8 +306,9 @@ Download concluído! ✅</code></pre>
         </p>
         <details>
           <summary>📜 Usandoa <strong>sync/await</strong>:</summary>
-          <div class="code">
-            <pre><code>function baixarArquivo() {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function baixarArquivo() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve("Download concluído! ✅");
@@ -310,15 +323,16 @@ async function executar() {
 }
 
 executar();</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Baixando arquivo...
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Baixando arquivo...
 // (Depois de 2 segundos...)
 // Download concluído! ✅</code></pre>
+            </div>
+            <p>✔️ Vantagens de <code>async/await</code>:</p>
           </div>
         </details>
-        <p>✔️ Vantagens de <code>async/await</code>:</p>
         <ul>
           <li>Código mais <strong>legível e limpo</strong>.</li>
           <li>Evita <code>.then()</code> encadeados.</li>
@@ -336,8 +350,9 @@ executar();</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo: Tratamento de Erros</summary>
-          <div class="code">
-            <pre><code>function baixarArquivo() {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function baixarArquivo() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let sucesso = false;
@@ -361,15 +376,18 @@ async function executar() {
 }
 
 executar();</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// Baixando arquivo...
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// Baixando arquivo...
 // (Depois de 2 segundos...)
 // Falha: Erro no download! ❌</code></pre>
+            </div>
+            <p>
+              ✔️torna try...catcho tratamento de erros mais simples e elegante.
+            </p>
           </div>
         </details>
-        <p>✔️torna try...catcho tratamento de erros mais simples e elegante.</p>
       </fieldset>
 
       <fieldset class="fieldset_table">

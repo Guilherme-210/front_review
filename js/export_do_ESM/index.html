@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Entenda os diferentes tipos de exportação no ES Modules. Aprenda a utilizar exportações nomeadas e padrão para melhor organizar seus projetos em JavaScript." />
+    <meta
+      name="description"
+      content="Entenda os diferentes tipos de exportação no ES Modules. Aprenda a utilizar exportações nomeadas e padrão para melhor organizar seus projetos em JavaScript."
+    />
 
     <script
       type="module"
@@ -34,7 +37,9 @@
           ><i class="fi fi-rr-angle-left"></i
         ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/js/exercicios/exercicio-20/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="/js/exercicios/exercicio-20/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Tipos de Export no ESM</h1>
@@ -48,42 +53,47 @@
 
     <main>
       <fieldset>
-        <legend class="num num1"> Exportação na mesma linha</legend>
+        <legend class="num num1">Exportação na mesma linha</legend>
         <p>
-          O arquivo <strong>inline.js</strong> permite exportar vários valores de um módulo e importá-los pelo nome
-          exato.
+          O arquivo <strong>inline.js</strong> permite exportar vários valores
+          de um módulo e importá-los pelo nome exato.
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-        <div class="code">
-          <pre><code>export function inline() {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>export function inline() {
   console.log("Export nomeado inline")
 }
 
 export default function () {
   console.log("Export default inline")
 }</code></pre>
-        </div>
-        <p>
-          Este arquivo fornece duas maneiras de usar suas funções:
-        </p>
-        <p>
-          Uma através de uma importação nomeada específica (<code>inline</code>)
-        </p>
-        <p>
-          Uma através de uma importação padrão (<code>default</code>), que pode ser renomeada no
-          momento da importação.
+            </div>
+            <p>Este arquivo fornece duas maneiras de usar suas funções:</p>
+            <p>
+              Uma através de uma importação nomeada específica
+              (<code>inline</code>)
+            </p>
+            <p>
+              Uma através de uma importação padrão (<code>default</code>), que
+              pode ser renomeada no momento da importação.
+            </p>
+          </div>
         </details>
-        </p>
       </fieldset>
 
       <fieldset>
         <legend class="num num2">Exportação usando multiplas linhas</legend>
-        <p>O arquivo <strong>non-inline.js</strong> exporta um único valor, que pode ser importado com qualquer nome.</p>
+        <p>
+          O arquivo <strong>non-inline.js</strong> exporta um único valor, que
+          pode ser importado com qualquer nome.
+        </p>
         <details>
           <summary>📜 Exemplo:</summary>
-        <div class="code">
-          <pre><code>function group() {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function group() {
   console.log("Export nomeado não-inline (agrupado)")
 }
 
@@ -99,22 +109,33 @@ function exportDefault() {
 export { group, a, b, c, d }
 
 export default exportDefault</code></pre>
-        </div>
-        <p>
-          Neste codigo foram definidas 6 fonções ao qual 5 delas foram nomeadas e exportadas juntas <code>export { group, a, b, c, d }</code> enquanto uma foi criada e exportada como <code>exportDefault()</code>, Isso permite que quem importar o módulo use qualquer nome para se referir a essa função.
-        </p>
+            </div>
+            <p>
+              Neste codigo foram definidas 6 fonções ao qual 5 delas foram
+              nomeadas e exportadas juntas
+              <code>export { group, a, b, c, d }</code> enquanto uma foi criada
+              e exportada como <code>exportDefault()</code>, Isso permite que
+              quem importar o módulo use qualquer nome para se referir a essa
+              função.
+            </p>
+          </div>
         </details>
       </fieldset>
 
       <fieldset>
-        <legend class="num num3">Arquivo de importação para cada elemento</legend>
+        <legend class="num num3">
+          Arquivo de importação para cada elemento
+        </legend>
         <p>
-          O arquivo <strong>script.js</strong> demonstra diferentes formas de importar e usar módulos em JavaScript, focando em importações nomeadas e padrão (<code>default</code>).
+          O arquivo <strong>script.js</strong> demonstra diferentes formas de
+          importar e usar módulos em JavaScript, focando em importações nomeadas
+          e padrão (<code>default</code>).
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-        <div class="code">
-          <pre><code>// import { inline } from "./inline.js"
+          <div class="div_details">
+            <div class="code">
+              <pre><code>// import { inline } from "./inline.js"
 import { inline as i } from "./inline.js"
 import defaultInline from "./inline.js"
 import exportDefault, { group, a, b, c, d } from "./non-inline.js"
@@ -124,17 +145,31 @@ defaultInline()
 
 group()
 exportDefault()</code></pre>
-        </div>
-        <p>
-          Tanto na importação <code>{ inline }</code>, quanto na importação <code>{ inline as i }</code> importam a mesma função, so que ao usao o "<code>as</code>" vc modifica o nome da função importada para uso dentro do seu arquivo, a fim de evitar comflitos.
-        </p>
-        <p>
-          O código (<code>import defaultInline from "./inline.js"</code>). <br> Importa o padrão (<code>default</code>) do arquivo <code>./inline.js</code>, e atribui essa exportação à variável <code>defaultInline</code>.
-        </p>
-        <p>
-          O código (<code>import exportDefault, { group, a, b, c, d } from "./non-inline.js"</code>)<br>
-          Importa o padrão (<code>default</code>) do arquivo <code>./non-inline.js</code> e a atribui à variável (<code>exportDefault</code>), e importa também as exportações nomeadas (<code>group, a, b, c e d</code>) do mesmo arquivo.
-        </p>
+            </div>
+            <p>
+              Tanto na importação <code>{ inline }</code>, quanto na importação
+              <code>{ inline as i }</code> importam a mesma função, so que ao
+              usao o "<code>as</code>" vc modifica o nome da função importada
+              para uso dentro do seu arquivo, a fim de evitar comflitos.
+            </p>
+            <p>
+              O código (<code>import defaultInline from "./inline.js"</code>).
+              <br />
+              Importa o padrão (<code>default</code>) do arquivo
+              <code>./inline.js</code>, e atribui essa exportação à variável
+              <code>defaultInline</code>.
+            </p>
+            <p>
+              O código (<code
+                >import exportDefault, { group, a, b, c, d } from
+                "./non-inline.js"</code
+              >)<br />
+              Importa o padrão (<code>default</code>) do arquivo
+              <code>./non-inline.js</code> e a atribui à variável
+              (<code>exportDefault</code>), e importa também as exportações
+              nomeadas (<code>group, a, b, c e d</code>) do mesmo arquivo.
+            </p>
+          </div>
         </details>
       </fieldset>
     </main>

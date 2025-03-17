@@ -91,8 +91,9 @@
           <summary>
             📜 A forma mais simples de criar um objeto é com <code>{}</code>:
           </summary>
-          <div class="code">
-            <pre><code>const pessoa = {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>const pessoa = {
   nome: "Guilherme",
   idade: 25,
   falar: function() {
@@ -101,15 +102,16 @@
 };
 
 pessoa.falar();</code></pre>
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Olá, meu nome é Guilherme</code></pre>
+            </div>
+            <p>
+              Aqui, <code>this</code> referência ao próprio objeto
+              <code>pessoa</code>.
+            </p>
           </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Olá, meu nome é Guilherme</code></pre>
-          </div>
-          <p>
-            Aqui, <code>this</code> referência ao próprio objeto
-            <code>pessoa</code>.
-          </p>
         </details>
         <h3>2️⃣ Função Construtora</h3>
         <details>
@@ -117,8 +119,9 @@ pessoa.falar();</code></pre>
             📜 Antes das <code>class</code>, usávamos funções para criar
             "moldes" de objetos:
           </summary>
-          <div class="code">
-            <pre><code>function Pessoa(nome, idade) {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function Pessoa(nome, idade) {
   this.nome = nome;
   this.idade = idade;
   this.falar = function() {
@@ -128,15 +131,16 @@ pessoa.falar();</code></pre>
 
 const pessoa1 = new Pessoa("Ana", 30);
 pessoa1.falar();</code></pre>
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Meu nome é Ana e tenho 30 anos.</code></pre>
+            </div>
+            <p>
+              A palavra-chave <code>new</code> cria uma nova instância do objeto
+              com base na função <code>Pessoa</code>.
+            </p>
           </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Meu nome é Ana e tenho 30 anos.</code></pre>
-          </div>
-          <p>
-            A palavra-chave <code>new</code> cria uma nova instância do objeto
-            com base na função <code>Pessoa</code>.
-          </p>
         </details>
       </fieldset>
 
@@ -148,8 +152,9 @@ pessoa1.falar();</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>class ContaBancaria {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>class ContaBancaria {
   #saldo; // Atributo privado
 
   constructor(saldoInicial) {
@@ -169,17 +174,18 @@ pessoa1.falar();</code></pre>
 const conta = new ContaBancaria(1000);
 conta.depositar(500);
 console.log(conta.getSaldo());</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// 1500
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// 1500
 // console.log(conta.#saldo); ❌ ERRO! O atributo é privado.
           </code></pre>
+            </div>
+            <p>
+              O <code>#saldo</code> não pode ser acessado diretamente, apenas
+              pelos métodos da classe.
+            </p>
           </div>
-          <p>
-            O <code>#saldo</code> não pode ser acessado diretamente, apenas
-            pelos métodos da classe.
-          </p>
         </details>
       </fieldset>
 
@@ -191,8 +197,9 @@ console.log(conta.getSaldo());</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>class Carro {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>class Carro {
   constructor(modelo) {
     this.modelo = modelo;
   }
@@ -209,17 +216,18 @@ console.log(conta.getSaldo());</code></pre>
 
 const carro = new Carro("Fusca");
 carro.ligar();</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Saída: Verificando combustível...
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Saída: Verificando combustível...
 //         Fusca está ligado!
 // carro.#checarCombustivel(); ❌ ERRO! Método privado.
           </code></pre>
+            </div>
+            <p>
+              O método <code>#checarCombustivel()</code> está oculto do usuário.
+            </p>
           </div>
-          <p>
-            O método <code>#checarCombustivel()</code> está oculto do usuário.
-          </p>
         </details>
       </fieldset>
 
@@ -230,8 +238,9 @@ carro.ligar();</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>class Animal {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>class Animal {
   constructor(nome) {
     this.nome = nome;
   }
@@ -249,16 +258,17 @@ class Cachorro extends Animal {
 
 const rex = new Cachorro("Rex");
 rex.fazerSom();</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Au au! 🐶
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Au au! 🐶
           </code></pre>
+            </div>
+            <p>
+              A classe <code>Cachorro</code> herdou <code>Animal</code>, mas
+              sobrescreveu o método <code>fazerSom()</code>.
+            </p>
           </div>
-          <p>
-            A classe <code>Cachorro</code> herdou <code>Animal</code>, mas
-            sobrescreveu o método <code>fazerSom()</code>.
-          </p>
         </details>
       </fieldset>
 
@@ -270,8 +280,9 @@ rex.fazerSom();</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo:</summary>
-          <div class="code">
-            <pre><code>class Forma {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>class Forma {
   calcularArea() {
     return 0;
   }
@@ -304,17 +315,18 @@ const formas = [new Quadrado(4), new Circulo(3)];
 formas.forEach(forma => {
   console.log(`Área: ${forma.calcularArea()}`);
 });</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// Área: 16
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// Área: 16
 //         Área: 28.274333882308138
           </code></pre>
+            </div>
+            <p>
+              A função <code>calcularArea()</code> funciona diferente dependendo
+              da classe.
+            </p>
           </div>
-          <p>
-            A função <code>calcularArea()</code> funciona diferente dependendo
-            da classe.
-          </p>
         </details>
       </fieldset>
 

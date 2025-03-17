@@ -180,6 +180,11 @@ legend {
 }
 
 /* Estilizando lista de resposta */
+.div_details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 details {
   background-color: var(--details-background-color);
   border: 1px solid var(--code-border-color);
@@ -193,17 +198,15 @@ summary {
 /* Estilizando as listas */
 ol {
   list-style: decimal;
-  margin-left: 2.5rem;
-}
-ol li {
-  margin: 0.5rem 0;
 }
 ul {
   list-style: circle;
-  margin-left: 2.5rem;
 }
-ul li {
-  margin: 0.5rem 0;
+ol, ul {
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 
 /* estilização da tabela */
@@ -254,7 +257,6 @@ tbody tr:nth-child(even) {
   background-color: var(--code-background-color);
   border-radius: 5px;
   padding: 12px;
-  margin-bottom: 10px;
   overflow-x: auto;
   border: 1px solid var(--code-border-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

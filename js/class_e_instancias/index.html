@@ -71,17 +71,20 @@
         </p>
         <details>
           <summary>📜Criando uma aula no JavaScript</summary>
-          <p>
-            No JavaScript, usamos a palavra-chave classpara definir uma classe.
-          </p>
-          <div class="code">
-            <pre><code>class Carro {
+          <div class="div_details">
+            <p>
+              No JavaScript, usamos a palavra-chave classpara definir uma
+              classe.
+            </p>
+            <div class="code">
+              <pre><code>class Carro {
   constructor(marca, modelo, ano) {
     this.marca = marca;
     this.modelo = modelo;
     this.ano = ano;
   }
 }</code></pre>
+            </div>
           </div>
         </details>
         <p>Explicação:</p>
@@ -105,37 +108,39 @@
         <p>Uma instância é um objeto criado a partir de uma classe.</p>
         <details>
           <summary>📜 Criando uma Instância deCarro</summary>
-          <div class="code">
-            <pre><code>const meuCarro = new Carro("Toyota", "Corolla", 2022);
+          <div class="div_details">
+            <div class="code">
+              <pre><code>const meuCarro = new Carro("Toyota", "Corolla", 2022);
 console.log(meuCarro);</code></pre>
-          </div>
-          <h3>🔹 Saída sem console:</h3>
-          <div class="code">
-            <pre><code>// Carro { marca: 'Toyota', modelo: 'Corolla', ano: 2022 }</code></pre>
-          </div>
-          <p>
-            ✔️ Agora temos um <strong>objeto real</strong> baseado no modelo
-            Carro!
-          </p>
-          <h3>
-            Podemos criar quantas instâncias quisermos usando a mesma classe:
-          </h3>
-          <div class="code">
-            <pre><code>const carro1 = new Carro("Honda", "Civic", 2023);
+            </div>
+            <h3>🔹 Saída sem console:</h3>
+            <div class="code">
+              <pre><code>// Carro { marca: 'Toyota', modelo: 'Corolla', ano: 2022 }</code></pre>
+            </div>
+            <p>
+              ✔️ Agora temos um <strong>objeto real</strong> baseado no modelo
+              Carro!
+            </p>
+            <h3>
+              Podemos criar quantas instâncias quisermos usando a mesma classe:
+            </h3>
+            <div class="code">
+              <pre><code>const carro1 = new Carro("Honda", "Civic", 2023);
 const carro2 = new Carro("Ford", "Mustang", 1969);
 
 console.log(carro1);
 console.log(carro2);</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>Carro { marca: 'Honda', modelo: 'Civic', ano: 2023 }
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>Carro { marca: 'Honda', modelo: 'Civic', ano: 2023 }
 Carro { marca: 'Ford', modelo: 'Mustang', ano: 1969 }</code></pre>
+            </div>
+            <p>
+              ✔️ Cada <strong>instância</strong> é um objeto
+              <strong>independente</strong> de outra.
+            </p>
           </div>
-          <p>
-            ✔️ Cada <strong>instância</strong> é um objeto
-            <strong>independente</strong> de outra.
-          </p>
         </details>
       </fieldset>
 
@@ -149,8 +154,9 @@ Carro { marca: 'Ford', modelo: 'Mustang', ano: 1969 }</code></pre>
           <summary>
             📜 Exemplo: Adicionando um Método <code>detalhes()</code>
           </summary>
-          <div class="code">
-            <pre><code>class Carro {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>class Carro {
   constructor(marca, modelo, ano) {
     this.marca = marca;
     this.modelo = modelo;
@@ -164,15 +170,16 @@ Carro { marca: 'Ford', modelo: 'Mustang', ano: 1969 }</code></pre>
 
 const meuCarro = new Carro("Chevrolet", "Onix", 2024);
 console.log(meuCarro.detalhes());</code></pre>
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// 🚗 Chevrolet Onix, Ano: 2024</code></pre>
+            </div>
+            <p>
+              ✔️ O método <code>detalhes()</code> pode ser chamado em qualquer
+              instância de <code>Carro</code>.
+            </p>
           </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// 🚗 Chevrolet Onix, Ano: 2024</code></pre>
-          </div>
-          <p>
-            ✔️ O método <code>detalhes()</code> pode ser chamado em qualquer
-            instância de <code>Carro</code>.
-          </p>
         </details>
       </fieldset>
 
@@ -184,8 +191,9 @@ console.log(meuCarro.detalhes());</code></pre>
         </p>
         <details>
           <summary>📜 Exemplo: Criando CarroEletricoque Herda deCarro</summary>
-          <div class="code">
-            <pre><code>class ContaBancaria {
+          <div class="div_details">
+            <div class="code">
+              <pre><code>class ContaBancaria {
   #saldo; // Propriedade privada
 
   constructor(nome, saldoInicial) {
@@ -208,14 +216,14 @@ conta.depositar(500);
 console.log(conta.verSaldo());
 
 // console.log(conta.#saldo); // ❌ ERRO: Propriedade privada!</code></pre>
-          </div>
-          <h3>🔹 Saída:</h3>
-          <div class="code">
-            <pre><code>// 💰 Depósito de R$500 realizado.
+            </div>
+            <h3>🔹 Saída:</h3>
+            <div class="code">
+              <pre><code>// 💰 Depósito de R$500 realizado.
 // 💵 Saldo de Guilherme: R$1500</code></pre>
+            </div>
           </div>
         </details>
-        <p></p>
       </fieldset>
 
       <fieldset class="fieldset_table">
