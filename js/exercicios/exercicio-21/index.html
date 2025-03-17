@@ -21,8 +21,8 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -34,9 +34,13 @@
   <body data-theme="light">
     <header>
       <nav>
-        <a class="nav_pages" href="/js/usando_o_npm/index.html"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/js/usando_o_npm/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/js/POO/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="/js/POO/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Calculando Aniversário com Day.js</h1>
@@ -51,15 +55,17 @@
       <fieldset>
         <legend>O que é Day.js?</legend>
         <p>
-          O <strong>Day.js</strong> é uma biblioteca JavaScript para manipulação de datas, semelhante ao Moment.js, mas mais leve e rápida.
+          O <strong>Day.js</strong> é uma biblioteca JavaScript para manipulação
+          de datas, semelhante ao Moment.js, mas mais leve e rápida.
         </p>
       </fieldset>
 
       <fieldset>
         <legend>Exemplo usado na aula</legend>
-        <div class="code">
-          <pre><code>
-const dayjs = require("dayjs")
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="code">
+            <pre><code>const dayjs = require("dayjs")
 
 function birthday(date) {
   const birthday = dayjs(date)
@@ -78,18 +84,32 @@ function birthday(date) {
   console.log(`Dias até completar ${ageInYears + 1} anos: ${daysToNextBirthday}`)
 }
 
-birthday("2000-02-23")
-          </code></pre>
-        </div>
+birthday("2000-02-23")</code></pre>
+          </div>
+          <p>
+            Para rodar esse código. É necessário executar o comando "<code
+              >node script.js</code
+            >" no terminal. 
+          </p>
+          <h3>🔹 Saída no console:</h3>
+          <div class="code">
+            <pre><code>Idade: 29
+Próximo aniversário: 02/09/2025
+Dias até completar 30 anos: 169</code></pre>
+          </div>
+        </details>
         <p>
-          Esse código usa o <strong>Day.js</strong> para calcular a idade de uma pessoa, determinar a data do próximo aniversário e quantos dias faltam para essa data.
+          Esse código usa o <strong>Day.js</strong> para calcular a idade de uma
+          pessoa, determinar a data do próximo aniversário e quantos dias faltam
+          para essa data.
         </p>
       </fieldset>
 
       <fieldset>
         <legend>Execução da aula</legend>
         <p>
-          A função <code>birthday()</code> recebe uma data de nascimento como string e exibe no console:
+          A função <code>birthday()</code> recebe uma data de nascimento como
+          string e exibe no console:
         </p>
         <ul>
           <li>A idade atual da pessoa.</li>
@@ -100,9 +120,7 @@ birthday("2000-02-23")
     </main>
 
     <footer>
-      <p>
-        © 2025 Desenvolvido por Guilherme Reis.
-      </p>  
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
       <p>
         <a href="https://github.com/Guilherme-210" target="_blank"
           >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
@@ -110,6 +128,7 @@ birthday("2000-02-23")
       </p>
     </footer>
 
-    <script src="toggleTheme.js"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
   </body>
 </html>

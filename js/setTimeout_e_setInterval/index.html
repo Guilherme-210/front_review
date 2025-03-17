@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Aprenda a usar setTimeout() e setInterval() no JavaScript. Descubra como controlar a execução de código com base no tempo, cancelar execuções e criar lógicas dinâmicas." />
-
+    <meta
+      name="description"
+      content="Aprenda a usar setTimeout() e setInterval() no JavaScript. Descubra como controlar a execução de código com base no tempo, cancelar execuções e criar lógicas dinâmicas."
+    />
 
     <script
       type="module"
@@ -19,8 +21,8 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -35,7 +37,9 @@
           ><i class="fi fi-rr-angle-left"></i
         ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/js/assincronicidade/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="/js/assincronicidade/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Conhecendo setTimeout() e setInterval()</h1>
@@ -56,26 +60,16 @@
           Sem JavaScript, <code>setTimeout()</code> e
           <code>setInterval()</code> são funções assíncronas que permitem
           controlar a execução de um código com base no tempo. Elas são muito
-          usadas para agendar tarefas , criar animações , fazer requisições
+          usadas para agendar tarefas, criar animações, fazer requisições
           periódicas e muito mais.
         </p>
-        <details>
-          <summary>🚀 Resumo</summary>
-          <ul>
-            <li><code>setTimeout()</code> → Executa uma única vez após um tempo.</li>
-            <li><code>clearTimeout()</code> → Cancelar um <code>setTimeout()</code>.</li>
-            <li><code>setInterval()</code> → Executa repetidamente a cada intervalo de tempo.</li>
-            <li><code>clearInterval()</code> → Cancelar um <code>setInterval()</code>.</li>
-            <li>Ambos podem receber parâmetros e serem combinados para criar lógicas mais complexas.</li>
-          </ul>
-        </details>
       </fieldset>
 
       <fieldset>
         <legend>📌 1. O que é setTimeout()?</legend>
         <p>
-          A função setTimeout()permite executar um código uma única vez depois
-          de um determinado tempo (em milissegundos).
+          A função <code>setTimeout()</code> permite executar um código uma
+          única vez depois de um determinado tempo <code>()</code>.
         </p>
         <p>📌 Sintaxe</p>
         <div class="code">
@@ -86,7 +80,7 @@
           <li><code>tempo</code> → Tempo de espera em milissegundos (ms) .</li>
         </ul>
         <details>
-          <summary>✅ Exemplo básico</summary>
+          <summary>📜 Exemplo básico</summary>
           <div class="code">
             <pre><code>console.log("Iniciando...");
   
@@ -96,7 +90,7 @@
   
   console.log("Aguardando...");</code></pre>
           </div>
-          <h3>Saída sem console:</h3>
+          <h3>🔹 Saída sem console:</h3>
           <div class="code">
             <pre><code>// Iniciando...
 // Aguardando...
@@ -105,19 +99,19 @@
           </div>
         </details>
         <p>
-          ✔️ O setTimeout()não bloqueia o código! A execução continua enquanto o
-          tempo passa.
+          ✔️ O <code>setTimeout()</code> não bloqueia o código! A execução
+          continua enquanto o tempo passa.
         </p>
       </fieldset>
 
       <fieldset>
-        <legend>🛑 2. Cancelando um setTimeout()comclearTimeout()</legend>
+        <legend>🛑 2. Cancelando um setTimeout() com clearTimeout()</legend>
         <p>
-          Se quisermos cancelar um setTimeout()antes que ele seja executado, use
-          clearTimeout().
+          Se quisermos cancelar um <code>setTimeout()</code> antes que ele seja
+          executado, use <code>clearTimeout()</code>.
         </p>
         <details>
-          <summary>✅ Exemplo: Cancelando umsetTimeout()</summary>
+          <summary>📜 Exemplo: Cancelando umsetTimeout()</summary>
           <div class="code">
             <pre><code>let timeout = setTimeout(() => {
 console.log("Isso nunca será exibido! ❌");
@@ -126,22 +120,22 @@ console.log("Isso nunca será exibido! ❌");
 clearTimeout(timeout);
 console.log("O timeout foi cancelado! ✅");</code></pre>
           </div>
-          <h3>Saída:</h3>
+          <h3>🔹 Saída:</h3>
           <div class="code">
             <pre><code>// O timeout foi cancelado! ✅</code></pre>
           </div>
         </details>
         <p>
-          ✔️ Como chamamos clearTimeout(timeout), a função dentro do
-          setTimeout()nunca foi realizada.
+          ✔️ Como chamamos <code>clearTimeout(timeout)</code>, a função dentro
+          do <code>setTimeout()</code> nunca foi realizada.
         </p>
       </fieldset>
 
       <fieldset>
         <legend>🔄 3. O que é setInterval()?</legend>
         <p>
-          A função setInterval() executa um código repetidamente a cada tempo
-          determinado (em milissegundos).
+          A função <code>setInterval()</code> executa um código repetidamente a
+          cada tempo determinado (em milissegundos).
         </p>
         <p>📌 Sintaxe</p>
         <div class="code">
@@ -154,7 +148,7 @@ console.log("O timeout foi cancelado! ✅");</code></pre>
           </li>
         </ul>
         <details>
-          <summary>✅ Exemplo básico</summary>
+          <summary>📜 Exemplo básico</summary>
           <div class="code">
             <pre><code>let contador = 0;
 
@@ -163,7 +157,7 @@ let intervalo = setInterval(() => {
   console.log(`Executando pela ${contador}ª vez`);
 }, 2000);</code></pre>
           </div>
-          <h3>Saída sem console:</h3>
+          <h3>🔹 Saída sem console:</h3>
           <div class="code">
             <pre><code>// Executando pela 1ª vez
 // (Depois de 2 segundos...)
@@ -174,20 +168,20 @@ let intervalo = setInterval(() => {
           </div>
         </details>
         <p>
-          ✔️ O código dentro do setInterval()será executado indefinidamente até
-          ser parado.
+          ✔️ O código dentro do <code>setInterval()</code> será executado
+          indefinidamente até ser parado.
         </p>
       </fieldset>
 
       <fieldset>
-        <legend>🛑 4. Cancelando um setInterval()comclearInterval()</legend>
+        <legend>🛑 4. Cancelando um setInterval() com clearInterval()</legend>
         <p>
-          Se quisermos parar a execução de um setInterval(), usamos
-          clearInterval().
+          Se quisermos parar a execução de um <code>setInterval()</code>, usamos
+          <code>clearInterval()</code>.
         </p>
         <details>
           <summary>
-            ✅ Exemplo: Parando um setInterval()após 5 execuções
+            📜 Exemplo: Parando um setInterval() após 5 execuções
           </summary>
           <div class="code">
             <pre><code>let contador = 0;
@@ -202,7 +196,7 @@ let intervalo = setInterval(() => {
   }
 }, 1000);</code></pre>
           </div>
-          <h3>Saída:</h3>
+          <h3>🔹 Saída:</h3>
           <div class="code">
             <pre><code>// Executando pela 1ª vez
 // Executando pela 2ª vez
@@ -212,41 +206,44 @@ let intervalo = setInterval(() => {
 // Intervalo encerrado! ✅</code></pre>
           </div>
         </details>
-        <p>✔️ Após 5 execuções, clearInterval(intervalo)para a reprodução.</p>
+        <p>
+          ✔️ Após 5 execuções, <code>clearInterval(intervalo)</code> para a
+          reprodução.
+        </p>
       </fieldset>
 
-      <fieldset>
-        <legend>🎯 5. Diferenças entre setTimeout()esetInterval()</legend>
+      <fieldset class="fieldset_table">
+        <legend>🎯 5. Diferenças entre setTimeout() e setInterval()</legend>
         <div class="div_table">
-        <table>
-          <thead>
-            <tr>
-              <th>Função</th>
-              <th>O que faz?</th>
-              <th>Quando usar?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>setTimeout()</code></td>
-              <td>Executado uma única vez após um tempo definido.</td>
-              <td>Atrasar a execução de uma função.</td>
-            </tr>
-            <tr>
-              <td><code>setInterval()</code></td>
-              <td>Executa repetidamente a cada intervalo de tempo.</td>
-              <td>Crie loops temporários.</td>
-            </tr>
-          </tbody>
-        </table>
+          <table>
+            <thead>
+              <tr>
+                <th>Função</th>
+                <th>O que faz?</th>
+                <th>Quando usar?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>setTimeout()</code></td>
+                <td>Executado uma única vez após um tempo definido.</td>
+                <td>Atrasar a execução de uma função.</td>
+              </tr>
+              <tr>
+                <td><code>setInterval()</code></td>
+                <td>Executa repetidamente a cada intervalo de tempo.</td>
+                <td>Crie loops temporários.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>⚡ 6. setTimeout()e setInterval()com Parâmetros</legend>
+        <legend>⚡ 6. setTimeout() e setInterval() com Parâmetros</legend>
         <p>Podemos passar parâmetros para a função executada.</p>
         <details>
-          <summary>✅ Exemplo: setTimeout()com parâmetros</summary>
+          <summary>📜 Exemplo: setTimeout() com parâmetros</summary>
           <div class="code">
             <pre><code>function saudacao(nome) {
   console.log(`Olá, ${nome}! 👋`);
@@ -254,13 +251,14 @@ let intervalo = setInterval(() => {
 
 setTimeout(saudacao, 2000, "Guilherme");</code></pre>
           </div>
-          <h3>Saída após 2 segundos:</h3>
+          <h3>🔹 Saída após 2 segundos:</h3>
           <div class="code">
             <pre><code>// Olá, Guilherme! 👋</code></pre>
           </div>
         </details>
+
         <details>
-          <summary>✅ Exemplo: setInterval() com parâmetros</summary>
+          <summary>📜 Exemplo: setInterval() com parâmetros</summary>
           <div class="code">
             <pre><code>function contagem(numero) {
   console.log(`Número atual: ${numero}`);
@@ -273,21 +271,28 @@ let intervalo = setInterval(() => {
   if (contador > 3) clearInterval(intervalo);
 }, 1000);</code></pre>
           </div>
-          <h3>Saída:</h3>
+          <h3>🔹 Saída:</h3>
           <div class="code">
             <pre><code>// Número atual: 1
 // Número atual: 2
 // Número atual: 3</code></pre>
           </div>
         </details>
-        <p>✔️ O setInterval()para automaticamente após 3 execuções.</p>
+        <p>
+          ✔️ O <code>setInterval()</code> para automaticamente após 3 execuções.
+        </p>
       </fieldset>
 
       <fieldset>
-        <legend>🔥 7. setTimeout()dentro desetInterval()</legend>
-        <p>Podemos combinar setTimeout()com setInterval()para criar loops com sons dinâmicos.</p>
+        <legend>🔥 7. setTimeout() dentro de setInterval()</legend>
+        <p>
+          Podemos combinar <code>setTimeout()</code> com
+          <code>setInterval()</code> para criar loops com sons dinâmicos.
+        </p>
         <details>
-          <summary>✅ Exemplo: Criando um contador com pausa entre execuções</summary>
+          <summary>
+            📜 Exemplo: Criando um contador com pausa entre execuções
+          </summary>
           <div class="code">
             <pre><code>let contador = 0;
 
@@ -301,7 +306,7 @@ function iniciarContagem() {
 
 iniciarContagem();</code></pre>
           </div>
-          <h3>Saída:</h3>
+          <h3>🔹 Saída:</h3>
           <div class="code">
             <pre><code>// (Depois de 2 segundos...) Contagem: 1
 // (Depois de 2 segundos...) Contagem: 2
@@ -310,7 +315,37 @@ iniciarContagem();</code></pre>
 // (Depois de 2 segundos...) Contagem: 5</code></pre>
           </div>
         </details>
-        <p>✔️ O código executado com interrupções dinâmicas e para após 5 execuções.</p>
+        <p>
+          ✔️ O código executado com interrupções dinâmicas e para após 5
+          execuções.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <details>
+          <summary>⚡ Resumo</summary>
+          <ul>
+            <li>
+              <code>setTimeout()</code> → Executa uma única vez após um tempo.
+            </li>
+            <li>
+              <code>clearTimeout()</code> → Cancelar um
+              <code>setTimeout()</code>.
+            </li>
+            <li>
+              <code>setInterval()</code> → Executa repetidamente a cada
+              intervalo de tempo.
+            </li>
+            <li>
+              <code>clearInterval()</code> → Cancelar um
+              <code>setInterval()</code>.
+            </li>
+            <li>
+              Ambos podem receber parâmetros e serem combinados para criar
+              lógicas mais complexas.
+            </li>
+          </ul>
+        </details>
       </fieldset>
     </main>
 
@@ -324,7 +359,7 @@ iniciarContagem();</code></pre>
       </p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="toggleTheme.js"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
   </body>
 </html>

@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Aprenda os conceitos de assincronicidade no JavaScript. Entenda como trabalhar com callbacks, Promises, async/await e o funcionamento do Event Loop." />
-
+    <meta
+      name="description"
+      content="Aprenda os conceitos de assincronicidade no JavaScript. Entenda como trabalhar com callbacks, Promises, async/await e o funcionamento do Event Loop."
+    />
 
     <script
       type="module"
@@ -19,8 +21,8 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -35,7 +37,9 @@
           ><i class="fi fi-rr-angle-left"></i
         ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/js/conhecendo_as_promises/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="/js/conhecendo_as_promises/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Assincronicidade no JavaScript</h1>
@@ -70,13 +74,13 @@
           esperar que a anterior seja concluída antes de executar.
         </p>
         <details>
-          <summary>✅ Exemplo:</summary>
+          <summary>📜 Exemplo:</summary>
           <div class="code">
             <pre><code>console.log("Início");
 console.log("Processando...");
 console.log("Fim");</code></pre>
           </div>
-          <h3>Saída:</h3>
+          <h3>🔹 Saída:</h3>
           <div class="code">
             <pre><code>// Início
 // Processando...
@@ -88,12 +92,12 @@ console.log("Fim");</code></pre>
         </p>
         <legend>🔄 Código Assíncrono (Executa em Paralelo)</legend>
         <p>
-          No código <strong>assíncrono</strong> , certas tarefas podem ser
+          No código <strong>assíncrono</strong>, certas tarefas podem ser
           delegadas para serem processadas enquanto o restante do código
           continua sendo executado.
         </p>
         <details>
-          <summary>✅ Exemplo:</summary>
+          <summary>📜 Exemplo:</summary>
           <div class="code">
             <pre><code>console.log("Início");
 
@@ -103,7 +107,7 @@ setTimeout(() => {
 
 console.log("Fim");</code></pre>
           </div>
-          <h3>Saída:</h3>
+          <h3>🔹 Saída:</h3>
           <div class="code">
             <pre><code>Início
 Fim
@@ -131,7 +135,7 @@ Executado após 2 segundos</code></pre>
           <li>O código síncrono é executado primeiro.</li>
           <li>
             Tarefas assíncronas (como <code>setTimeout()</code>,
-            <code>fetch()</code>, eventos) são enviadas para a Task Queue .
+            <code>fetch()</code>, eventos) são enviadas para a Task Queue.
           </li>
           <li>
             Quando uma Call Stack está vazia, o Event Loop pega as tarefas da
@@ -139,7 +143,7 @@ Executado após 2 segundos</code></pre>
           </li>
         </ol>
         <details>
-          <summary>✅ Exemplo para entender o Event Loop</summary>
+          <summary>📜 Exemplo para entender o Event Loop</summary>
           <div class="code">
             <pre><code>console.log("A");
 
@@ -149,7 +153,7 @@ setTimeout(() => {
 
 console.log("C");</code></pre>
           </div>
-          <h3>Saída sem console:</h3>
+          <h3>🔹 Saída sem console:</h3>
           <div class="code">
             <pre><code>// A
 // C
@@ -173,7 +177,7 @@ console.log("C");</code></pre>
           passadas como argumento para serem executadas depois).
         </p>
         <details>
-          <summary>✅ Exemplo de retorno de chamada</summary>
+          <summary>📜 Exemplo de retorno de chamada</summary>
           <div class="code">
             <pre><code>function baixarArquivo(url, callback) {
   console.log(`Baixando arquivo de ${url}...`);
@@ -188,7 +192,7 @@ baixarArquivo("https://meuarquivo.com", (mensagem) => {
   console.log(mensagem);
 });</code></pre>
           </div>
-          <h3>Saída sem console:</h3>
+          <h3>🔹 Saída sem console:</h3>
           <div class="code">
             <pre><code>// Baixando arquivo de https://meuarquivo.com...
 // (Depois de 2 segundos...)
@@ -202,7 +206,7 @@ baixarArquivo("https://meuarquivo.com", (mensagem) => {
         </p>
         <legend>❌ Problema dos Callbacks: Callback Hell</legend>
         <details>
-          <summary>✅ Exemplo:</summary>
+          <summary>📜 Exemplo:</summary>
           <p>
             O uso excessivo de callbacks pode tornar o código difícil de
             entender e manter, gerando o <strong>"Callback Hell"</strong>.
@@ -246,7 +250,7 @@ baixarArquivo("https://meuarquivo.com", (mensagem) => {
           </li>
         </ul>
         <details>
-          <summary>✅ Criando uma Promessa</summary>
+          <summary>📜 Criando uma Promessa</summary>
           <div class="code">
             <pre><code>function baixarArquivo(url) {
   return new Promise((resolve, reject) => {
@@ -267,7 +271,7 @@ baixarArquivo("https://meuarquivo.com")
   .then((mensagem) => console.log(mensagem)) // Sucesso
   .catch((erro) => console.error(erro)); // Erro</code></pre>
           </div>
-          <h3>Saída sem console:</h3>
+          <h3>🔹 Saída sem console:</h3>
           <div class="code">
             <pre><code>Baixando arquivo de https://meuarquivo.com...
 (Depois de 2 segundos...)
@@ -289,7 +293,7 @@ Download concluído! ✅</code></pre>
           síncrona e legível .
         </p>
         <details>
-          <summary>✅ Usandoa <strong>sync/await</strong>:</summary>
+          <summary>📜 Usandoa <strong>sync/await</strong>:</summary>
           <div class="code">
             <pre><code>function baixarArquivo() {
   return new Promise((resolve) => {
@@ -307,7 +311,7 @@ async function executar() {
 
 executar();</code></pre>
           </div>
-          <h3>Saída:</h3>
+          <h3>🔹 Saída:</h3>
           <div class="code">
             <pre><code>// Baixando arquivo...
 // (Depois de 2 segundos...)
@@ -325,13 +329,13 @@ executar();</code></pre>
       </fieldset>
 
       <fieldset>
-        <legend>⚠️ 6. Tratando Erros comtry...catch</legend>
+        <legend>⚠️ 6. Tratando Erros com try...catch</legend>
         <p>
           Podemos capturar erros em funções <strong>async</strong> com
           <strong>try...catch</strong>.
         </p>
         <details>
-          <summary>✅ Exemplo: Tratamento de Erros</summary>
+          <summary>📜 Exemplo: Tratamento de Erros</summary>
           <div class="code">
             <pre><code>function baixarArquivo() {
   return new Promise((resolve, reject) => {
@@ -358,7 +362,7 @@ async function executar() {
 
 executar();</code></pre>
           </div>
-          <h3>Saída sem console:</h3>
+          <h3>🔹 Saída sem console:</h3>
           <div class="code">
             <pre><code>// Baixando arquivo...
 // (Depois de 2 segundos...)
@@ -393,7 +397,9 @@ executar();</code></pre>
               <tr>
                 <td><strong>Assíncrono/Aguardando</strong></td>
                 <td>Código mais legível e organizado</td>
-                <td>Precisa de <strong>try...catchpara</strong> tratar erros</td>
+                <td>
+                  Precisa de <strong>try...catchpara</strong> tratar erros
+                </td>
               </tr>
             </tbody>
           </table>
@@ -411,6 +417,7 @@ executar();</code></pre>
       </p>
     </footer>
 
-    <script src="toggleTheme.js"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
   </body>
 </html>

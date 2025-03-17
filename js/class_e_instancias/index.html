@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Aprenda sobre Classes e Instâncias no JavaScript. Descubra como criar classes, instâncias, métodos e entender conceitos como herança e propriedades privadas." />
+    <meta
+      name="description"
+      content="Aprenda sobre Classes e Instâncias no JavaScript. Descubra como criar classes, instâncias, métodos e entender conceitos como herança e propriedades privadas."
+    />
 
     <script
       type="module"
@@ -18,8 +21,8 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -67,7 +70,7 @@
           vários bolos (instâncias) .
         </p>
         <details>
-          <summary>📌 Criando uma aula no JavaScript</summary>
+          <summary>📜Criando uma aula no JavaScript</summary>
           <p>
             No JavaScript, usamos a palavra-chave classpara definir uma classe.
           </p>
@@ -101,7 +104,7 @@
         <legend>🚗 2. O Que São Instâncias?</legend>
         <p>Uma instância é um objeto criado a partir de uma classe.</p>
         <details>
-          <summary>✅ Criando uma Instância deCarro</summary>
+          <summary>📜 Criando uma Instância deCarro</summary>
           <div class="code">
             <pre><code>const meuCarro = new Carro("Toyota", "Corolla", 2022);
 console.log(meuCarro);</code></pre>
@@ -144,7 +147,7 @@ Carro { marca: 'Ford', modelo: 'Mustang', ano: 1969 }</code></pre>
         </p>
         <details>
           <summary>
-            ✅ Exemplo: Adicionando um Método <code>detalhes()</code>
+            📜 Exemplo: Adicionando um Método <code>detalhes()</code>
           </summary>
           <div class="code">
             <pre><code>class Carro {
@@ -180,7 +183,7 @@ console.log(meuCarro.detalhes());</code></pre>
           características da classe pai usando extends.
         </p>
         <details>
-          <summary>✅ Exemplo: Criando CarroEletricoque Herda deCarro</summary>
+          <summary>📜 Exemplo: Criando CarroEletricoque Herda deCarro</summary>
           <div class="code">
             <pre><code>class ContaBancaria {
   #saldo; // Propriedade privada
@@ -272,7 +275,7 @@ console.log(conta.verSaldo());
       </p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="toggleTheme.js"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
   </body>
 </html>

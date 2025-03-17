@@ -49,6 +49,7 @@
   --thead-background-color: #dedfe0;
   --tbody-background-color: #cfcdcd;
   --table-font-color: #212529;
+  --border-table-color: #575656a1;
 
   --footer-bg-color: #ffffff;
   --footer-text-color: #212529;
@@ -78,6 +79,7 @@
   --thead-background-color: #212529;
   --tbody-background-color: #282c34;
   --table-font-color: #f1f5f9;
+  --border-table-color: #1a1818bb;
 
   --footer-bg-color: #333;
   --footer-text-color: #f1f5f9;
@@ -156,12 +158,15 @@ main {
 
 /* estilização do fieldset */
 fieldset {
+  display: flex;
+  flex-direction: column;
   background-color: var(--header-bg-color);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   color: var(--font-color);
   padding: var(--padding-medium);
   margin-bottom: 20px;
+  gap: 1rem;
 }
 
 /* estilização do fieldset - legend */
@@ -205,24 +210,23 @@ ul li {
 .fieldset_table {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .div_table {
   width: fit-content;
   max-width: 100%;
 
-  border: #000 1px solid;
   border-radius: 10px;
   margin: var(--margin-medium) 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(
-    --table-background-color
-  ); /* Usa a mesma cor de fundo dos fieldsets */
-  border-radius: var(--border-radius-small);
+  background-color: var(--table-background-color);
   overflow: hidden; /* Garante que as bordas arredondadas funcionem */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.986);
+  border: 2px solid var(--border-table-color); /* Usa a cor da borda das variáveis */
+  border-radius: 10px;
   table-layout: auto;
 }
 thead {
@@ -230,9 +234,9 @@ thead {
 }
 th,
 td {
-  padding: var(--padding-medium);
+  padding: var(--padding-medium) var(--padding-large);
   text-align: left;
-  border-bottom: 1px solid var(--border-color); /* Usa a cor da borda das variáveis */
+  border: 2px solid var(--border-table-color); /* Usa a cor da borda das variáveis */
   color: var(--table-font-color);
 }
 th {
@@ -243,11 +247,6 @@ tbody tr:nth-child(even) {
   background-color: var(
     --tbody-background-color
   ); /* Linhas pares com fundo levemente diferente */
-}
-
-/* estilização do fieldset - p */
-p {
-  margin: var(--margin-small);
 }
 
 /* estilização do fieldset - .code */
@@ -268,10 +267,18 @@ code {
   color: var(--button-bg-color);
   border-radius: 5px;
   background-color: var(--code-background-color);
-  padding: 0.1rem;
+  padding: 0.2rem;
   white-space: pre-wrap;
   font-size: 1rem;
   line-height: 1.6;
+}
+.code pre, pre code {
+  padding: 0;
+}
+tbody tr:nth-child(even) {
+  code{
+    background-color: var(--header-bg-color); /* Linhas pares com fundo levemente diferente */
+  }
 }
 
 strong {

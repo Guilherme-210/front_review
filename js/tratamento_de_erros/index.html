@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Entenda como tratar erros no JavaScript usando try, catch, finally e throw. Aprenda a evitar falhas inesperadas e melhorar a robustez do seu código." />
-
+    <meta
+      name="description"
+      content="Entenda como tratar erros no JavaScript usando try, catch, finally e throw. Aprenda a evitar falhas inesperadas e melhorar a robustez do seu código."
+    />
 
     <script
       type="module"
@@ -19,8 +21,8 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -31,9 +33,13 @@
   <body data-theme="light">
     <header>
       <nav>
-        <a class="nav_pages" href="/js/class_e_instancias/index.html"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/js/class_e_instancias/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/js/setTimeout_e_setInterval/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="/js/setTimeout_e_setInterval/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Tratamento de Erros no JavaScript</h1>
@@ -48,33 +54,42 @@
     <main>
       <fieldset>
         <legend>
-          🛠️ Tratamento de Erros no JavaScript: try, catchefinally
+          🛠️ Tratamento de Erros no JavaScript: try, catch e finally
         </legend>
         <p>
           O JavaScript, assim como outras linguagens de programação, permite
           lidar com erros de forma controlada usando blocos de tratamento de
-          abordagens . Isso é essencial para evitar que um erro inesperado
+          abordagens. Isso é essencial para evitar que um erro inesperado
           aconteça na execução do código.
         </p>
         <p>O tratamento de erros no JavaScript é feito com:</p>
         <ul>
-          <li>try→ Tente executar um bloco de código.</li>
-          <li>catch→ Captura e lida com erros caso ocorram no try.</li>
+          <li><code>try</code> → Tente executar um bloco de código.</li>
           <li>
-            finally→ (Opcional) Sempre execute um bloco de código,
+            <code>catch</code> → Captura e lida com erros caso ocorram no try.
+          </li>
+          <li>
+            <code>finally</code> → (Opcional) Sempre execute um bloco de código,
             independentemente de ter ocorrido erro ou não.
           </li>
         </ul>
         <details>
-          <summary>📌 Resumo</summary>
+          <summary>⚡ Resumo</summary>
           <ol>
-            <li>✔️ <code>try</code> → Tente executar um código que pode dar erro.</li>
-            <li>✔️ <code>catch</code> → Captura erros e impede que o código quebre.</li>
-            <li>✔️ <code>finally</code> → Sempre é executado (com ou sem erro).</li>
+            <li>
+              ✔️ <code>try</code> → Tente executar um código que pode dar erro.
+            </li>
+            <li>
+              ✔️ <code>catch</code> → Captura erros e impede que o código
+              quebre.
+            </li>
+            <li>
+              ✔️ <code>finally</code> → Sempre é executado (com ou sem erro).
+            </li>
             <li>✔️ <code>throw</code> → Lançamento de erros personalizados.</li>
             <li>
-              ✔️ Os erros podem ser de diferentes tipos ( <code>ReferenceError</code>,
-              <code>TypeError</code>, etc.).
+              ✔️ Os erros podem ser de diferentes tipos (
+              <code>ReferenceError</code>, <code>TypeError</code>, etc.).
             </li>
           </ol>
         </details>
@@ -84,35 +99,43 @@
         <legend>🎯 1. O Problema Sem Tratamento de Erros</legend>
         <p>
           Quando um erro ocorre no JavaScript, ele pode interromper
-          completamente a execução do código. Exemplo:
+          completamente a execução do código.
         </p>
-        <div class="code">
-          <pre><code>console.log("Início do código...");
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="code">
+            <pre><code>console.log("Início do código...");
 
 let resultado = 10 / 2;
 console.log("Resultado:", resultado);
 
 let erro = x + 10; // ❌ ERRO: 'x' não está definido.
 
-// Retomo da função
-// ReferenceError: x is not defined
-
 console.log("Este código nunca será executado.");</code></pre>
-        </div>
-        <p>
-          💥 Erro no Console: <code>ReferenceError: x is not defined</code> O
-          erro faz com que o restante do código não seja executado .
-        </p>
+          </div>
+          <h3>💥 Erro no Console:</h3>
+          <div class="code">
+            <pre><code>ReferenceError: x is not defined</code></pre>
+          </div>
+          <p>
+            O erro
+            <strong>faz com que o restante do código não seja executado</strong
+            >. Para evitar isso, usamos <code>try...catch</code>.
+          </p>
+        </details>
       </fieldset>
 
       <fieldset>
         <legend>🛡️ 2. Como funciona try...catch?</legend>
         <p>
-          O tryexecuta um bloco de código. Se ocorrer um erro, ele pula para o
-          catch, que captura a exceção sem quebrar o código.
+          O <code>try</code> executa um bloco de código. Se ocorrer um erro, ele
+          pula para o <code>catch</code>, que captura a exceção sem quebrar o
+          código.
         </p>
-        <div class="code">
-          <pre><code>console.log("Início do código...")
+        <details>
+          <summary>📜 Exemplo: <code>try...catch</code></summary>
+          <div class="code">
+            <pre><code>console.log("Início do código...")
 try {
   let resultado = 10 / 2
   console.log("Resultado:", resultado)
@@ -123,39 +146,53 @@ try {
 } catch (erro) {
   console.log("⚠️ Ocorreu um erro:", erro.message)
 }
-console.log("O código continua normalmente! 🚀")
-
-// Início do código...
+console.log("O código continua normalmente! 🚀")</code></pre>
+          </div>
+          <h3>🔹 Saída sem console:</h3>
+          <div class="code">
+            <pre><code>// Início do código...
 // Resultado: 5
 // ⚠️ Ocorreu um erro: x is not defined
 // O código continua normalmente! 🚀</code></pre>
-        </div>
-        <p>✔️ O erro foi capturado sem quebrar o programa.</p>
+          </div>
+          <p>✔️ O erro foi capturado sem quebrar o programa.</p>
+        </details>
       </fieldset>
 
       <fieldset>
         <legend>🔍 3. O Objeto de Erro (Error)</legend>
         <p>O catchrecebe um objeto com informações de erro, como:</p>
         <ul>
-          <li>erro.message→ Mensagem de erro.</li>
-          <li>erro.name→ Tipo do erro ( ReferenceError, TypeError, etc.).</li>
-          <li>erro.stack→ Rastreamento de pilha (rastreamento de erro).</li>
+          <li><code>erro.message</code> → Mensagem de erro.</li>
+          <li>
+            <code>erro.name</code> → Tipo do erro ( ReferenceError, TypeError,
+            etc.).
+          </li>
+          <li>
+            <code>erro.stack</code> → Rastreamento de pilha (rastreamento de
+            erro).
+          </li>
         </ul>
-        <div class="code">
-          <pre><code>try {
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="code">
+            <pre><code>try {
   let resultado = x / 2 // ❌ ERRO: 'x' não está definido.
 } catch (erro) {
   console.log("Nome do erro:", erro.name)
   console.log("Mensagem:", erro.message)
   console.log("Stack trace:", erro.stack)
-}
-
-// Nome do erro: ReferenceError
+}</code></pre>
+          </div>
+          <h3>🔹 Saída:</h3>
+          <div class="code">
+            <pre><code>// Nome do erro: ReferenceError
 // Mensagem: x is not defined
 // Stack trace: ReferenceError: x is not defined
 //     at &lt;anonymous&gt;:2:19</code></pre>
-        </div>
-        <p></p>
+          </div>
+          <p></p>
+        </details>
       </fieldset>
 
       <fieldset>
@@ -163,10 +200,12 @@ console.log("O código continua normalmente! 🚀")
         <p>
           O finallyé um bloco que sempre será executado, independentemente de
           ocorrer erro ou não. Ele é útil para fechar conexões, liberar memória
-          ou limpar dados temporariamente .
+          ou limpar dados temporariamente.
         </p>
-        <div class="code">
-          <pre><code>try {
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="code">
+            <pre><code>try {
   console.log("Tentando executar o código...")
   let resultado = 10 / 0 // Isso resulta em Infinity, mas não é um erro.
   console.log("Resultado:", resultado)
@@ -175,24 +214,29 @@ console.log("O código continua normalmente! 🚀")
 } finally {
   console.log("Isso sempre será executado! ✅")
 }
-console.log("Fim do código!")
-
-// Tentando executar o código...
+console.log("Fim do código!")</code></pre>
+          </div>
+          <h3>🔹 Saída:</h3>
+          <div class="code">
+            <pre><code>// Tentando executar o código...
 // Resultado: Infinity
 // Isso sempre será executado! ✅
 // Fim do código!</code></pre>
-        </div>
-        <p>Mesmo sem erro, <code>finally</code> foi executado</p>
+          </div>
+          <p>Mesmo sem erro, <code>finally</code> foi executado</p>
+        </details>
       </fieldset>
 
       <fieldset>
-        <legend>⚙️ 5. Criando Erros Personalizados ( throw)</legend>
+        <legend>⚙️ 5. Criando Erros Personalizados (<code>throw</code>)</legend>
         <p>
           Podemos lançar nossos próprios erros usando throw, útil para validar
           entradas e impedir ações indesejadas.
         </p>
-        <div class="code">
-          <pre><code>function dividir(a, b) {
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="code">
+            <pre><code>function dividir(a, b) {
   if (b === 0) {
     throw new Error("Divisão por zero não é permitida! ❌")
   }
@@ -203,12 +247,15 @@ try {
   console.log(dividir(10, 0)) // ❌ ERRO!
 } catch (erro) {
   console.log("Erro capturado:", erro.message)
-}
-
-// 5
+}</code></pre>
+          </div>
+          <h3>🔹 Saída:</h3>
+          <div class="code">
+            <pre><code>// 5
 // Erro capturado: Divisão por zero não é permitida! ❌</code></pre>
-        </div>
-        <p>✔️ O erro foi tratado, evitando uma falha inesperada.</p>
+          </div>
+          <p>✔️ O erro foi tratado, evitando uma falha inesperada.</p>
+        </details>
       </fieldset>
 
       <fieldset>
@@ -242,22 +289,26 @@ try {
             </tbody>
           </table>
         </div>
-        <p></p>
-        <div class="code">
-          <pre><code>try {
-  let lista = [1, 2, 3]
-  lista.length = -1 // ❌ ERRO: Tamanho de array negativo gera um RangeError.
-} catch (erro) {
+        <details>
+          <summary>📜 Exemplo: Capturando Erros Diferentes:</summary>
+
+          <div class="code">
+            <pre><code>try {
+            let lista = [1, 2, 3]
+            lista.length = -1 // ❌ ERRO: Tamanho de array negativo gera um RangeError.
+          } catch (erro) {
   if (erro instanceof RangeError) {
     console.log("Erro de intervalo:", erro.message)
   } else {
     console.log("Outro erro:", erro.message)
   }
-}
-
-// Erro de intervalo: Invalid array length</code></pre>
-        </div>
-        <p></p>
+}</code></pre>
+          </div>
+          <h3>🔹 Saída:</h3>
+          <div class="code">
+            <pre><code>// Erro de intervalo: Invalid array length</code></pre>
+          </div>
+        </details>
       </fieldset>
     </main>
 
@@ -272,6 +323,7 @@ try {
     </footer>
 
     <script src="script.js"></script>
-    <script src="toggleTheme.js"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
   </body>
 </html>

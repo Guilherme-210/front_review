@@ -18,8 +18,8 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -50,13 +50,13 @@
       <fieldset>
         <legend class="num num1"> Exportação na mesma linha</legend>
         <p>
-          Permite exportar vários valores de um módulo e importá-los pelo nome
+          O arquivo <strong>inline.js</strong> permite exportar vários valores de um módulo e importá-los pelo nome
           exato.
         </p>
+        <details>
+          <summary>📜 Exemplo:</summary>
         <div class="code">
-          <pre><code>// inline.js
-
-export function inline() {
+          <pre><code>export function inline() {
   console.log("Export nomeado inline")
 }
 
@@ -73,16 +73,17 @@ export default function () {
         <p>
           Uma através de uma importação padrão (<code>default</code>), que pode ser renomeada no
           momento da importação.
+        </details>
         </p>
       </fieldset>
 
       <fieldset>
         <legend class="num num2">Exportação usando multiplas linhas</legend>
-        <p>Exporta um único valor, que pode ser importado com qualquer nome.</p>
+        <p>O arquivo <strong>non-inline.js</strong> exporta um único valor, que pode ser importado com qualquer nome.</p>
+        <details>
+          <summary>📜 Exemplo:</summary>
         <div class="code">
-          <pre><code>// non-inline.js
-
-function group() {
+          <pre><code>function group() {
   console.log("Export nomeado não-inline (agrupado)")
 }
 
@@ -102,17 +103,18 @@ export default exportDefault</code></pre>
         <p>
           Neste codigo foram definidas 6 fonções ao qual 5 delas foram nomeadas e exportadas juntas <code>export { group, a, b, c, d }</code> enquanto uma foi criada e exportada como <code>exportDefault()</code>, Isso permite que quem importar o módulo use qualquer nome para se referir a essa função.
         </p>
+        </details>
       </fieldset>
 
       <fieldset>
         <legend class="num num3">Arquivo de importação para cada elemento</legend>
         <p>
-          O código demonstra diferentes formas de importar e usar módulos em JavaScript, focando em importações nomeadas e padrão (<code>default</code>).
+          O arquivo <strong>script.js</strong> demonstra diferentes formas de importar e usar módulos em JavaScript, focando em importações nomeadas e padrão (<code>default</code>).
         </p>
+        <details>
+          <summary>📜 Exemplo:</summary>
         <div class="code">
-          <pre><code>// script.js
-
-// import { inline } from "./inline.js"
+          <pre><code>// import { inline } from "./inline.js"
 import { inline as i } from "./inline.js"
 import defaultInline from "./inline.js"
 import exportDefault, { group, a, b, c, d } from "./non-inline.js"
@@ -133,6 +135,7 @@ exportDefault()</code></pre>
           O código (<code>import exportDefault, { group, a, b, c, d } from "./non-inline.js"</code>)<br>
           Importa o padrão (<code>default</code>) do arquivo <code>./non-inline.js</code> e a atribui à variável (<code>exportDefault</code>), e importa também as exportações nomeadas (<code>group, a, b, c e d</code>) do mesmo arquivo.
         </p>
+        </details>
       </fieldset>
     </main>
 
@@ -147,6 +150,7 @@ exportDefault()</code></pre>
     </footer>
 
     <script src="./scripts/script.js" type="module"></script>
-    <script src="./scripts/toggleTheme.js"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
   </body>
 </html>

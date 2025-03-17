@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Aprenda a utilizar Módulos com ES Modules no JavaScript. Descubra como importar e exportar código de maneira eficiente e moderna para criar projetos bem estruturados." />
+    <meta
+      name="description"
+      content="Aprenda a utilizar Módulos com ES Modules no JavaScript. Descubra como importar e exportar código de maneira eficiente e moderna para criar projetos bem estruturados."
+    />
 
     <script
       type="module"
@@ -18,8 +21,8 @@
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
 
-    <link rel="stylesheet" href="style/reset.css" />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -34,7 +37,9 @@
           ><i class="fi fi-rr-angle-left"></i
         ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/js/export_do_ESM/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="/js/export_do_ESM/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Módulos com ES Modules</h1>
@@ -50,15 +55,16 @@
       <fieldset>
         <legend></legend>
         <p>
-          O <code>ES Modules</code> (ECMAScript Modules) é um sistema de módulos
-          nativo do JavaScript que permite dividir o código em arquivos
+          O <strong>ES Modules</strong> (ECMAScript Modules) é um sistema de
+          módulos nativo do JavaScript que permite dividir o código em arquivos
           reutilizáveis e organizados. Ele usa as palavras-chave
           <code>export</code> e <code>import</code> para compartilhar e carregar
           funcionalidades entre arquivos.
         </p>
         <p>
-          Para usar ES Modules no HTML, você deve definir a chamada da tag
-          <code>&lt;script&gt;</code> com o <code>type="module"</code>
+          Para usar <strong>ES Modules</strong> no HTML, você deve definir a
+          chamada da tag <code>&lt;script&gt;</code> com o
+          <code>type="module"</code>
         </p>
       </fieldset>
 
@@ -69,10 +75,10 @@
           Vamos imaginar que na nossa aplicação temos um arquivo javascript com
           várias funções e que utilizamos essas funções várias vezes:
         </p>
-        <div class="code">
-          <pre><code>// script1.js
-
-function label(attributes) {
+        <details>
+          <summary>📜 Exemplo: script1.js</summary>
+          <div class="code">
+            <pre><code>function label(attributes) {
   const element = document.createElement('label')
   Object.assign(element, attributes)
   return element
@@ -92,23 +98,26 @@ function br() {
 console.log(label({ for: 'fullname', textContent: 'Nome Completo'}))
 console.log(input({ id: 'fullname', name: 'fullname', placeholder: 'Digite seu nome completo...'}))
 console.log(br())</code></pre>
-        </div>
+          </div>
+        </details>
       </fieldset>
 
       <fieldset>
         <legend>Exemplo utilizando os ES Modules</legend>
         <p>
-          Vamos modularizar nosso código javascript utilizando os ES Modules:
+          Vamos modularizar nosso código javascript utilizando os
+          <strong>ES Modules</strong>:
         </p>
-        <div class="code">
-          <pre><code>// index.html
-            
-&lt;script src="scripts/script2.js" type="module"&gt;&lt;/script&gt;</code></pre>
-        </div>
-        <div class="code">
-          <pre><code>// script2.js
-
-import { name, label, input, br } from "./functions.js"
+        <details>
+          <summary>📜 Exemplo: index.html</summary>
+          <div class="code">
+            <pre><code>&lt;script src="scripts/script2.js" type="module"&gt;&lt;/script&gt;</code></pre>
+          </div>
+        </details>
+        <details>
+          <summary>📜 Exemplo: script2.js</summary>
+          <div class="code">
+            <pre><code>import { name, label, input, br } from "./functions.js"
 
 console.log(name)
 console.log(label({ for: "fullname", textContent: "Nome Completo" }))
@@ -120,11 +129,12 @@ console.log(
   })
 )
 console.log(br())</code></pre>
-        </div>
-        <div class="code">
-          <pre><code>// functions.js
-
-export const name = "Guilherme"
+          </div>
+        </details>
+        <details>
+          <summary>📜 Exemplo: functions.js</summary>
+          <div class="code">
+            <pre><code>export const name = "Guilherme"
 
 export function label(attributes) {
   const element = document.createElement("label")
@@ -142,7 +152,8 @@ export function br() {
   const element = document.createElement("br")
   return element
 }</code></pre>
-        </div>
+          </div>
+        </details>
       </fieldset>
     </main>
 
