@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Entenda como usar Promises no JavaScript moderno. Aprenda sobre encadeamento de promessas, Promise.all, Promise.race e o uso de async/await." />
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Conhecendo as promessas</title>
+  </head>
+  <body data-theme="light">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/assincronicidade/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Conhecendo as promessas</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>📌 Conhecendo as promessas no JavaScript</legend>
+        <p>
+          No JavaScript moderno, Promises é uma ferramenta essencial para lidar
+          com operações assíncronas, como requisições HTTP, leitura de arquivos,
+          timers e muito mais.
+        </p>
+        <p>
+          Se você já se deparou com callbacks aninhados e o famoso "Callback
+          Hell", saiba que as Promises foram criadas justamente para resolver
+          esse problema, tornando o código assíncrono mais organizado e legível.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔎 1. O Que é uma Promessa?</legend>
+        <p>
+          Uma Promise (ou "promessa") representa um valor que pode estar
+          disponível agora, no futuro ou nunca .
+        </p>
+        <p>Ela pode ter três estados</p>
+        <ul>
+          <li>
+            Pendente (Pendente) → A promessa foi iniciada, mas ainda não
+            finalizou.
+          </li>
+          <li>Cumprida (Resolvida) → A promessa foi concluída com sucesso.</li>
+          <li>Rejeitado (Rejeitada) → Ocorreu um erro durante a execução.</li>
+        </ul>
+        <details>
+          <summary>📌 Criando uma Promise Simples</summary>
+          <div class="code">
+            <pre><code>const minhaPromise = new Promise((resolve, reject) => {
+  let sucesso = true; // Altere para false para testar o reject
+  
+  setTimeout(() => {
+    if (sucesso) {
+      resolve("✅ Sucesso! A promessa foi resolvida.");
+    } else {
+      reject("❌ Erro! A promessa foi rejeitada.");
+    }
+  }, 2000);
+});</code></pre>
+          </div>
+        </details>
+        <p>Explicação:</p>
+        <ul>
+          <li><strong>resolve(valor)</strong>→ Chama o sucesso da Promise.</li>
+          <li><strong>reject(erro)</strong>→ Chama a bloqueada da Promise</li>
+        </ul>
+        <p>Mas... Como consumimos essa Promessa?</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          🛠️ 2. Como Usar Promises com <code>.then()</code> e
+          <code>.catch()</code>
+        </legend>
+        <p>
+          Uma Promise pode ser consumida usando os métodos
+          <code>.then()</code> (para sucesso) e <code>.catch()</code> (para
+          erro).
+        </p>
+        <details>
+          <summary>
+            ✅ Exemplo Usando <code>.then()</code> e <code>.catch()</code>
+          </summary>
+          <div class="code">
+            <pre><code>minhaPromise
+  .then((mensagem) => {
+    console.log(mensagem); // Executa se a Promise for resolvida
+  })
+  .catch((erro) => {
+    console.error(erro); // Executa se a Promise for rejeitada
+  });</code></pre>
+          </div>
+          <h3>Saída no console (caso sucesso = true):</h3>
+          <div class="code">
+            <pre><code>(Depois de 2 segundos...)
+✅ Sucesso! A promessa foi resolvida.</code></pre>
+          </div>
+          <h3>Saída no console (caso sucesso = false):</h3>
+          <div class="code">
+            <pre><code>// (Depois de 2 segundos...)
+// ❌ Erro! A promessa foi rejeitada.            </code></pre>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          ⏳ 3. Encadeando Promessas (<code>.then()</code> Aninhado)
+        </legend>
+        <p>
+          Como as promessas são <strong>assíncronas</strong>, podemos
+          <strong>encadear várias delas</strong>, garantindo que uma seja
+          realizada após a outra.
+        </p>
+        <details>
+          <summary>✅ Exemplo com Encadeamento</summary>
+          <div class="code">
+            <pre><code>function primeiraPromise() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("Passo 1 concluído!"), 1000);
+  });
+}
+
+function segundaPromise(mensagem) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(mensagem + " ➡️ Passo 2 concluído!"), 1000);
+  });
+}
+
+primeiraPromise()
+  .then((resultado) => segundaPromise(resultado))
+  .then((resultadoFinal) => console.log(resultadoFinal))
+  .catch((erro) => console.error("Erro:", erro));</code></pre>
+          </div>
+          <h3>Saída sem console:</h3>
+          <div class="code">
+            <pre><code>// (Depois de 2 segundos...)
+// Passo 1 concluído! ➡️ Passo 2 concluído!</code></pre>
+          </div>
+        </details>
+        <p>✔️ O código fica mais organizado do que usando apenas callbacks.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          🔄 4. Promise.all() - Executando Múltiplas Promessas ao Mesmo Tempo
+        </legend>
+        <p>
+          Se tivermos várias promessas independentes , podemos
+          Promise.all()usá-las simultaneamente e obter os resultados quando
+          todas forem concluídas .
+        </p>
+        <details>
+          <summary>✅ Exemplo comPromise.all()</summary>
+          <div class="code">
+            <pre><code>const promessa1 = new Promise((resolve) => setTimeout(() => resolve("🐢 Tarefa 1 concluída"), 3000));
+const promessa2 = new Promise((resolve) => setTimeout(() => resolve("🚀 Tarefa 2 concluída"), 2000));
+const promessa3 = new Promise((resolve) => setTimeout(() => resolve("💡 Tarefa 3 concluída"), 1000));
+
+Promise.all([promessa1, promessa2, promessa3])
+  .then((resultados) => console.log("✅ Todas concluídas:", resultados))
+  .catch((erro) => console.error("Erro em alguma promessa:", erro));</code></pre>
+          </div>
+          <h3>Sair no console (após 3 segundos, quando todos terminam):</h3>
+          <div class="code">
+            <pre><code>// ✅ Todas concluídas: ['🐢 Tarefa 1 concluída', '🚀 Tarefa 2 concluída', '💡 Tarefa 3 concluída']</code></pre>
+          </div>
+        </details>
+        <p>
+          ✔️ As Promessas foram realizadas em paralelo, e o resultado só aparece
+          quando TODAS terminam.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          ⚡ 5. Promise.race() - Pegando a Primeira Promise que Resolver
+        </legend>
+        <p>
+          Se quisermos que apenas a primeira promessa resolvida seja usada ,
+          podemos utilizar <code>Promise.race()</code>.
+        </p>
+        <details>
+          <summary>✅ Exemplo com Promise.race()</summary>
+          <div class="code">
+            <pre><code>const promessa1 = new Promise((resolve) => setTimeout(() => resolve("🏆 Primeira a terminar!"), 2000));
+const promessa2 = new Promise((resolve) => setTimeout(() => resolve("🔄 Outra promessa"), 3000));
+
+Promise.race([promessa1, promessa2])
+  .then((resultado) => console.log("✅ Vencedora:", resultado))
+  .catch((erro) => console.error("Erro:", erro));</code></pre>
+          </div>
+          <h3>Saída no console (após 2 segundos):</h3>
+          <div class="code">
+            <pre><code>// ✅ Vencedora: 🏆 Primeira a terminar!</code></pre>
+          </div>
+        </details>
+        <p>
+          ✔️ Assim que a primeira promessa terminar, as outras serão ignoradas.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          🔥 6. Como Usar Promises com async/await(A Forma Moderna)
+        </legend>
+        <p>
+          Uma abordagem ainda mais limpa para lidar com Promises é usando
+          <strong>async/await</strong>, tornando o código mais próximo do
+          síncrono.
+        </p>
+        <details>
+          <summary>✅ Exemplo com async/await</summary>
+          <div class="code">
+            <pre><code>function baixarArquivo() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("📂 Arquivo baixado!"), 2000);
+  });
+}
+
+async function executar() {
+  console.log("⏳ Baixando...");
+  let resultado = await baixarArquivo();
+  console.log(resultado);
+}
+
+executar();</code></pre>
+          </div>
+          <h3>Saída sem console:</h3>
+          <div class="code">
+            <pre><code>// ⏳ Baixando...
+// (Depois de 2 segundos...)
+// 📂 Arquivo baixado!</code></pre>
+          </div>
+        </details>
+        <p>
+          ✔️ Com <strong>async/await</strong>, o código fica mais limpo e fácil
+          de entender.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🚨 7. Tratamento de Erros com async/await</legend>
+        <p>
+          Podemos usar <code>try...catch</code> para capturar erros ao usar
+          <code>async/await</code>.
+        </p>
+        <details>
+          <summary>✅ Exemplo com Erro</summary>
+          <div class="code">
+            <pre><code>function falharDownload() {
+  return new Promise((_, reject) => {
+    setTimeout(() => reject("❌ Erro no download!"), 2000);
+  });
+}
+
+async function executar() {
+  try {
+    console.log("⏳ Tentando baixar...");
+    let resultado = await falharDownload();
+    console.log(resultado);
+  } catch (erro) {
+    console.error("⚠️ Falha detectada:", erro);
+  }
+}
+
+executar();</code></pre>
+          </div>
+          <h3>Saída sem console:</h3>
+          <div class="code">
+            <pre><code>⏳ Tentando baixar...
+(Depois de 2 segundos...)
+⚠️ Falha detectada: ❌ Erro no download!</code></pre>
+          </div>
+        </details>
+        <p>
+          ✔️ Com <code>try...catch</code>, o código trata erros de forma
+          clara e segura.
+        </p>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>📊 Comparação de Métodos para Trabalhar com Promessas</legend>
+
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Vantagens</th>
+                <th>Desvantagens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Retornos de chamada</strong></td>
+                <td>Simples e direto, sem novas sintaxes</td>
+                <td>Pode gerar o <strong>Callback Hell</strong> e dificultar a manutenção</td>
+              </tr>
+              <tr>
+                <td><strong>Promessas</strong></td>
+                <td>Evita aninhamento excessivo, facilita o encadeamento</td>
+                <td>Pode ficar prolixo com <code>.then()</code> e <code>.catch()</code></td>
+              </tr>
+              <tr>
+                <td><strong>Promessa.tudo</strong></td>
+                <td>Executa múltiplas promessas em paralelo e retorna todas de uma vez</td>
+                <td>Se uma Promise falhar, todas falham</td>
+              </tr>
+              <tr>
+                <td><strong>Promessa.corrida</strong></td>
+                <td>Retorno ao resultado da primeira promessa resolvida</td>
+                <td>Nem sempre é útil, pois ignora o demais</td>
+              </tr>
+              <tr>
+                <td><strong>Assíncrono/Aguardando</strong></td>
+                <td>Código mais legível e organizado, parece síncrono</td>
+                <td>
+                  Precisa de <code>try...catch</code> para tratar erros
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
+</html>
