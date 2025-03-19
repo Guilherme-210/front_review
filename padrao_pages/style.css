@@ -203,6 +203,7 @@ ul {
   list-style: circle;
 }
 ol, ul {
+  margin-top: 1.5rem;
   margin-left: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -291,6 +292,7 @@ strong {
 .inputs {
   display: flex;
   margin: var(--margin-medium) 0;
+  gap: 1rem;
 }
 /* estilização do fieldset - input */
 input,
@@ -324,6 +326,34 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"] {
   -webkit-appearance: none;
   appearance: none;
+}
+.labelInput_input{
+  display: flex;
+  max-width: 100%;
+}
+label {
+  display: block;
+}
+
+/* estilização dos div inputs */
+.textArea {
+  display: flex-block;
+  gap: var(--margin-small);
+  text-align: center;
+  margin: var(--margin-medium) 0;
+  align-items: center;
+}
+/* estilização do fieldset - textarea */
+textarea {
+  width: 100%;
+  height: 10rem;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: var(--code-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  border: solid 2px var(--border-color);
+  resize: none;
 }
 
 /* estilização do fieldset - button */

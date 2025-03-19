@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Crie um formulário com validação de email e senha no JavaScript. Verifique a estrutura do email e a segurança da senha com regras claras e mensagens de erro personalizadas."
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Validador de email e senha</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/tratamento_de_erros/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/js/setTimeout_e_setInterval/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+
+      <h1>Validador de email e senha</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>Cadastro de Usuário</legend>
+        <form action="#">
+          <div class="inputs">
+            <label class="labelInput_input" for="inputName"
+              >Digite o seu nome</label
+            >
+            <input
+              type="text"
+              class="labelInput_input"
+              id="inputName"
+              placeholder="Digite o seu nome"
+            />
+          </div>
+
+          <div class="inputs">
+            <label class="labelInput_input" for="inputEmail"
+              >Digite o seu e-mail</label
+            >
+            <input
+              type="email"
+              class="labelInput_input"
+              id="inputEmail"
+              placeholder="seu.email@email.com"
+            />
+          </div>
+
+          <div class="inputs">
+            <label class="labelInput_input" for="inputSenha"
+              >Digite a sua senha</label
+            >
+            <input
+              type="password"
+              class="labelInput_input"
+              id="inputSenha"
+              placeholder="Digite a sua senha"
+            />
+          </div>
+
+          <div class="inputs">
+            <button type="button" id="submeter">Cadastrar</button>
+            <button type="button" id="release">Exibir Cadastros</button>
+          </div>
+
+          <div class="textArea">
+            <textarea name="teste" id="textAreaTest" readonly></textarea>
+          </div>
+        </form>
+      </fieldset>
+
+      <fieldset>
+        <legend>Validador de Email e Senha</legend>
+        <p>
+          Construa uma página HTML contendo um formulário de registro com os
+          campos nome, email e senha onde, ao submeter o formulário, deverá ser
+          feita uma validação para verificar se o email é um email válido e se a
+          senha atende as regras mínimas de seguraça.
+        </p>
+        <details>
+          <summary>✅ Para que um email seja válido ele deve possuir:</summary>
+          <ol>
+            <li>Um caractere <code>@</code></li>
+            <li>
+              Texto antes do <code>@</code> com pelo menos 2 caracteres, números
+              ou _ (underscore).
+            </li>
+            <li>Texto após o <code>@</code> com pelo menos 2 caracteres</li>
+            <li>
+              Um <code>.</code> seguido de mais texto com pelo menos 2
+              caracteres após o texto após o <code>@</code>
+            </li>
+            <li>Estrutura de um email válido: <code>**xx@xx.xx**</code></li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>✅ Para que uma senha seja válida ela deve possuir:</summary>
+          <ol>
+            <li>Pelo menos uma letra minúscula.</li>
+            <li>Pelo menos uma letra maiúscula.</li>
+            <li>Pelo menos um número</li>
+            <li>Pelo menos um caractere especial.</li>
+            <li>Pelo menos 8 caracteres.</li>
+          </ol>
+        </details>
+        <p>
+          As validação devem ser escritas em funções separadas que lançam um
+          novo erro em caso de falha com uma mensagem apropriada. Esse erro
+          deverá ser tratado através de um bloco trycatch, evitando que um erro
+          seja emitido no console do navegador e mostrando para o usuário o erro
+          ocorrido.
+        </p>
+      </fieldset>
+
+      <!--
+      <fieldset>
+        <legend></legend>
+        <p></p>
+        <details>
+          <summary>📜</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <h3>🔹 Saída</h3>
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <p></p>
+        <details>
+          <summary>📜</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <h3>🔹 Saída</h3>
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <p></p>
+        <details>
+          <summary>📜</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <h3>🔹 Saída</h3>
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <p></p>
+        <details>
+          <summary>📜</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <h3>🔹 Saída</h3>
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <p></p>
+        <details>
+          <summary>📜</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <h3>🔹 Saída</h3>
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend></legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong></strong></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><strong></strong></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><strong></strong></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><strong></strong></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+      -->
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="./script.js" type="module"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
+  </body>
+</html>
