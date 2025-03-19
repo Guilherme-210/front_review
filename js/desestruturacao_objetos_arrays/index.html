@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Página base para as aulas da One Bit Code. Explore diversos modelos de e outros exemplos práticos de JavaScript para aprimorar suas habilidades de programação." />
-  
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
-  
-  <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png" />
-  
-  <title>Desestruturação de Objetos e Arrays</title>
-</head>
-<body data-theme="light">
-  <header>
-    <nav>
-      <a class="nav_pages" href="/js/arrow_functions/index.html"><i class="fi fi-rr-angle-left"></i></a>
-      <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-      <a class="nav_pages" href="/js/operador_spread/index.html"><i class="fi fi-rr-angle-right"></i></a>
-    </nav>
-    <h1>Desestruturação de Objetos e Arrays</h1>
-    <div>
-      <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
-        <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
-      </button>
-    </div>
-  </header>
-  
-  <main>
-    <fieldset>
-      <legend>O que é Desestruturação?</legend>
-      <p>
-        A <strong>Desestruturação</strong> é uma funcionalidade do JavaScript que permite extrair dados de objetos e arrays de forma mais conveniente e legível. 
-        Com ela, podemos acessar propriedades específicas sem precisar referenciá-las diretamente através do objeto ou array original.
-      </p>
-    </fieldset>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Página base para as aulas da One Bit Code. Explore diversos modelos de e outros exemplos práticos de JavaScript para aprimorar suas habilidades de programação."
+    />
 
-    <fieldset>
-      <legend>Exemplo usado na aula</legend>
-      <div class="code">
-        <pre><code>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+
+    <title>Desestruturação de Objetos e Arrays</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/arrow_functions/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/js/operador_spread/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+      <h1>Desestruturação de Objetos e Arrays</h1>
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que é Desestruturação?</legend>
+        <p>
+          A <strong>Desestruturação</strong> é uma funcionalidade do JavaScript
+          que permite extrair dados de objetos e arrays de forma mais
+          conveniente e legível. Com ela, podemos acessar propriedades
+          específicas sem precisar referenciá-las diretamente através do objeto
+          ou array original.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exemplo usado na aula</legend>
+        <div class="code">
+          <pre><code>
 const person = {
   name: "Luke",
   job: "Farmer",
@@ -69,16 +92,17 @@ function createUser({ name, job, parents }) {
 const luke = createUser(person)
 console.log(luke)
         </code></pre>
-      </div>
-      <p>
-        O código acima mostra como desestruturar objetos e arrays para extrair seus valores de maneira simplificada.
-      </p>
-    </fieldset>
+        </div>
+        <p>
+          O código acima mostra como desestruturar objetos e arrays para extrair
+          seus valores de maneira simplificada.
+        </p>
+      </fieldset>
 
-    <fieldset>
-      <legend>Exemplo de treino</legend>
-      <div class="code">
-        <pre><code>
+      <fieldset>
+        <legend>Exemplo de treino</legend>
+        <div class="code">
+          <pre><code>
 // Exemplo de treino: Extraindo dados de um objeto de carro
 const car = {
   brand: "Tesla",
@@ -92,23 +116,22 @@ const car = {
 const { brand, model, specs: { horsepower, range } } = car
 console.log(brand, model, horsepower, range)
         </code></pre>
-      </div>
-    </fieldset>
-  </main>
-  
-  <footer>
-    <p>
-      © Baseado nas aulas da One Bit Code.
-    </p>
-    <p>
-      © 2025 Desenvolvido por Guilherme Reis.
-    </p> <br />
-    <p>
-      <a href="https://github.com/Guilherme-210" target="_blank">Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon></a>
-    </p>
-  </footer>
-  
-  <script src="script.js"></script>
-  <script src="toggleTheme.js"></script>
-</body>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© Baseado nas aulas da One Bit Code.</p>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggleTheme.js"></script>
+  </body>
 </html>

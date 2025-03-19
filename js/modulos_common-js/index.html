@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore o conceito de módulos no Common.JS e veja exemplos práticos de importação e exportação de código. Aprenda a organizar melhor seu projeto em JavaScript!"/>
+    <meta
+      name="description"
+      content="Explore o conceito de módulos no Common.JS e veja exemplos práticos de importação e exportação de código. Aprenda a organizar melhor seu projeto em JavaScript!"
+    />
 
     <script
       type="module"
@@ -27,14 +30,16 @@
     />
     <title>Módulos Common.JS</title>
   </head>
-  <body data-theme="light">
+  <body data-theme="dark">
     <header>
       <nav>
         <a class="nav_pages" href="/js/introdução_aos_modulos/index.html"
           ><i class="fi fi-rr-angle-left"></i
         ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/js/ES_Modules/index.html"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="/js/ES_Modules/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
       </nav>
 
       <h1>Módulos Common.JS</h1>
@@ -50,10 +55,17 @@
       <fieldset>
         <legend>O que é Módulos com Common.JS?</legend>
         <p>
-          A utilização de importação e exportação usando o <code>Common.JS</code> é uma ferramenta a parte não suportada por padrão nos navegadores. Só que ele é a forma padrão de se trabalhar com módulos pelo <code>Node.JS</code>, mas mesmo no node ele não precisa ser utilizado necessariamente por haver outras ferramentas que podem ser utilizadas no lugar dele.
+          A utilização de importação e exportação usando o
+          <code>Common.JS</code> é uma ferramenta a parte não suportada por
+          padrão nos navegadores. Só que ele é a forma padrão de se trabalhar
+          com módulos pelo <code>Node.JS</code>, mas mesmo no node ele não
+          precisa ser utilizado necessariamente por haver outras ferramentas que
+          podem ser utilizadas no lugar dele.
         </p>
         <p>
-          E ele pode ser totalmente substituído pela implementação nativa dos módulos do JavaScript, ao qual é preferível por serem ferramentas próprias da linguagem.
+          E ele pode ser totalmente substituído pela implementação nativa dos
+          módulos do JavaScript, ao qual é preferível por serem ferramentas
+          próprias da linguagem.
         </p>
       </fieldset>
 
@@ -73,7 +85,10 @@ render1()
 store1()
 console.log("Aplicação finalizada.")</code></pre>
         </div>
-        <p>No exemplo a cima, é mais utilizado em códigos pequenos e de fácil manuseio, o qual acaba por não ter muito conteúdo.</p>
+        <p>
+          No exemplo a cima, é mais utilizado em códigos pequenos e de fácil
+          manuseio, o qual acaba por não ter muito conteúdo.
+        </p>
       </fieldset>
 
       <!-- Exemplo usado na aula -->
@@ -113,7 +128,10 @@ function store() {
 
 module.exports = store</code></pre>
         </div>
-        <p>Esse exemplo é mais utilizado quando há muito conteúdo, com o intuito de deixar o código mais legível e de fácil manutenção.</p>
+        <p>
+          Esse exemplo é mais utilizado quando há muito conteúdo, com o intuito
+          de deixar o código mais legível e de fácil manutenção.
+        </p>
       </fieldset>
     </main>
 
