@@ -4,7 +4,7 @@ const inputName = document.getElementById("inputName")
 const inputEmail = document.getElementById("inputEmail")
 const inputSenha = document.getElementById("inputSenha")
 
-function submeter() {
+function submit() {
   const usuario = {
     Name: inputName.value,
     Email: inputEmail.value,
@@ -19,4 +19,4 @@ function submeter() {
 }
 
 export { inputName, inputEmail, inputSenha }
-export default submeter
+export default submit

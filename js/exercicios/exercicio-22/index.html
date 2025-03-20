@@ -23,6 +23,7 @@
 
     <link rel="stylesheet" href="/padrao_pages/reset.css" />
     <link rel="stylesheet" href="/padrao_pages/style.css" />
+
     <link
       rel="icon"
       type="image/x-icon"
@@ -65,6 +66,7 @@
               id="inputName"
               placeholder="Digite o seu nome"
             />
+            <span id="name_error"></span>
           </div>
 
           <div class="inputs">
@@ -77,6 +79,7 @@
               id="inputEmail"
               placeholder="seu.email@email.com"
             />
+            <span id="email_error"></span>
           </div>
 
           <div class="inputs">
@@ -89,10 +92,11 @@
               id="inputSenha"
               placeholder="Digite a sua senha"
             />
+            <span id="password_error"></span>
           </div>
 
           <div class="inputs">
-            <button type="button" id="submeter">Cadastrar</button>
+            <button type="button" id="submit">Cadastrar</button>
             <button type="button" id="release">Exibir Cadastros</button>
           </div>
 

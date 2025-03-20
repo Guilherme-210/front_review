@@ -334,6 +334,19 @@ input[type="number"] {
 label {
   display: block;
 }
+/* Estilizando o span */
+span {
+    color: #f64348;
+    font-size: .75rem;
+    margin: .25rem;
+}
+/* Estilização de acerto e erro */
+.error {
+    border: 1px solid #f64348;
+}
+.success {
+    border: 1px solid #43f67f;
+}
 
 /* estilização dos div inputs */
 .textArea {
