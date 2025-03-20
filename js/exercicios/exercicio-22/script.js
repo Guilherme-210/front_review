@@ -12,8 +12,10 @@ document.getElementById("submit").addEventListener("click", function () {
   const inputSenha = document.getElementById("inputSenha")
 
   try {
+    // Validação do nome
     inputName.classList.add("success")
 
+    // Validação do email
     if (validateEmail()) {
       inputEmail.classList.add("success")
     } else {
@@ -22,6 +24,7 @@ document.getElementById("submit").addEventListener("click", function () {
       return
     }
 
+    // Validação da senha
     if (validatePassword()) {
       inputSenha.classList.add("success")
     } else {
