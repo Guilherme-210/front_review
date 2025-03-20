@@ -288,11 +288,30 @@ strong {
   color: var(--strong-code-color);
 }
 
+/* ================== */
+/* estilização dos formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-medium);
+}
 /* estilização dos div inputs */
 .inputs {
   display: flex;
   margin: var(--margin-medium) 0;
   gap: 1rem;
+  align-items: center;
+}
+.buttons-ex22 {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputs-ex22 {
+  width: 100%;
+  margin: 0;
 }
 /* estilização do fieldset - input */
 input,
@@ -303,7 +322,6 @@ select {
   color: var(--font-color);
   display: block;
   font-size: var(--font-size-small);
-  margin: var(--margin-small);
   padding: var(--padding-medium);
   text-align: end;
   width: 100%;
@@ -335,10 +353,16 @@ label {
   display: block;
 }
 /* Estilizando o span */
-span {
+.content_input-span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.span_error {
     color: #f64348;
     font-size: .75rem;
-    margin: .25rem;
+    display: none;
+    /* display: block; */
 }
 /* estilizando o input type=senha */
 .password-container {

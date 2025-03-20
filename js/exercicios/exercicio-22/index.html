@@ -56,49 +56,56 @@
       <fieldset>
         <legend>Cadastro de Usuário</legend>
         <form action="#">
-          <div class="inputs">
-            <label class="labelInput_input" for="inputName"
-              >Digite o seu nome</label
-            >
-            <input
-              type="text"
-              class="labelInput_input"
-              id="inputName"
-              placeholder="Digite o seu nome"
-            />
-            <span id="name_error"></span>
-          </div>
-
-          <div class="inputs">
-            <label class="labelInput_input" for="inputEmail"
-              >Digite o seu e-mail</label
-            >
-            <input
-              type="email"
-              class="labelInput_input"
-              id="inputEmail"
-              placeholder="seu.email@email.com"
-            />
-            <span id="email_error"></span>
-          </div>
-
-          <div class="inputs">
-            <label class="labelInput_input" for="inputSenha"
-              >Digite a sua senha</label
-            >
-            <div class="password-container">
+          <div class="content_input-span">
+            <div class="inputs inputs-ex22">
+              <label class="labelInput_input" for="inputName"
+                >Digite o seu nome</label
+              >
               <input
-                type="password"
+                type="text"
                 class="labelInput_input"
-                id="inputSenha"
-                placeholder="Digite a sua senha 'Senha12+'"
+                id="inputName"
+                placeholder="Digite o seu nome"
               />
-              <span id="toggleSenha" class="eye-icon">👁️</span>
             </div>
-            <span id="password_error"></span>
+            <span class="span_error" id="name_error">O seu nome está errado</span>
           </div>
 
-          <div class="inputs">
+          <div class="content_input-span">
+            <div class="inputs inputs-ex22">
+              <label class="labelInput_input" for="inputEmail"
+                >Digite o seu e-mail</label
+              >
+              <input
+                type="email"
+                class="labelInput_input"
+                id="inputEmail"
+                placeholder="seu.email@email.com"
+              />
+            </div>
+            <span class="span_error" id="email_error">O seu e-mail está errado</span>
+          </div>
+
+          <div class="content_input-span">
+            <div class="inputs inputs-ex22">
+              <label class="labelInput_input" for="inputSenha"
+                >Digite a sua senha</label
+              >
+              <div class="password-container">
+                <input
+                  type="password"
+                  class="labelInput_input"
+                  id="inputSenha"
+                  placeholder="Digite a sua senha 'Senha12+'"
+                />
+                <span id="toggleSenha" class="eye-icon">👁️</span>
+              </div>
+            </div>
+            <span class="span_error" id="password_none">Este campo não pode estar em branco</span>
+            <span class="span_error" id="password_error">A sua senha está errada</span>
+          </div>
+
+          <div class="inputs buttons-ex22">
             <button type="button" id="submit">Cadastrar</button>
             <button type="button" id="release">Exibir Cadastros</button>
           </div>
