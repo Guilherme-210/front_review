@@ -11,6 +11,8 @@ document.getElementById("submit").addEventListener("click", function () {
   const inputName = document.getElementById("inputName")
   const inputEmail = document.getElementById("inputEmail")
   const inputSenha = document.getElementById("inputSenha")
+  const Email = document.getElementById("inputEmail").value
+  const Senha = document.getElementById("inputSenha").value
 
   inputName.classList.remove("success")
   inputName.classList.remove("error")
@@ -19,28 +21,48 @@ document.getElementById("submit").addEventListener("click", function () {
   inputSenha.classList.remove("success")
   inputSenha.classList.remove("error")
 
+  document.getElementById("name_error").style.display = "none"
+  document.getElementById("email_none").style.display = "none"
+  document.getElementById("email_error").style.display = "none"
+  document.getElementById("password_none").style.display = "none"
+  document.getElementById("password_error").style.display = "none"
+
   try {
     // Validação do nome
-    if (!validateName(inputName)) return
+    if (!validateName(inputName)) {
+      document.getElementById("name_error").style.display = "block"
+      return
+    }
 
     // Validação do email
-    if (validateEmail()) {
+    if (Email.length < 1) {
+      inputEmail.classList.add("error")
+      alert("Campo de e-mail não pode estar em branco.")
+      document.getElementById("email_none").style.display = "block"
+      return
+    } else if (validateEmail()) {
       inputEmail.classList.add("success")
     } else {
       inputEmail.classList.add("error")
       alert("Por favor, insira um e-mail válido.")
+      document.getElementById("email_error").style.display = "block"
       return
     }
 
     // Validação da senha
-    if (validatePassword()) {
+    if (Senha.length < 1) {
+      inputSenha.classList.add("error")
+      alert("Campo senha não pode estar em branco.")
+      document.getElementById("password_none").style.display = "block"
+      return
+    } else if (validatePassword()) {
       inputSenha.classList.add("success")
     } else {
       inputSenha.classList.add("error")
-      alert("Por favor, insira uma senha válida.")
+      // alert("Por favor, insira uma senha válida.")
+      document.getElementById("password_error").style.display = "block"
       return
     }
-
     submit()
   } catch (error) {
     console.error("Erro ao submeter:", error)
