@@ -2,6 +2,7 @@ import submit from "./js/submit.js"
 import release from "./js/release.js"
 import { validateEmail } from "./js/validateEmail.js"
 import { validatePassword } from "./js/validatePassword.js"
+import { validateName } from "./js/validateName.js"
 import { toggleSenha } from "./js/toggleSenha.js"
 
 export let usuarios = []
@@ -11,9 +12,16 @@ document.getElementById("submit").addEventListener("click", function () {
   const inputEmail = document.getElementById("inputEmail")
   const inputSenha = document.getElementById("inputSenha")
 
+  inputName.classList.remove("success")
+  inputName.classList.remove("error")
+  inputEmail.classList.remove("success")
+  inputEmail.classList.remove("error")
+  inputSenha.classList.remove("success")
+  inputSenha.classList.remove("error")
+
   try {
     // Validação do nome
-    inputName.classList.add("success")
+    if (!validateName(inputName)) return
 
     // Validação do email
     if (validateEmail()) {

@@ -4,7 +4,7 @@ function toggle_Theme() {
   const icon = document.getElementById("icon_Theme")
 
   // Obtém o tema atual ou assume "light" como padrão
-  let currentTheme = body.getAttribute("data-theme") || "light"
+  let currentTheme = body.getAttribute("data-theme") || "dark"
 
   // Aplica o novo tema no body
   let newTheme = currentTheme === "light" ? "dark" : "light"
