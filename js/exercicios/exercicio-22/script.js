@@ -1,13 +1,15 @@
 import submit from "./js/submit.js"
 import release from "./js/release.js"
 import { validateEmail } from "./js/validateEmail.js"
-// import { validatePassword } from "./js/validatePassword.js"
+import { validatePassword } from "./js/validatePassword.js"
+import { toggleSenha } from "./js/toggleSenha.js"
 
 export let usuarios = []
 
 document.getElementById("submit").addEventListener("click", function () {
   const inputName = document.getElementById("inputName")
   const inputEmail = document.getElementById("inputEmail")
+  const inputSenha = document.getElementById("inputSenha")
 
   try {
     inputName.classList.add("success")
@@ -17,6 +19,14 @@ document.getElementById("submit").addEventListener("click", function () {
     } else {
       inputEmail.classList.add("error")
       alert("Por favor, insira um e-mail válido.")
+      return
+    }
+
+    if (validatePassword()) {
+      inputSenha.classList.add("success")
+    } else {
+      inputSenha.classList.add("error")
+      alert("Por favor, insira uma senha válida.")
       return
     }
 
@@ -34,4 +44,8 @@ document.getElementById("release").addEventListener("click", function () {
     console.error("Erro ao liberar:", error)
     alert("Ocorreu um erro ao liberar.")
   }
+})
+
+document.getElementById("toggleSenha").addEventListener("click", function () {
+  toggleSenha()
 })

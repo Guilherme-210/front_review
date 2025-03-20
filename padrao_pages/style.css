@@ -340,6 +340,24 @@ span {
     font-size: .75rem;
     margin: .25rem;
 }
+/* estilizando o input type=senha */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.password-container input {
+  padding-right: 40px; /* Garante espaço para o ícone */
+}
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none; /* Evita seleção acidental do ícone */
+}
+
 /* Estilização de acerto e erro */
 .error {
     border: 1px solid #f64348;
