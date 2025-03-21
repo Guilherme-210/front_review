@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore o encadeamento de Promises no JavaScript. Aprenda a evitar 'Callback Hell' e otimize operações assíncronas com exemplos e tratamento de erros." />
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Encadeando Promises no JavaScript</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-23/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="#"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>🔗 Encadeando Promises no JavaScript</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>🔎 1. O Que é o Encadeamento de Promises?</legend>
+        <p>
+          Quando trabalhamos com operações assíncronas no JavaScript, é comum
+          precisarmos executar uma tarefa após a conclusão de outra. Em vez de
+          aninhar várias funções dentro de callbacks (o que gera o temido
+          "<strong>Callback Hell</strong>"), podemos utilizar encadeamento de
+          Promises para tornar o código mais legível e organizado.
+        </p>
+        <p>
+          O encadeamento de Promises permite que o resultado de uma Promise seja
+          passado para outra, garantindo que uma ação só ocorra após a
+          finalização da anterior. Isso é feito utilizando múltiplos
+          <code>.then()</code>, onde cada <code>.then()</code> recebe o valor
+          retornado pelo anterior.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🛠️ 2. Exemplo Simples de Encadeamento</legend>
+        <details>
+          <summary>📜 Exemplo</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function primeiraPromise() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("Passo 1 concluído!"), 1000);
+  });
+}
+
+function segundaPromise(mensagem) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(mensagem + " ➡️ Passo 2 concluído!"), 1000);
+  });
+}
+
+primeiraPromise()
+  .then((resultado) => segundaPromise(resultado)) // Passa o resultado da primeira para a segunda
+  .then((resultadoFinal) => console.log(resultadoFinal)) // Mostra o resultado final
+  .catch((erro) => console.error("Erro:", erro));</code></pre>
+            </div>
+            <h3>🔹 Saída no console:</h3>
+            <div class="code">
+              <pre><code>(Depois de 2 segundos...)
+Passo 1 concluído! ➡️ Passo 2 concluído!</code></pre>
+            </div>
+            <p>✅ Explicação:</p>
+            <ol>
+              <li>
+                A <code>primeiraPromise()</code> é executada e retorna uma
+                Promise resolvida após 1 segundo.
+              </li>
+              <li>
+                O resultado dessa Promise é passado para a
+                <code>segundaPromise()</code>, que adiciona uma nova mensagem.
+              </li>
+              <li>O resultado final é exibido no console.</li>
+            </ol>
+            <p>
+              ✔️ Esse método evita o aninhamento excessivo de funções e melhora
+              a legibilidade do código.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>⚡ 3. Encadeando Múltiplas Promises</legend>
+        <p>
+          Podemos encadear quantas Promises forem necessárias, desde que cada
+          <code>.then()</code> retorne uma nova Promise.
+        </p>
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function etapa1() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("✅ Etapa 1 finalizada"), 1000);
+  });
+}
+
+function etapa2(mensagem) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(mensagem + " ➡️ Etapa 2 finalizada"), 1000);
+  });
+}
+
+function etapa3(mensagem) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(mensagem + " ➡️ Etapa 3 finalizada"), 1000);
+  });
+}
+
+etapa1()
+  .then((res) => etapa2(res))
+  .then((res) => etapa3(res))
+  .then((final) => console.log(final))
+  .catch((erro) => console.error("Erro:", erro));</code></pre>
+            </div>
+            <h3>🔹 Saída no console após 3 segundos:</h3>
+            <div class="code">
+              <pre><code>✅ Etapa 1 finalizada ➡️ Etapa 2 finalizada ➡️ Etapa 3 finalizada</code></pre>
+            </div>
+            <p>
+              ✔️ Cada <code>.then()</code> aguarda a finalização da Promise
+              anterior antes de prosseguir para a próxima.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>🚨 4. Tratamento de Erros no Encadeamento de Promises</legend>
+        <p>
+          Se uma Promise falhar no meio do encadeamento, o
+          <code>.catch()</code> será acionado e interromperá a execução dos
+          <code>.then()</code> subsequentes.
+        </p>
+        <details>
+          <summary>📜 Exemplo com erro:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function tarefa1() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("📌 Tarefa 1 concluída"), 1000);
+  });
+}
+
+function tarefa2() {
+  return new Promise((_, reject) => {
+    setTimeout(() => reject("❌ Erro na Tarefa 2!"), 1000);
+  });
+}
+
+function tarefa3() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("📌 Tarefa 3 concluída"), 1000);
+  });
+}
+
+tarefa1()
+  .then((res) => {
+    console.log(res);
+    return tarefa2(); // Esta irá falhar
+  })
+  .then((res) => {
+    console.log(res);
+    return tarefa3();
+  })
+  .then((res) => console.log(res))
+  .catch((erro) => console.error("🚨 Problema detectado:", erro));</code></pre>
+            </div>
+            <h3>🔹 Saída no console:</h3>
+            <div class="code">
+              <pre><code>📌 Tarefa 1 concluída
+🚨 Problema detectado: ❌ Erro na Tarefa 2!</code></pre>
+            </div>
+            <p>✅ O erro na Tarefa 2 impede que a Tarefa 3 seja executada.</p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔄 5. Encadeamento com .finally()</legend>
+        <p>
+          Se quisermos que algo seja executado independentemente do sucesso ou
+          erro, usamos <code>.finally()</code>.
+        </p>
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>tarefa1()
+  .then((res) => {
+    console.log(res);
+    return tarefa2();
+  })
+  .catch((erro) => console.error("🚨 Problema detectado:", erro))
+  .finally(() => console.log("🔄 Processo finalizado."));</code></pre>
+            </div>
+            <h3>🔹 Saída no console:</h3>
+            <div class="code">
+              <pre><code>📌 Tarefa 1 concluída
+🚨 Problema detectado: ❌ Erro na Tarefa 2!
+🔄 Processo finalizado.</code></pre>
+            </div>
+            <p>
+              ✔️ O <code>.finally()</code> sempre será executado, mesmo que
+              tenha ocorrido um erro.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>Exemplos usado na aula</legend>
+        <p></p>
+        <details>
+          <summary>📜 Encadeando Promises Exemplo usado aula</summary>
+          <div class="div_details">
+            <h3>🔹 Vamos começar criando duas funções que retornam promises:</h3>
+            <div class="code">
+              <pre><code>function checkAge(age) {
+    return new Promise((resolve, reject) => {
+        if (age) {
+            resolve(age > 18)
+        } else {
+            reject(new Error('age is required'))
+        }
+    })
+}
+
+function getAge(birthday) {
+    return new Promise((resolve, reject) => {
+        if (birthday) {
+            const birthYear = new Date(birthday).getFullYear()
+            const currentYear = new Date().getFullYear()
+            resolve(currentYear - birthYear)
+        } else {
+            reject(new Error('birthday is required'))
+        }
+    })
+}</code></pre>
+            </div>
+            <p>🔹 Em seguida, podemos chamar a primeira função e utilizar o método <code>.then()</code> para chamar a segunda função após ela, a qual terá que ter o seu próprio método <code>.then()</code> executado para termos enfim o resultado final:</p>
+            <div class="code">
+              <pre><code>getAge('1995-09-02').then(age => {
+    checkAge(age).then(isOver18 => {
+        if (isOver18) {
+            console.log('Maior de idade')
+        } else {
+            console.log('Menor de idade')
+        }
+    }).catch(err => {
+        console.log(err.message)
+    })
+}).catch(err => {
+    console.log(err.message)
+})</code></pre>
+            </div>
+            <p>🔹 No entanto, trabalhar com várias promises dessa forma é confuso e inviável, para isso o javascript nos permite encadear as promises. Isso é possível porque o retorno padrão do <code>.then()</code> também é uma promise, o que significa que nós podemos retornar explicitamente a nossa própria promise qualquer e então encadear esse retorno com outro método <code>.then()</code>:</p>
+            <div class="code">
+              <pre><code>getAge('2009-09-02')
+	.then(age => {
+    return checkAge(age)
+	})
+	.then(isOver18 => {
+    if (isOver18) {
+        console.log('Maior de idade')
+    } else {
+        console.log('Menor de idade')
+    }
+	})
+	.catch(err => {
+    console.log(err.message)
+})</code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>🚀 Conclusão</legend>
+        <p>
+          <strong>Encadear Promises</strong> é uma técnica poderosa que ajuda a organizar
+          operações assíncronas de forma mais limpa e estruturada.
+        </p>
+        <details>
+          <summary>📌 Resumo:</summary>
+          <div class="div_details">
+            <ol>
+              <li>✅ Permite executar operações de forma sequencial.</li>
+              <li>✅ Evita o aninhamento excessivo de callbacks.</li>
+              <li>✅ Facilita o tratamento de erros com <code>.catch()</code>.</li>
+              <li>✅ <code>.finally()</code> garante que uma ação seja executada independentemente do resultado</li>
+            </ol>
+          </div>
+        </details>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
+  </body>
+</html>
