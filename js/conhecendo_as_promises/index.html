@@ -51,7 +51,7 @@
 
     <main>
       <fieldset>
-        <legend>📌 Conhecendo as promessas no JavaScript</legend>
+        <legend>📌 Conhecendo as Promises no JavaScript</legend>
         <p>
           No JavaScript moderno, Promises é uma ferramenta essencial para lidar
           com operações assíncronas, como requisições HTTP, leitura de arquivos,
@@ -65,7 +65,7 @@
       </fieldset>
 
       <fieldset>
-        <legend>🔎 1. O Que é uma Promessa?</legend>
+        <legend>🔎 1. O Que é uma promise?</legend>
         <p>
           Uma Promise (ou "promessa") representa um valor que pode estar
           disponível agora, no futuro ou nunca .
@@ -118,14 +118,19 @@
           🛠️ 2. Como Usar Promises com <code>.then()</code> e
           <code>.catch()</code>
         </legend>
-        <p>
-          Uma Promise pode ser consumida usando os métodos
-          <code>.then()</code> (para sucesso) e <code>.catch()</code> (para
-          erro).
-        </p>
+        <p>Uma Promise pode ser consumida usando os métodos:</p>
+        <ul>
+          <li><code>.then()</code>→ Executado quando a Promise for resolvida.</li>
+          <li><code>.catch()</code> → Executado quando a Promise for rejeitada.</li>
+          <li><code>.finally()</code> → Sempre executado, independentemente do
+        sucesso ou falha.</li>
+        </ul>
+        
+        
+        
         <details>
           <summary>
-            📜 Exemplo Usando <code>.then()</code> e <code>.catch()</code>
+            📜 Exemplo Usando <code>.then()</code>, <code>.catch()</code> e <code>.finally()</code>.
           </summary>
           <div class="div_details">
             <div class="code">
@@ -135,17 +140,22 @@
   })
   .catch((erro) => {
     console.error(erro); // Executa se a Promise for rejeitada
+  })
+  .finally(() => {
+    console.log("🔄 Processo finalizado."); // Sempre será executado
   });</code></pre>
             </div>
             <h3>🔹 Saída no console (caso sucesso = true):</h3>
             <div class="code">
-              <pre><code>(Depois de 2 segundos...)
-✅ Sucesso! A promessa foi resolvida.</code></pre>
+              <pre><code>// (Depois de 2 segundos...)
+// ✅ Sucesso! A promessa foi resolvida.
+// 🔄 Processo finalizado.</code></pre>
             </div>
             <h3>🔹 Saída no console (caso sucesso = false):</h3>
             <div class="code">
               <pre><code>// (Depois de 2 segundos...)
-// ❌ Erro! A promessa foi rejeitada.            </code></pre>
+// ❌ Erro! A promessa foi rejeitada.
+// 🔄 Processo finalizado.</code></pre>
             </div>
           </div>
         </details>
@@ -369,7 +379,7 @@ executar();</code></pre>
                 </td>
               </tr>
               <tr>
-                <td><strong>Promessa.tudo</strong></td>
+                <td><strong>Promessa.all()</strong></td>
                 <td>
                   Executa múltiplas promessas em paralelo e retorna todas de uma
                   vez
@@ -377,7 +387,7 @@ executar();</code></pre>
                 <td>Se uma Promise falhar, todas falham</td>
               </tr>
               <tr>
-                <td><strong>Promessa.corrida</strong></td>
+                <td><strong>Promessa.race()</strong></td>
                 <td>Retorno ao resultado da primeira promessa resolvida</td>
                 <td>Nem sempre é útil, pois ignora o demais</td>
               </tr>
