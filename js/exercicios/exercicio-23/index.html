@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pratique o uso de Promises no JavaScript calculando o IMC com validação de parâmetros e tratamento assíncrono de dados." />
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Treinando o uso das Promises</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Treinando o uso das Promises</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend></legend>
+        <p>
+          Escreva uma função assíncrona que têm como parâmetros o peso e a
+          altura de uma pessoa e retorna uma promise do IMC dessa pessoa. Além
+          disso, caso algum dos parâmetros não seja do tipo “number” a promise
+          deverá ser rejeitada.
+        </p>
+        <p>
+          Você deverá criar também uma outra função que recebe os mesmos
+          parâmetros de peso e altura, chama a função que calcula o IMC e então
+          exibe no terminal o resultado das promises em texto. Caso a promise
+          seja resolvida você também deverá mostrar no terminal a situação do
+          IMC da pessoa de acordo com a seguinte tabela:
+        </p>
+        <ul>
+          <li>Abaixo de 18,5: <strong>Magreza</strong></li>
+          <li>Entre 18,5 e 24,9: <strong>Normal</strong></li>
+          <li>Entre 25 e 29,9: <strong>Sobrepeso</strong></li>
+          <li>Entre 30 e 39,9: <strong>Obesidade</strong></li>
+          <li>Acima de 40: <strong>Obesidade grave</strong></li>
+        </ul>
+        <p>
+          Dentro da segunda função, após chamar a função que calcula o IMC,
+          chame a função log do console com uma mensagem qualquer para
+          evidenciar o funcionamento assíncrono do código.
+        </p>
+        <p>
+          O Índice de Massa Corporal (<strong>IMC</strong>) é calculado
+          dividindo o peso em quilogramas (<strong>kg</strong>) pela altura ao
+          quadrado em metros (<strong>m²</strong>).
+        </p>
+        <h3>Exemplo:</h3>
+        <p>Se uma pessoa pesa 70 kg e tem 1,75 m de altura.</p>
+        <p>O cálculo seria: 70 / (1,75 * 1,75) = 22,86 kg/m².</p>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <form action="#">
+          <label for="inputHeight">Escreva a sua altura:</label>
+          <input type="number" id="inputHeight" step="0.01"/>
+          <div class="content_input-span">
+          <span class="span_error" id="Height_none">O campo de altura esta em branco</span>
+          </div>
+          <label for="inputWeight">Escreva o seu peso:</label>
+          <input type="number" id="inputWeight" step="0.1"/>
+          <div class="content_input-span">
+            <span class="span_error" id="Weight_none">O campo de pedo esta em branco</span>
+          </div>
+          <div class="inputs">
+            <button type="button" id="calcButton">Calcular IMC</button>
+          </div>
+          <label for="textareaResult">Resultado:</label>
+          <textarea type="text" id="textareaResult" readonly></textarea>
+        </form>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <p></p>
+        <details>
+          <summary>📜 Código JS do usado na página</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+        <details>
+          <summary>📜 Código JS do usado no exercício</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <h3>🔹 Saída</h3>
+            <div class="code">
+              <pre><code>
+          </code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <!-- <script src="js/scriptResolução.js"></script> -->
+    <script src="script.js" type="module"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
+  </body>
+</html>

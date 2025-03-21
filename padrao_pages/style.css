@@ -200,10 +200,10 @@ ol {
   list-style: decimal;
 }
 ul {
-  list-style: circle;
+  list-style: disc;
 }
 ol, ul {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-left: 2.5rem;
   display: flex;
   flex-direction: column;
