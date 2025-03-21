@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Pratique o uso de Promises no JavaScript calculando o IMC com validação de parâmetros e tratamento assíncrono de dados." />
-
+    <meta
+      name="description"
+      content="Pratique o uso de Promises no JavaScript calculando o IMC com validação de parâmetros e tratamento assíncrono de dados."
+    />
 
     <script
       type="module"
@@ -31,7 +33,9 @@
   <body data-theme="dark">
     <header>
       <nav>
-        <a class="nav_pages" href="/js/conhecendo_as_promises/index.html"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/js/conhecendo_as_promises/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
         <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
       </nav>
@@ -81,20 +85,25 @@
         <h3>Exemplo:</h3>
         <p>Se uma pessoa pesa 70 kg e tem 1,75 m de altura.</p>
         <p>O cálculo seria: 70 / (1,75 * 1,75) = 22,86 kg/m².</p>
+        <p>E a sua situação seria <strong>normal</strong>.</p>
       </fieldset>
 
       <fieldset>
         <legend></legend>
         <form action="#">
           <label for="inputHeight">Escreva a sua altura:</label>
-          <input type="number" id="inputHeight" step="0.01"/>
+          <input type="number" id="inputHeight" step="0.01" />
           <div class="content_input-span">
-          <span class="span_error" id="Height_none">O campo de altura esta em branco</span>
+            <span class="span_error" id="Height_none"
+              >O campo de altura esta em branco</span
+            >
           </div>
           <label for="inputWeight">Escreva o seu peso:</label>
-          <input type="number" id="inputWeight" step="0.1"/>
+          <input type="number" id="inputWeight" step="0.1" />
           <div class="content_input-span">
-            <span class="span_error" id="Weight_none">O campo de pedo esta em branco</span>
+            <span class="span_error" id="Weight_none"
+              >O campo de pedo esta em branco</span
+            >
           </div>
           <div class="inputs">
             <button type="button" id="calcButton">Calcular IMC</button>

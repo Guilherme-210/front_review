@@ -1,11 +1,11 @@
-let imc 
+let imc = null
 
 export function calcIMC() {
   const inputHeight = document.getElementById("inputHeight")
   const inputWeight = document.getElementById("inputWeight")
   const textareaResult = document.getElementById("textareaResult")
-  const Height = inputHeight.value
-  const Weight = inputWeight.value
+  const Height = parseFloat(inputHeight.value)
+  const Weight = parseFloat(inputWeight.value)
 
   document.getElementById("Height_none").style.display = "none"
   document.getElementById("Weight_none").style.display = "none"
@@ -15,16 +15,16 @@ export function calcIMC() {
   return new Promise((resolve, reject) => {
     if (Height.length < 1 || Weight.length < 1) {
       if (Height.length < 1) {
-        reject("A altura não pode estar em branco.")
         document.getElementById("Height_none").style.display = "block"
         inputHeight.classList.add("error")
-        return reject
+        reject("A altura não pode estar em branco.")
+        return
       }
       if (Weight.length < 1) {
-        reject("O peso não pode estar em branco.")
         document.getElementById("Weight_none").style.display = "block"
         inputWeight.classList.add("error")
-        return reject
+        reject("O peso não pode estar em branco.")
+        return
       }
     }
 
@@ -35,5 +35,4 @@ export function calcIMC() {
     resolve(`Calculo executado com sucesso. O resultado e: ${imc}`)
   })
 }
-
-export default { imc }
+export { imc }
