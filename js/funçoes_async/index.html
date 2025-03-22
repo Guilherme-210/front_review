@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descubra como trabalhar com funções async no JavaScript. Aprenda a usar await, tratar erros com try...catch e executar operações assíncronas de forma eficiente." />
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Funções async no JavaScript</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/encadeando_promises/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/js/exercicios/exercicio-24/index.html"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Funções Async</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>📌 Funções Async no JavaScript</legend>
+        <p>
+          No JavaScript moderno, funções <code>async</code> são uma forma
+          elegante e mais legível de trabalhar com código assíncrono. Elas
+          permitem que você use <code>await</code> para lidar com operações que
+          retornam Promises sem precisar usar <code>.then()</code> e
+          <code>.catch()</code>, tornando o código mais organizado e próximo do
+          estilo síncrono.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔹 1. O Que é uma Função Async?</legend>
+        <p>
+          Uma função <code>async</code> é uma função especial que sempre retorna
+          uma <code>Promise</code>. Dentro dela, podemos usar
+          <code>await</code> para esperar a resolução de outras Promises antes
+          de continuar a execução do código.
+        </p>
+        <details>
+          <summary>📜 Sintaxe básica:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function minhaFuncao() {
+  return "🚀 Função async executada!";
+}
+
+minhaFuncao().then(console.log); // 🚀 Função async executada!</code></pre>
+            </div>
+            <ul>
+              <li>
+                <code>async function minhaFuncao()</code> → Declara uma função
+                assíncrona.
+              </li>
+              <li>
+                O valor retornado (<code>"🚀 Função async executada!"</code>) é
+                automaticamente encapsulado em uma Promise.
+              </li>
+              <li>
+                <code>.then(console.log)</code> captura o resultado da Promise e
+                imprime no console.
+              </li>
+            </ul>
+          </div>
+        </details>
+      </fieldset>
+
+      <!-- fieldset 2 -->
+       <fieldset>
+        <legend>🔹 2. Tratamento de Erros com try...catch</legend>
+        <p>
+          Ao invés de usar <code>.catch()</code> para tratar erros, podemos
+          envolver await dentro de um try...catch.
+        </p>
+        <details>
+          <summary>📜 Exemplo com erro:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function baixarArquivo() {
+  try {
+    throw new Error("❌ Erro no download!");
+  } catch (erro) {
+    console.error("⚠️ Capturado:", erro.message);
+  }
+}
+
+baixarArquivo();</code></pre>
+            </div>
+            <p>🔍 Aqui:</p>
+            <ul>
+              <li>O <code>throw new Error(...)</code> simula um erro.</li>
+              <li>
+                O bloco <code>try...catch</code> captura o erro e exibe a
+                mensagem corretamente.
+              </li>
+            </ul>
+            <p>
+              ✔ Isso evita encadeamentos longos de <code>.catch()</code> e deixa
+              o código mais organizado.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+      
+
+      <!-- fieldset 3 -->
+     <fieldset>
+        <legend>🔹 3. Como Usar Await Dentro de Funções Async</legend>
+        <p>
+          O operador <code>await</code> pausa a execução da função
+          <code>async</code> até que a Promise seja resolvida, evitando a
+          necessidade de <code>.then()</code>.
+        </p>
+        <p>
+          O <code>await</code> so funciona dentro de
+          <strong>funções Assíncronas</strong>
+        </p>
+        <details>
+          <summary>
+            📜 Exemplo:Funções Assíncronas com <code>await</code>
+          </summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>function esperar(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function executar() {
+  console.log("⏳ Esperando...");
+  await esperar(2000); // Aguarda 2 segundos
+  console.log("✅ Concluído!");
+}
+
+executar();</code></pre>
+            </div>
+            <p>🔍 O que acontece aqui?</p>
+            <ol>
+              <li>
+                <code>esperar(2000)</code> cria uma Promise que resolve após 2
+                segundos.
+              </li>
+              <li>
+                <code>await esperar(2000)</code> pausa a função até a Promise
+                ser resolvida.
+              </li>
+              <li>
+                Depois de 2 segundos,
+                <code>console.log("✅ Concluído!")</code> é executado.
+              </li>
+            </ol>
+            <p>
+              ✔ Sem <code>async/await</code>, precisaríamos usar
+              <code>.then()</code>, tornando o código menos legível.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>📜 Exemplo: Execução Sequencial</summary>
+          <p>
+            <strong>Execução Sequencial</strong>: Quando você usa
+            <code>await</code> em uma sequência de
+            <strong>chamadas assíncronas</strong>, cada chamada espera a
+            anterior ser concluída antes de prosseguir. Isso pode ser
+            ineficiente se as operações
+            <strong>não dependem umas das outras</strong>.
+          </p>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function exemplo() {
+    const resultado1 = await operacao1(); // espera
+    const resultado2 = await operacao2(); // espera
+    // ...
+}</code></pre>
+            </div>
+            <p>
+              🔍 Nesse caso, operacao2 só será chamada após operacao1 ser
+              concluída.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>📜 Exemplo: Execução Paralela <code>Promise.all</code></summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function exemplo() {
+    const promessa1 = operacao1(); // inicia a operação
+    const promessa2 = operacao2(); // inicia a operação
+    
+    const [resultado1, resultado2] = await Promise.all([promessa1, promessa2]); // espera ambas
+    // ...
+}</code></pre>
+            </div>
+            <p>
+              🔍 Isso permite que operacao1 e operacao2 sejam executadas ao
+              mesmo tempo, melhorando a eficiência.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+
+      <!-- fieldset 4 -->
+      <fieldset>
+        <legend>🔹 4. Async Retorna Sempre uma Promise</legend>
+        <p>
+          Mesmo que uma função <code>async</code> pareça retornar um valor
+          normal, ele sempre será encapsulado em uma Promise.
+        </p>
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function respostaRapida() {
+  return "✅ Tudo certo!";
+}
+
+console.log(respostaRapida()); // Promise { "✅ Tudo certo!" }
+
+respostaRapida().then(console.log); // ✅ Tudo certo!</code></pre>
+            </div>
+            <p>🔍 O que acontece aqui?</p>
+            <ul>
+              <li>
+                <code>respostaRapida()</code> retorna
+                <code>"✅ Tudo certo!"</code>, mas como a função é
+                <code>async</code>, o retorno é uma Promise.
+              </li>
+              <li>
+                Para obter o valor, usamos <code>.then(console.log)</code>.
+              </li>
+            </ul>
+          </div>
+        </details>
+      </fieldset>
+
+      <!-- fieldset 5 -->
+      <fieldset>
+        <legend>🔹 5. Rejeitando Promises em Funções async</legend>
+        <p>
+          Se uma função <code>async</code> precisar indicar um erro, ela pode rejeitar uma
+          Promise usando <code>throw</code> ou <code>Promise.reject()</code>.
+        </p>
+        <details>
+          <summary>📌 Exemplo com <code>throw</code>:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function falhar() {
+  throw new Error("❌ Algo deu errado!");
+}
+
+falhar()
+  .then(console.log)  // Não será executado
+  .catch((erro) => console.error("⚠️ Capturado:", erro.message));</code></pre>
+</div>
+            <h3>🔍 Explicação:</h3>
+            <ul>
+              <li>O <code>throw new Error("❌ Algo deu errado!")</code> faz com que a Promise seja rejeitada.</li>
+              <li>Como <code>falhar()</code> retorna uma Promise rejeitada, o <code>.catch()</code> captura e exibe o erro.</li>
+            </ul>
+        </details>
+        <details>
+          <summary>📌 Exemplo com <code>Promise.reject()</code>:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function rejeitar() {
+  return Promise.reject("🚨 Erro crítico!");
+}
+
+rejeitar().catch(console.error); // 🚨 Erro crítico!</code></pre>
+            </div>
+            <h3>🔍 Explicação:</h3>
+            <p>Diferente do <code>throw</code>, o <code>Promise.reject()</code> rejeita explicitamente a Promise, sem precisar ser capturado por um <code>try...catch</code>.</p>
+          </div>
+        </details>
+        <details>
+          <summary>📌 Rejeitando dentro de <code>try...catch</code>:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function buscarDados() {
+  try {
+    let resposta = await fetch("https://url-invalida.com");
+    if (!resposta.ok) {
+      throw new Error("Erro na requisição!");
+    }
+    let dados = await resposta.json();
+    return dados;
+  } catch (erro) {
+    console.error("❌ Capturado:", erro.message);
+    return Promise.reject(erro);
+  }
+}
+
+buscarDados().catch(console.error);</code></pre>
+            </div>
+            <h3>🔍 Explicação:</h3>
+              <li>Se a URL for inválida ou a resposta não for bem-sucedida, lançamos um erro.</li>
+              <li>O <code>catch</code> captura esse erro e pode rejeitar a Promise para que o erro seja tratado em outro local.</li>
+          </div>
+        </details>
+      </fieldset>
+
+      <!-- fieldset 6 -->
+      <fieldset>
+        <legend>🔹 6. Exemplo Real com API Fetch</legend>
+        <p>
+          Funções <code>async</code> são muito usadas para fazer requisições
+          HTTP com <code>fetch()</code>.
+        </p>
+        <details>
+          <summary>📜 Exemplo com <code>fetch()</code>:</summary>
+          <div class="div_details">
+            <div class="code">
+              <pre><code>async function buscarDados() {
+  try {
+    let resposta = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let dados = await resposta.json(); // Converte a resposta em JSON
+    console.log("📄 Dados recebidos:", dados);
+  } catch (erro) {
+    console.error("❌ Erro na requisição:", erro);
+  }
+}
+
+buscarDados();</code></pre>
+            </div>
+            <p>🔍 Explicação:</p>
+            <ol>
+              <li>
+                <code>fetch(url)</code> retorna uma Promise com a resposta da
+                requisição.
+              </li>
+              <li>
+                <code>await resposta.json()</code> converte a resposta para
+                JSON.
+              </li>
+              <li>O resultado é exibido no console.</li>
+            </ol>
+            <p>
+              ✔ Com <code>async/await</code>, evitamos usar
+              <code>.then()</code> várias vezes, deixando o código mais limpo.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>🚀 Conclusão</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Vantagens</th>
+                <th>Desvantagens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.then()</code> e <code>.catch()</code></td>
+                <td>Funciona em qualquer Promise</td>
+                <td>Pode deixar o código verboso e aninhado</td>
+              </tr>
+              <tr>
+                <td><code>async/await</code></td>
+                <td>Código mais limpo e legível</td>
+                <td>Precisa de try...catch para erros</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          ✔ <code>async/await</code> é a forma mais moderna e legível de lidar
+          com operações assíncronas.
+        </p>
+        <p>
+          ✔ Melhora a organização do código e facilita o tratamento de erros.
+        </p>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
+  </body>
+</html>
