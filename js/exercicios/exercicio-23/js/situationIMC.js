@@ -1,9 +1,10 @@
-import { imc } from "./calcIMC.js"
+import { imc, calcIMC } from "./calcIMC.js"
 
 export function situationIMC() {
   if (imc == null || imc <= 0 || isNaN(imc)) return
 
-  try {
+  calcIMC()
+  .then(() => {
     let situacao = ""
 
     if (imc < 18.5) {
@@ -20,7 +21,11 @@ export function situationIMC() {
       situacao = "Situação: Obesidade grau III"
     }
     textareaResult.value = `O resultado é: ${imc}\n${situacao}`
-  } catch (err) {
+  }) .catch((err) => {
     console.log("⚠️ Ocorreu um erro:", err.message)
-  }
+    textareaResult.value = ("⚠️ Ocorreu um erro:", err.message)
+  })
+
+  console.log("calculando...")
+  console.log(`O resultado é: ${imc} \n${situacao}`)
 }

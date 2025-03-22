@@ -9,5 +9,4 @@ document.getElementById("calcButton").addEventListener("click", function (ev) {
 
   calcIMC()
   situationIMC()
-  situationIMC()
 })

@@ -21,12 +21,16 @@ export function calcIMC() {
         document.getElementById("Height_none").style.display = "block"
         inputHeight.classList.add("error")
         reject("A altura deve ser um número válido e maior que zero.")
+        textareaResult.value =
+          "⚠️ Ocorreu um erro: A altura deve ser um número válido e maior que zero"
         return
       }
       if (isNaN(Weight) || Weight <= 0) {
         document.getElementById("Weight_none").style.display = "block"
         inputWeight.classList.add("error")
         reject("O peso deve ser um número válido e maior que zero.")
+        textareaResult.value =
+          "⚠️ Ocorreu um erro: O peso deve ser um número válido e maior que zero."
         return
       }
     }
