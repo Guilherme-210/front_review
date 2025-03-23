@@ -325,7 +325,7 @@ tbody tr:nth-child(even) {
 /* Botões */
 .code_actions button {
     background: none;
-    border: none;
+    border: transparent solid 1px;
     color: #bbb;
     cursor: pointer;
     font-size: 14px;

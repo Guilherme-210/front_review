@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aprenda sobre requisições GET e POST no JavaScript. Descubra como buscar e enviar dados para APIs com exemplos práticos usando Fetch API."
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>requisições GET e POST</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/js/exercicios/exercicio-24/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1></h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>O que são requisições GET e POST?</legend>
+        <p>
+          As requisições GET são um dos tipos de requisições HTTP mais comuns.
+          Elas são usadas para buscar dados de um servidor, como uma API ou um
+          site.
+        </p>
+        <div class="quote-container">
+          <blockquote class="quote">
+            Exemplo simples: Quando você acessa um site no navegador, ele faz
+            uma requisição GET para o servidor para carregar a página.
+          </blockquote>
+        </div>
+        <p>
+          As requisições POST são usadas para enviar dados para um servidor.
+          Diferente de GET, que só busca informações, POST é usado para criar ou
+          modificar recursos no servidor.
+        </p>
+        <div class="quote-container">
+          <blockquote class="quote">
+            Exemplo comum: Quando você preenche um formulário e clica em
+            "Enviar", seu navegador provavelmente faz uma requisição POST com os
+            dados do formulário.
+          </blockquote>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>📌 Características do GET e POST</legend>
+        <div class="div_lists">
+          <div class="div_list">
+            <h3>🔹 Características da requisição GET</h3>
+            <ul class="list_check">
+              <li>
+                <strong>Usada para buscar dados</strong> – não deve ser usada
+                para enviar ou modificar dados.
+              </li>
+              <li>
+                <strong>Os parâmetros são passados na URL</strong> – isso
+                significa que os dados são visíveis.
+              </li>
+              <li>
+                <strong>Pode ser armazenada em cache</strong> – otimiza
+                desempenho ao evitar múltiplas chamadas ao servidor.
+              </li>
+              <li>
+                <strong>Pode ser salva no histórico do navegador</strong> – pois
+                os dados ficam na URL.
+              </li>
+              <li>
+                <strong>Não altera o servidor</strong> – apenas lê informações.
+              </li>
+            </ul>
+          </div>
+          <div class="div_list">
+            <h3>🔹 Características da requisição POST</h3>
+            <ul class="list_check">
+              <li>
+                <strong>Usada para enviar e salvar dados</strong> – cria ou
+                modifica informações no servidor.
+              </li>
+              <li>
+                <strong>Os dados são enviados no corpo da requisição</strong> –
+                ao invés da URL.
+              </li>
+              <li>
+                <strong>Mais seguro que GET</strong> – porque os dados não
+                aparecem na URL.
+              </li>
+              <li>
+                <strong>Não é armazenada em cache</strong> – evita envio
+                duplicado acidental.
+              </li>
+              <li>
+                <strong>Não pode ser salva no histórico do navegador</strong> –
+                porque os dados não ficam visíveis na URL.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔹 Exemplo prático: Fazendo uma requisição GET</legend>
+        <p>🖥️ 1. No navegador (URL)</p>
+        <p>Se você acessar:</p>
+        <div class="code_container">
+          <div class="code_header">
+            <span class="code_title">local ou arquivo</span>
+            <div class="code_actions">
+              <button class="copy_btn">📋 Copiar</button>
+              <button class="edit_btn">✏️ Editar</button>
+            </div>
+          </div>
+          <pre
+            class="code_block"
+          ><code id="code_text">https://jsonplaceholder.typicode.com/posts</code></pre>
+        </div>
+        <p>
+          Isso faz uma requisição GET e retorna uma lista de posts (dados
+          fictícios de uma API de teste).
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🛠️ 2. Com JavaScript (Fetch API)</legend>
+        <p>O método fetch() permite fazer requisições GET de forma simples:</p>
+        <div class="code_container">
+          <div class="code_header">
+            <span class="code_title">local ou arquivo</span>
+            <div class="code_actions">
+              <button class="copy_btn">📋 Copiar</button>
+              <button class="edit_btn">✏️ Editar</button>
+            </div>
+          </div>
+          <pre class="code_block"><code id="
+code_text">fetch("https://jsonplaceholder.typicode.com/posts")
+  .then(response => response.json()) // Converte a resposta para JSON
+  .then(data => console.log(data))  // Exibe os dados no console
+  .catch(error => console.error("Erro na requisição:", error));</code></pre>
+        </div>
+        <p>
+          🔹 Aqui, estamos buscando uma lista de posts e exibindo no console.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>📩 3. GET com parâmetros na URL</legend>
+        <p>Exemplo: buscar um post específico (id = 1):</p>
+        <p>Podemos enviar parâmetros para o servidor na própria URL.</p>
+        <details>
+          <summary>📜 Exemplo:</summary>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data));</code></pre>
+            </div>
+            <p>
+              💡 Os parâmetros também podem ser passados na URL usando ? e &:
+            </p>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/users?nome=João&idade=25");</code></pre>
+            </div>
+            <p>Isso enviaria nome=João e idade=25 para o servidor.</p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔹 Exemplo prático: Fazendo uma requisição POST</legend>
+        <h3>🛠️ 1. Com JavaScript (Fetch API)</h3>
+        <p>Podemos usar fetch() para enviar dados com POST:</p>
+        <div class="code_container">
+          <div class="code_header">
+            <span class="code_title">local ou arquivo</span>
+            <div class="code_actions">
+              <button class="copy_btn">📋 Copiar</button>
+              <button class="edit_btn">✏️ Editar</button>
+            </div>
+          </div>
+          <pre class="code_block"><code id="
+code_text">fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    title: "Novo Post",
+    body: "Conteúdo do post...",
+    userId: 1
+  })
+})
+  .then(response => response.json()) // Converte a resposta para JSON
+  .then(data => console.log("Resposta do servidor:", data))
+  .catch(error => console.error("Erro na requisição:", error));</code></pre>
+        </div>
+        <h2>🔍 O que está acontecendo aqui?</h2>
+        <ul>
+          <li>method: "POST" → Define que estamos enviando dados.</li>
+          <li>
+            headers: { "Content-Type": "application/json" } → Indica que os
+            dados são JSON.
+          </li>
+          <li>
+            body: JSON.stringify({...}) → Converte o objeto para JSON antes de
+            enviar.
+          </li>
+        </ul>
+        <p>
+          💡 Dica: O servidor pode responder com o objeto salvo e um id gerado
+          automaticamente.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>📩 Enviando dados no corpo da requisição</legend>
+        <p>
+          Diferente de GET, onde os parâmetros vão na URL, no POST os dados são
+          enviados dentro do corpo da requisição (body).
+        </p>
+        <p>
+          Isso deixa a requisição mais segura e permite enviar grandes volumes
+          de dados
+        </p>
+        <details>
+          <summary>📜 Exemplo de envio de formulário com fetch():</summary>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">local ou arquivo</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">fetch("https://api.exemplo.com/contato", {
+  method: "POST",
+  body: new FormData(document.querySelector("form"))
+});</code></pre>
+            </div>
+            <p>
+              Aqui, usamos FormData para enviar os dados do formulário
+              automaticamente.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔹 GET e POST no Axios (Alternativa ao Fetch)</legend>
+        <p>
+          O axios é uma biblioteca popular para requisições HTTP. Exemplo de um
+          GET:
+        </p>
+        <div class="code_container">
+          <div class="code_header">
+            <span class="code_title">js</span>
+            <div class="code_actions">
+              <button class="copy_btn">📋 Copiar</button>
+              <button class="edit_btn">✏️ Editar</button>
+            </div>
+          </div>
+          <pre
+            class="code_block"
+          ><code id="code_text">axios.get("https://jsonplaceholder.typicode.com/posts")
+  .then(response => console.log(response.data))
+  .catch(error => console.error("Erro na requisição:", error));</code></pre>
+        </div>
+        <p>O axios simplifica as requisições POST:</p>
+        <div class="code_container">
+          <div class="code_header">
+            <span class="code_title">js</span>
+            <div class="code_actions">
+              <button class="copy_btn">📋 Copiar</button>
+              <button class="edit_btn">✏️ Editar</button>
+            </div>
+          </div>
+          <pre
+            class="code_block"
+          ><code id="code_text">axios.post("https://jsonplaceholder.typicode.com/posts", {
+  title: "Novo Post",
+  body: "Conteúdo do post...",
+  userId: 1
+})
+  .then(response => console.log("Resposta do servidor:", response.data))
+  .catch(error => console.error("Erro na requisição:", error));
+</code></pre>
+        </div>
+        <div class="div_lists">
+          <div class="div_list">
+            <h3>🔹 GET no Axios (Alternativa ao Fetch)</h3>
+            <ul class="list_check">
+              <li>Mais fácil de usar que fetch()</li>
+              <li>Já converte resposta para JSON automaticamente</li>
+            </ul>
+          </div>
+          <div class="div_list">
+            <h3>🔹 POST no Axios (Alternativa ao Fetch)</h3>
+            <ul class="list_check">
+              <li>Mais fácil de usar que fetch()</li>
+              <li>Já converte resposta para JSON automaticamente</li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>🔹 GET vs POST: Qual a diferença?</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>GET</th>
+                <th>POST</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Uso principal</td>
+                <td>Buscar dados</td>
+                <td>Enviar dados</td>
+              </tr>
+              <tr>
+                <td>Parâmetros</td>
+                <td>Na URL (<code>?chave=valor</code>)</td>
+                <td>No corpo da requisição</td>
+              </tr>
+              <tr>
+                <td>Segurança</td>
+                <td>Menos seguro (dados visíveis na URL)</td>
+                <td>Mais seguro (dados ocultos no body)</td>
+              </tr>
+              <tr>
+                <td>Cacheável?</td>
+                <td>Sim</td>
+                <td>Não</td>
+              </tr>
+              <tr>
+                <td>Tamanho da requisição</td>
+                <td>Limitado pela URL</td>
+                <td>Pode enviar grandes volumes de dados</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Se precisar enviar dados sigilosos ou modificar o servidor, não use
+          GET, use POST! 🚀
+        </p>
+        <p>
+          Se precisar buscar informações, use GET. Se precisar enviar dados ou
+          modificar o servidor, use POST! 🚀
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend></legend>
+        <div class="div_lists">
+          <div class="div_list">
+            <h3>🚀 Resumo rápido GET</h3>
+            <ul class="list_check">
+              <li>GET serve para buscar dados.</li>
+              <li>Os parâmetros são enviados na URL.</li>
+              <li>Pode ser testado direto no navegador.</li>
+              <li>Melhor para dados públicos, não sensíveis.</li>
+              <li>Pode ser feito com fetch() ou axios.</li>
+            </ul>
+          </div>
+          <div class="div_list">
+            <h3>🚀 Resumo rápido POST</h3>
+            <ul class="list_check">
+              <li>POST é usado para enviar e salvar dados no servidor.</li>
+              <li>Os dados são enviados no corpo da requisição, não na URL.</li>
+              <li>Mais seguro que GET, ideal para informações sensíveis.</li>
+              <li>Pode ser feito com fetch() ou axios.</li>
+              <li>
+                Não deve ser armazenado em cache para evitar reenvios
+                acidentais.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
+  </body>
+</html>
