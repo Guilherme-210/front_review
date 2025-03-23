@@ -92,6 +92,7 @@ body {
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: "Ubuntu", sans-serif;
+  height: 100vh;
 }
 
 /* estilização do header */
@@ -202,12 +203,24 @@ ol {
 ul {
   list-style: disc;
 }
-ol, ul {
+.div_lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.div_list {
+  width: 50%;
+}
+.list_check {
+  list-style-type: "✔ ";
+}
+ol,
+ul {
   margin-top: 1rem;
   margin-left: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 /* estilização da tabela */
@@ -253,6 +266,28 @@ tbody tr:nth-child(even) {
   ); /* Linhas pares com fundo levemente diferente */
 }
 
+/* Estilizando a citação */
+.quote_container {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--details-background-color);
+  border-left: 4px solid var(--border-color);
+  border-radius: 8px;
+}
+.quote {
+  width: 100%;
+  min-height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: var(--font-color);
+}
+.quote::placeholder {
+  color: var(--font-color);
+  opacity: 0.6;
+}
+
 /* estilização do fieldset - .code */
 .code {
   background-color: var(--code-background-color);
@@ -263,8 +298,56 @@ tbody tr:nth-child(even) {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Contêiner do bloco de código */
+.code_container {
+    width: 100%;
+    background-color: var(--details-background-color, #333);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho */
+.code_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+}
+
+/* Título */
+.code_title {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Botões */
+.code_actions button {
+    background: none;
+    border: none;
+    color: #bbb;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.code_actions button:hover {
+    color: white;
+}
+
+/* Bloco de código */
+.code_block {
+    background-color: var(--code-background-color, #282c34);
+    color: var(--code-color, #00ff00);
+    padding: 15px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    white-space: pre-wrap;
+    border-radius: 0 0 8px 8px;
+}
 /* estilização do fieldset - pre & code */
-pre,
+/* pre, */
 code {
   font-family: "Fira Code", monospace;
   color: var(--button-bg-color);
@@ -275,12 +358,15 @@ code {
   font-size: 1rem;
   line-height: 1.6;
 }
-.code pre, pre code {
+.code pre,
+pre code {
   padding: 0;
 }
 tbody tr:nth-child(even) {
-  code{
-    background-color: var(--header-bg-color); /* Linhas pares com fundo levemente diferente */
+  code {
+    background-color: var(
+      --header-bg-color
+    ); /* Linhas pares com fundo levemente diferente */
   }
 }
 
@@ -345,7 +431,7 @@ input[type="number"] {
   -webkit-appearance: none;
   appearance: none;
 }
-.labelInput_input{
+.labelInput_input {
   display: flex;
   max-width: 100%;
 }
@@ -359,10 +445,10 @@ label {
   align-items: flex-end;
 }
 .span_error {
-    color: #f64348;
-    font-size: .75rem;
-    display: none;
-    /* display: block; */
+  color: #f64348;
+  font-size: 0.75rem;
+  display: none;
+  /* display: block; */
 }
 /* estilizando o input type=senha */
 .password-container {
@@ -384,10 +470,10 @@ label {
 
 /* Estilização de acerto e erro */
 .error {
-    border: 1px solid #f64348;
+  border: 1px solid #f64348;
 }
 .success {
-    border: 1px solid #43f67f;
+  border: 1px solid #43f67f;
 }
 
 /* estilização dos div inputs */
