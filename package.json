@@ -4,7 +4,8 @@
   "description": "Primeiro projeto com o uso do npm",
   "main": "searchInput.js",
   "scripts": {
-    "dev-form": "nodemon treino_js/formulario_mocado/app.js"
+    "dev-form": "nodemon treino_js/formulario_mocado/app.js",
+    "ToDo-List": "nodemon treino_js/ToDo_List/app.js"
   },
   "repository": {
     "type": "git",
