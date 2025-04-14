@@ -448,16 +448,31 @@ footer {
   background-color: var(--footer-bg-color);
   color: var(--footer-text-color);
   text-align: center;
-  padding: var(--padding-large); /* Você pode definir essa variável se necessário */
-  margin-top: var(--margin-large); /* Você pode definir essa variável se necessário */
+  padding: var(--padding-large);
+  margin-top: var(--margin-large);
   width: 100%;
-}
-footer a {
-  color: var(--footer-link-color);
-  text-decoration: none;
+  font-size: 0.95rem;
+  border-top: 1px solid var(--border-color);
 }
 
-footer a:hover {
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
   color: var(--footer-link-hover-color);
   text-decoration: underline;
 }
