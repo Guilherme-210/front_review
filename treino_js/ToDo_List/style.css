@@ -312,31 +312,39 @@ input:hover {
   box-shadow: var(--box-shadow-hover-color);
 }
 
-form .listArea {
+.listArea {
   display: flex-block;
   gap: var(--margin-small);
   text-align: center;
   margin: var(--margin-medium) 0;
   align-items: center;
 }
-form .listArea ul {
+.listArea ul {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  width: 100%;
 }
-form .listArea ul li {
+.listArea ul li {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-form .listArea ul li .tag_list {
+.listArea ul li .tag_list {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   border: var(--button-bg-color) solid 1px;
   border-radius: 10px 0 0 10px;
+}
+.listArea ul li .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: auto;
 }
 
 /* estilização do fieldset - button */
@@ -354,21 +362,33 @@ button:hover {
   background-color: var(--header-bg-color);
   border: solid var(--border-width) var(--button-bg-color);
 }
-.clear_button {
-  display: block;
-  width: 20%;
-  border-left: 0;
-  border-color: var(--button-bg-color);
-  border-radius: 0 10px 10px 0;
-}
-.clear_button:hover {
-  color: #c02626;
-  border-left: 0;
-}
 .create_button:hover {
   border-color: var(--button-bg-color);
   color: #26c026;
   cursor: pointer;
+}
+.clear_button {
+  display: block;
+  /* width: 20%; */
+  border-left: 0;
+  border-color: var(--button-bg-color);
+  border-radius: 0;
+}
+.clear_button:hover {
+  color: #c02626;
+  border-left: 0;
+  border-right: 0;
+}
+.complet_button {
+  display: block;
+  width: auto;
+  border-left: 0;
+  border-color: var(--button-bg-color);
+  border-radius: 0 10px 10px 0;
+}
+.complet_button:hover {
+  color: #108606;
+  border-left: 0;
 }
 
 

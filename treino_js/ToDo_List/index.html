@@ -88,34 +88,28 @@
       <section class="listas">
         <fieldset>
           <legend>lista de afazeres</legend>
-          <form action="submit" id="form">
+          <form id="form">
             <div class="div_inputs">
               <input
                 required
                 type="text"
-                class="Name"
-                id="inputName"
+                class="taskInput"
+                id="taskInput"
                 placeholder="Digite o sua primeiro tarefa."
               />
-              <button class="create_button" id="createButton" type="submit">
+              <button
+                class="create_button"
+                id="createItem"
+                type="button"
+                onclick="newTesk(), showValues()"
+              >
                 Enviar
               </button>
             </div>
-            
-            <div class="listArea">
-              <ul>
-                <li>
-                  <p class="tag_list">casa</p>
-                  <button class="clear_button" id="clearButton">excluir</button>
-                </li>
-    
-                <li>
-                  <p class="tag_list">casa</p>
-                  <button class="clear_button">excluir</button>
-                </li>
-              </ul>
-            </div>
           </form>
+          <div class="listArea">
+            <ul class="taskList" id="to-do-list"></ul>
+          </div>
         </fieldset>
       </section>
     </main>
