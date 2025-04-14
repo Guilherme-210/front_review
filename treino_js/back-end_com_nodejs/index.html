@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="./style/css/reset.css" />
+    <link rel="stylesheet" href="./style/css/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Back-end com NodeJS</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="../objetos/index.html"
+          ><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="../formulario_com_nodejs/index.html"
+          ><i class="fi fi-rr-angle-right"></i
+        ></a>
+      </nav>
+
+      <h1>Back-end com NodeJS</h1>
+      <!-- Alternar Tema -->
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset class="fieldset_explications">
+        <legend>Conceito de Node.js e API REST</legend>
+        <div class="quote_container">
+          <p>🟩 Node.js</p>
+          <p>
+            Node.js é uma ferramenta que permite rodar JavaScript no servidor.
+          </p>
+          <p>
+            Com ele, você cria back-end, APIs, sistemas em tempo real, e muito
+            mais.
+          </p>
+          <ol class="list_check">
+            <li>Permite rodar JS fora do navegador.</li>
+            <li>Ideal pra criar servidores, APIs e apps rápidos.</li>
+            <li>Usa o motor V8 do Chrome por baixo dos panos.</li>
+          </ol>
+        </div>
+
+        <div class="quote_container">
+          <p>🌐 API REST</p>
+          <p>
+            API REST é um jeito de criar rotas para sistemas conversarem entre
+            si.
+          </p>
+          <p>
+            Usa métodos HTTP como GET, POST, PUT e DELETE pra manipular dados.
+          </p>
+          <ol class="list_check">
+            <li>Usa os métodos HTTP (GET, POST, PUT, DELETE...).</li>
+            <li>Baseada em recursos (ex: /usuarios, /produtos).</li>
+            <li>Toda comunicação rola via JSON, normalmente.</li>
+          </ol>
+        </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>
+          <i>🌐</i> Métodos HTTP: Entendendo as Requisições na Web <i>🌐</i>
+        </legend>
+        <p>
+          Quando navegamos na internet ou interagimos com <strong>APIs</strong>,
+          usamos os métodos <strong>HTTP</strong> para comunicar com o back-end.
+          Cada método tem um propósito específico e define a ação que queremos
+          executar no servidor.
+        </p>
+        <p>Aqui está um resumo dos principais métodos <strong>HTTP</strong>:</p>
+
+        <details>
+          <summary>1. GET - Buscar Informações</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Solicita dados do servidor, mas não altera nada.</li>
+              <li>Como abrir um site ou buscar dados de uma API.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">const express = require("express")
+
+const app = express()
+
+app.get("/projects", (request, response) => {
+  return response.json(["projeto 1", "projeto 2"])
+})</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Consultar listas de usuários, produtos, artigos etc.</li>
+              <li>Buscar informações sem modificar nada no servidor.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>2. POST - Criar um Novo Registro</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Envia dados para o servidor para criar um novo recurso.</li>
+              <li>Diferente do GET, pode modificar os dados no servidor.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.post("/projects", (request, response) => {
+  return response.json(["projeto 1", "projeto 2", "projeto 3"])
+})</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Criar contas de usuário, posts em um blog, adicionar itens em um
+                banco de dados.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>3. PUT - Atualizar um Registro (Completo)</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Atualiza toda a informação de um recurso existente.</li>
+              <li>Se algum campo estiver ausente, ele pode ser apagado</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.put("/projects/:id", (request, response) => {
+  return response.json(["projeto 1", "projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Substituir completamente os dados de um usuário, produto, post
+                etc.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>4. PATCH - Atualizar um Registro (Parcial)</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Atualiza apenas campos específicos de um recurso.</li>
+              <li>
+                Diferente do PUT, os campos não enviados continuam inalterados
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.patch("/projects/:id", (request, response) => {
+  return response.json(["projeto 1", "projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Atualizar somente um campo, como mudar a senha ou e-mail de um
+                usuário.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>5. DELETE - Apagar um Registro</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Remove um recurso do servidor permanentemente.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.delete("/projects/:id", (request, response) => {
+  return response.json(["projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>
+                Apagar um usuário, remover um produto do catálogo, deletar um
+                post etc.
+              </li>
+            </ul>
+          </div>
+        </details>
+      </fieldset>
+      
+      <fieldset class="fieldset_table">
+        <legend>🚀 Conclusão</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>GET</strong></td>
+                <td>🔍 Buscar informações (sem modificar nada)</td>
+              </tr>
+              <tr>
+                <td><strong>POST</strong></td>
+                <td>➕ Criar um novo recurso</td>
+              </tr>
+              <tr>
+                <td><strong>PUT</strong></td>
+                <td>💾 Atualizar um recurso por completo</td>
+              </tr>
+              <tr>
+                <td><strong>PATCH</strong></td>
+                <td>🛠️ Atualizar apenas um campo</td>
+              </tr>
+              <tr>
+                <td><strong>DELETE</strong></td>
+                <td>🗑️ Deletar um recurso</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>
+          <i>🏷️</i> Tipos de Parâmetros em Requisições HTTP <i>🏷️</i>
+        </legend>
+        <p>
+          Quando fazemos requisições para APIs, precisamos passar informações
+          para o servidor. Existem três formas principais de enviar esses dados:
+        </p>
+
+        <details>
+          <summary>1. Query Params (Parâmetros de Consulta)</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>
+                Passados na <strong>URL</strong> após o <code>?</code> e
+                separados por <code>&</code>.
+              </li>
+              <li>
+                Usados para <strong>filtrar</strong>,
+                <strong>ordenar</strong> ou <strong>paginar</strong> resultados
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.get("/projects", (request, response) => {
+  const { title, owner } = request.query
+
+  console.log(title)
+  console.log(owner)
+
+  return response.json(["projeto 1", "projeto 2"])
+})</code></pre>
+            </div>
+            <h3>URL gerada:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">arduino</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">http://localhost:3333/projects?title=React&owner=Guilherme</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Filtros em listas (ex: Titulo equivalente a "React").</li>
+              <li>Paginação (?title=React&owner=Guilherme).</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>2. Route Params (Parâmetros de Rota)</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>Fazem parte da <strong>URL</strong>, sem <code>?</code>.</li>
+              <li>
+                Usados para identificar <strong>um recurso específico</strong>.
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.put("/projects/:id", (request, response) => {
+  // const params = request.params
+  // console.log(params)
+  // { id: '1' }
+
+  const { id } = request.params
+  console.log(id)
+  // 1
+
+  return response.json(["projeto 1", "projeto 2", "projeto 3", "projeto 4"])
+})</code></pre>
+            </div>
+            <h3>URL gerada:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+                <pre class="code_block"><code id="
+                  code_text">http://localhost:3333/projects/1?</code></pre>
+              </div>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Buscar uma rota específica (/projects/1).</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>3. Request Body (Corpo da Requisição)</summary>
+          <div class="div_details">
+            <h4>📌 O que faz?</h4>
+            <ul>
+              <li>
+                <strong>Não vai na URL</strong>! É enviado no
+                <strong>corpo da requisição</strong>.
+              </li>
+              <li>
+                Usado para <strong>enviar dados complexos</strong>, como JSON.
+              </li>
+              <li>
+                Exige métodos como <code>POST</code>, <code>PUT</code> ou
+                <code>PATCH</code>.
+              </li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <p>
+              Por padrão o <strong>express</strong> não interpreta o que vai ser
+              enviado para ele no formato json. Então para falarmos para o
+              <strong>express</strong> que a nossa <strong>API</strong> vai
+              receber dados no formato de json, so precisamos adicionar
+              <code>app.use(express.json())</code>.
+            </p>
+            <p>
+              ⚠️ <strong>sempre antes da chamada das rotas</strong> e logo apos
+              da definição da variavel <code>app</code>!
+            </p>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">script,js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.use(express.json())
+
+app.post("/projects", (request, response) => {
+  const body = request.body
+  
+  console.log(body)
+
+  return response.json(["projeto 1", "projeto 2", "projeto 3"])
+})</code></pre>
+            </div>
+            <h3>JSON enviado no body:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">Body => JSON</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">{
+  "nome": "Guilherme",
+  "email": "guilherme@email.com",
+  "idade": 27
+}</code></pre>
+            </div>
+            <h4>💡 Usado para:</h4>
+            <ul class="list_check">
+              <li>Criar usuários, enviar formulários, atualizar informações</li>
+            </ul>
+          </div>
+        </details>
+      </fieldset>
+      
+      <fieldset class="fieldset_table">
+        <legend>🚀 Conclusão</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo de Parâmetro</th>
+                <th>Onde Fica?</th>
+                <th>Exemplo</th>
+                <th>Usado Para</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Query Params</strong></td>
+                <td>URL após <code>?</code></td>
+                <td><code>/usuarios?idade=25</code></td>
+                <td>Filtros, paginação</td>
+              </tr>
+              <tr>
+                <td><strong>Route Params</strong></td>
+                <td>Na URL</td>
+                <td><code>/usuarios/123</code></td>
+                <td>Identificar um recurso</td>
+              </tr>
+              <tr>
+                <td><strong>Request Body</strong></td>
+                <td>No corpo da requisição</td>
+                <td><code>{ "nome": "João" }</code></td>
+                <td>Criar ou atualizar dados</td>
+              </tr>
+              <tr>
+                <td><strong>Header Params</strong></td>
+                <td>No cabeçalho da requisição</td>
+                <td><code>"Authorization": "Bearer token123"</code></td>
+                <td>Autenticação, metadados</td>
+              </tr>
+              <tr>
+                <td><strong>Path Params</strong></td>
+                <td>Na URL, dentro de uma hierarquia</td>
+                <td><code>/lojas/15/produtos/200</code></td>
+                <td>Recursos dentro de categorias</td>
+              </tr>
+              <tr>
+                <td><strong>Form Data</strong></td>
+                <td>No corpo da requisição</td>
+                <td><code>formData.append("foto", file)</code></td>
+                <td>Upload de arquivos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <i>🧾</i> Lista esperta dos response.status(n) mais comuns: <i>🧾</i>
+        </legend>
+        <p></p>
+
+        <details>
+          <summary>
+            1. (1xx) – Informativos (quase nunca usados no back-end do dia a
+            dia)
+          </summary>
+          <div class="div_details">
+            <p>
+              🔧 Ex: <code>100 Continue</code> → usado por navegadores e
+              servidores pra saber se devem continuar a requisição.
+            </p>
+            <p>
+              👉<strong>
+                Você quase nunca vai usar. Bora pro que interessa.</strong
+              >
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            2. (2xx) – Sucesso (Usado para expressar êxito na requisição)
+          </summary>
+          <div class="div_details">
+            <h3>📌 200 OK:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Requisição foi processada com sucesso.</li>
+              <li>
+                🧠 Usa quando: você quer responder com dados ou mensagens
+                normais.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(200).json({ msg: "Usuário encontrado!" })</code></pre>
+            </div>
+
+            <h3>📌 201 Created:</h3>
+            <ul class="list_explicative">
+              <li>
+                🔸 Algo foi criado com sucesso (ex: novo usuário, post,
+                comentário...).
+              </li>
+              <li>🧠 Usa quando: um novo recurso é criado com POST.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(201).json({ msg: "Usuário criado!" })</code></pre>
+            </div>
+
+            <h3>📌 204 No Content:</h3>
+            <ul class="list_explicative">
+              <li>
+                🔸 Requisição bem-sucedida, mas sem conteúdo pra retornar.
+              </li>
+              <li>
+                🧠 Usa quando: deleta algo ou atualiza e não precisa responder
+                com dados.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(204).send()</code></pre>
+            </div>
+
+            <div class="fieldset_table">
+              <div class="div_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Significado</th>
+                      <th>Quando usar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>200</td>
+                      <td>OK</td>
+                      <td>
+                        Quando uma requisição foi processada com sucesso (GET,
+                        PUT)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>201</td>
+                      <td>Created</td>
+                      <td>
+                        Quando você cria algo com sucesso (POST, por exemplo)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>204</td>
+                      <td>No Content</td>
+                      <td>
+                        Quando deu tudo certo, mas não tem nada pra retornar
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            3. (3xx) – Redirecionamentos (mais comuns no front ou servidores
+            como o Nginx)
+          </summary>
+          <div class="div_details">
+            <ul class="list_explicative">
+              <li>
+                Ex: <code>301 Moved Permanently</code>, <code>302 Found</code>
+              </li>
+              <li>
+                🧠 Quase nunca usados no Express diretamente. Quando precisar
+                redirecionar, pode usar:
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">response.redirect("/nova-pagina")</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            4. (4xx) – Erro do cliente (o famoso "foi você que errou , não o
+            servidor")
+          </summary>
+          <div class="div_details">
+            <h3>📌 400 Bad Request:</h3>
+            <ul class="list_explicative">
+              <li>🔸 A requisição veio errada ou malformada.</li>
+              <li>
+                🧠 Usa quando: dados estão inválidos, campos faltando, etc.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(400).json({ error: "Nome é obrigatório." })</code></pre>
+            </div>
+
+            <h3>📌 401 Unauthorized:</h3>
+            <ul class="list_explicative">
+              <li>🔸 O cliente não está autenticado.</li>
+              <li>
+                🧠 Usa quando: precisa de login/autenticação (JWT, token, etc).
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(401).json({ error: "Você precisa estar logado." })</code></pre>
+            </div>
+
+            <h3>📌 403 Forbidden:</h3>
+            <ul class="list_explicative">
+              <li>🔸 O cliente está logado, mas não tem permissão.</li>
+              <li>
+                🧠 Usa quando: usuário tenta acessar algo que ele não pode.
+              </li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(403).json({ error: "Acesso negado." })</code></pre>
+            </div>
+
+            <h3>📌 404 Not Found:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Recurso não encontrado.</li>
+              <li>🧠 Usa quando: o ID não existe, rota errada, etc.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(403).json({ error: "Acesso negado." })</code></pre>
+            </div>
+
+            <h3>📌 409 Conflict:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Conflito de dados (ex: registro já existe).</li>
+              <li>🧠 Usa quando: email já cadastrado, CPF duplicado, etc.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(404).json({ error: "Usuário não encontrado." })</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            5. (5xx) – Erros do servidor (a culpa agora é nossa &#128517;)
+          </summary>
+          <div class="div_details">
+            <h3>📌 500 Internal Server Error:</h3>
+            <ul class="list_explicative">
+              <li>🔸 Erro interno do servidor. Algo deu ruim.</li>
+              <li>🧠 Usa quando: estoura uma exceção, erro desconhecido.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">return response.status(500).json({ error: "Erro inesperado no servidor." })</code></pre>
+            </div>
+
+            <h3>
+              📌 <code>502 Bad Gateway</code>,
+              <code>503 Service Unavailable</code>,
+              <code>504 Gateway Timeout</code>:
+            </h3>
+            <ul class="list_explicative">
+              <li>
+                🔸 Problemas de infraestrutura (outro serviço caiu, servidor
+                ocupado, etc).
+              </li>
+              <li>
+                🧠 Mais comuns em apps maiores com múltiplos serviços (tipo
+                microserviços).
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            6. 🔥 Dica Ninja:
+          </summary>
+          <div class="div_details">
+            <h3>Você pode criar um padrão no seu back-end tipo assim:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">if (!user) {
+  return response.status(404).json({ error: "Usuário não encontrado" })
+}
+
+if (!email || !senha) {
+  return response.status(400).json({ error: "Campos obrigatórios" })
+}
+
+return response.status(200).json({ msg: "Usuário logado com sucesso!" })</code></pre>
+            </div>
+          </div>
+        </details>
+      </fieldset>
+      
+      <fieldset>
+        <legend>
+          <i>🛑</i> Middleware: O Interceptador de Requisições <i>🛑</i>
+        </legend>
+        <div>
+          <p>
+            O <strong>middleware</strong> é como um segurança que fica no meio
+            do caminho entre a requisição do cliente e a resposta do servidor.
+          </p>
+          <p>
+            Ele pode <strong>modificar</strong>, <strong>bloquear</strong> ou
+            <strong>encaminhar</strong> a requisição antes que ela chegue ao
+            destino final.
+          </p>
+          <h4>📌 Definição:</h4>
+          <p>
+            Um <strong>middleware</strong> é uma função que
+            <strong>intercepta</strong> a requisição antes dela chegar à rota
+            final. Podendo assim:
+          </p>
+          <ul>
+            <li>Modificar a requisição ou a resposta.</li>
+            <li>Bloquear o acesso caso não cumpra algum critério.</li>
+            <li>Registrar logs e métricas.</li>
+            <li>Adicionar informações extras na requisição</li>
+          </ul>
+          <p>
+            Ele e utilizada principalmente quando houver a nessecidade de
+            executar um mesmo trexo de código em multiplas rotas.
+          </p>
+        </div>
+
+        <div>
+          <h4>
+            <button id="openModal" class="openModal">
+              &#65291; Uma middleware e composta por: 
+            </button>
+          </h4>
+
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Uma middleware e composta por:</h2>
+              <ul>
+                <li>function functionName(request, response, next):</li>
+                <ul>
+                  <li>
+                    <strong>request</strong>: Este é um objeto que contém
+                    informações sobre a requisição HTTP que o servidor recebeu.
+                    Isso inclui coisas como o método HTTP (<code>GET</code>,
+                    <code>POST</code>, <code>PUT</code>, <code>DELETE</code>,
+                    etc.), a URL solicitada, os headers da requisição, o corpo
+                    da requisição (se houver), e muito mais.
+                  </li>
+                  <li>
+                    <strong>response</strong>: Este é um objeto que você usa
+                    para enviar uma resposta de volta ao cliente que fez a
+                    requisição. Ele permite definir o status code da resposta,
+                    os headers da resposta, e o corpo da resposta.
+                  </li>
+                  <li>
+                    <strong>next</strong>: Esta é uma função muito importante.
+                    Quando um middleware termina de executar sua lógica, ele
+                    precisa chamar a função <code>next()</code> para passar o
+                    controle para o próximo middleware na cadeia ou para a rota
+                    final que irá lidar com a requisição. Se
+                    <code>next()</code> não for chamado, a requisição ficará
+                    "presa" no middleware e a resposta nunca será enviada.
+                  </li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <details>
+          <summary>Fluxo da Requisição com Middleware</summary>
+
+          <div class="code_container">
+            <pre
+              class="code_block"
+            >[ Cliente ] → [ Middleware 1 ] → [ Middleware 2 ] → [ Rota Final ]<code id="
+code_text"></code></pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Exemplos de como criar Middlewares</summary>
+          <div class="div_details">
+            <h4>
+              📌 Criando um middleware que registrar informações sobre cada
+              requisições recebidas:
+            </h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">function logRequests(request, response, next) {
+  const { method, url } = request
+
+  const logLabel = `[${method.toUpperCase()}] ${url}`
+
+  console.log(logLabel)
+
+  console.time("logLabel")
+
+  next()
+
+  console.timeEnd("logLabel")
+}</code></pre>
+            </div>
+            <h4>💡 Em resumo, o que esse middleware faz é:</h4>
+            <ul class="list_check">
+              <li>
+                <strong
+                  >Registrar informações sobre cada requisição recebida</strong
+                >: Ele loga o método HTTP e a URL da requisição no console.
+              </li>
+              <li>
+                <strong>Medir o tempo de processamento da requisição</strong>:
+                Ele inicia um cronômetro antes de passar o controle para o
+                próximo middleware/rota e para o cronômetro depois que a rota e
+                quaisquer middlewares subsequentes terminarem de executar. Isso
+                ajuda a identificar possíveis gargalos de desempenho na sua
+                aplicação.
+              </li>
+              <li>
+                <strong>Passar o controle adiante</strong>: Ao chamar
+                <code>next()</code>, ele garante que a requisição continue seu
+                fluxo normal através da sua aplicação.
+              </li>
+            </ul>
+            <h4>📌 Criando um middleware que executa a validação do ID:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">function validateProjectID(request, response, next) {
+  const { id } = request.params
+  console.log("1")
+
+  if (!isUuid(id)) {
+    return response.status(400).json({ error: "Invalid project ID." })
+  }
+
+  return next()
+}</code></pre>
+            </div>
+            <h4>💡 Em resumo, o que esse middleware faz é:</h4>
+            <ul class="list_check">
+              <li>
+                Se o <code>id</code> não for um <strong>UUID</strong> válido,
+                uma resposta de erro 400 é enviada e a função retorna, impedindo
+                a chamada de <code>next()</code>.
+              </li>
+              <li>
+                Se o <code>id</code> for um <strong>UUID</strong> válido, o
+                middleware simplesmente chama <code>next()</code>, permitindo
+                que a requisição continue para a próxima função na cadeia (que
+                provavelmente será a rota que realmente busca ou manipula o
+                projeto com o ID fornecido).
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <h3>📜 Metodos de uso para um Middleware!</h3>
+        <p>
+          Os middlewares podem ter diferentes funções, dependendo do que
+          queremos fazer:
+        </p>
+
+        <details>
+          <summary>1. Middleware Global</summary>
+          <div class="div_details">
+            <ul>
+              <li>Aplica-se a todas as requisições.</li>
+              <li>Exemplo: Registro de logs, CORS, parsing de JSON.</li>
+            </ul>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">// Sem rota especifica
+function logRequests(request, response, next) {...} 
+
+app.use(logRequests)
+
+// Rota sendo especificada
+
+app.use("/projects/:id", logRequests)</code></pre>
+            </div>
+            <h4>💡 O que acontece aqui?</h4>
+            <ol>
+              <li>
+                Nese metodo nos temos o middleware sendo usado da seguinte forma
+                utiliza o <code>app.use(logRequests)</code> para executar sempre
+                que houver alguma requisição, sendo aplicado em qualquer rota.
+              </li>
+              <li>
+                Nese metodo nos temos o middleware sendo aplicado em uma rota
+                especifica,<code>app.use("/projects/:id", logRequests)</code>.
+              </li>
+              <li>
+                Em ambos os metodos pode ser aplicado mais de uma Middleware no
+                momento da chamada, as separando por uma virgula(<code>,</code>)
+                no momento da chamada.
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>2. Middleware de Rota Específica</summary>
+          <div class="div_details">
+            <ul>
+              <li>Funciona apenas em determinadas rotas.</li>
+              <li>Exemplo: Autenticação antes de acessar uma área restrita.</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">function logRequests(request, response, next) {...}
+function validateProjectID(request, response, next) {...}
+
+app.use("/projects/:id", logRequests, validateProjectID)</code></pre>
+            </div>
+            <h4>💡 O que acontece aqui?</h4>
+            <p>
+              Nese metodo nos temos o middleware sendo aplicado dentro de uma
+              rota específica, podendo ser aplicado mais de uma middleware para
+              a rota chamada
+              <code
+                >app.use("/projects/:id", logRequests, validateProjectID)</code
+              >.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>3. Middleware de Tratamento de Erros</summary>
+          <div class="div_details">
+            <ul>
+              <li>Captura e lida com erros nas requisições.</li>
+              <li>Deve ter quatro parâmetros (err, req, res, next).</li>
+            </ul>
+            <h4>📌 Exemplo:</h4>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Algo deu errado!");
+});</code></pre>
+            </div>
+          </div>
+        </details>
+      </fieldset>
+      
+      <fieldset class="fieldset_table">
+        <legend>🚀 Conclusão</legend>
+        <div class="div_table">
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Exemplo de Uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Global</strong></td>
+                <td>Aplica-se a todas as requisições</td>
+                <td>
+                  <code>app.use(logRequests)</code> e
+                  <code>app.use(logRequests, validateProjectID)</code>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Rota Específica</strong></td>
+                <td>Funciona apenas em algumas rotas</td>
+                <td>
+                  <code>app.delete("/projects/:id", checkAuth, ...)</code> e
+                  <code>app.use("/projects/:id", validateProjectID, ...)</code>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Erro</strong></td>
+                <td>Trata erros na aplicação</td>
+                <td>
+                  <code>app.use((err, req, res, next) =&gt; { ... })</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="./style/js/modal.js"></script>
+    <script src="./style/js/openDetails.js"></script>
+    <script src="./style/js/toggleTheme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Formulário interativo com alternância de tema, exibição de senha e validação de dados como CPF/CNPJ, e-mail e telefone. Integração com MockAPI para uma experiência dinâmica e intuitiva."
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <title>Formulário Mocado Com MockAPI</title>
+  </head>
+
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="../formulario_com_nodejs/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="../ToDo_List/index.html"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Formulário Mocado Com MockAPI</h1>
+
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <div class="loading loading_blue" id="loading_blue">  
+          <img src="style/gif/loading-blue.gif" alt="" sizes="" srcset="" />
+        </div>
+        <div class="loading loading_green" id="loading_green">
+          <img src="style/gif/loading-green.gif" alt="" sizes="" srcset="" />
+        </div>
+        <legend>Seu Cadastro em Poucos Cliques</legend>
+        <form action="#">
+          <div class="div_content">
+            <!-- Nome -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="firstName"
+                  >Nome
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="firstName"
+                placeholder="Digite o seu nome"
+                autocomplete="given-name"
+              />
+            </div>
+
+            <!-- Sobrenome -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="lastName"
+                  >Sobrenome
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="lastName"
+                placeholder="Digite o seu sobrenome"
+                autocomplete="family-name"
+              />
+            </div>
+          </div>
+
+          <div class="div_content">
+            <!-- CPF -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="CPF_CNPJ"
+                  >CPF/CNPJ
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="CPF_CNPJ"
+                placeholder="Digite o seu CPF/CNPJ"
+                maxlength="18"
+                onchange="pesquiseCPF()"
+                autofocus
+              />
+            </div>
+
+            <div class="content_input-cellphone">
+              <!-- DDI -->
+              <div class="div_countryCode">
+                <span class="span_label">
+                  <label class="labelInput_input" for="countryCode"
+                    >DDI
+                    <span class="required" aria-hidden="true">*</span></label
+                  >
+                </span>
+                <input
+                  required
+                  type="tel"
+                  class="labelInput_input"
+                  id="countryCode"
+                  placeholder="+00"
+                  autocomplete="tel-country-code"
+                />
+              </div>
+
+              <!-- Telefone -->
+              <div class="div_cellphone">
+                <span class="span_label">
+                  <label class="labelInput_input" for="cellphone"
+                    >Telefone
+                    <span class="required" aria-hidden="true">*</span></label
+                  >
+                </span>
+                <input
+                  required
+                  type="tel"
+                  class="labelInput_input"
+                  id="cellphone"
+                  placeholder="(12) 12345-1234"
+                  maxlength="15"
+                  autocomplete="tel-national"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="div_content">
+            <div class="content_input-email">
+              <label class="labelInput_input" for="email"
+                >Endereço de e-mail
+                <span class="required" aria-hidden="true">*</span></label
+              >
+              <input
+                required
+                type="email"
+                class="labelInput_input"
+                id="email"
+                placeholder="seu.e-mail@email.com"
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <div class="div_content">
+            <!-- Data de nascimento -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="birthDate"
+                  >Data de Nascimento
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="date"
+                class="labelInput_input"
+                id="birthDate"
+              />
+            </div>
+
+            <!-- Gênero -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="gender"
+                  >Gênero
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <select required class="labelInput_input" id="gender">
+                <option value="" disabled selected>Escolha o seu gênero</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Endereço 1° linha -->
+          <div class="div_content">
+            <!-- País/Região -->
+            <div class="content_input-bairro">
+              <span class="span_label">
+                <label class="labelInput_input" for="country"
+                  >País/Região
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="country"
+                placeholder="Digite o seu país..."
+                autocomplete="country-name"
+              />
+            </div>
+
+            <!-- Estado -->
+            <div class="content_input-rua">
+              <span class="span_label">
+                <label class="labelInput_input" for="state"
+                  >Estado
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="state"
+                placeholder="Digite o seu estado"
+                autocomplete="region"
+              />
+            </div>
+
+            <!-- Cidade -->
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="city"
+                  >Cidade
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="city"
+                placeholder="Nome da cidade"
+                autocomplete=""
+              />
+            </div>
+
+            <!-- CEP -->
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="CEP"
+                  >CEP <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="number"
+                class="labelInput_input"
+                id="CEP"
+                placeholder="Digite o seu CEP"
+                autocomplete="postal-code"
+              />
+            </div>
+          </div>
+
+          <!-- Endereço 2° linha -->
+          <div class="div_content">
+            <!-- Bairro -->
+            <div class="content_input-bairro">
+              <span class="span_label">
+                <label class="labelInput_input" for="district"
+                  >Bairro
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="district"
+                placeholder="Nome do bairro"
+              />
+            </div>
+
+            <!-- Endereço (Rua, Avenida, etc.) -->
+            <div class="content_input-rua">
+              <span class="span_label">
+                <label class="labelInput_input" for="address"
+                  >Endereço
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="text"
+                class="labelInput_input"
+                id="address"
+                placeholder="Endereço (Rua, Avenida, etc.)"
+              />
+            </div>
+
+            <!-- Número -->
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="addressNumber"
+                  >Número
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="number"
+                class="labelInput_input"
+                id="addressNumber"
+                placeholder="Número"
+              />
+            </div>
+
+            <!-- Complemento -->
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="Complement"
+                  >Complemento</label
+                >
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="Complement"
+                placeholder="casa, bloco, apartamento, etc."
+                autocomplete="address-line3"
+              />
+            </div>
+          </div>
+
+          <div class="div_content">
+            <!-- Senha -->
+            <div class="content_input-password">
+              <span class="span_label">
+                <label class="labelInput_input" for="senha"
+                  >Digite a sua senha
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <div class="password-container">
+                <input
+                  required
+                  type="password"
+                  class="labelInput_input form-password"
+                  id="senha"
+                  placeholder='Digite a sua senha "Senha+78*"'
+                />
+                <i
+                  class="fa-regular fa-eye-slash toggleSenha"
+                  id="toggleSenha"
+                ></i>
+              </div>
+            </div>
+
+            <!-- confirme senha -->
+            <div class="content_input-password">
+              <span class="span_label">
+                <label class="labelInput_input" for="confirmSenha"
+                  >Confirme a sua senha
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <div class="password-container">
+                <input
+                  required
+                  type="password"
+                  class="form-password labelInput_input"
+                  id="confirmSenha"
+                  placeholder='Confirme a sua senha "Senha+78*"'
+                />
+                <i class="fa-regular fa-eye-slash toggleSenha"></i>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="submit">Cadastrar</button>
+        </form>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o repositório do projeto
+          <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210/MockFormAPI" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+    <script src="./script.js" type="module"></script>
+    <script src="./pesquiseCPF.js"></script>
+    <script src="./script/toggleSenha.js"></script>
+    <script src="./script/toggleTheme.js"></script>
+  </body>
+</html>

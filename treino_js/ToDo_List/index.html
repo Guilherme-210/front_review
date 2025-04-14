@@ -34,9 +34,11 @@
   <body>
     <header>
       <nav>
-        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-left"></i></a>
+        <a class="nav_pages" href="../formulario_com_mockAPI/index.html"
+          ><i class="fi fi-rr-angle-left"></i
+        ></a>
         <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
-        <a class="nav_pages" href="/"><i class="fi fi-rr-angle-right"></i></a>
+        <a class="nav_pages" href="#"><i class="fi fi-rr-angle-right"></i></a>
       </nav>
 
       <h1>Crie a sua lista de tarefas</h1>
@@ -49,7 +51,7 @@
     </header>
 
     <main>
-      <section>
+      <section class="explications">
         <fieldset>
           <legend>Sobre o Projeto</legend>
           <p>
@@ -59,26 +61,22 @@
             concluídas.
           </p>
           <p>O To-Do List está dividido em três seções:</p>
-          <ul>
-            <li>
-              <p>
+          <div>
+            <ul>
+              <li>
                 <strong>Projetos a Concluir:</strong> Aqui você adiciona novas
                 tarefas que precisam ser realizadas.
-              </p>
-            </li>
-            <li>
-              <p>
+              </li>
+              <li>
                 <strong>Em Processo:</strong> Movimente as tarefas para cá
                 quando estiver trabalhando nelas.
-              </p>
-            </li>
-            <li>
-              <p>
+              </li>
+              <li>
                 <strong>Concluídas:</strong> Após finalizar uma tarefa, mova-a
                 para esta seção.
-              </p>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
           <p>
             Utilize os botões para adicionar, mover e excluir tarefas conforme
             necessário. Dessa forma, você pode manter um controle mais preciso
@@ -97,26 +95,27 @@
                 type="text"
                 class="Name"
                 id="inputName"
-                placeholder="Digite o seu primeiro afazer."
+                placeholder="Digite o sua primeiro tarefa."
               />
               <button class="create_button" id="createButton" type="submit">
                 Enviar
               </button>
             </div>
+            
+            <div class="listArea">
+              <ul>
+                <li>
+                  <p class="tag_list">casa</p>
+                  <button class="clear_button" id="clearButton">excluir</button>
+                </li>
+    
+                <li>
+                  <p class="tag_list">casa</p>
+                  <button class="clear_button">excluir</button>
+                </li>
+              </ul>
+            </div>
           </form>
-          <div class="listArea">
-            <ul>
-              <li>
-                <div class="tag_list"><p>casa</p></div>
-                <button class="clear_button" id="clearButton">excluir</button>
-              </li>
-
-              <li>
-                <div class="tag_list"><p>casa</p></div>
-                <button class="clear_button">excluir</button>
-              </li>
-            </ul>
-          </div>
         </fieldset>
       </section>
     </main>
