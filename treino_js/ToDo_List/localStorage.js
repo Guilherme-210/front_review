@@ -18,7 +18,7 @@ async function newTesk() {
     console.log(values)
     taskInput.value = ""
     console.log("Tarefa adicionada com sucesso!")
-    showValues() // Atualiza a lista automaticamente após adicionar
+    showValues() 
   } catch (error) {
     console.error(error)
   }
@@ -35,7 +35,8 @@ function showValues() {
       <p class="tag_list">${values[i]["name"]}</p>
       <div class="buttons">
         <button class="clear_button" onclick="clearTesk(${i})"><ion-icon name="trash-outline"></ion-icon></button>
-        <button class="complet_button" onclick="completTesk(${i})">completa <ion-icon name="thumbs-up-outline"></ion-icon></button>
+        <button class="edit_button" onclick="editTesk(${i})"><ion-icon name="pencil-outline"></ion-icon></button>
+        <button class="complet_button" onclick="completTesk(${i})"><ion-icon name="thumbs-up-outline"></ion-icon></button>
       </div>
     </li>`
   }
@@ -62,6 +63,34 @@ function completTesk(index) {
   }
 
   values[index].name += " ✅"
+  localStorage.setItem(localStorageKey, JSON.stringify(values))
+  showValues()
+}
+
+function editTesk(index) {
+  let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]")
+  let currentTask = values[index].name
+
+  // Remove o "✅" se estiver presente, pro usuário editar o texto limpo
+  let cleanTask = currentTask.replace(" ✅", "")
+
+  let newTask = prompt("Editar tarefa:", cleanTask)
+
+  if (newTask === null) return // Cancelou
+
+  newTask = newTask.trim()
+
+  if (!newTask) {
+    alert("Tarefa não pode ser vazia.")
+    return
+  }
+
+  // Recoloca o ✅ se a tarefa anterior já estava concluída
+  if (currentTask.endsWith(" ✅")) {
+    newTask += " ✅"
+  }
+
+  values[index].name = newTask
   localStorage.setItem(localStorageKey, JSON.stringify(values))
   showValues()
 }

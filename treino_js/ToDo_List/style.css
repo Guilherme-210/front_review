@@ -420,15 +420,22 @@ button:hover {
 }
 .clear_button {
   display: block;
-  /* width: 20%; */
   border-left: 0;
   border-color: var(--button-bg-color);
   border-radius: 0;
 }
 .clear_button:hover {
   color: #c02626;
+}
+.edit_button {
+  display: block;
+  width: auto;
   border-left: 0;
-  border-right: 0;
+  border-color: var(--button-bg-color);
+  border-radius: 0;
+}
+.edit_button:hover {
+  color: #ffffff;
 }
 .complet_button {
   display: block;
@@ -440,6 +447,9 @@ button:hover {
 .complet_button:hover {
   color: #108606;
   border-left: 0;
+}
+.completed {
+  color: #00ff00;
 }
 
 
