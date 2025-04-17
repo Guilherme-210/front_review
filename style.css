@@ -99,14 +99,17 @@ nav a:hover {
   text-decoration: underline;
   color: #007bff;
 }
-.html{
+.html {
   color: #f37f3d;
 }
-.css{
+.css {
   color: #32bae5;
 }
-.js{
+.js {
   color: #f6cf39;
+}
+.react {
+  color: #61DAFB;
 }
 
 /* Estilo do main */
@@ -134,6 +137,7 @@ h3 {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  gap: 1rem;
 }
 
 .fieldset_scroll {
@@ -155,7 +159,7 @@ h3 {
   transform: translate(-50%, -50%); 
   width: 90%;
   font-size: 15rem;
-  opacity: 0.1;
+  opacity: 0.3;
   z-index: +1; 
 }
 
@@ -167,7 +171,7 @@ h3 {
   transform: translate(-50%, -50%); 
   width: 90%;
   font-size: 15rem;
-  opacity: 0.1;
+  opacity: 0.3;
   z-index: +1; 
 }
 
@@ -179,7 +183,19 @@ h3 {
   transform: translate(-50%, -50%); 
   width: 90%;
   font-size: 15rem;
-  opacity: 0.1;
+  opacity: 0.3;
+  z-index: +1; 
+}
+
+.icon_aula_react {
+  position: absolute; 
+  color: #61DAFB;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 90%;
+  font-size: 15rem;
+  opacity: 0.3;
   z-index: +1; 
 }
 
@@ -221,6 +237,15 @@ h3 {
   font-weight: bold;
 }
 .fieldset_scroll ul.ul_javascript li a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+.fieldset_scroll ul.ul_react li a {
+  text-decoration: none;
+  color: #32bae5;
+  font-weight: bold;
+}
+.fieldset_scroll ul.ul_react li a:hover {
   text-decoration: underline;
   color: #007bff;
 }

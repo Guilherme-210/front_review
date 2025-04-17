@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link rel="stylesheet" href="/padrao_pages/reset.css" />
+    <link rel="stylesheet" href="/padrao_pages/style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <title>Introdução ao React</title>
+  </head>
+  <body data-theme="dark">
+    <header>
+      <nav>
+        <a class="nav_pages" href="/"><ion-icon name="home"></ion-icon></a>
+        <a class="nav_pages" href="/react/primeira-pagina/script.js"><i class="fi fi-rr-angle-right"></i></a>
+      </nav>
+
+      <h1>Introdução Básica ao React</h1>
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>📌 Introdução ao React</legend>
+        <div class="fieldset_explications">
+          <div class="quote_container">
+            <p>🤔 O que é o React?</p>
+            <p>
+              React (ou React.js) é uma biblioteca JavaScript para criar
+              interfaces de usuário, mantida pelo Facebook.
+            </p>
+            <p>“Mas pera... é um framework ou biblioteca?”</p>
+            <p>
+              React é uma biblioteca focada só na parte de visualização (view)
+              da sua aplicação. Ele não se mete com rotas, requisições, nem
+              banco de dados. É só a “carinha do app”.
+            </p>
+            <p>🎯 Qual é o objetivo do React?</p>
+            <p>
+              Facilitar o desenvolvimento de interfaces interativas e
+              reutilizáveis, de forma rápida, dinâmica e eficiente.
+            </p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>🧱 Conceito-chave: Componentes</legend>
+        <p>React é baseado no conceito de componentes.</p>
+        <p>
+          Pensa em componentes como pequenas peças de LEGO: cada peça representa
+          um pedaço da sua interface (um botão, uma barra de navegação, um card
+          de produto, etc.).
+        </p>
+
+        <div>
+          <h4>
+            <button id="openModal" class="openModal">
+              &#65291; Por exemplo:
+            </button>
+          </h4>
+
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2>Código de exemplo:</h2>
+                <span class="close">&times;</span>
+              </div>
+              <p>Vamos criar um componente básico de título.</p>
+              <div class="code_container">
+                <div class="code_header">
+                  <span class="code_title">index.jsx</span>
+                  <div class="code_actions">
+                    <button class="copy_btn">📋 Copiar</button>
+                    <button class="edit_btn">✏️ Editar</button>
+                  </div>
+                </div>
+                <pre class="code_block"><code id="
+code_text">function OlaMundo() {
+  return &lt;h1&gt;Olá, mundo!&lt;/h1&gt;;
+}</code></pre>
+              </div>
+              <p>
+                Esse é um componente funcional. Ele retorna um elemento JSX (já
+                falo disso 👇) que será renderizado na tela.
+              </p>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>💡 JSX - JavaScript + XML</legend>
+        <p>
+          JSX é uma <strong>sintaxe que parece HTML</strong>, mas é usada dentro
+          do JavaScript.
+        </p>
+        <details>
+          <summary>Com ela, você escreve assim:</summary>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.jsx</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">const elemento = &lt;h1&gt;Olá, React!&lt;/h1&gt;;</code></pre>
+            </div>
+            <h3>🔹 Por baixo dos panos, o JSX vira algo assim:</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">index.js</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">React.createElement('h1', null, 'Olá, React!');</code></pre>
+            </div>
+            <p>✔️ JSX é mais legível e intuitivo.</p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>⚙️ Como o React funciona?</legend>
+        <p>
+          Ele usa um conceito chamado
+          <strong>DOM Virtual (Virtual DOM)</strong>.
+        </p>
+        <p>
+          Quando algo muda, o React
+          <strong>compara o que mudou e atualiza só aquela parte da tela</strong
+          >, sem recarregar tudo.
+        </p>
+        <p>Isso deixa a aplicação mais <strong>rápida e eficiente</strong>.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>🔄 Estado e Interatividade (useState)</legend>
+        <p>
+          React não é só pra mostrar HTML bonitinho. Ele reage (daí o nome) a
+          <strong>mudanças de estado</strong>.
+        </p>
+        <details>
+          <summary>
+            Exemplo com <code>useState</code> (hook pra guardar dados):
+          </summary>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">local ou arquivo</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">import { useState } from 'react';
+
+function Contador() {
+  const [contador, setContador] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Você clicou {contador} vezes&lt;/p&gt;
+      &lt;button onClick={() =&gt; setContador(contador + 1)}&gt;Clique aqui&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            </div>
+            <p>
+              🔄 A cada clique, o valor muda e o React atualiza só o texto
+              &lt;p&gt;.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          📁 Estrutura básica de um projeto React (com Vite ou Create React App)
+        </legend>
+        <details>
+          <summary>Exemplos:</summary>
+          <div class="div_details">
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">bash</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">npx create-react-app meu-projeto
+# ou com Vite:
+npm create vite@latest</code></pre>
+            </div>
+            <h3>🔹 Saída</h3>
+            <div class="code_container">
+              <div class="code_header">
+                <span class="code_title">bash</span>
+                <div class="code_actions">
+                  <button class="copy_btn">📋 Copiar</button>
+                  <button class="edit_btn">✏️ Editar</button>
+                </div>
+              </div>
+              <pre class="code_block"><code id="
+code_text">/src
+  App.jsx
+  main.jsx
+  /components
+    MeuComponente.jsx</code></pre>
+            </div>
+            <p></p>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset class="fieldset_table">
+        <legend>📦 Por que usar React?</legend>
+        <div class="fieldset_explications">
+          <div class="quote_container">
+            <ul class="list_check">
+              <li>Componentes reutilizáveis</li>
+              <li>Atualizações rápidas com DOM Virtual</li>
+              <li>Comunidade gigante e cheia de pacotes úteis</li>
+              <li>Funciona bem com outras libs (Axios, React Router, etc.)</li>
+              <li>Muito usado no mercado (empregabilidade 🔥)</li>
+            </ul>
+          </div>
+
+          <div class="quote_container">
+            <h3>🚀 Conclusão</h3>
+            <p>
+              React é uma ferramenta poderosa que te ajuda a criar interfaces de
+              forma modular, interativa e eficiente.
+            </p>
+            <p>
+              Você escreve menos código repetitivo, separa tudo em pedacinhos e
+              ainda ganha performance no processo.
+            </p>
+          </div>
+        </div>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+
+    <script src="/padrao_pages/modal.js"></script>
+    <script src="/padrao_pages/openDetails.js"></script>
+    <script src="/padrao_pages/toggleTheme.js"></script>
+  </body>
+</html>
